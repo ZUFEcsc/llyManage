@@ -6,5 +6,6 @@
 <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<link rel="icon" href="../img/you.png">
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2414271_pf3sgq73pge.css">
+<link rel="icon" href="/llYou/img/you.png">
+
+<link rel="stylesheet" href=//at.alicdn.com/t/font_2414271_vwmmiz7y15m.css>

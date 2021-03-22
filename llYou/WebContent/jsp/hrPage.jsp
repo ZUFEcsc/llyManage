@@ -102,20 +102,20 @@ tbody tr th {
 								<div class="form-row">
 									<div class="form-group col-md">
 										<select id="inputTime" class="form-control">
-											<option selected>请选择入驻年份</option>
+											<option selected>请选择发布时间</option>
 											<option>2021</option>
 											<option>2020</option>
 										</select>
 									</div>
 									<div class="form-group col-md">
 										<select id="inputState" class="form-control">
-											<option selected>请选择所属行业</option>
+											<option selected>请选择招聘岗位</option>
 											<option>...</option>
 										</select>
 									</div>
 									<div class="form-group col-md">
 										<input type="text" class="form-control" id="inputZ"
-											placeholder="企业名称或企业代码">
+											placeholder="输入招聘代码">
 									</div>
 									<a href="#" type="submit"><i
 										class="layui-icon layui-icon-search"
@@ -127,24 +127,26 @@ tbody tr th {
 							<thead>
 								<tr>
 									<th scope="col"><i class="iconfont icon-bianhao"
-										style="color: #999999"></i> 企业编号</th>
+										style="color: #999999"></i> 招聘代码</th>
 									<th scope="col"><i class="iconfont icon-jianzhu"
-										style="font-size: 18px; color: #1e9fff"></i>企业名称</th>
-									<th scope="col"><i class="iconfont icon-B--hangyetongji"
-										style="color: #e9bb1d;"></i>所属行业</th>
+										style="font-size: 18px; color: #1e9fff"></i>招聘岗位</th>									
 									<th scope="col"><i class="iconfont icon-shijian"
-										style="font-size: 18px; color: #cdcdcd;"></i>入驻时间</th>
+										style="font-size: 18px; color: #cdcdcd;"></i>发布时间</th>
+									<th scope="col"><i class="iconfont icon-B"
+											style="font-size: 18px; color: #dc3023;"></i>状态</th>
 									<th scope="col"><i class="iconfont icon--_caozuo"
 										style="font-size: 18px; color: #5aa9e6;"></i> 操作</th>
+									<th></th>	
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
 										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-									<td>杭州齐家网络有限公司</td>
-									<td>IT服务/系统集成</td>
+									<td>前端UI设计师</td>
 									<td>2020/01/09</td>
+									<td><span class="layui-badge layui-bg-orange">已结束</span></td>
+									<td></td>
 									<td>
 										<button type="button"
 											class="layui-btn layui-btn-sm layui-btn-normal"
@@ -155,12 +157,12 @@ tbody tr th {
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><a href=""> <i
-											class="iconfont icon-xiaoxi"
-											style="font-size: 18px; color: #e29c45;"></i></a> Y20189</th>
-									<td>杭州齐家网络有限公司</td>
-									<td>IT服务/系统集成</td>
+									<th scope="row"><i class="iconfont icon-6"
+										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+									<td>前端UI设计师</td>
 									<td>2020/01/09</td>
+									<td><span class="layui-badge layui-bg-orange">已结束</span></td>
+									<td></td>
 									<td>
 										<button type="button"
 											class="layui-btn layui-btn-sm layui-btn-normal"
@@ -171,12 +173,18 @@ tbody tr th {
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><a href=""> <i
-											class="iconfont icon-xiaoxi"
-											style="font-size: 18px; color: #e29c45;"></i></a> Y20189</th>
-									<td>杭州齐家网络有限公司</td>
-									<td>IT服务/系统集成</td>
+									<th scope="row"><i class="iconfont icon-6"
+										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+									<td>前端UI设计师</td>
 									<td>2020/01/09</td>
+									<td><span class="layui-badge layui-bg-green"> 2 / 5 </span></td>
+									<td>
+										<button type="button"
+											class="layui-btn layui-btn-sm layui-btn-primary"
+											style="margin: 0px;"><span
+												style="font-size: 14px;"> 结束招聘</span>
+										</button>
+									</td>
 									<td>
 										<button type="button"
 											class="layui-btn layui-btn-sm layui-btn-normal"
@@ -188,7 +196,7 @@ tbody tr th {
 								</tr>
 							</tbody>
 						</table>
-
+						
 					</div>
 
 					<!-- 简历池 -->
