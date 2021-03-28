@@ -138,17 +138,18 @@ body {
 
 		<div class="">
 			<i class="iconfont icon-admin" style="font-size:24px;"></i>
-			<input style="display:inline-block;width:90%;margin-top:-14px;" type="text" class="form-control" placeholder="用户登录" required
+			<input style="display:inline-block;width:90%;margin-top:-22px;" type="text" class="form-control" placeholder="用户登录" required
 				autofocus>
 		</div>
 
 		<div class="">
 			<i class="iconfont icon-mima" style="font-size:24px;"></i>
-			<input style="display:inline-block;width:90%;margin-top:-6px;" type="password" class="form-control" placeholder="密码" required>	
+			<input style="display:inline-block;width:90%;margin-top:-8px;" type="password" class="form-control" placeholder="密码" required>	
 		</div>
 		
-		<div class="" style="margin-top:2px;">
-			<input type="text" class="form-control w-75" style="display:inline-block;" placeholder="验证码" required>
+		<div class="" style="margin-top:3px;">
+			<i class="iconfont icon-ecurityCode" style="font-size:24px;"></i>
+			<input type="text" class="form-control" style="display:inline-block;width:70%;" placeholder="验证码" required>
 			<img alt="验证码" src="ResImgServlet" style="display:inline-block;">
 		</div>
 		

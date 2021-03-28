@@ -8,4 +8,5 @@
 
 <link rel="icon" href="/llYou/img/you.png">
 
-<link rel="stylesheet" href=//at.alicdn.com/t/font_2414271_vwmmiz7y15m.css>
+<link rel="stylesheet" href=//at.alicdn.com/t/font_2414271_yqesh48q75n.css>
+<script src="//at.alicdn.com/t/font_2414271_yqesh48q75n.js"></script>

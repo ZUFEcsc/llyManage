@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" import="java.util.*,dao.*,bean.*" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%><!DOCTYPE html>
+	
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
 <%@ include file="bootstrap.jsp"%>
@@ -122,12 +127,18 @@ tbody tr th {
 								</tr>
 							</thead>
 							<tbody>
+							<%
+								Dao dao=new Dao();
+								List<CompanyBean> list=dao.getList();
+								for(CompanyBean ab:list)
+								{
+							%>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-									<td>杭州齐家网络有限公司</td>
-									<td>IT服务/系统集成</td>
-									<td>2020/01/09</td>
+										style="font-size: 16px; color: #e29c45;"></i><%=ab.getNumber() %></th>
+									<td><%=ab.getName() %></td>
+									<td><%=ab.getKind() %></td>
+									<td><%=ab.getTime() %></td>
 									<td>
 										<button type="button"
 											class="layui-btn layui-btn-sm layui-btn-normal"
@@ -137,38 +148,8 @@ tbody tr th {
 										</button>
 									</td>
 								</tr>
-								<tr>
-									<th scope="row"><a href=""> <i
-											class="iconfont icon-xiaoxi"
-											style="font-size: 18px; color: #e29c45;"></i></a> Y20189</th>
-									<td>杭州齐家网络有限公司</td>
-									<td>IT服务/系统集成</td>
-									<td>2020/01/09</td>
-									<td>
-										<button type="button"
-											class="layui-btn layui-btn-sm layui-btn-normal"
-											style="margin: 0px;">
-											<i class="iconfont icon-gengduo"></i><span
-												style="font-size: 14px;"> 更多</span>
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><a href=""> <i
-											class="iconfont icon-xiaoxi"
-											style="font-size: 18px; color: #e29c45;"></i></a> Y20189</th>
-									<td>杭州齐家网络有限公司</td>
-									<td>IT服务/系统集成</td>
-									<td>2020/01/09</td>
-									<td>
-										<button type="button"
-											class="layui-btn layui-btn-sm layui-btn-normal"
-											style="margin: 0px;">
-											<i class="iconfont icon-gengduo"></i><span
-												style="font-size: 14px;"> 更多</span>
-										</button>
-									</td>
-								</tr>
+								<%} %>
+
 							</tbody>
 						</table>
 
@@ -214,9 +195,13 @@ tbody tr th {
 									</tr>
 								</thead>
 								<tbody>
+								<%
+								for(CompanyBean ab:list)
+								{
+								%>
 									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
+										<td><%=ab.getName() %></td>
+										<td><%=ab.getTime() %></td>
 										<td><span class="layui-badge layui-bg-orange">已通过认证</span></td>
 										<td>
 											<button type="button"
@@ -234,46 +219,7 @@ tbody tr th {
 											</button>
 										</td>
 									</tr>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td><span class="layui-badge layui-bg-green">未通过认证</span></td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<span style="font-size: 14px;">发送反馈</span>
-											</button>
-										</td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<i class="iconfont icon-gengduo"></i><span
-													style="font-size: 14px;"> 更多</span>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td><span class="layui-badge layui-bg-green">未通过认证</span></td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<span style="font-size: 14px;">发送反馈</span>
-											</button>
-										</td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<i class="iconfont icon-gengduo"></i><span
-													style="font-size: 14px;"> 更多</span>
-											</button>
-										</td>
-									</tr>
+									<%} %>
 								</tbody>
 							</table>
 						</div>
@@ -321,34 +267,19 @@ tbody tr th {
 									</tr>
 								</thead>
 								<tbody>
+								<%
+								for(CompanyBean ab:list)
+								{
+								%>
 									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
+										<td><%=ab.getName() %></td>
+										<td><%=ab.getTime() %></td>
 										<td>企业成立时间修改为…<a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
 										<td><span class="layui-badge layui-bg-orange">通过申请</span></td>
 										<td></td>
 									</tr>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td>企业成立时间修改为…<a href=""
-											style="color: #666666; font-size: 10px;"> 更多</a></td>
-										<td><span class="layui-badge layui-bg-green">驳回申请</span></td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td>企业成立时间修改为…<a href=""
-											style="color: #666666; font-size: 10px;"> 更多</a></td>
-										<td><span class="layui-badge layui-bg-blue">等待处理</span></td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">去审核</button>
-										</td>
-									</tr>
+								<%} %>
 								</tbody>
 							</table>
 						</div>

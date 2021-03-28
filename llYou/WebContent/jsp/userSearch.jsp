@@ -56,7 +56,7 @@
 				</ul>
 				<div class="layui-tab-content">
 					<!-- 招聘信息查询  -->
-					<div class="layui-tab-item layui-show" id="item-XXCX">	
+					<div class="layui-tab-item layui-show" id="item-XXCX">
 						<div>
 							<form>
 								<div class="form-row">
@@ -125,11 +125,11 @@
 						</div>
 
 						<%@ include file="hrjob-card.jsp"%>
-						
+
 						<%@ include file="hrjob-card.jsp"%>
-						
+
 						<%@ include file="hrjob-card.jsp"%>
-						
+
 						<%@ include file="hrjob-card.jsp"%>
 
 					</div>

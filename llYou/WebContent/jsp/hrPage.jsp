@@ -609,6 +609,7 @@ tbody tr th {
 							id : 'JLC'
 						});
 						$("#item-JLC")[0].style.display = "";
+						$("#item-JLC")[0].classList.add("layui-show");
 					}
 					element.tabChange('demo', 'JLC');
 				},
@@ -619,6 +620,7 @@ tbody tr th {
 							id : 'DYJD'
 						});
 						$("#item-DYJD")[0].style.display = "";
+						$("#item-DYJD")[0].classList.add("layui-show");
 					}
 					element.tabChange('demo', 'DYJD');
 				},
@@ -629,6 +631,7 @@ tbody tr th {
 							id : 'DEJD'
 						});
 						$("#item-DEJD")[0].style.display = "";
+						$("#item-DEJD")[0].classList.add("layui-show");
 					}
 					element.tabChange('demo', 'DEJD');
 				},
@@ -639,6 +642,7 @@ tbody tr th {
 							id : 'YHXX'
 						});
 						$("#item-YHXX")[0].style.display = "";
+						$("#item-YHXX")[0].classList.add("layui-show");
 					}
 					element.tabChange('demo', 'YHXX');
 				},
@@ -649,6 +653,7 @@ tbody tr th {
 							id : 'XXXG'
 						});
 						$("#item-XXXG")[0].style.display = "";
+						$("#item-XXXG")[0].classList.add("layui-show");
 					}
 					element.tabChange('demo', 'XXXG');
 				},
