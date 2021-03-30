@@ -129,14 +129,14 @@ tbody tr th {
 									<th scope="col"><i class="iconfont icon-bianhao"
 										style="color: #999999"></i> 招聘代码</th>
 									<th scope="col"><i class="iconfont icon-jianzhu"
-										style="font-size: 18px; color: #1e9fff"></i>招聘岗位</th>									
+										style="font-size: 18px; color: #1e9fff"></i>招聘岗位</th>
 									<th scope="col"><i class="iconfont icon-shijian"
 										style="font-size: 18px; color: #cdcdcd;"></i>发布时间</th>
 									<th scope="col"><i class="iconfont icon-B"
-											style="font-size: 18px; color: #dc3023;"></i>状态</th>
+										style="font-size: 18px; color: #dc3023;"></i>状态</th>
 									<th scope="col"><i class="iconfont icon--_caozuo"
 										style="font-size: 18px; color: #5aa9e6;"></i> 操作</th>
-									<th></th>	
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -177,12 +177,13 @@ tbody tr th {
 										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
 									<td>前端UI设计师</td>
 									<td>2020/01/09</td>
-									<td><span class="layui-badge layui-bg-green"> 2 / 5 </span></td>
+									<td><span class="layui-badge layui-bg-green"> 2 / 5
+									</span></td>
 									<td>
 										<button type="button"
 											class="layui-btn layui-btn-sm layui-btn-primary"
-											style="margin: 0px;"><span
-												style="font-size: 14px;"> 结束招聘</span>
+											style="margin: 0px;">
+											<span style="font-size: 14px;"> 结束招聘</span>
 										</button>
 									</td>
 									<td>
@@ -196,24 +197,42 @@ tbody tr th {
 								</tr>
 							</tbody>
 						</table>
-						
+
 					</div>
 
 					<!-- 简历池 -->
 					<div class="layui-tab-item" id="item-JLC" style="display: none;">
 
+
+						<div class="site-demo-button" id="layerDemo"
+							style="margin-bottom: 0; float: right; margin-left: 10px;">
+
+							<button type="button" class="layui-btn  layui-btn-normal"
+								data-method="notice" style="font-size: 18px; line-height: 18px;">
+								<i class="iconfont icon-jiqiren2"
+									style="color: #ffffff; font-size: 22px;"></i> <span
+									style="font-size: 18px;">智能筛选</span>
+							</button>
+						</div>
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
 									<div class="form-group col-md">
-										<select class="form-control">
-											<option selected disabled style="display: none;" value="">请选择认证状态</option>
-											<option>已通过认证</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+										<select id="inputTime" class="form-control">
+											<option selected>请选择发布时间</option>
+											<option>2021</option>
+											<option>2020</option>
 										</select>
+									</div>
+									<div class="form-group col-md">
+										<select id="inputState" class="form-control">
+											<option selected>请选择招聘岗位</option>
+											<option>...</option>
+										</select>
+									</div>
+									<div class="form-group col-md">
+										<input type="text" class="form-control" id="inputZ"
+											placeholder="输入招聘代码">
 									</div>
 									<a href="#" type="submit"><i
 										class="layui-icon layui-icon-search"
@@ -221,88 +240,162 @@ tbody tr th {
 								</div>
 							</form>
 						</div>
-						<div>
-							<table class="table">
-								<thead>
-									<tr>
-										<th scope="col"><i class="iconfont icon-jianzhu"
-											style="font-size: 18px; color: #1e9fff"></i>企业名称</th>
-										<th scope="col"><i class="iconfont icon-shijian"
-											style="font-size: 18px; color: #cdcdcd;"></i>申请时间</th>
-										<th scope="col"><i
-											class="iconfont icon-shangbiaorenzheng"
-											style="font-size: 18px; color: #fc5531;"></i>认证状态</th>
-										<th scope="col"><i class="iconfont icon--_caozuo"
-											style="font-size: 18px; color: #5aa9e6;"></i>操作</th>
-										<th scope="col"><i class="iconfont icon-suggestion"
-											style="color: #666666;"></i>详细信息</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td><span class="layui-badge layui-bg-orange">已通过认证</span></td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<span style="font-size: 14px;">创建账号</span>
-											</button>
-										</td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<i class="iconfont icon-gengduo"></i><span
-													style="font-size: 14px;"> 更多</span>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td><span class="layui-badge layui-bg-green">未通过认证</span></td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<span style="font-size: 14px;">发送反馈</span>
-											</button>
-										</td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<i class="iconfont icon-gengduo"></i><span
-													style="font-size: 14px;"> 更多</span>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td><span class="layui-badge layui-bg-green">未通过认证</span></td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<span style="font-size: 14px;">发送反馈</span>
-											</button>
-										</td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<i class="iconfont icon-gengduo"></i><span
-													style="font-size: 14px;"> 更多</span>
-											</button>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+						<hr>
+						<div
+							style="margin:10px;padding: 15px; background-color: #ffffff; ">
+							<img alt="" src="../icon/jlc.png" style="width:4%;float:left;margin-top:-15px;margin-left:-20px;">
+							
+							<div class="layui-row layui-col-space15">
+								<div class="layui-col-md3">
+									<div class="layui-card">
+										<div class="layui-card-header">
+											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
+											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+												class="layui-badge layui-bg-orange">亲和待人</span>
+										</div>
+										<div class="layui-card-body">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> 姓名：陈沈清<br> <i
+												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											性别：女<br> <i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> 年龄：25<br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i>
+											学历：本科<br> <i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> 招聘职位：前端UI设计师<br> <i
+												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											综合评分：
+											<div class="layui-progress" lay-showPercent="yes"
+												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+												<div class="layui-progress-bar" lay-percent="80%"></div>
+											</div>
+											<div style="display: inline-block;">
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">通过</button>
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">驳回</button>
 
+											</div>
+											<a href="#"><span
+												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+													更多</span></a> <br>
+										</div>
+									</div>
+								</div>
+								
+							
+								<div class="layui-col-md3">
+									<div class="layui-card">
+										<div class="layui-card-header">
+											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
+											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+												class="layui-badge layui-bg-orange">亲和待人</span>
+										</div>
+										<div class="layui-card-body">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> 姓名：陈沈清<br> <i
+												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											性别：女<br> <i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> 年龄：25<br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i>
+											学历：本科<br> <i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> 招聘职位：前端UI设计师<br> <i
+												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											综合评分：
+											<div class="layui-progress" lay-showPercent="yes"
+												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+												<div class="layui-progress-bar" lay-percent="80%"></div>
+											</div>
+											<div style="display: inline-block;">
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">通过</button>
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">驳回</button>
+
+											</div>
+											<a href="#"><span
+												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+													更多</span></a> <br>
+										</div>
+									</div>
+								</div>
+								
+								
+
+								<div class="layui-col-md3">
+									<div class="layui-card">
+										<div class="layui-card-header">
+											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
+											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+												class="layui-badge layui-bg-orange">亲和待人</span>
+										</div>
+										<div class="layui-card-body">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> 姓名：陈沈清<br> <i
+												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											性别：女<br> <i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> 年龄：25<br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i>
+											学历：本科<br> <i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> 招聘职位：前端UI设计师<br> <i
+												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											综合评分：
+											<div class="layui-progress" lay-showPercent="yes"
+												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+												<div class="layui-progress-bar" lay-percent="80%"></div>
+											</div>
+											<div style="display: inline-block;">
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">通过</button>
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">驳回</button>
+
+											</div>
+											<a href="#"><span
+												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+													更多</span></a> <br>
+										</div>
+									</div>
+								</div>
+
+								<div class="layui-col-md3">
+									<div class="layui-card">
+										<div class="layui-card-header">
+											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
+											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+												class="layui-badge layui-bg-orange">亲和待人</span>
+										</div>
+										<div class="layui-card-body">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> 姓名：陈沈清<br> <i
+												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											性别：女<br> <i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> 年龄：25<br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i>
+											学历：本科<br> <i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> 招聘职位：前端UI设计师<br> <i
+												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											综合评分：
+											<div class="layui-progress" lay-showPercent="yes"
+												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+												<div class="layui-progress-bar" lay-percent="80%"></div>
+											</div>
+											<div style="display: inline-block;">
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">通过</button>
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">驳回</button>
+
+											</div>
+											<a href="#"><span
+												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+													更多</span></a> <br>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
 					</div>
 
 
@@ -586,10 +679,44 @@ tbody tr th {
 		<%@ include file="lly-footer.jsp"%>
 	</div>
 	<script src="../res/layui/layui.js"></script>
+
 	<script>
 		//JavaScript代码区域
 		layui.use('element', function() {
 			var element = layui.element;
+		});
+	</script>
+
+	<!-- 滑块 -->
+	<script>
+		layui.use('slider', function() {
+			var $ = layui.$, slider = layui.slider;
+
+			slider.render({
+				elem : '#slideTest10',
+				value : [ 30, 60 ] //初始值
+				,
+				range : true
+			//范围选择
+			});
+
+			//自定义颜色
+			slider.render({
+				elem : '#slideTest15',
+				theme : '#1E9FFF' //主题色
+			});
+			slider.render({
+				elem : '#zhpf',
+				value : 80,
+				step : 10 //步长
+				,
+				theme : '#5FB878' //主题色
+				,
+				setTips : function(value) { //自定义提示文本
+					return value + '分';
+				}
+			});
+
 		});
 	</script>
 

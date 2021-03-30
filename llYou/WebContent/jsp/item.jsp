@@ -19,8 +19,8 @@
 	<button type="button" class="layui-btn  layui-btn-normal"
 		data-method="notice" style="font-size: 18px; line-height: 18px;">
 		<i class="iconfont icon-jiqiren2"
-			style="color: #ffffff; font-size: 22px;"></i> 
-			<span style="font-size: 18px;">智能筛选</span>
+			style="color: #ffffff; font-size: 22px;"></i> <span
+			style="font-size: 18px;">智能筛选</span>
 	</button>
 </div>
 <div>
@@ -98,27 +98,25 @@
 			</svg>
 					请选择筛选条件<br>
 					<div class="layui-form-item">
-					
+
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input"
 								id="exampleCheck1"> <label class="form-check-label"
-								for="exampleCheck1">
-							工作能力					 
-							</label>
+								for="exampleCheck1"> 工作能力 </label>
 						</div>
-						<div id="test1" style="line-height:10px;margin:0px 20px;padding:0px;">
+						<div id="test1"
+							style="line-height: 10px; margin: 0px 20px; padding: 0px;">
 						</div>
-							 
+
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input"
 								id="exampleCheck1"> <label class="form-check-label"
-								for="exampleCheck1">
-							工作效率					 
-							</label>
+								for="exampleCheck1"> 工作效率 </label>
 						</div>
-						<div id="test2" style="line-height:10px;margin:0px 20px;padding:0px;">
+						<div id="test2"
+							style="line-height: 10px; margin: 0px 20px; padding: 0px;">
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
@@ -171,115 +169,116 @@
 			</div>
 		</div>
 	</div>
-	<script src="../res/layui/layui.js"></script>
-	<script>
-		//注意进度条依赖 element 模块，否则无法进行正常渲染和功能性操作
-		layui.use('element', function() {
-			var element = layui.element;
+</div>
+<script src="../res/layui/layui.js"></script>
+<script>
+	//注意进度条依赖 element 模块，否则无法进行正常渲染和功能性操作
+	layui.use('element', function() {
+		var element = layui.element;
+	});
+</script>
+
+<!-- 评分 -->
+<script>
+	layui.use('rate', function() {
+		var rate = layui.rate;
+
+		//渲染
+		var ins1 = rate.render({
+			elem : '#test1' //绑定元素
 		});
-	</script>
-	
-	<!-- 评分 -->
-	<script>
-	layui.use('rate', function(){
-	    var rate = layui.rate;
-	   
-	    //渲染
-	    var ins1 = rate.render({
-	      elem: '#test1'  //绑定元素
-	    });
-	    
-	    var ins2 = rate.render({
-		      elem: '#test2'  //绑定元素
-		    });
-	  });
-	</script>
-	
-	
-	<!-- 滑块 -->
-	<script>
-		layui.use('slider', function() {
-			var $ = layui.$, slider = layui.slider;
 
-			slider.render({
-				elem : '#slideTest10',
-				value : [ 30, 60 ] //初始值
-				,
-				range : true
-			//范围选择
-			});
-
-			//自定义颜色
-			slider.render({
-				elem : '#slideTest15',
-				theme : '#1E9FFF' //主题色
-			});
-			slider.render({
-				elem : '#zhpf',
-				value : 80,
-				step : 10 //步长
-				,
-				theme : '#5FB878' //主题色
-				,
-				setTips : function(value) { //自定义提示文本
-					return value + '分';
-				}
-			});
-
+		var ins2 = rate.render({
+			elem : '#test2' //绑定元素
 		});
-	</script>
-	
-	<!-- 弹出框 -->
-	<script>
-		layui
-				.use(
-						'layer',
-						function() { //独立版的layer无需执行这一句
-							var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+	});
+</script>
 
-							//触发事件
-							var active = {
-								notice : function() {
-									//示范一个公告层
-									layer
-											.open({
-												type : 1,
-												title : false //不显示标题栏
-												,
-												closeBtn : false,
-												area : '300px;',
-												shade : 0.8,
-												id : 'LAY_layuipro' //设定一个id，防止重复弹出
-												,
-												btn : [ '火速围观', '残忍拒绝' ],
-												btnAlign : 'c',
-												moveType : 1 //拖拽模式，0或者1
-												,
-												content : '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">你知道吗？亲！<br>layer ≠ layui<br><br>layer只是作为Layui的一个弹层模块，由于其用户基数较大，所以常常会有人以为layui是layerui<br><br>layer虽然已被 Layui 收编为内置的弹层模块，但仍然会作为一个独立组件全力维护、升级。<br><br>我们此后的征途是星辰大海 ^_^</div>',
-												success : function(layero) {
-													var btn = layero
-															.find('.layui-layer-btn');
-													btn
-															.find(
-																	'.layui-layer-btn0')
-															.attr(
-																	{
-																		href : 'http://www.layui.com/',
-																		target : '_blank'
-																	});
-												}
-											});
-								}
-							};
 
-							$('#layerDemo .layui-btn').on(
-									'click',
-									function() {
-										var othis = $(this), method = othis
-												.data('method');
-										active[method] ? active[method].call(
-												this, othis) : '';
-									});
+<!-- 滑块 -->
+<script>
+	layui.use('slider', function() {
+		var $ = layui.$, slider = layui.slider;
 
-						});
-	</script>
+		slider.render({
+			elem : '#slideTest10',
+			value : [ 30, 60 ] //初始值
+			,
+			range : true
+		//范围选择
+		});
+
+		//自定义颜色
+		slider.render({
+			elem : '#slideTest15',
+			theme : '#1E9FFF' //主题色
+		});
+		slider.render({
+			elem : '#zhpf',
+			value : 80,
+			step : 10 //步长
+			,
+			theme : '#5FB878' //主题色
+			,
+			setTips : function(value) { //自定义提示文本
+				return value + '分';
+			}
+		});
+
+	});
+</script>
+
+<!-- 弹出框 -->
+<script>
+	layui
+			.use(
+					'layer',
+					function() { //独立版的layer无需执行这一句
+						var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+						//触发事件
+						var active = {
+							notice : function() {
+								//示范一个公告层
+								layer
+										.open({
+											type : 1,
+											title : false //不显示标题栏
+											,
+											closeBtn : false,
+											area : '300px;',
+											shade : 0.8,
+											id : 'LAY_layuipro' //设定一个id，防止重复弹出
+											,
+											btn : [ '火速围观', '残忍拒绝' ],
+											btnAlign : 'c',
+											moveType : 1 //拖拽模式，0或者1
+											,
+											content : '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">你知道吗？亲！<br>layer ≠ layui<br><br>layer只是作为Layui的一个弹层模块，由于其用户基数较大，所以常常会有人以为layui是layerui<br><br>layer虽然已被 Layui 收编为内置的弹层模块，但仍然会作为一个独立组件全力维护、升级。<br><br>我们此后的征途是星辰大海 ^_^</div>',
+											success : function(layero) {
+												var btn = layero
+														.find('.layui-layer-btn');
+												btn
+														.find(
+																'.layui-layer-btn0')
+														.attr(
+																{
+																	href : 'http://www.layui.com/',
+																	target : '_blank'
+																});
+											}
+										});
+							}
+						};
+
+						$('#layerDemo .layui-btn').on(
+								'click',
+								function() {
+									var othis = $(this), method = othis
+											.data('method');
+									active[method] ? active[method].call(this,
+											othis) : '';
+								});
+
+					});
+</script>
