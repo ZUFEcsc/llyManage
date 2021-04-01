@@ -2,7 +2,7 @@ package bean;
 
 import java.util.Date;
 
-public class UserBean {
+public class Mg_UserBean {
 	private String name;
 	private String identity;
 	private String sex;
@@ -66,7 +66,7 @@ public class UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public UserBean(String name, String identity, String sex, String nation, Date regist_time, String political_feature,
+	public Mg_UserBean(String name, String identity, String sex, String nation, Date regist_time, String political_feature,
 			String learn_experience,String username,String password) {
 		super();
 		this.name = name;
@@ -80,7 +80,7 @@ public class UserBean {
 		this.password=password;
 	}
 	
-	public UserBean()
+	public Mg_UserBean()
 	{
 		
 	}

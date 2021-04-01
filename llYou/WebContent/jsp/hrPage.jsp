@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" import="java.util.*,dao.*,bean.*" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%><!DOCTYPE html>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 <head>
 <%@ include file="bootstrap.jsp"%>
@@ -246,6 +250,15 @@ tbody tr th {
 							<img alt="" src="../icon/jlc.png" style="width:4%;float:left;margin-top:-15px;margin-left:-20px;">
 							
 							<div class="layui-row layui-col-space15">
+							<!-- -->
+							 <%
+							 Dao dao = new Dao();
+							 List<Hr_UserResumeBean> list = dao.getListResumePoolInfo();
+							 for(Hr_UserResumeBean ab:list)
+							 {
+								 if(ab.getState().equals("1000"))
+								 {
+							 %>
 								<div class="layui-col-md3">
 									<div class="layui-card">
 										<div class="layui-card-header">
@@ -255,13 +268,13 @@ tbody tr th {
 										</div>
 										<div class="layui-card-body">
 											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：陈沈清<br> <i
+												style="color: #5FB878;"></i> 姓名：<%=ab.getName() %><br> <i
 												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：女<br> <i class="iconfont icon-zhaopingangwei"
-												style="color: #5FB878;"></i> 年龄：25<br> <i
+											性别：<%=ab.getSex() %><br> <i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> 年龄：<%=ab.getAge() %><br> <i
 												class="iconfont icon-xueli" style="color: #5FB878;"></i>
-											学历：本科<br> <i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：前端UI设计师<br> <i
+											学历：<%=ab.getLearn_experience() %><br> <i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position() %><br> <i
 												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 											综合评分：
 											<div class="layui-progress" lay-showPercent="yes"
@@ -281,117 +294,10 @@ tbody tr th {
 										</div>
 									</div>
 								</div>
-								
-							
-								<div class="layui-col-md3">
-									<div class="layui-card">
-										<div class="layui-card-header">
-											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
-											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
-												class="layui-badge layui-bg-orange">亲和待人</span>
-										</div>
-										<div class="layui-card-body">
-											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：陈沈清<br> <i
-												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：女<br> <i class="iconfont icon-zhaopingangwei"
-												style="color: #5FB878;"></i> 年龄：25<br> <i
-												class="iconfont icon-xueli" style="color: #5FB878;"></i>
-											学历：本科<br> <i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：前端UI设计师<br> <i
-												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											综合评分：
-											<div class="layui-progress" lay-showPercent="yes"
-												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
-												<div class="layui-progress-bar" lay-percent="80%"></div>
-											</div>
-											<div style="display: inline-block;">
-												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">通过</button>
-												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">驳回</button>
-
-											</div>
-											<a href="#"><span
-												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-													更多</span></a> <br>
-										</div>
-									</div>
-								</div>
-								
-								
-
-								<div class="layui-col-md3">
-									<div class="layui-card">
-										<div class="layui-card-header">
-											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
-											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
-												class="layui-badge layui-bg-orange">亲和待人</span>
-										</div>
-										<div class="layui-card-body">
-											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：陈沈清<br> <i
-												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：女<br> <i class="iconfont icon-zhaopingangwei"
-												style="color: #5FB878;"></i> 年龄：25<br> <i
-												class="iconfont icon-xueli" style="color: #5FB878;"></i>
-											学历：本科<br> <i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：前端UI设计师<br> <i
-												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											综合评分：
-											<div class="layui-progress" lay-showPercent="yes"
-												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
-												<div class="layui-progress-bar" lay-percent="80%"></div>
-											</div>
-											<div style="display: inline-block;">
-												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">通过</button>
-												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">驳回</button>
-
-											</div>
-											<a href="#"><span
-												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-													更多</span></a> <br>
-										</div>
-									</div>
-								</div>
-
-								<div class="layui-col-md3">
-									<div class="layui-card">
-										<div class="layui-card-header">
-											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
-											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
-												class="layui-badge layui-bg-orange">亲和待人</span>
-										</div>
-										<div class="layui-card-body">
-											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：陈沈清<br> <i
-												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：女<br> <i class="iconfont icon-zhaopingangwei"
-												style="color: #5FB878;"></i> 年龄：25<br> <i
-												class="iconfont icon-xueli" style="color: #5FB878;"></i>
-											学历：本科<br> <i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：前端UI设计师<br> <i
-												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											综合评分：
-											<div class="layui-progress" lay-showPercent="yes"
-												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
-												<div class="layui-progress-bar" lay-percent="80%"></div>
-											</div>
-											<div style="display: inline-block;">
-												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">通过</button>
-												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">驳回</button>
-
-											</div>
-											<a href="#"><span
-												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-													更多</span></a> <br>
-										</div>
-									</div>
-								</div>
+								<%
+								}
+							 }
+							 %>
 
 							</div>
 
@@ -523,12 +429,26 @@ tbody tr th {
 								</tr>
 							</thead>
 							<tbody>
+							<%
+							List<CompanyUserBean> list2=dao.getListCompanyUserInfo();
+							for(CompanyUserBean ab:list2)
+							{
+								if(ab.getPosition_kind().equals("1"))
+									ab.setPosition_kind("普通员工");
+								if(ab.getPosition_kind().equals("2"))
+									ab.setPosition_kind("部门主管");
+								if(ab.getPosition_kind().equals("3"))
+									ab.setPosition_kind("项目经理");
+								if(ab.getPosition_kind().equals("4"))
+									ab.setPosition_kind("总裁");
+								
+							%>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-									<td>陈沈清</td>
-									<td>普通员工</td>
-									<td>2020/01/09</td>
+										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getUsername() %></th>
+									<td><%=ab.getName() %></td>
+									<td><%=ab.getPosition_kind() %></td>
+									<td><%=ab.getIn_time() %></td>
 									<td>
 										<button type="button"
 											class="layui-btn layui-btn-sm layui-btn-normal"
@@ -538,53 +458,8 @@ tbody tr th {
 										</button>
 									</td>
 								</tr>
-								<tr>
-									<th scope="row"><a href=""> <i
-											class="iconfont icon-xiaoxi"
-											style="font-size: 18px; color: #e29c45;"></i></a> Y20189</th>
-									<td>陈沈清</td>
-									<td>项目经理</td>
-									<td>2020/01/09</td>
-									<td>
-										<button type="button"
-											class="layui-btn layui-btn-sm layui-btn-normal"
-											style="margin: 0px;">
-											<i class="iconfont icon-gengduo"></i><span
-												style="font-size: 14px;"> 更多</span>
-										</button>
-									</td>
-								<tr>
-									<th scope="row"><a href=""> <i
-											class="iconfont icon-xiaoxi"
-											style="font-size: 18px; color: #e29c45;"></i></a> Y20189</th>
-									<td>陈沈清</td>
-									<td>办公室主任</td>
-									<td>2020/01/09</td>
-									<td>
-										<button type="button"
-											class="layui-btn layui-btn-sm layui-btn-normal"
-											style="margin: 0px;">
-											<i class="iconfont icon-gengduo"></i><span
-												style="font-size: 14px;"> 更多</span>
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><a href=""> <i
-											class="iconfont icon-xiaoxi"
-											style="font-size: 18px; color: #e29c45;"></i></a> Y20189</th>
-									<td>陈沈清</td>
-									<td>部门主管</td>
-									<td>2020/01/09</td>
-									<td>
-										<button type="button"
-											class="layui-btn layui-btn-sm layui-btn-normal"
-											style="margin: 0px;">
-											<i class="iconfont icon-gengduo"></i><span
-												style="font-size: 14px;"> 更多</span>
-										</button>
-									</td>
-								</tr>
+								<%} %>
+
 							</tbody>
 						</table>
 

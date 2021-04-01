@@ -334,16 +334,16 @@ tbody tr th {
 							<tbody>
 							<%
 								Dao dao2 = new Dao();
-							List<UserBean> list2 = dao2.getListUerBasicInfo();
-							for(UserBean ab:list2)
-							{
+								List<Mg_UserBean> list2 = dao2.getListUerBasicInfo();
+								for(Mg_UserBean ab:list2)
+								{
 							%>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getUsername() %></th>
-									<td><%=ab.getName() %></td>
-									<td><%=ab.getSex() %></td>
-									<td><%=ab.getRegist_time() %></td>
+										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getUsername()%></th>
+									<td><%=ab.getName()%></td>
+									<td><%=ab.getSex()%></td>
+									<td><%=ab.getRegist_time()%></td>
 									<td>
 										<button type="button"
 											class="layui-btn layui-btn-sm layui-btn-normal"
@@ -353,7 +353,9 @@ tbody tr th {
 										</button>
 									</td>
 								</tr>
-								<%} %>
+								<%
+									}
+								%>
 							</tbody>
 						</table>
 
@@ -401,8 +403,8 @@ tbody tr th {
 								</thead>
 								<tbody>
 								<%
-								for(UserBean ab:list2)
-								{
+									for(Mg_UserBean ab:list2)
+														{
 								%>
 									<tr>
 										<td><%=ab.getName() %></td>

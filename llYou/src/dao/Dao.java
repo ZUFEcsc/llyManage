@@ -8,7 +8,9 @@ import java.util.List;
 
 import bean.CompanyBean;
 import bean.CompanySeekBean;
-import bean.UserBean;
+import bean.CompanyUserBean;
+import bean.Hr_UserResumeBean;
+import bean.Mg_UserBean;
 import bean.UserSeekBean;
 import util.DBUtil;
 
@@ -41,8 +43,8 @@ public class Dao {
     	return list;
     }
 	
-	public List<UserBean> getListUerBasicInfo(){
-    	List<UserBean> list=new ArrayList<UserBean>();
+	public List<Mg_UserBean> getListUerBasicInfo(){
+    	List<Mg_UserBean> list=new ArrayList<Mg_UserBean>();
     	Connection conn=DBUtil.getConnection();
     	Statement stmt=null;
 		ResultSet rs=null;
@@ -52,7 +54,7 @@ public class Dao {
 			rs = stmt.executeQuery(sql);
 			while(rs.next())
 			{
-				UserBean ab = new UserBean();
+				Mg_UserBean ab = new Mg_UserBean();
 				ab.setName(rs.getString(2));
 				ab.setUsername(rs.getString(1));
 				ab.setSex(rs.getString(3));
@@ -120,6 +122,67 @@ public class Dao {
 				ab.setWork_experience(rs.getString(6));
 				ab.setDeliver_time(rs.getString(7));
 				ab.setState(rs.getString(8));
+				list.add(ab);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{
+			DBUtil.ColseJDBC(rs, stmt, conn);
+		}
+    	return list;
+    }
+	
+	public List<Hr_UserResumeBean> getListResumePoolInfo(){
+    	List<Hr_UserResumeBean> list=new ArrayList<Hr_UserResumeBean>();
+    	Connection conn=DBUtil.getConnection();
+    	Statement stmt=null;
+		ResultSet rs=null;
+		String sql="select b.name,b.sex,b.age,b.learn_experience,j.position_kind,j.state "
+				+ "from user_basic_info b,job_seeking j "
+				+ "where j.company_number='SZ001F' and b.name=j.name";
+		try{
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				Hr_UserResumeBean ab = new Hr_UserResumeBean();
+				ab.setName(rs.getString(1));
+				ab.setSex(rs.getString(2));
+				ab.setAge(rs.getInt(3));
+				ab.setLearn_experience(rs.getString(4));
+				ab.setSeek_position(rs.getString(5));
+				ab.setState(rs.getString(6));
+				list.add(ab);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{
+			DBUtil.ColseJDBC(rs, stmt, conn);
+		}
+    	return list;
+    }
+	
+	
+	public List<CompanyUserBean> getListCompanyUserInfo(){
+    	List<CompanyUserBean> list=new ArrayList<CompanyUserBean>();
+    	Connection conn=DBUtil.getConnection();
+    	Statement stmt=null;
+		ResultSet rs=null;
+		String sql="select c.username,c.name,s.in_time,c.position_kind "
+				+ "from company_username_info c,staff_file s "
+				+ "where c.company_number='SZ001F' and c.name=s.name ";
+		try{
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				CompanyUserBean ab = new CompanyUserBean();
+				ab.setName(rs.getString(2));
+				ab.setUsername(rs.getString(1));
+				ab.setIn_time(rs.getDate(3));
+				ab.setPosition_kind(rs.getString(4));
 				list.add(ab);
 			}
 		}catch(Exception e)
