@@ -47,7 +47,7 @@
 						<!-- style="overflow-y:scroll; overflow-x:hidden;" -->
 						<form>
 							<div class="layui-card-header">
-								<strong>企业信息</strong>
+								<strong style="font-size:18px;">企业信息</strong>
 							</div>
 							<div class="layui-card-body">
 
@@ -102,7 +102,7 @@
 							
 							
 							<div class="layui-card-header">
-								<strong>账号分配</strong>
+								<strong style="font-size:18px;">账号分配</strong>
 							</div>
 							<div class="layui-card-body">
 								<div class="form-row">
@@ -133,14 +133,9 @@
 								</div>
 								<div class="form-group">
 									<div class="form-row" style="margin-top:15px;margin-left:45%;">
-										<a href="#" class="btn btn-primary"><span style="padding:0 15px;">下一步</span></a>
+										<a href="qyReg2.jsp" class="layui-btn layui-btn-normal"><span style="padding:0 15px;">下一步</span></a>
 									</div>
 								</div>
-								
-
-
-
-
 
 							</div>
 						</form>
