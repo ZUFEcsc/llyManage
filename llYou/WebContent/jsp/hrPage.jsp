@@ -1,8 +1,9 @@
-<%@ page language="java" import="java.util.*,dao.*,bean.*" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%><!DOCTYPE html>
+<%@ page language="java" import="java.util.*,dao.*,bean.*"
+	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><!DOCTYPE html>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
 <html>
 <head>
@@ -246,19 +247,18 @@ tbody tr th {
 						</div>
 						<hr>
 						<div
-							style="margin:10px;padding: 15px; background-color: #ffffff; ">
-							<img alt="" src="../icon/jlc.png" style="width:4%;float:left;margin-top:-15px;margin-left:-20px;">
-							
+							style="margin: 10px; padding: 15px; background-color: #ffffff;">
+							<img alt="" src="../icon/jlc.png"
+								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
+
 							<div class="layui-row layui-col-space15">
-							<!-- -->
-							 <%
-							 Dao dao = new Dao();
-							 List<Hr_UserResumeBean> list = dao.getListResumePoolInfo();
-							 for(Hr_UserResumeBean ab:list)
-							 {
-								 if(ab.getState().equals("1000"))
-								 {
-							 %>
+								<!-- -->
+								<%
+									Dao dao = new Dao();
+									List<Hr_UserResumeBean> list = dao.getListResumePoolInfo();
+									for (Hr_UserResumeBean ab : list) {
+										if (ab.getState().equals("1000")) {
+								%>
 								<div class="layui-col-md3">
 									<div class="layui-card">
 										<div class="layui-card-header">
@@ -268,14 +268,15 @@ tbody tr th {
 										</div>
 										<div class="layui-card-body">
 											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：<%=ab.getName() %><br> <i
+												style="color: #5FB878;"></i> 姓名：<%=ab.getName()%><br> <i
 												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：<%=ab.getSex() %><br> <i class="iconfont icon-zhaopingangwei"
-												style="color: #5FB878;"></i> 年龄：<%=ab.getAge() %><br> <i
-												class="iconfont icon-xueli" style="color: #5FB878;"></i>
-											学历：<%=ab.getLearn_experience() %><br> <i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position() %><br> <i
-												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											性别：<%=ab.getSex()%><br> <i
+												class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
+											年龄：<%=ab.getAge()%><br> <i class="iconfont icon-xueli"
+												style="color: #5FB878;"></i> 学历：<%=ab.getLearn_experience()%><br>
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
+											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 											综合评分：
 											<div class="layui-progress" lay-showPercent="yes"
 												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
@@ -295,31 +296,49 @@ tbody tr th {
 									</div>
 								</div>
 								<%
-								}
-							 }
-							 %>
+									}
+									}
+								%>
 
 							</div>
 
 						</div>
+
 					</div>
 
 
 					<!-- 第一阶段 -->
 					<div class="layui-tab-item" id="item-DYJD" style="display: none;">
 
+						<div class="site-demo-button" id="layerDemo"
+							style="margin-bottom: 0; float: right; margin-left: 10px;">
+
+							<button type="button" class="layui-btn  layui-btn-normal"
+								data-method="notice" style="font-size: 18px; line-height: 18px;">
+								<i class="iconfont icon-jiqiren2"
+									style="color: #ffffff; font-size: 22px;"></i> <span
+									style="font-size: 18px;">智能筛选</span>
+							</button>
+						</div>
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
 									<div class="form-group col-md">
-										<select class="form-control">
-											<option selected disabled style="display: none;" value="">请选择申请状态</option>
-											<option>已通过认证</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+										<select id="inputTime" class="form-control">
+											<option selected>请选择发布时间</option>
+											<option>2021</option>
+											<option>2020</option>
 										</select>
+									</div>
+									<div class="form-group col-md">
+										<select id="inputState" class="form-control">
+											<option selected>请选择招聘岗位</option>
+											<option>...</option>
+										</select>
+									</div>
+									<div class="form-group col-md">
+										<input type="text" class="form-control" id="inputZ"
+											placeholder="输入招聘代码">
 									</div>
 									<a href="#" type="submit"><i
 										class="layui-icon layui-icon-search"
@@ -327,61 +346,144 @@ tbody tr th {
 								</div>
 							</form>
 						</div>
-						<div>
-							<table class="table">
-								<thead>
-									<tr>
-										<th scope="col"><i class="iconfont icon-jianzhu"
-											style="font-size: 18px; color: #1e9fff"></i>企业名称</th>
-										<th scope="col"><i class="iconfont icon-shijian"
-											style="font-size: 18px; color: #cdcdcd;"></i>申请时间</th>
-										<th scope="col"><i class="iconfont icon-xiugai"
-											style="font-size: 18px; color: #549688;"></i>修改内容</th>
-										<th scope="col"><i class="iconfont icon-B"
-											style="font-size: 18px; color: #dc3023;"></i>申请状态</th>
-										<th scope="col"><i class="iconfont icon--_caozuo"
-											style="font-size: 18px; color: #5aa9e6;"></i>操作</th>
+						<hr>
+						<div
+							style="margin: 10px; padding: 15px; background-color: #ffffff;">
+							<img alt="" src="../icon/jlc.png"
+								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
 
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td>企业成立时间修改为…<a href=""
-											style="color: #666666; font-size: 10px;"> 更多</a></td>
-										<td><span class="layui-badge layui-bg-orange">通过申请</span></td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td>企业成立时间修改为…<a href=""
-											style="color: #666666; font-size: 10px;"> 更多</a></td>
-										<td><span class="layui-badge layui-bg-green">驳回申请</span></td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>杭州齐家网络有限公司</td>
-										<td>2020/01/09</td>
-										<td>企业成立时间修改为…<a href=""
-											style="color: #666666; font-size: 10px;"> 更多</a></td>
-										<td><span class="layui-badge layui-bg-blue">等待处理</span></td>
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">去审核</button>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+							<div class="layui-row layui-col-space15">
+
+								<div class="layui-col-md3">
+									<div class="layui-card">
+										<div class="layui-card-header">
+											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
+											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+												class="layui-badge layui-bg-orange">亲和待人</span>
+										</div>
+										<div class="layui-card-body">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> 姓名：<br> <i
+												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											性别：<br> <i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> 年龄：<br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i> 学历：<br>
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> 招聘职位：<br> <i
+												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											综合评分：
+											<div class="layui-progress" lay-showPercent="yes"
+												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+												<div class="layui-progress-bar" lay-percent="80%"></div>
+											</div>
+											<div style="display: inline-block;">
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">通过</button>
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">驳回</button>
+
+											</div>
+											<a href="#"><span
+												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+													更多</span></a> <br>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
+
 
 					</div>
 
 
 					<!-- 第二阶段 -->
 					<div class="layui-tab-item" id="item-DEJD" style="display: none;">
+
+						<div class="site-demo-button" id="layerDemo"
+							style="margin-bottom: 0; float: right; margin-left: 10px;">
+
+							<button type="button" class="layui-btn  layui-btn-normal"
+								data-method="notice" style="font-size: 18px; line-height: 18px;">
+								<i class="iconfont icon-jiqiren2"
+									style="color: #ffffff; font-size: 22px;"></i> <span
+									style="font-size: 18px;">智能筛选</span>
+							</button>
+						</div>
+						<div>
+							<form style="float: right;">
+								<div class="form-row">
+									<div class="form-group col-md">
+										<select id="inputTime" class="form-control">
+											<option selected>请选择发布时间</option>
+											<option>2021</option>
+											<option>2020</option>
+										</select>
+									</div>
+									<div class="form-group col-md">
+										<select id="inputState" class="form-control">
+											<option selected>请选择招聘岗位</option>
+											<option>...</option>
+										</select>
+									</div>
+									<div class="form-group col-md">
+										<input type="text" class="form-control" id="inputZ"
+											placeholder="输入招聘代码">
+									</div>
+									<a href="#" type="submit"><i
+										class="layui-icon layui-icon-search"
+										style="font-size: 30px; color: #1E9FFF;"></i></a>
+								</div>
+							</form>
+						</div>
+						<hr>
+						<div
+							style="margin: 10px; padding: 15px; background-color: #ffffff;">
+							<img alt="" src="../icon/jlc.png"
+								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
+
+							<div class="layui-row layui-col-space15">
+
+								<div class="layui-col-md3">
+									<div class="layui-card">
+										<div class="layui-card-header">
+											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
+											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+												class="layui-badge layui-bg-orange">亲和待人</span>
+										</div>
+										<div class="layui-card-body">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> 姓名：<br> <i
+												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											性别：<br> <i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> 年龄：<br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i> 学历：<br>
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> 招聘职位：<br> <i
+												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											综合评分：
+											<div class="layui-progress" lay-showPercent="yes"
+												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+												<div class="layui-progress-bar" lay-percent="80%"></div>
+											</div>
+											<div style="display: inline-block;">
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">通过</button>
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #5FB878;">驳回</button>
+
+											</div>
+											<a href="#"><span
+												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+													更多</span></a> <br>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+
+
 					</div>
 
 					<!-- 员工信息 -->
@@ -429,26 +531,24 @@ tbody tr th {
 								</tr>
 							</thead>
 							<tbody>
-							<%
-							List<CompanyUserBean> list2=dao.getListCompanyUserInfo();
-							for(CompanyUserBean ab:list2)
-							{
-								if(ab.getPosition_kind().equals("1"))
-									ab.setPosition_kind("普通员工");
-								if(ab.getPosition_kind().equals("2"))
-									ab.setPosition_kind("部门主管");
-								if(ab.getPosition_kind().equals("3"))
-									ab.setPosition_kind("项目经理");
-								if(ab.getPosition_kind().equals("4"))
-									ab.setPosition_kind("总裁");
-								
-							%>
+								<%
+									List<CompanyUserBean> list2 = dao.getListCompanyUserInfo();
+									for (CompanyUserBean ab : list2) {
+										if (ab.getPosition_kind().equals("1"))
+											ab.setPosition_kind("普通员工");
+										if (ab.getPosition_kind().equals("2"))
+											ab.setPosition_kind("部门主管");
+										if (ab.getPosition_kind().equals("3"))
+											ab.setPosition_kind("项目经理");
+										if (ab.getPosition_kind().equals("4"))
+											ab.setPosition_kind("总裁");
+								%>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getUsername() %></th>
-									<td><%=ab.getName() %></td>
-									<td><%=ab.getPosition_kind() %></td>
-									<td><%=ab.getIn_time() %></td>
+										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getUsername()%></th>
+									<td><%=ab.getName()%></td>
+									<td><%=ab.getPosition_kind()%></td>
+									<td><%=ab.getIn_time()%></td>
 									<td>
 										<button type="button"
 											class="layui-btn layui-btn-sm layui-btn-normal"
@@ -458,7 +558,9 @@ tbody tr th {
 										</button>
 									</td>
 								</tr>
-								<%} %>
+								<%
+									}
+								%>
 
 							</tbody>
 						</table>
