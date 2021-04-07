@@ -19,6 +19,7 @@
 .layui-timeline-item i {
 	font-size: 25px;
 }
+
 .layui-nav-child dd a {
 	margin-left: 30px;
 }
@@ -122,222 +123,61 @@ tbody tr th {
 						</div>
 
 						<div class="layui-row layui-col-space15">
+						<%
+						Dao dao=new Dao();
+						List<CompanyProjectBean> list=dao.getListCompanyProjectInfo();
+						for(CompanyProjectBean ab:list)
+						{
+							if(ab.getState().equals("1"))
+							{
+								if(ab.getProject_responser().equals("张雨佳"))
+								{
+						%>
 							<div class="layui-col-md3">
 								<div class="layui-card">
 									<div class="layui-card-header" style="background: #ffc107;">
-										<strong>Y2019876</strong> <span style="float: right;">
+										<strong><%=ab.getProject_number() %></strong> <span style="float: right;">
 											<i class="iconfont icon-jiazaizhong"
 											style="color: #ffffff; font-size: 18px;"></i> 进行中…
 										</span>
 									</div>
 									<div class="layui-card-body">
 										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										项目姓名：教练我想打篮球<br> <i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> 项目负责人：三井<br> <i
+										<strong style="color: #2b4f6c;">项目姓名：</strong> <span
+											style="color: #777777;"><%=ab.getProject_name() %></span><br> <i
+											class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
+										<strong style="color: #2b4f6c;">项目负责人：</strong> <span
+											style="color: #777777;"><%=ab.getProject_responser() %></span><br> <i
 											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										项目内容：安西教练，我想打篮球555<br> <i
+										<strong style="color: #2b4f6c;">项目内容：</strong> <span
+											style="color: #777777;"><%=ab.getProject_content() %></span><br> <i
 											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 项目成员：安西教练、三井寿<br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										起始时间：2019-08-07<br> <i
+											style="color: #5FB878;"></i> 
+										<strong style="color: #2b4f6c;">项目成员：</strong><span
+											style="color: #777777;"><%=ab.getProject_member() %></span><br> <i
+											class="iconfont icon-shijian" style="color: #5FB878;"></i> 
+										<strong	style="color: #2b4f6c;">起始时间：</strong><span
+											style="color: #777777;"><%=ab.getStart_time() %></span><br> <i
 											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										结束时间：2021-04-20（预计）<br> <a href="#"
-											style="margin-left: 80%"> 查看详细</a>
-
+										<strong style="color: #2b4f6c;">结束时间：</strong><span
+											style="color: #777777;">未知</span><br>
+											<a href="#" style="margin-left: 80%"><span
+												style="font-size: 12px; color: #838383;">
+													查看详情</span></a> 
 									</div>
 								</div>
 							</div>
-							<div class="layui-col-md3">
-								<div class="layui-card">
-									<div class="layui-card-header" style="background: #ffc107;">
-										<strong>Y2019876</strong> <span style="float: right;">
-											<i class="iconfont icon-jiazaizhong"
-											style="color: #ffffff; font-size: 18px;"></i> 进行中…
-										</span>
-									</div>
-									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										项目姓名：教练我想打篮球<br> <i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> 项目负责人：三井<br> <i
-											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										项目内容：安西教练，我想打篮球555<br> <i
-											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 项目成员：安西教练、三井寿<br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										起始时间：2019-08-07<br> <i
-											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										结束时间：2021-04-20（预计）<br> <a href="#"
-											style="margin-left: 80%"> 查看详细</a>
-
-									</div>
-								</div>
-							</div>
-							
-							<div class="layui-col-md3">
-								<div class="layui-card">
-									<div class="layui-card-header" style="background: #5fb878;">
-										<strong>Y2019876</strong> <span style="float: right;">
-											<i class="iconfont icon-gougou" style="color: #ffffff;"></i>
-											已结束
-										</span>
-									</div>
-									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										项目姓名：教练我想打篮球<br> <i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> 项目负责人：三井<br> <i
-											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										项目内容：安西教练，我想打篮球555<br> <i
-											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 项目成员：安西教练、三井寿<br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										起始时间：2019-08-07<br> <i
-											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										结束时间：2021-04-20（预计）<br> <a href="#"
-											style="margin-left: 80%"> 查看详细</a>
-
-									</div>
-								</div>
-							</div>
-							
-							<div class="layui-col-md3">
-								<div class="layui-card">
-									<div class="layui-card-header" style="background: #ffc107;">
-										<strong>Y2019876</strong> <span style="float: right;">
-											<i class="iconfont icon-jiazaizhong"
-											style="color: #ffffff; font-size: 18px;"></i> 进行中…
-										</span>
-									</div>
-									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										项目姓名：教练我想打篮球<br> <i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> 项目负责人：三井<br> <i
-											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										项目内容：安西教练，我想打篮球555<br> <i
-											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 项目成员：安西教练、三井寿<br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										起始时间：2019-08-07<br> <i
-											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										结束时间：2021-04-20（预计）<br> <a href="#"
-											style="margin-left: 80%"> 查看详细</a>
-
-									</div>
-								</div>
-							</div>
+<%} 
+							}
+}%>
 						</div>
-						
-						
-						<div class="layui-row layui-col-space15">
-							<div class="layui-col-md3">
-								<div class="layui-card">
-									<div class="layui-card-header" style="background: #ffc107;">
-										<strong>Y2019876</strong> <span style="float: right;">
-											<i class="iconfont icon-jiazaizhong"
-											style="color: #ffffff; font-size: 18px;"></i> 进行中…
-										</span>
-									</div>
-									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										项目姓名：教练我想打篮球<br> <i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> 项目负责人：三井<br> <i
-											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										项目内容：安西教练，我想打篮球555<br> <i
-											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 项目成员：安西教练、三井寿<br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										起始时间：2019-08-07<br> <i
-											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										结束时间：2021-04-20（预计）<br> <a href="#"
-											style="margin-left: 80%"> 查看详细</a>
 
-									</div>
-								</div>
-							</div>
-							<div class="layui-col-md3">
-								<div class="layui-card">
-									<div class="layui-card-header" style="background: #5fb878;">
-										<strong>Y2019876</strong> <span style="float: right;">
-											<i class="iconfont icon-gougou" style="color: #ffffff;"></i>
-											已结束
-										</span>
-									</div>
-									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										项目姓名：教练我想打篮球<br> <i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> 项目负责人：三井<br> <i
-											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										项目内容：安西教练，我想打篮球555<br> <i
-											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 项目成员：安西教练、三井寿<br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										起始时间：2019-08-07<br> <i
-											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										结束时间：2021-04-20（预计）<br> <a href="#"
-											style="margin-left: 80%"> 查看详细</a>
 
-									</div>
-								</div>
-							</div>
-							
-							<div class="layui-col-md3">
-								<div class="layui-card">
-									<div class="layui-card-header" style="background: #5fb878;">
-										<strong>Y2019876</strong> <span style="float: right;">
-											<i class="iconfont icon-gougou" style="color: #ffffff;"></i>
-											已结束
-										</span>
-									</div>
-									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										项目姓名：教练我想打篮球<br> <i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> 项目负责人：三井<br> <i
-											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										项目内容：安西教练，我想打篮球555<br> <i
-											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 项目成员：安西教练、三井寿<br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										起始时间：2019-08-07<br> <i
-											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										结束时间：2021-04-20（预计）<br> <a href="#"
-											style="margin-left: 80%"> 查看详细</a>
-
-									</div>
-								</div>
-							</div>
-							
-							<div class="layui-col-md3">
-								<div class="layui-card">
-									<div class="layui-card-header" style="background: #5fb878;">
-										<strong>Y2019876</strong> <span style="float: right;">
-											<i class="iconfont icon-gougou" style="color: #ffffff;"></i>
-											已结束
-										</span>
-									</div>
-									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										项目姓名：教练我想打篮球<br> <i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> 项目负责人：三井<br> <i
-											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										项目内容：安西教练，我想打篮球555<br> <i
-											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 项目成员：安西教练、三井寿<br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										起始时间：2019-08-07<br> <i
-											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										结束时间：2021-04-20（预计）<br> <a href="#"
-											style="margin-left: 80%"> 查看详细</a>
-
-									</div>
-								</div>
-							</div>
-							
-						</div>
-						
 					</div>
 
 					<!-- 项目评价 -->
 					<div class="layui-tab-item " id="item-XMPJ" style="display: none;">
-					
+
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
@@ -362,30 +202,28 @@ tbody tr th {
 								<thead>
 									<tr>
 										<th scope="col"><i class="iconfont icon-bianhao"
-										style="color: #999999"></i>项目编号</th>
+											style="color: #999999"></i>项目编号</th>
 										<th scope="col"><i class="iconfont icon-suggestion"
 											style="color: #6449ff;"></i>项目名称</th>
 										<th scope="col"><i class="iconfont icon-zhaopingangwei"
-											style="color: #009688;font-size: 18px;"></i>项目负责人</th>
+											style="color: #009688; font-size: 18px;"></i>项目负责人</th>
 										<th scope="col"><i
 											class="iconfont icon-shangbiaorenzheng"
 											style="font-size: 18px; color: #fc5531;"></i>项目状态</th>
 										<th scope="col"><i class="iconfont icon--_caozuo"
-											style="font-size: 18px; color: #5aa9e6;"></i>操作</th>										
+											style="font-size: 18px; color: #5aa9e6;"></i>操作</th>
 									</tr>
-									
+
 								</thead>
 								<tbody>
-								
+
 									<tr>
 										<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
 										<td>桌游开发</td>
-										<td>
-											陈沈清
-										</td>
+										<td>陈沈清</td>
 										<td><span class="layui-badge layui-bg-orange">待评价</span></td>
-										
+
 										<td>
 											<button type="button"
 												class="layui-btn layui-btn-sm layui-btn-normal"
@@ -397,52 +235,38 @@ tbody tr th {
 									</tr>
 									<tr>
 										<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
 										<td>桌游开发</td>
-										<td>
-											陈沈清
-										</td>
+										<td>陈沈清</td>
 										<td><span class="layui-badge layui-bg-green">已评价</span></td>
-										
-										<td>
-											
-										</td>
+
+										<td></td>
 									</tr>
 									<tr>
 										<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
 										<td>桌游开发</td>
-										<td>
-											陈沈清
-										</td>
+										<td>陈沈清</td>
 										<td><span class="layui-badge layui-bg-green">已评价</span></td>
-										
-										<td>
-											
-										</td>
+
+										<td></td>
 									</tr>
 									<tr>
 										<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
 										<td>桌游开发</td>
-										<td>
-											陈沈清
-										</td>
+										<td>陈沈清</td>
 										<td><span class="layui-badge layui-bg-green">已评价</span></td>
-										
-										<td>
-											
-										</td>
+
+										<td></td>
 									</tr>
 									<tr>
 										<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
 										<td>桌游开发</td>
-										<td>
-											陈沈清
-										</td>
+										<td>陈沈清</td>
 										<td><span class="layui-badge layui-bg-orange">待评价</span></td>
-										
+
 										<td>
 											<button type="button"
 												class="layui-btn layui-btn-sm layui-btn-normal"
@@ -452,11 +276,11 @@ tbody tr th {
 											</button>
 										</td>
 									</tr>
-									
+
 								</tbody>
 							</table>
 						</div>
-					
+
 					</div>
 
 				</div>

@@ -91,26 +91,96 @@ tbody tr th {
 				<div class="layui-tab-content">
 					<!-- 考勤评价  -->
 					<div class="layui-tab-item layui-show" id="item-KQPJ">
-						<div id="first" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<div class="layui-col-md4 layui-col-md-offset1">
 							<div class="layui-card">
 								<div class="layui-card-header">
-									<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
-									把组员头像拖入即可开始评价
+									<i class="iconfont icon-jia" style="color: #5FB878;"></i> <strong>点击组员头像即可开始评价</strong>
 								</div>
 								<div class="layui-card-body">
-									<i class="iconfont icon-lunkuohua2_yonghu"
-										style="color: #5FB878;"></i> 职员编号：<br> <i
-										class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-									职员姓名：<br> <i class="iconfont icon-jiqiren2"
-										style="color: #5FB878;"></i> 职员岗位：<br> <i
-										class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
-									评价时间：<br>
-									<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-									评价内容：<br>
-									<div style="display: inline-block;">
-										<button type="button" class="layui-btn layui-btn-sm"
-											style="background-color: #5FB878;">提交评价</button>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-lunkuohua2_yonghu"
+											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">职员编号：</strong><span
+											style="color: #777777;">Y129842</span>
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+										<strong style="color: #2b4f6c;">职员姓名：</strong><span
+											style="color: #777777;">陈杉</span>
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+										<strong style="color: #2b4f6c;">职员岗位：</strong><span
+											style="color: #777777;">咸鱼岗</span>
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-zhaopingangwei"
+											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
+											style="color: #777777;">2020/12/03</span>
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
+										<strong style="color: #2b4f6c;">评价内容：</strong>
+									</div>
+									<div class="layui-panel">
+										<div
+											style="padding: 0px 0px 0px 100px; display: inline-block;">
+											<div style="margin-bottom: 5px;">
+												<span
+													style="color: #777777; display: inline-block; padding-right: 20px;">出勤天数</span>
+												<input class="form-control form-control-sm"
+													style="display: inline-block; width: 30%;" type="text"
+													placeholder="30"> <span
+													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
+													30天</span>
+											</div>
+											<div style="margin-bottom: 5px;">
+												<span style="color: #777777; padding-right: 20px;">请假天数</span>
+												<input class="form-control form-control-sm"
+													style="display: inline-block; width: 30%;" type="text"
+													placeholder="30"> <span
+													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
+													30天</span>
+											</div>
+											<div style="margin-bottom: 5px;">
+												<span style="color: #777777; padding-right: 20px;">迟到天数</span>
+												<input class="form-control form-control-sm"
+													style="display: inline-block; width: 30%;" type="text"
+													placeholder="30"> <span
+													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
+													30天</span>
+											</div>
 
+											<div style="margin-bottom: 5px;">
+												<span style="color: #777777; padding-right: 20px;">早退天数</span>
+												<input class="form-control form-control-sm"
+													style="display: inline-block; width: 30%;" type="text"
+													placeholder="30"> <span
+													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
+													30天</span>
+											</div>
+
+											<div style="margin-bottom: 5px;">
+												<span style="color: #777777; padding-right: 20px;">矿工天数</span>
+												<input class="form-control form-control-sm"
+													style="display: inline-block; width: 30%;" type="text"
+													placeholder="30"> <span
+													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
+													30天</span>
+
+											</div>
+											<div style="margin-bottom: 5px;">
+												<span style="color: #777777; padding-right: 48px;">备注</span>
+												<input class="form-control form-control-sm"
+													style="display: inline-block; width: 55%;" type="text"
+													placeholder="请输入备注">
+											</div>
+
+										</div>
+									</div>
+
+									<div style="display: inline-block;">
+										<button type="button" class="layui-btn "
+											style="background-color: #5FB878;">提交评价</button>
 
 									</div>
 									<a href="#"><span
@@ -120,70 +190,84 @@ tbody tr th {
 							</div>
 						</div>
 
-						<div id="second" ondrop="drop(event)"
-							ondragover="allowDrop(event)">
-							<img id="drag1" src="../img/avatar.png" ondragstart="drag(event)"
-								width="69" style="border-radius: 50% !important;"> <img
-								id="drag2" src="../img/avatar.png" ondragstart="drag(event)"
-								width="69" style="border-radius: 50% !important;"> <img
-								id="drag3" src="../icon/jlc.png" ondragstart="drag(event)"
-								width="69" style="border-radius: 50% !important;">
+						<div class="layui-col-md5 layui-col-md-offset1">
+							<div class="layui-card">
+								<div class="layui-card-header">
+									<strong style="color: #eb6100;">待评价组员：</strong>
+								</div>
+								<div class="layui-card-body">
+									<div>
+										<a href="#" class="layui-btn layui-btn-sm layui-btn-danger">A组</a>
+										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">B组</a>
+										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">C组</a>
+										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">D组</a>
+									</div>
+									<div style="margin-top: 15px;">
+										<div style="display: inline-block; padding-right: 10px;">
+											<img id="drag1" src="../img/avatar.png" width="69"
+												style="border-radius: 50% !important; display: block;">
+											<strong
+												style="display: block; color: #101010; margin-left: 14px;">
+												Cindy</strong>
+										</div>
+
+										<div style="display: inline-block;">
+											<img id="drag2" src="../img/avatar.png" width="69"
+												style="border-radius: 50% !important;"> <strong
+												style="display: block; color: #101010; margin-left: 14px;">
+												陈沈清</strong>
+										</div>
+										<div style="display: inline-block;">
+											<img id="drag3" src="../icon/jlc.png" width="69"
+												style="border-radius: 50% !important;"> <strong
+												style="display: block; color: #101010; margin-left: 14px;">
+												陈沈清</strong>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>
+
+				<%@ include file="lly-footer.jsp"%>
 			</div>
-
-			<%@ include file="lly-footer.jsp"%>
 		</div>
-	</div>
-	<script src="../res/layui/layui.js"></script>
-	<script>
-		//JavaScript代码区域
-		layui.use('element', function() {
-			var element = layui.element;
-		});
-	</script>
-
-	<script>
-		layui.use('element', function() {
-			var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
-
-			var active = {
-				tabKQPJ : function() {
-					element.tabChange('demo', 'KQPJ');
-				},
-
-			};
-
-			$('.site-demo-active').on('click', function() {
-				var othis = $(this), type = othis.data('type');
-				active[type] ? active[type].call(this, othis) : '';
+		<script src="../res/layui/layui.js"></script>
+		<script>
+			//JavaScript代码区域
+			layui.use('element', function() {
+				var element = layui.element;
 			});
+		</script>
 
-			//Hash地址的定位
-			var layid = location.hash.replace(/^#demo=/, '');
-			element.tabChange('demo', layid);
+		<script>
+			layui.use('element', function() {
+				var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
 
-			element.on('tab(demo)', function(elem) {
-				location.hash = 'demo=' + $(this).attr('lay-id');
+				var active = {
+					tabKQPJ : function() {
+						element.tabChange('demo', 'KQPJ');
+					},
+
+				};
+
+				$('.site-demo-active').on('click', function() {
+					var othis = $(this), type = othis.data('type');
+					active[type] ? active[type].call(this, othis) : '';
+				});
+
+				//Hash地址的定位
+				var layid = location.hash.replace(/^#demo=/, '');
+				element.tabChange('demo', layid);
+
+				element.on('tab(demo)', function(elem) {
+					location.hash = 'demo=' + $(this).attr('lay-id');
+				});
+
 			});
-
-		});
-	</script>
-
-	<!-- 拖拽 -->
-	<script>
-		function allowDrop(e) {
-			e.preventDefault();
-		}
-		function drag(e) {
-			e.dataTransfer.setData("img", e.target.id);
-		}
-		function drop(e) {
-			e.preventDefault();
-			var Img = e.dataTransfer.getData("img");
-			e.target.appendChild(document.getElementById(Img));
-		}
-	</script>
+		</script>
 </body>
 </html>

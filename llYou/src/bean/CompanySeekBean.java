@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.Date;
+
 public class CompanySeekBean {
 	private String company_location;
 	private String company_name;
@@ -7,7 +9,9 @@ public class CompanySeekBean {
 	private String salary;
 	private String advantage;
 	private String work_experience;
-	private String deliver_time;
+	private Date deliver_time;
+	private String state;
+	private String seek_number;
 	
 	public String getCompany_location() {
 		return company_location;
@@ -45,14 +49,27 @@ public class CompanySeekBean {
 	public void setWork_experience(String work_experience) {
 		this.work_experience = work_experience;
 	}
-	public String getDeliver_time() {
+	public Date getDeliver_time() {
 		return deliver_time;
 	}
-	public void setDeliver_time(String deliver_time) {
+	public void setDeliver_time(Date deliver_time) {
 		this.deliver_time = deliver_time;
 	}
+	
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getSeek_number() {
+		return seek_number;
+	}
+	public void setSeek_number(String seek_number) {
+		this.seek_number = seek_number;
+	}
 	public CompanySeekBean(String company_location, String company_name, String seek_position, String salary, String advantage,
-			String work_experience,String deliver_time) {
+			String work_experience,Date deliver_time,String state,String seek_number) {
 		super();
 		this.company_location = company_location;
 		this.company_name = company_name;
@@ -61,6 +78,8 @@ public class CompanySeekBean {
 		this.advantage = advantage;
 		this.work_experience = work_experience;
 		this.deliver_time=deliver_time;
+		this.state=state;
+		this.seek_number=seek_number;
 	}
 	
 	public CompanySeekBean()

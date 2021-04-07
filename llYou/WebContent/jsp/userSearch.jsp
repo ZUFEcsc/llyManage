@@ -46,6 +46,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<a href="#" class="site-demo-active" data-url="ZPJD"
 									data-id="ZPJD" data-type="tabZPJD">我的招聘进度</a>
 							</dd>
+							<dd>
+								<a href="#" class="site-demo-active" data-url="WDJL"
+									data-id="WDJL" data-type="tabWDJL">我的简历</a>
+							</dd>
 						</dl></li>
 				</ul>
 			</div>
@@ -384,6 +388,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						 -->
 					</div>
+				
+					<!-- 我的简历 -->
+					<div class="layui-tab-item " id="item-WDJL" style="display: none;">
+					我的简历
+					</div>
 				</div>
 			</div>
 
@@ -417,6 +426,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							$("#item-ZPJD")[0].style.display = ""
 						}
 						element.tabChange('demo', 'ZPJD');
+					},
+					tabWDJL : function() {
+						if ($("#item-WDJL")[0].style.display == "") {
+						} else {
+							element.tabAdd('demo', {
+								title : '我的简历',
+								id : 'WDJL'
+							});
+							$("#item-WDJL")[0].style.display = ""
+						}
+						element.tabChange('demo', 'WDJL');
 					},
 				};
 

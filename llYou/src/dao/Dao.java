@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.CompanyBean;
+import bean.CompanyProjectBean;
 import bean.CompanySeekBean;
 import bean.CompanyUserBean;
 import bean.Hr_UserResumeBean;
@@ -88,7 +89,7 @@ public class Dao {
 				ab.setAdvantage(rs.getString(4));
 				ab.setCompany_name(rs.getString(5));
 				ab.setWork_experience(rs.getString(6));
-				ab.setDeliver_time(rs.getString(7));
+				ab.setDeliver_time(rs.getDate(7));
 				list.add(ab);
 			}
 		}catch(Exception e)
@@ -183,6 +184,65 @@ public class Dao {
 				ab.setUsername(rs.getString(1));
 				ab.setIn_time(rs.getDate(3));
 				ab.setPosition_kind(rs.getString(4));
+				list.add(ab);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{
+			DBUtil.ColseJDBC(rs, stmt, conn);
+		}
+    	return list;
+    }
+	
+	public List<CompanySeekBean> getListHRCompanySeekInfo(){
+    	List<CompanySeekBean> list=new ArrayList<CompanySeekBean>();
+    	Connection conn=DBUtil.getConnection();
+    	Statement stmt=null;
+		ResultSet rs=null;
+		String sql="select seek_number,seek_position,deliver_time,state from company_seek_info where company_number='SZ001F'";
+		try{
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				CompanySeekBean ab = new CompanySeekBean();
+				ab.setSeek_number(rs.getString(1));
+				ab.setSeek_position(rs.getString(2));
+				ab.setDeliver_time(rs.getDate(3));
+				ab.setState(rs.getString(4));
+				
+				list.add(ab);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{
+			DBUtil.ColseJDBC(rs, stmt, conn);
+		}
+    	return list;
+    }
+	
+	public List<CompanyProjectBean> getListCompanyProjectInfo(){
+    	List<CompanyProjectBean> list=new ArrayList<CompanyProjectBean>();
+    	Connection conn=DBUtil.getConnection();
+    	Statement stmt=null;
+		ResultSet rs=null;
+		String sql="select project_number,project_name,project_responser,project_member,project_content,start_time,end_time,state from company_project_info where company_number='SZ001F'";
+		try{
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				CompanyProjectBean ab = new CompanyProjectBean();
+				ab.setProject_number(rs.getString(1));
+				ab.setProject_name(rs.getString(2));
+				ab.setProject_responser(rs.getString(3));
+				ab.setProject_member(rs.getString(4));
+				ab.setProject_content(rs.getString(5));
+				ab.setStart_time(rs.getDate(6));
+				ab.setEnd_time(rs.getDate(7));
+				ab.setState(rs.getString(8));
 				list.add(ab);
 			}
 		}catch(Exception e)

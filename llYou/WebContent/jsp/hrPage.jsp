@@ -50,9 +50,7 @@ tbody tr th {
 
 				<ul class="layui-nav layui-nav-tree" lay-filter="test">
 					<li class="layui-nav-item layui-nav-itemed"><a class=""
-						href="javascript:;"> <i
-							class="layui-icon layui-icon-release layui-icon-list"
-							style="font-size: 22px; margin-right: 10px;"></i>招聘管理
+						href="javascript:;"> 招聘管理
 					</a>
 						<dl class="layui-nav-child">
 							<dd>
@@ -74,8 +72,7 @@ tbody tr th {
 
 						</dl></li>
 					<li class="layui-nav-item layui-nav-itemed"><a
-						href="javascript:;"> <i class="layui-icon layui-icon-release"
-							style="font-size: 22px; margin-right: 10px;"></i>用户管理
+						href="javascript:;">用户管理
 					</a>
 						<dl class="layui-nav-child">
 							<dd>
@@ -101,7 +98,9 @@ tbody tr th {
 				<div class="layui-tab-content">
 					<!-- 招聘信息 -->
 					<div class="layui-tab-item layui-show" id="item-ZPXX">
-
+						<div style="float: left;">
+							<a href="#" class="layui-btn layui-btn-normal"> <i class="iconfont icon-fabu" style="color:#fff;font-size:22px;"></i> 发布招聘</a>
+						</div>
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
@@ -145,51 +144,26 @@ tbody tr th {
 								</tr>
 							</thead>
 							<tbody>
+							<%
+							Dao dao=new Dao();
+							List<CompanySeekBean> list=dao.getListHRCompanySeekInfo();
+							for(CompanySeekBean ab:list)
+							{
+								if(ab.getState().equals("1"))
+									ab.setState("已结束");
+								else if(ab.getState().equals("2"))
+									ab.setState("进行中");
+							%>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-									<td>前端UI设计师</td>
-									<td>2020/01/09</td>
-									<td><span class="layui-badge layui-bg-orange">已结束</span></td>
-									<td></td>
+										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getSeek_number() %></th>
+									<td><%=ab.getSeek_position() %></td>
+									<td><%=ab.getDeliver_time() %></td>
+									<td><span class="layui-badge layui-bg-orange"><%=ab.getState() %></span></td>
 									<td>
-										<button type="button"
-											class="layui-btn layui-btn-sm layui-btn-normal"
-											style="margin: 0px;">
-											<i class="iconfont icon-gengduo"></i><span
-												style="font-size: 14px;"> 更多</span>
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-									<td>前端UI设计师</td>
-									<td>2020/01/09</td>
-									<td><span class="layui-badge layui-bg-orange">已结束</span></td>
-									<td></td>
-									<td>
-										<button type="button"
-											class="layui-btn layui-btn-sm layui-btn-normal"
-											style="margin: 0px;">
-											<i class="iconfont icon-gengduo"></i><span
-												style="font-size: 14px;"> 更多</span>
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-									<td>前端UI设计师</td>
-									<td>2020/01/09</td>
-									<td><span class="layui-badge layui-bg-green"> 2 / 5
-									</span></td>
-									<td>
-										<button type="button"
-											class="layui-btn layui-btn-sm layui-btn-primary"
-											style="margin: 0px;">
-											<span style="font-size: 14px;"> 结束招聘</span>
-										</button>
+									<%if(ab.getState().equals("进行中")){ %>
+									<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">结束招聘</a>
+									<%} %>
 									</td>
 									<td>
 										<button type="button"
@@ -200,6 +174,7 @@ tbody tr th {
 										</button>
 									</td>
 								</tr>
+								<%} %>
 							</tbody>
 						</table>
 
@@ -254,9 +229,8 @@ tbody tr th {
 							<div class="layui-row layui-col-space15">
 								<!-- -->
 								<%
-									Dao dao = new Dao();
-									List<Hr_UserResumeBean> list = dao.getListResumePoolInfo();
-									for (Hr_UserResumeBean ab : list) {
+									List<Hr_UserResumeBean> list3 = dao.getListResumePoolInfo();
+									for (Hr_UserResumeBean ab : list3) {
 										if (ab.getState().equals("1000")) {
 								%>
 								<div class="layui-col-md3">
@@ -353,7 +327,10 @@ tbody tr th {
 								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
 
 							<div class="layui-row layui-col-space15">
-
+							<%
+									for (Hr_UserResumeBean ab : list3) {
+										if (ab.getState().equals("1100")) {
+								%>
 								<div class="layui-col-md3">
 									<div class="layui-card">
 										<div class="layui-card-header">
@@ -363,14 +340,15 @@ tbody tr th {
 										</div>
 										<div class="layui-card-body">
 											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：<br> <i
+												style="color: #5FB878;"></i> 姓名：<%=ab.getName()%><br> <i
 												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：<br> <i class="iconfont icon-zhaopingangwei"
-												style="color: #5FB878;"></i> 年龄：<br> <i
-												class="iconfont icon-xueli" style="color: #5FB878;"></i> 学历：<br>
+											性别：<%=ab.getSex()%><br> <i
+												class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
+											年龄：<%=ab.getAge()%><br> <i class="iconfont icon-xueli"
+												style="color: #5FB878;"></i> 学历：<%=ab.getLearn_experience()%><br>
 											<i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：<br> <i
-												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
+											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 											综合评分：
 											<div class="layui-progress" lay-showPercent="yes"
 												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
@@ -389,6 +367,10 @@ tbody tr th {
 										</div>
 									</div>
 								</div>
+								<%
+								}
+								}
+								%>
 							</div>
 						</div>
 
@@ -442,7 +424,10 @@ tbody tr th {
 								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
 
 							<div class="layui-row layui-col-space15">
-
+							<%
+									for (Hr_UserResumeBean ab : list3) {
+										if (ab.getState().equals("1110")) {
+								%>
 								<div class="layui-col-md3">
 									<div class="layui-card">
 										<div class="layui-card-header">
@@ -452,14 +437,15 @@ tbody tr th {
 										</div>
 										<div class="layui-card-body">
 											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：<br> <i
+												style="color: #5FB878;"></i> 姓名：<%=ab.getName()%><br> <i
 												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：<br> <i class="iconfont icon-zhaopingangwei"
-												style="color: #5FB878;"></i> 年龄：<br> <i
-												class="iconfont icon-xueli" style="color: #5FB878;"></i> 学历：<br>
+											性别：<%=ab.getSex()%><br> <i
+												class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
+											年龄：<%=ab.getAge()%><br> <i class="iconfont icon-xueli"
+												style="color: #5FB878;"></i> 学历：<%=ab.getLearn_experience()%><br>
 											<i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：<br> <i
-												class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
+											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 											综合评分：
 											<div class="layui-progress" lay-showPercent="yes"
 												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
@@ -478,7 +464,10 @@ tbody tr th {
 										</div>
 									</div>
 								</div>
-
+							<%
+							}
+									}
+							%>
 
 							</div>
 						</div>

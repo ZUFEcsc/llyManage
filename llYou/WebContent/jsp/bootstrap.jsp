@@ -6,7 +6,10 @@
 <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+<script src="/llYou/dist/echarts.min.js"></script>
+<script type="text/javascript" src="/llYou/dist/echarts-wordcloud.min.js"></script>
+
 <link rel="icon" href="/llYou/img/you.png">
 
-<link rel="stylesheet" href=//at.alicdn.com/t/font_2414271_e18orjwzkgu.css>
-<script src="//at.alicdn.com/t/font_2414271_e18orjwzkgu.js"></script>
+<link rel="stylesheet" href=//at.alicdn.com/t/font_2414271_f9m84t5ibqb.css>
+<script src="//at.alicdn.com/t/font_2414271_f9m84t5ibqb.js"></script>
