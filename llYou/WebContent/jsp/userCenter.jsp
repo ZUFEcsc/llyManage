@@ -71,12 +71,8 @@
 											<td>政治面貌： 共青团员</td>
 										</tr>
 										<tr class="uc-tr">
-											<td>所属企业： 浙江财经大学</td>
+											<td>所属企业： 溜溜游大学</td>
 											<td>担任职位： 团支书</td>
-										</tr>
-										<tr class="uc-tr">
-											<td>所属企业：</td>
-											<td>担任职位：</td>
 										</tr>
 									</tbody>
 								</table>
@@ -87,10 +83,12 @@
 					<div class="layui-col-md6">
 						<div class="layui-card">
 							<div class="layui-card-header">个人分析</div>
-							<div class="layui-card-body">内容</div>
-							<div class="layui-card-body">内容</div>
-							<div class="layui-card-body">内容</div>
-							<div class="layui-card-body">内容</div>
+							<div class="layui-card-body">
+								<div id="xrt"
+									style="display:inline-block;width: 80%; height: 400px; padding-right: 20px;"></div>
+							
+							</div>
+							
 						</div>
 					</div>
 
@@ -104,8 +102,6 @@
 								<div id="xxzzt" style="display:inline-block;width: 60%; height: 400px;">
 								
 								</div>
-								<div id="xrt"
-									style="display:inline-block;width: 35%; height: 400px; padding-right: 30px;"></div>
 								<div id="GRDA" style="display:inline-block;width: 100%; height: 300px;"></div>
 							</div>
 

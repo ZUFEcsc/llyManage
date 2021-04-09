@@ -12,6 +12,10 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 <style>
+.star {
+	width: 120px !important;
+}
+
 .layui-timeline-item {
 	height: 55px;
 }
@@ -205,17 +209,176 @@
 
 					<!-- 添加项目 -->
 					<div class="layui-tab-item " id="item-TJXM" style="display: none;">
-						添加项目</div>
+						<div class="layui-col-md5"
+							style="margin-top: 20px; margin-left: 20px;">
+							<div class="layui-card" style="font-size: 1.15rem;">
+								<div class="layui-card-header"
+									style="background-color: #1296db;">
+									<i class="iconfont icon-jia" style="color: #fff;"></i> <strong
+										style="color: #fff; font-size: 1.25rem;">添加项目</strong>
+								</div>
+								<div class="layui-card-body"
+									style="margin-top: 20px; margin-left: 20px;">
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-xiugai"
+											style="color: #1296db; font-size: 1.25rem;"></i> <strong
+											style="color: #2b4f6c;">项目编号：</strong><span
+											style="color: #777777;">Y129842</span>
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-suggestion"
+											style="color: #1296db; font-size: 1.25rem;"></i> <strong
+											style="color: #2b4f6c;">项目名称：</strong> <input
+											class="form-control form-control-sm"
+											style="display: inline-block; width: 55%;" type="text"
+											placeholder="请输入项目名称">
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-zhaopingangwei"
+											style="color: #1296db; font-size: 1.25rem;"></i> <strong
+											style="color: #2b4f6c;">项目负责人：</strong>
+									</div>
+									<div class="layui-panel">
+										<div
+											style="padding: 0px 0px 0px 140px; display: inline-block;">
+											<div style="display: inline-block; padding: 0px 5px;">
+												<img src="../img/avatar.png" width="39"
+													style="border-radius: 50% !important;"> <span
+													style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
+													郭美丽</span>
+											</div>
+
+											<div style="display: inline-block; padding: 0px 5px;">
+												<img src="../icon/add.png" width="39"
+													style="border-radius: 50% !important;"> <span
+													style="display: block; color: #101010; margin-left: 8px; font-size: 0.75px;">
+													添加</span>
+											</div>
+										</div>
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-lunkuohua2_yonghu"
+											style="color: #1296db; font-size: 1.25rem;"></i> <strong
+											style="color: #2b4f6c;">项目成员：</strong>
+										<div class="layui-panel">
+											<div
+												style="padding: 0px 0px 0px 140px; display: inline-block;">
+												<div style="display: inline-block; padding: 0px 5px;">
+													<img src="../img/avatar.png" width="39"
+														style="border-radius: 50% !important;"> <span
+														style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
+														陈沈清</span>
+												</div>
+												<div style="display: inline-block; padding: 0px 5px;">
+													<img src="../img/avatar.png" width="39"
+														style="border-radius: 50% !important;"> <span
+														style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
+														解远远</span>
+												</div>
+												<div style="display: inline-block; padding: 0px 5px;">
+													<img src="../icon/add.png" width="39"
+														style="border-radius: 50% !important;"> <span
+														style="display: block; color: #101010; margin-left: 8px; font-size: 0.75px;">
+														添加</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-shoujizhengli"
+											style="color: #1296db; font-size: 1.25rem;"></i> <strong
+											style="color: #2b4f6c;">项目内容：</strong>
+										<textarea class="form-control form-control-sm"
+											style="display: inline-block; width: 75%;" rows="4"></textarea>
+									</div>
+
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-shijian"
+											style="color: #1296db; font-size: 1.25rem;"></i> <strong
+											style="color: #2b4f6c;">起始时间：</strong> 
+											<input type="date" name="starttime" class="form-control form-control-sm"
+											value="2000-01-01" style="display: inline-block; width: 75%;">
+									</div>
+									<div style="margin-bottom: 5px;">
+										<i class="iconfont icon-jiezhishijian"
+											style="color: #1296db; font-size: 1.15rem;"></i> <strong
+											style="color: #2b4f6c;">结束时间：</strong>
+											<input type="date" name="endtime" class="form-control form-control-sm"
+											value="2021-09-01" style="display: inline-block; width: 75%;">
+									</div>
+
+									<div style="display: inline-block;">
+										<button type="button" class="layui-btn "
+											style="background-color: #1296db; padding: 0 30px;">确定添加</button>
+
+									</div>
+									<a href="#"><span
+										style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+											更多</span></a> <br>
+								</div>
+							</div>
+						</div>
+
+
+
+
+						<div class="layui-col-md5 layui-col-md-offset1"
+							style="margin-top: 20px;">
+							<div class="layui-card">
+								<div class="layui-card-header"
+									style="background-color: #eb6100;">
+									<strong style="color: #fff; font-size: 1.25rem;">待评价组员：</strong>
+								</div>
+								<div class="layui-card-body"
+									style="margin-top: 20px; margin-left: 20px;">
+									<div>
+										<a href="#" class="layui-btn layui-btn-danger">A组</a> <a
+											href="#" class="layui-btn layui-btn-primary">B组</a> <a
+											href="#" class="layui-btn layui-btn-primary">C组</a> <a
+											href="#" class="layui-btn layui-btn-primary">D组</a>
+									</div>
+									<div style="margin-top: 25px;">
+										<div style="display: inline-block; padding: 0 10px;">
+											<img id="drag1" src="../img/avatar.png" width="69"
+												style="border-radius: 50% !important; display: block;">
+											<strong
+												style="display: block; color: #101010; margin-left: 14px;">
+												Cindy</strong>
+										</div>
+
+										<div style="display: inline-block; padding: 0 10px;">
+											<img id="drag2" src="../img/avatar.png" width="69"
+												style="border-radius: 50% !important;"> <strong
+												style="display: block; color: #101010; margin-left: 14px;">
+												陈沈清</strong>
+										</div>
+										<div style="display: inline-block; padding: 0 10px;">
+											<img id="drag3" src="../icon/jlc.png" width="69"
+												style="border-radius: 50% !important;"> <strong
+												style="display: block; color: #101010; margin-left: 14px;">
+												陈沈清</strong>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
 
 
 					<!-- 年末评价 -->
 					<div class="layui-tab-item " id="item-NMPJ" style="display: none;">
-						<div class="layui-col-md4 layui-col-md-offset1">
-							<div class="layui-card">
-								<div class="layui-card-header">
-									<i class="iconfont icon-jia" style="color: #5FB878;"></i> <strong>点击组员头像即可开始评价</strong>
+						<div class="layui-col-md5"
+							style="margin-top: 20px; margin-left: 20px;">
+							<div class="layui-card" style="font-size: 1.15rem;">
+								<div class="layui-card-header"
+									style="background-color: #5FB878;">
+									<i class="iconfont icon-jia" style="color: #fff;"></i> <strong
+										style="color: #fff; font-size: 1.25rem;">点击组员头像即可开始评价</strong>
 								</div>
-								<div class="layui-card-body">
+								<div class="layui-card-body"
+									style="margin-top: 20px; margin-left: 20px;">
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-lunkuohua2_yonghu"
 											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">职员编号：</strong><span
@@ -245,39 +408,30 @@
 										<div
 											style="padding: 0px 0px 0px 100px; display: inline-block;">
 											<div style="margin-bottom: 5px;">
-												<span
-													style="color: #777777; display: inline-block; padding-right: 20px;">工作能力</span>
-												<input class="form-control form-control-sm"
-													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30">
+												<span style="color: #777777; padding-right: 10px;">工作能力</span>
+												<div id="nlstar" class="star" style="display: inline-block;"></div>
+
 											</div>
 											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 20px;">工作效率</span>
-												<input class="form-control form-control-sm"
-													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30">
+												<span style="color: #777777; padding-right: 10px;">工作效率</span>
+												<div id="xlstar" class="star" style="display: inline-block;"></div>
+
 											</div>
 											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 20px;">发展潜力</span>
-												<input class="form-control form-control-sm"
-													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30">
+												<span style="color: #777777; padding-right: 10px;">发展潜力</span>
+												<div id="fzstar" class="star" style="display: inline-block;"></div>
+
 											</div>
 
 											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 20px;">交流能力</span>
-												<input class="form-control form-control-sm"
-													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30">
+												<span style="color: #777777; padding-right: 10px;">交流能力</span>
+												<div id="ljstar" class="star" style="display: inline-block;"></div>
+
 											</div>
 
 											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 20px;">喜爱程度</span>
-												<input class="form-control form-control-sm"
-													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30"> <span
-													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
-													30天</span>
+												<span style="color: #777777; padding-right: 10px;">喜爱程度</span>
+												<div id="xastar" class="star" style="display: inline-block;"></div>
 
 											</div>
 											<div style="margin-bottom: 5px;">
@@ -292,7 +446,7 @@
 
 									<div style="display: inline-block;">
 										<button type="button" class="layui-btn "
-											style="background-color: #5FB878;">提交评价</button>
+											style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
 
 									</div>
 									<a href="#"><span
@@ -302,19 +456,22 @@
 							</div>
 						</div>
 
-						<div class="layui-col-md5 layui-col-md-offset1">
+						<div class="layui-col-md5 layui-col-md-offset1"
+							style="margin-top: 20px;">
 							<div class="layui-card">
-								<div class="layui-card-header">
-									<strong style="color: #eb6100;">待评价组员：</strong>
+								<div class="layui-card-header"
+									style="background-color: #eb6100;">
+									<strong style="color: #fff; font-size: 1.25rem;">待评价组员：</strong>
 								</div>
-								<div class="layui-card-body">
+								<div class="layui-card-body"
+									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn layui-btn-sm layui-btn-danger">A组</a>
-										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">B组</a>
-										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">C组</a>
-										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">D组</a>
+										<a href="#" class="layui-btn layui-btn-danger">A组</a> <a
+											href="#" class="layui-btn layui-btn-primary">B组</a> <a
+											href="#" class="layui-btn layui-btn-primary">C组</a> <a
+											href="#" class="layui-btn layui-btn-primary">D组</a>
 									</div>
-									<div style="margin-top: 15px;">
+									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
 											<img id="drag1" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important; display: block;">
@@ -323,13 +480,13 @@
 												Cindy</strong>
 										</div>
 
-										<div style="display: inline-block;">
+										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												陈沈清</strong>
 										</div>
-										<div style="display: inline-block;">
+										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
@@ -348,12 +505,16 @@
 
 					<!-- 重大事件评价 -->
 					<div class="layui-tab-item " id="item-ZDSJ" style="display: none;">
-						<div class="layui-col-md4 layui-col-md-offset1">
-							<div class="layui-card">
-								<div class="layui-card-header">
-									<i class="iconfont icon-jia" style="color: #5FB878;"></i> <strong>点击组员头像即可开始评价</strong>
+						<div class="layui-col-md5"
+							style="margin-top: 20px; margin-left: 20px;">
+							<div class="layui-card" style="font-size: 1.15rem;">
+								<div class="layui-card-header"
+									style="background-color: #5FB878;">
+									<i class="iconfont icon-jia" style="color: #fff;"></i> <strong
+										style="color: #fff; font-size: 1.25rem;">点击组员头像即可开始评价</strong>
 								</div>
-								<div class="layui-card-body">
+								<div class="layui-card-body"
+									style="margin-top: 20px; margin-left: 20px;">
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-lunkuohua2_yonghu"
 											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">职员编号：</strong><span
@@ -377,33 +538,36 @@
 
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">事件类型：</strong> 
-										<select class="form-control form-control-sm" style="display: inline-block; width: 35%;" >
-										<option selected disabled style="display: none;" value="">请选择事件类型</option>
-									      <option>1</option>
-									      <option>2</option>
-									      <option>5</option>
-									    </select>
+										<strong style="color: #2b4f6c;">事件类型：</strong> <select
+											class="form-control form-control-sm"
+											style="display: inline-block; width: 35%;">
+											<option selected disabled style="display: none;" value="">请选择事件类型</option>
+											<option>1</option>
+											<option>2</option>
+											<option>5</option>
+										</select>
 									</div>
 
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">事件描述：</strong> 
-										 <textarea class="form-control form-control-sm" style="display: inline-block; width: 75%;" rows="3"></textarea>
+										<strong style="color: #2b4f6c;">事件描述：</strong>
+										<textarea class="form-control form-control-sm"
+											style="display: inline-block; width: 75%;" rows="3"></textarea>
 									</div>
 
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">其他说明：</strong> 
-										 <textarea class="form-control form-control-sm" style="display: inline-block; width: 75%;" rows="3"></textarea>
-										
+										<strong style="color: #2b4f6c;">其他说明：</strong>
+										<textarea class="form-control form-control-sm"
+											style="display: inline-block; width: 75%;" rows="3"></textarea>
+
 									</div>
 
 
 
 									<div style="display: inline-block;">
 										<button type="button" class="layui-btn "
-											style="background-color: #5FB878;">提交评价</button>
+											style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
 
 									</div>
 									<a href="#"><span
@@ -413,19 +577,22 @@
 							</div>
 						</div>
 
-						<div class="layui-col-md5 layui-col-md-offset1">
+						<div class="layui-col-md5 layui-col-md-offset1"
+							style="margin-top: 20px;">
 							<div class="layui-card">
-								<div class="layui-card-header">
-									<strong style="color: #eb6100;">待评价组员：</strong>
+								<div class="layui-card-header"
+									style="background-color: #eb6100;">
+									<strong style="color: #fff; font-size: 1.25rem;">待评价组员：</strong>
 								</div>
-								<div class="layui-card-body">
+								<div class="layui-card-body"
+									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn layui-btn-sm layui-btn-danger">A组</a>
-										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">B组</a>
-										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">C组</a>
-										<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">D组</a>
+										<a href="#" class="layui-btn layui-btn-danger">A组</a> <a
+											href="#" class="layui-btn layui-btn-primary">B组</a> <a
+											href="#" class="layui-btn layui-btn-primary">C组</a> <a
+											href="#" class="layui-btn layui-btn-primary">D组</a>
 									</div>
-									<div style="margin-top: 15px;">
+									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
 											<img id="drag1" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important; display: block;">
@@ -434,13 +601,13 @@
 												Cindy</strong>
 										</div>
 
-										<div style="display: inline-block;">
+										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												陈沈清</strong>
 										</div>
-										<div style="display: inline-block;">
+										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
@@ -452,6 +619,7 @@
 
 							</div>
 						</div>
+
 
 					</div>
 
@@ -468,6 +636,43 @@
 		//JavaScript代码区域
 		layui.use('element', function() {
 			var element = layui.element;
+		});
+	</script>
+
+	<script type="text/javascript">
+		$('#nlstar').raty({
+
+			half : true,
+			path : '../icon/',
+			score : 3,
+		});
+
+		$('#xlstar').raty({
+
+			half : true,
+			path : '../icon/',
+			score : 5,
+		});
+
+		$('#fzstar').raty({
+
+			half : true,
+			path : '../icon/',
+			score : 3,
+		});
+
+		$('#ljstar').raty({
+
+			half : true,
+			path : '../icon/',
+			score : 5,
+		});
+
+		$('#xastar').raty({
+
+			half : true,
+			path : '../icon/',
+			score : 4,
 		});
 	</script>
 

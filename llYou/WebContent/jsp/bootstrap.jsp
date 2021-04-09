@@ -7,7 +7,9 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script src="/llYou/dist/echarts.min.js"></script>
-<script type="text/javascript" src="/llYou/dist/echarts-wordcloud.min.js"></script>
+<script src="/llYou/dist/echarts-wordcloud.min.js"></script>
+
+<script src="/llYou/dist/jquery.raty.min.js"></script>
 
 <link rel="icon" href="/llYou/img/you.png">
 
