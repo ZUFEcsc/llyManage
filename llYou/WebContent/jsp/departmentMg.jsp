@@ -538,7 +538,8 @@
 
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">事件类型：</strong> <select
+										<strong style="color: #2b4f6c;">事件类型：</strong>
+										<select
 											class="form-control form-control-sm"
 											style="display: inline-block; width: 35%;">
 											<option selected disabled style="display: none;" value="">请选择事件类型</option>

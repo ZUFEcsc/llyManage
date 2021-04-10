@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+.selectbox {
+	clear: both;
+	margin: auto;
+}
+
+.selemediv {
+	width: 180px;
+	height: 35px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 30px;
+	position: relative
+}
+
+
+.selemenu {
+	font-size: 14px;
+	line-height: 35px;
+}
+
+.citylist span {
+	display: block;
+	clear: both;
+	cursor: pointer;
+}
+
+.citylist span:hover {
+	background: #eee;
+}
+
+.citylist {
+	display: none;
+	line-height: 35px;
+	background: #fff;
+	text-indent: 10px;
+	font-size: 12px;
+	position: absolute;
+	left: 0;
+	top: 35px;
+	width: 180px;
+	box-shadow: 0px 5px 5px #ccc;
+}
+
+.citylist2 {
+	box-shadow: 0px 5px 5px #ccc;;
+	font-size: 14px;
+	color: #666;
+	padding: 20px 40px;
+	position: absolute;
+	top:20;
+    left:0;
+    z-index:10;
+	background: #fff;
+	border-bottom: 1px solid #f6f6f6;
+	display: none;
+}
+
+.citylist2 ul {
+	float: left;
+	line-height: 40px;
+}
+
+.citylist2 ul li {
+	float: left;
+	cursor: pointer
+}
+
+.citylist2 ul li:hover {
+	color: #ff4400
+}
+
+.citylist2 .chengshi li {
+	width: 20%;
+}
+
+.citylist2 .leibie {
+	width: 100px;
+	float: left;
+	line-height: 40px;
+}
+
+ul, li {
+	list-style: none;
+}
+
+.xzk {
+	width: 300px;
+	overflow: hidden;
+	clear: both;
+}

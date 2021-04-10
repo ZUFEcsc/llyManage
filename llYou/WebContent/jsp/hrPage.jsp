@@ -27,6 +27,8 @@ tbody tr th {
 }
 </style>
 <link rel="stylesheet" href="../res/layui/css/layui.css">
+
+<link rel="stylesheet" href="../js/selection/xlselection.css" />
 </head>
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
@@ -50,8 +52,7 @@ tbody tr th {
 
 				<ul class="layui-nav layui-nav-tree" lay-filter="test">
 					<li class="layui-nav-item layui-nav-itemed"><a class=""
-						href="javascript:;"> 招聘管理
-					</a>
+						href="javascript:;"> 招聘管理 </a>
 						<dl class="layui-nav-child">
 							<dd>
 								<a href="#" class="site-demo-active" data-url="ZPXX"
@@ -72,8 +73,7 @@ tbody tr th {
 
 						</dl></li>
 					<li class="layui-nav-item layui-nav-itemed"><a
-						href="javascript:;">用户管理
-					</a>
+						href="javascript:;">用户管理 </a>
 						<dl class="layui-nav-child">
 							<dd>
 								<a href="#" class="site-demo-active" data-url="YHXX"
@@ -99,7 +99,10 @@ tbody tr th {
 					<!-- 招聘信息 -->
 					<div class="layui-tab-item layui-show" id="item-ZPXX">
 						<div style="float: left;">
-							<a href="#" class="layui-btn layui-btn-normal"> <i class="iconfont icon-fabu" style="color:#fff;font-size:22px;"></i> 发布招聘</a>
+							<a href="#" class="layui-btn layui-btn-normal"> <i
+								class="iconfont icon-fabu" style="color: #fff; font-size: 22px;"></i>
+								发布招聘
+							</a>
 						</div>
 						<div>
 							<form style="float: right;">
@@ -144,26 +147,28 @@ tbody tr th {
 								</tr>
 							</thead>
 							<tbody>
-							<%
-							Dao dao=new Dao();
-							List<CompanySeekBean> list=dao.getListHRCompanySeekInfo();
-							for(CompanySeekBean ab:list)
-							{
-								if(ab.getState().equals("1"))
-									ab.setState("已结束");
-								else if(ab.getState().equals("2"))
-									ab.setState("进行中");
-							%>
+								<%
+									Dao dao = new Dao();
+									List<CompanySeekBean> list = dao.getListHRCompanySeekInfo();
+									for (CompanySeekBean ab : list) {
+										if (ab.getState().equals("1"))
+											ab.setState("已结束");
+										else if (ab.getState().equals("2"))
+											ab.setState("进行中");
+								%>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
-										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getSeek_number() %></th>
-									<td><%=ab.getSeek_position() %></td>
-									<td><%=ab.getDeliver_time() %></td>
-									<td><span class="layui-badge layui-bg-orange"><%=ab.getState() %></span></td>
+										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getSeek_number()%></th>
+									<td><%=ab.getSeek_position()%></td>
+									<td><%=ab.getDeliver_time()%></td>
+									<td><span class="layui-badge layui-bg-orange"><%=ab.getState()%></span></td>
 									<td>
-									<%if(ab.getState().equals("进行中")){ %>
-									<a href="#" class="layui-btn layui-btn-sm layui-btn-primary">结束招聘</a>
-									<%} %>
+										<%
+											if (ab.getState().equals("进行中")) {
+										%> <a href="#"
+										class="layui-btn layui-btn-sm layui-btn-primary">结束招聘</a> <%
+ 	}
+ %>
 									</td>
 									<td>
 										<button type="button"
@@ -174,7 +179,9 @@ tbody tr th {
 										</button>
 									</td>
 								</tr>
-								<%} %>
+								<%
+									}
+								%>
 							</tbody>
 						</table>
 
@@ -184,16 +191,187 @@ tbody tr th {
 					<div class="layui-tab-item" id="item-JLC" style="display: none;">
 
 
-						<div class="site-demo-button" id="layerDemo"
-							style="margin-bottom: 0; float: right; margin-left: 10px;">
+						<div class="layui-col-md2">
+							<div class="selectbox">
+								<a type="button" class="layui-btn layui-btn-normal selemenu"
+									style="color: #ffffff;"> <i class="iconfont icon-jiqiren2"
+									style="color: #ffffff; font-size: 22px;"></i> 智能筛选
+								</a>
 
-							<button type="button" class="layui-btn  layui-btn-normal"
-								data-method="notice" style="font-size: 18px; line-height: 18px;">
-								<i class="iconfont icon-jiqiren2"
-									style="color: #ffffff; font-size: 22px;"></i> <span
-									style="font-size: 18px;">智能筛选</span>
-							</button>
+								<div class="citylist2">
+
+									<div class="xzk" style="line-height: 45px;">
+										<div style="display: inline-block;">
+											<img style="display: inline-block;" src="../icon/ai.png"
+												width=8%> <span
+												style="color: #3f81c1; font-size: 16px;">请选择筛选条件</span> <a
+												href="#" class="layui-btn layui-btn-sm layui-btn-normal"
+												style="margin-left: 70px;">提交筛选</a>
+										</div>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<label class="form-check-label"
+												style="color: #777777; display: inline-block">性别</label>
+
+										</div>
+										<ul class="shangquan">
+											<li><select class="form-control form-control-sm"
+												style="display: inline-block;">
+													<option selected disabled style="display: none;" value="">请选择性别</option>
+													<option>男</option>
+													<option>女</option>
+											</select></li>
+										</ul>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<label class="form-check-label"
+												style="color: #777777; display: inline-block">年龄</label>
+
+										</div>
+										<ul class="shangquan"
+											style="display: inline-block; width: 200px">
+											<li>
+												<div style="display: inline-block;">
+													<input class="form-control form-control-sm"
+														style="display: inline-block; width: 20%;" type="text"
+														placeholder="23"><span> - </span> <input
+														class="form-control form-control-sm"
+														style="display: inline-block; width: 20%;" type="text"
+														placeholder="25"><span> 岁</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<label class="form-check-label"
+												style="color: #777777; display: inline-block">最低学历</label>
+
+										</div>
+										<ul class="shangquan">
+											<li><select class="form-control form-control-sm"
+												style="display: inline-block;">
+													<option selected disabled style="display: none;" value="">请选择最低学历</option>
+													<option>高中</option>
+													<option>本科</option>
+											</select></li>
+										</ul>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<label class="form-check-label"
+												style="color: #777777; display: inline-block">工作能力</label>
+
+										</div>
+										<ul class="shangquan">
+											<li>
+												<div id="nlstar" class="star" style="display: inline-block;"></div>
+											</li>
+										</ul>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<span style="color: #777777;">工作效率</span>
+										</div>
+										<ul class="shangquan">
+											<li>
+												<div id="xlstar" class="star" style="display: inline-block;"></div>
+											</li>
+										</ul>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<span style="color: #777777;">沟通能力</span>
+										</div>
+										<ul class="shangquan">
+											<li>
+												<div id="gtstar" class="star" style="display: inline-block;"></div>
+											</li>
+										</ul>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<span style="color: #777777;">工作经验</span>
+										</div>
+										<ul class="shangquan">
+											<li>
+												<div id="jystar" class="star" style="display: inline-block;"></div>
+											</li>
+										</ul>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<span style="color: #777777;">专业技能</span>
+										</div>
+										<ul class="shangquan">
+											<li>
+												<div id="zystar" class="star" style="display: inline-block;"></div>
+											</li>
+										</ul>
+									</div>
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<span style="color: #777777;">匹配程度</span>
+										</div>
+										<ul class="shangquan">
+											<li>
+												<div id="ppstar" class="star" style="display: inline-block;"></div>
+											</li>
+										</ul>
+									</div>
+
+
+									<div class="xzk">
+										<div class="leibie">
+											<input type="checkbox"
+												style="display: inline-block; margin-bottom: 3px;">
+											<label class="form-check-label"
+												style="color: #777777; display: inline-block">过往标签</label>
+
+										</div>
+										<ul class="shangquan" style="width: 200px">
+											<li><span class="layui-badge layui-bg-orange">亲和待人</span>
+												<span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+												class="layui-badge layui-bg-gray">技术大神</span> <span
+												class="layui-badge layui-bg-gray">效率之王</span> <span
+												class="layui-badge layui-bg-orange">接单大佬</span> <span
+												class="layui-badge layui-bg-gray">沟通达人</span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
 						</div>
+
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
@@ -284,16 +462,13 @@ tbody tr th {
 					<!-- 第一阶段 -->
 					<div class="layui-tab-item" id="item-DYJD" style="display: none;">
 
-						<div class="site-demo-button" id="layerDemo"
-							style="margin-bottom: 0; float: right; margin-left: 10px;">
-
-							<button type="button" class="layui-btn  layui-btn-normal"
-								data-method="notice" style="font-size: 18px; line-height: 18px;">
-								<i class="iconfont icon-jiqiren2"
-									style="color: #ffffff; font-size: 22px;"></i> <span
-									style="font-size: 18px;">智能筛选</span>
-							</button>
+						<div style="float: left;">
+							<a href="#" class="layui-btn layui-btn-normal selemenu"
+								style="color: #ffffff;"> <i class="iconfont icon-jiqiren2"
+								style="color: #ffffff; font-size: 22px;"></i> 智能筛选
+							</a>
 						</div>
+						
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
@@ -327,7 +502,7 @@ tbody tr th {
 								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
 
 							<div class="layui-row layui-col-space15">
-							<%
+								<%
 									for (Hr_UserResumeBean ab : list3) {
 										if (ab.getState().equals("1100")) {
 								%>
@@ -368,8 +543,8 @@ tbody tr th {
 									</div>
 								</div>
 								<%
-								}
-								}
+									}
+									}
 								%>
 							</div>
 						</div>
@@ -381,16 +556,13 @@ tbody tr th {
 					<!-- 第二阶段 -->
 					<div class="layui-tab-item" id="item-DEJD" style="display: none;">
 
-						<div class="site-demo-button" id="layerDemo"
-							style="margin-bottom: 0; float: right; margin-left: 10px;">
-
-							<button type="button" class="layui-btn  layui-btn-normal"
-								data-method="notice" style="font-size: 18px; line-height: 18px;">
-								<i class="iconfont icon-jiqiren2"
-									style="color: #ffffff; font-size: 22px;"></i> <span
-									style="font-size: 18px;">智能筛选</span>
-							</button>
+						<div style="float: left;">
+							<a href="#" class="layui-btn layui-btn-normal selemenu"
+								style="color: #ffffff;"> <i class="iconfont icon-jiqiren2"
+								style="color: #ffffff; font-size: 22px;"></i> 智能筛选
+							</a>
 						</div>
+						
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
@@ -424,7 +596,7 @@ tbody tr th {
 								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
 
 							<div class="layui-row layui-col-space15">
-							<%
+								<%
 									for (Hr_UserResumeBean ab : list3) {
 										if (ab.getState().equals("1110")) {
 								%>
@@ -464,10 +636,10 @@ tbody tr th {
 										</div>
 									</div>
 								</div>
-							<%
-							}
+								<%
 									}
-							%>
+									}
+								%>
 
 							</div>
 						</div>
@@ -650,6 +822,62 @@ tbody tr th {
 		//JavaScript代码区域
 		layui.use('element', function() {
 			var element = layui.element;
+		});
+	</script>
+
+	<!-- 下拉框 -->
+	<script>
+		$(".selemenu").click(
+				function() {
+					$(this).next().slideToggle();
+					$(this).parents().siblings().find(".citylist,.citylist2")
+							.slideUp();
+				})
+
+		$(function() {
+			$(document).not($(".selectbox")).click(function() {
+				$(".citylist,.citylist2").slideUp();
+			})
+			$(".selectbox").click(function(event) {
+				event.stopPropagation();
+			})
+		})
+	</script>
+
+
+
+
+	<!-- 评分 -->
+	<script type="text/javascript">
+		$('#nlstar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#xlstar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#gtstar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#jystar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#zystar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#ppstar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
 		});
 	</script>
 

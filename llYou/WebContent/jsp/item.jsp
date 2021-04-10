@@ -11,6 +11,8 @@
 <script src="../lib/layui/layui.js"></script>
 <link rel="stylesheet" href="../js/steps/steps.css" />
 <link rel="stylesheet" href="../js/introduction/personaljl.css" />
+
+<link rel="stylesheet" href="../js/selection/xlselection.css" />
 <script src="../js/jquery-3.4.1.min.js"></script>
 
 <style type="text/css">
@@ -48,7 +50,6 @@
 </head>
 
 
-<!-- 步骤条 -->
 
 <%@ include file="bootstrap.jsp"%>
 <body>
@@ -68,70 +69,205 @@
 	<div style="padding: 20px; background-color: #ffffff;">
 
 		<div class="layui-row layui-col-space15">
-			<div class="layui-col-md4">
-				<div class="single-member effect-3">
-					<div class="member-image">
-						<img src="../img/person/p1.jpg" alt="Member">
-					</div>
-					<div class="member-info">
-						<h3 style="margin-bottom: 14px;">未命名简历</h3>
-						<h5>应聘岗位：JAVA工程师</h5>
-						<div style="text-align:left;">
-						<small style="color:#2b4f6c;">已投岗位：</small><br>
-						<small class="gwS">字节跳动 - 算法工程师（远程实习）.</small><br> <small class="gwS">滴滴出行
-							- 视觉深度学习算法工程师.</small><br> 
-						<a class="layui-btn" style="margin-top:10px;padding: 0 100px;background-color: 009688;font-size: 16px;" href="#">查 看 详 情</a>
-						
+			<div class="layui-col-md2">
+				<div class="selectbox">
+					<a type="button" class="layui-btn layui-btn-normal selemenu"> <i
+						class="iconfont icon-jiqiren2"
+						style="color: #ffffff; font-size: 22px;"></i> 
+						<span style="font-size: 18px;color: #ffffff; ">智能筛选</span>
+					</a>
+
+					<!-- 
+						<div class="selemediv">
+							<div class="selemenu">
+								<span class="sqinput">
+								</span>
+							</div>				
+						</div>-->
+
+					<div class="citylist2">
+
+						<div class="xzk" style="line-height: 45px;">
+							<div style="display: inline-block;">
+								<svg class="icon" aria-hidden="true" style="font-size: 8px;">
+							   			<use xlink:href="#icon-jiqiren"></use>
+									</svg>
+							</div>
+							<div style="display: inline-block;">
+								<span style=" color: #3f81c1; font-size: 16px;">请选择筛选条件</span>
+								<a href="#" class="layui-btn layui-btn-sm layui-btn-normal" style="margin-left:70px;">提交筛选</a>
+							</div>
 						</div>
 						
-					</div>
-				</div>
-			</div>
-			<div class="layui-col-md6">
-				<div class="layui-card">
-					<blockquote class="layui-elem-quote">
-						<strong>字节跳动</strong> <span> 部门主管</span><br> <small
-							style="color: #8d8d8d;"> 本次投递已被企业处理，简历不可修改</small>
-					</blockquote>
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">性别</label>
 
-					<div class="layui-card-body">
+							</div>
+							<ul class="shangquan">
+								<li>
+									<select	class="form-control form-control-sm"
+											style="display: inline-block;">
+											<option selected disabled style="display: none;" value="">请选择性别</option>
+											<option>男</option>
+											<option>女</option>
+										</select>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">年龄</label>
 
-						<div id="steps"></div>
+							</div>
+							<ul class="shangquan" style="display: inline-block;width:200px">
+								<li>
+								<div style="display: inline-block;">
+									<input class="form-control form-control-sm"
+											style="display: inline-block;width:20%;" type="text"
+											placeholder="23"><span> - </span>
+									<input class="form-control form-control-sm"
+											style="display: inline-block;width:20%;" type="text"
+											placeholder="25"><span> 岁</span>
+											</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">最低学历</label>
+
+							</div>
+							<ul class="shangquan">
+								<li>
+									<select	class="form-control form-control-sm"
+											style="display: inline-block;">
+											<option selected disabled style="display: none;" value="">请选择最低学历</option>
+											<option>高中</option>
+											<option>本科</option>
+										</select>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">工作能力</label>
+
+							</div>
+							<ul class="shangquan">
+								<li>
+									<div id="nlstar" class="star" style="display: inline-block;"></div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <span
+									style="color: #777777;">工作效率</span>
+							</div>
+							<ul class="shangquan">
+								<li>
+									<div id="xlstar" class="star" style="display: inline-block;"></div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <span
+									style="color: #777777;">沟通能力</span>
+							</div>
+							<ul class="shangquan">
+								<li>
+									<div id="gtstar" class="star" style="display: inline-block;"></div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <span
+									style="color: #777777;">工作经验</span>
+							</div>
+							<ul class="shangquan">
+								<li>
+									<div id="jystar" class="star" style="display: inline-block;"></div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <span
+									style="color: #777777;">专业技能</span>
+							</div>
+							<ul class="shangquan">
+								<li>
+									<div id="zystar" class="star" style="display: inline-block;"></div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <span
+									style="color: #777777;">匹配程度</span>
+							</div>
+							<ul class="shangquan">
+								<li>
+									<div id="ppstar" class="star" style="display: inline-block;"></div>
+								</li>
+							</ul>
+						</div>
+
+
+						<div class="xzk">
+							<div class="leibie">
+								<input type="checkbox"
+									style="display: inline-block; margin-bottom: 3px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">过往标签</label>
+
+							</div>
+							<ul class="shangquan" style="width:200px">
+								<li>
+								<span class="layui-badge layui-bg-orange">亲和待人</span>
+								<span class="layui-badge layui-bg-orange">工作狂魔</span>
+									<span class="layui-badge layui-bg-gray">技术大神</span>
+									<span class="layui-badge layui-bg-gray">效率之王</span>
+									
+								<span class="layui-badge layui-bg-orange">接单大佬</span>
+									<span class="layui-badge layui-bg-gray">沟通达人</span>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
-	</div>
-	<div class="layui-col-md2">
-		<div class="layui-card">
-			<div class="layui-card-header">
-				<div style="display: inline-block;">
-					<svg class="icon" aria-hidden="true" style="font-size: 6px;">
-			   			<use xlink:href="#icon-jiqiren"></use>
-					</svg>
-				</div>
-				<div style="display: inline-block;">请选择筛选条件</div>
-			</div>
-			<div class="layui-card-body">
 
-
-				<div class="layui-form-item">
-
-					<div style="margin-bottom: 5px;">
-						<span style="color: #777777; padding-right: 10px;">喜爱程度</span>
-						<div id="star" class="star" style="display: inline-block;"></div>
-					</div>
-
-					<div id="star" data-score="1"></div>
-
-					<div class="form-group form-check"></div>
-				</div>
-
-
-
-			</div>
-		</div>
 	</div>
 
 	<script src="../res/layui/layui.js"></script>
@@ -142,43 +278,61 @@
 		});
 	</script>
 
-	<!-- 步骤条 -->
+
+
+	<!-- 下拉框 -->
 	<script>
-		layui.config({
-			base : '../js/steps/',
+		$(".selemenu").click(
+				function() {
+					$(this).next().slideToggle();
+					$(this).parents().siblings().find(".citylist,.citylist2")
+							.slideUp();
+				})
 
-		}).use('steps');
-		layui.use([ 'table', 'form', 'jquery', 'laypage', 'element', 'layer',
-				'steps' ], function() {
-			var $ = layui.jquery, steps = layui.steps;
-
-			var data = [ {
-				'title' : "投递简历",
-				"desc" : "2021-03-23"
-			}, {
-				'title' : "简历初选",
-				"desc" : "2021-03-24"
-			}, {
-				'title' : "一轮面试",
-				"desc" : "2021-03-28"
-			}, {
-				'title' : "二轮面试",
-				"desc" : "暂定"
-			}, ];
-
-			rendersteps(2); //现在的步骤是0
-			function rendersteps(step) {
-				steps.render(data, '#steps', step);
-			}
-		});
+		$(function() {
+			$(document).not($(".selectbox")).click(function() {
+				$(".citylist,.citylist2").slideUp();
+			})
+			$(".selectbox").click(function(event) {
+				event.stopPropagation();
+			})
+		})
 	</script>
+
+
+
 
 	<!-- 评分 -->
 	<script type="text/javascript">
-		$('#star').raty({
-
+		$('#nlstar').raty({
 			half : true,
 			path : '../icon/',
+			score : 4,
+		});
+		$('#xlstar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#gtstar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#jystar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#zystar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
+		});
+		$('#ppstar').raty({
+			half : true,
+			path : '../icon/',
+			score : 4,
 		});
 	</script>
 
