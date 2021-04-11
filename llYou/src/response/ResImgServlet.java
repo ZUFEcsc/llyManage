@@ -23,7 +23,7 @@ import com.sun.prism.BasicStroke;
 /**
  * Servlet implementation class ResImgServlet
  */
-@WebServlet("/ResImgServlet")
+@WebServlet("/jsp/ResImgServlet")
 public class ResImgServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -124,6 +124,7 @@ public class ResImgServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
 		session.setAttribute("code", this.getText());
+		
         
 //		String s = "ABCDEFGHJKLMNPRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
 //		

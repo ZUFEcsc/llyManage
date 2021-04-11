@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="../res/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
+<%
+		String msg = (String) request.getAttribute("msg");
+	%>
+<%if(msg!=null) {%>
+<%=msg %>
+<%} %>
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header" style="height: 80px;">
 			<div class="layui-logo" style="line-height: 80px;">
@@ -19,7 +25,7 @@
 			<span
 				style="color: #e8e9e9; line-height: 80px; font-size: 24px; margin-left: 200px;">用户注册认证</span>
 			<ul class="layui-nav layui-layout-right" style="line-height: 80px;">
-				<li class="layui-nav-item"><a href="Login"> 返回首页</a></li>
+				<li class="layui-nav-item"><a href="index.jsp"> 返回首页</a></li>
 				<li class="layui-nav-item"><a href="#">帮助</a></li>
 			</ul>
 		</div>

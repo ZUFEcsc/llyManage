@@ -395,18 +395,19 @@ Date date=new Date();
 									<form action="NianMoEvaluateServlet" method="post">
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">职员编号：</strong><span
-											style="color: #777777;">SZ001F0001</span>
+											style="color: #5FB878;"></i> 
+											<label for="exampleInputNumber1"><strong style="color: #2b4f6c;">职员编号：</strong></label>
+											<input type="text" id="exampleInputNumber1" placeholder="SZ001F0001">
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">职员姓名：</strong><span
-											style="color: #777777;">张琪</span>
+										<label for="exampleInputName1"><strong style="color: #2b4f6c;">职员姓名：</strong></label>
+										<input type="text" id="exampleInputName1" placeholder="张琪">
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">职员岗位：</strong><span
-											style="color: #777777;">普通员工</span>
+										<label for="exampleInputPosition1"><strong style="color: #2b4f6c;">职员岗位：</strong></label>
+										<input type="text" id="exampleInputPosition1" placeholder="普通员工">
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-zhaopingangwei"
@@ -489,7 +490,7 @@ Date date=new Date();
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
 											<img id="drag1" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important; display: block;">
+												style="border-radius: 50% !important; display: block;" onclick="pay('11')">
 											<strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												张琪</strong>
@@ -497,13 +498,13 @@ Date date=new Date();
 
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important;"> <strong
+												style="border-radius: 50% !important;" onclick="pay('22')"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
-												style="border-radius: 50% !important;"> <strong
+												style="border-radius: 50% !important;" onclick="pay('33')"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												王光</strong>
 										</div>
@@ -533,18 +534,19 @@ Date date=new Date();
 									<form action="BigMistakeEvaluateServlet" method="post">
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">职员编号：</strong><span
-											style="color: #777777;">SZ001F0001</span>
+											style="color: #5FB878;"></i> 
+											<label for="exampleInputNumber2"><strong style="color: #2b4f6c;">职员编号：</strong></label>
+											<input type="text" id="exampleInputNumber2" placeholder="SZ001F0001">
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">职员姓名：</strong><span
-											style="color: #777777;">张琪</span>
+										<label for="exampleInputName2"><strong style="color: #2b4f6c;">职员姓名：</strong></label>
+										<input type="text" id="exampleInputName2" placeholder="张琪">
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">职员岗位：</strong><span
-											style="color: #777777;">普通员工</span>
+										<label for="exampleInputPosition2"><strong style="color: #2b4f6c;">职员岗位：</strong></label>
+										<input type="text" id="exampleInputPosition2" placeholder="普通员工">
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-zhaopingangwei"
@@ -613,7 +615,7 @@ Date date=new Date();
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
 											<img id="drag1" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important; display: block;">
+												style="border-radius: 50% !important; display: block;" onclick="pay('11')">
 											<strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												张琪</strong>
@@ -621,13 +623,13 @@ Date date=new Date();
 
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important;"> <strong
+												style="border-radius: 50% !important;" onclick="pay('22')"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
-												style="border-radius: 50% !important;"> <strong
+												style="border-radius: 50% !important;" onclick="pay('33')"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												王光</strong>
 										</div>
@@ -752,5 +754,62 @@ Date date=new Date();
 
 		});
 	</script>
+<script>
+//触发按钮点击事件
+function pay(reg){
+	//获取id
+	var userid=reg;
+	//alert(userid);
+	getUserList(userid);
+}
+
+
+//通过ajax向后台发送id触发查询并返回数据
+function getUserList(userid){
+	
+	$.post("${pageContext.request.contextPath}/jsp/AjaxServlet",{"userid":userid},function(r){
+		//打印返回的数据
+		console.log(r);
+		//切割返回的数据
+		var recList = r;
+		var entName="";
+		var userlist=new Array();//用户信息数组
+		for(var i=0;i<recList.length;i++){
+			
+			if(recList[i]!=","){
+				var entName = entName+recList[i];
+			
+			}
+			if(recList[i]==","){
+				console.log(entName);
+				userlist.push(entName);
+				entName="";
+			}
+			
+		}
+		//console.log(userlist[0]);
+		var usernumber=userlist[0]; //获取用户姓名
+		var username=userlist[1]; //获取用户性别
+		var userposition=userlist[2]; //获取用户学历
+		
+		//改变左侧输入框的内容
+		var usernumberid=document.getElementById("exampleInputNumber1");
+		usernumberid.value=usernumber;
+		var usernameid=document.getElementById("exampleInputName1");
+		usernameid.value=username;
+		var userpositionid=document.getElementById("exampleInputPosition1");
+		userpositionid.value=userposition;
+		var usernumberid2=document.getElementById("exampleInputNumber2");
+		usernumberid2.value=usernumber;
+		var usernameid2=document.getElementById("exampleInputName2");
+		usernameid2.value=username;
+		var userpositionid2=document.getElementById("exampleInputPosition2");
+		userpositionid2.value=userposition;
+		
+	});
+	
+}
+
+</script>
 </body>
 </html>

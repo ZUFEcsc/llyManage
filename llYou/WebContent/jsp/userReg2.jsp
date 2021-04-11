@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="../res/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
+<%
+		String msg = (String) request.getAttribute("username");
+	%>
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header" style="height: 80px;">
 			<div class="layui-logo" style="line-height: 80px;">
@@ -47,7 +50,7 @@
 
 					<div class="layui-card">
 						<!-- style="overflow-y:scroll; overflow-x:hidden;" -->
-						<form>
+						<form action="TwoRegistServlet?username=<%=msg %>" method="post">
 							<div class="layui-card-header">
 								<strong style="font-size:18px;">用户认证</strong>
 							</div>
@@ -56,11 +59,11 @@
 								<div class="form-row">
 									<div class="form-group col-md-3">
 										<label>姓名</label> <input class="form-control"
-											placeholder="请输入真实姓名">
+											placeholder="请输入真实姓名" name="name">
 									</div>
 
 									<div class="form-group col-sm-2">
-										<label>性别</label> <select class="form-control">
+										<label>性别</label> <select class="form-control" name="sex">
 											<option selected disabled style="display: none;" value="">请选择性别</option>
 											<option>男</option>
 											<option>女</option>
@@ -71,11 +74,11 @@
 
 									<div class="form-group col-md-2">
 										<label>民族</label> <input class="form-control"
-											placeholder="请输入民族">
+											placeholder="请输入民族" name="nation">
 									</div>
 
 									<div class="form-group col-sm-3">
-										<label>政治面貌</label> <select class="form-control">
+										<label>政治面貌</label> <select class="form-control" name="political_feature">
 											<option selected disabled style="display: none;" value="">请选择政治面貌</option>
 											<option>群众</option>
 											<option>共青团员</option>
@@ -91,7 +94,7 @@
 								<div class="form-row">
 									<div class="form-group col-md-5">
 										<label>身份证</label> <input class="form-control"
-											placeholder="请输入身份证"> <small
+											placeholder="请输入身份证" name="identity"> <small
 											class="form-text text-muted">我们承诺，不会把您的个人信息透露给任何人。</small>
 									</div>
 								</div>
@@ -106,21 +109,21 @@
 								<div class="form-row">
 									<div class="form-group col-md-3">
 										<label>就读学校</label> <input class="form-control"
-											placeholder="请输入学校名称">
+											placeholder="请输入学校名称" name="school">
 									</div>
 																			
 									<div class="form-group col-md">
 										<label>所获荣誉</label> <input class="form-control"
-											placeholder="请输入所获荣誉">
+											placeholder="请输入所获荣誉" name="honor">
 									</div>
 																
 									<div class="form-group col-md-2">
 										<label>在校时间</label> 
-										<input type="date" name="startTime" id=""
+										<input type="date" name="inschool" id=""
 											class="form-control">
 									</div>
 									<div class="form-group col-md-2">
-										<label>毕业时间</label> <input type="date" name="endTime"
+										<label>毕业时间</label> <input type="date" name="graduate"
 											class="form-control">
 									</div>	
 									
@@ -140,8 +143,9 @@
 								<div class="form-group">
 									<div class="form-row"
 										style="margin-top: 15px; margin-left: 43%;">
-										<a href="userReg3.jsp" class="layui-btn layui-btn-normal"><span
-											style="padding: 0 15px;">确认提交</span></a>
+										
+											<button type="submit" class="layui-btn layui-btn-normal"><span
+											style="padding: 0 15px;">确认提交</span></button>
 									</div>
 								</div>
 

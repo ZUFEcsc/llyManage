@@ -467,4 +467,100 @@ public class Dao {
 		return false;
 		
 	}
+	
+	public boolean RegOneStepInsert(String username,String password,String email)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="insert into login_info(username,password,email,regist_time) values(?,?,?,?)";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			pstmt.setString(3, email);
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+			Date date=new Date();
+			pstmt.setString(4, sdf.format(date).toString());
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean RegTwoStepUpdate(String name,String sex,String nation,String political_feature,String identity,String school,String honor,String inschool,String graduate,String username)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update login_info set name=?,sex=?,nation=?,political_feature=?,identity_card=?,school=?,honor=?,inschool_time=?,graduate_time=? where username=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, sex);
+			pstmt.setString(3, nation);
+			pstmt.setString(4, political_feature);
+			pstmt.setString(5, identity);
+			pstmt.setString(6, school);
+			pstmt.setString(7, honor);
+			pstmt.setString(8, inschool);
+			pstmt.setString(9, graduate);
+			pstmt.setString(10, username);
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean isExistUsername(String username)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="select * from login_info where username=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			rs=pstmt.executeQuery();
+			if(rs.next())
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(rs, pstmt, conn);
+		}
+    	return false;
+		
+	}
+	public String FindPassword(String username)
+	{
+		String password=null;
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="select * from login_info where username=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			rs=pstmt.executeQuery();
+			if(rs.next())
+				password=rs.getString("password");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(rs, pstmt, conn);
+		}
+    	return password;
+		
+	}
 }
