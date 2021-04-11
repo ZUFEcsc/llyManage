@@ -31,6 +31,9 @@ tbody tr th {
 <link rel="stylesheet" href="../js/selection/xlselection.css" />
 </head>
 <body class="layui-layout-body">
+	<%
+		String msg = (String) request.getAttribute("msg");
+	%>
 	<div class="layui-layout layui-layout-admin">
 		<%@ include file="lly-header.jsp"%>
 		<div class="layui-side layui-bg-black">
@@ -436,9 +439,12 @@ tbody tr th {
 											</div>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">通过</button>
+													style="background-color: #5FB878;">
+													<a href="UptoFirstStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
+												</button>
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">驳回</button>
+													style="background-color: #5FB878;">
+													驳回</button>
 
 											</div>
 											<a href="#"><span
@@ -451,7 +457,13 @@ tbody tr th {
 									}
 									}
 								%>
-
+								<%
+									if (msg != null) {
+								%>
+								<%=msg%>
+								<%
+									}
+								%>
 							</div>
 
 						</div>
@@ -468,7 +480,7 @@ tbody tr th {
 								style="color: #ffffff; font-size: 22px;"></i> 智能筛选
 							</a>
 						</div>
-						
+
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
@@ -531,9 +543,9 @@ tbody tr th {
 											</div>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">通过</button>
+													style="background-color: #5FB878;"><a href="UptoSecondStepServlet?identity=<%=ab.getIdentity()%>">通过</a></button>
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">驳回</button>
+													style="background-color: #5FB878;"><a href="DowntoZeroStepServlet?identity=<%=ab.getIdentity()%>">驳回</a></button>
 
 											</div>
 											<a href="#"><span
@@ -544,6 +556,13 @@ tbody tr th {
 								</div>
 								<%
 									}
+									}
+								%>
+								<%
+									if (msg != null) {
+								%>
+								<%=msg%>
+								<%
 									}
 								%>
 							</div>
@@ -562,7 +581,7 @@ tbody tr th {
 								style="color: #ffffff; font-size: 22px;"></i> 智能筛选
 							</a>
 						</div>
-						
+
 						<div>
 							<form style="float: right;">
 								<div class="form-row">
@@ -625,9 +644,9 @@ tbody tr th {
 											</div>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">通过</button>
+													style="background-color: #5FB878;"><a href="UptoThirdStepServlet?identity=<%=ab.getIdentity()%>">通过</a></button>
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">驳回</button>
+													style="background-color: #5FB878;"><a href="DowntoFirstStepServlet?identity=<%=ab.getIdentity()%>">驳回</a></button>
 
 											</div>
 											<a href="#"><span
@@ -640,7 +659,13 @@ tbody tr th {
 									}
 									}
 								%>
-
+<%
+									if (msg != null) {
+								%>
+								<%=msg%>
+								<%
+									}
+								%>
 							</div>
 						</div>
 

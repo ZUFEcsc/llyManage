@@ -243,220 +243,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										style="font-size: 30px; color: #1E9FFF;"></i></a>
 								</div>
 							</form>
-							<sapn style="float: right;line-height:45px;">请选择时间段：</sapn>
+							<span style="float: right; line-height: 45px;">请选择时间段：</span>
 							<hr>
 						</div>
 						<div class="layui-row" style="margin: 10px; padding: 5px;">
 
-
-							<div class="layui-col-md6">
-								<div class="layui-card"
-									style="margin-left: 50px; margin-top: 10px;">
-									<blockquote class="layui-elem-quote">
-										<strong>字节跳动</strong> <span> 部门主管</span><br> <small
-											style="color: #8d8d8d;"> 本次投递已被企业处理，简历不可修改</small>
-									</blockquote>
-
-									<div class="layui-card-body">
-
-										<div id="steps" class="steps"></div>
-									</div>
-								</div>
-							</div>
-							<div class="layui-col-md6">
-								<div class="layui-card"
-									style="margin-left: 50px; margin-top: 10px;">
-									<blockquote class="layui-elem-quote">
-										<strong>酷家乐</strong> <span> 产品经理实习生</span><br> <small
-											style="color: #8d8d8d;"> 本次投递已被企业处理，简历不可修改</small>
-									</blockquote>
-
-									<div class="layui-card-body">
-
-										<div id="steps1" class="steps"></div>
-									</div>
-								</div>
-
-							</div>
-
-
-
-							<!--
 							<%
-							List<UserSeekBean> list2=dao.getListOwnSeekStepInfo();
-							int i=1;
-							for(UserSeekBean ab:list2)
-							{
-								if(i%2!=0)
-								{
-									
-							
-							%>
-							
-							<div class="layui-col-md5">
-								<div class="layui-row grid-demo">
-									<div class="layui-col-md8">
-										<div class="grid-demo grid-demo-bg3">
-											<div class="layui-card">
-												<div class="layui-card-header" style="margin-bottom:4px;"> 
-													<i class="iconfont icon-dingwei" style="font-size: 20px; color:#009688"></i>
-													<strong><%=ab.getCompany_location() %></strong> | 
-													<i class="iconfont icon-shoujizhengli" style="font-size: 20px; color:#55c5f1;"></i>
-													招<%=ab.getSeek_position() %>一名 
-													</div>
-												<div class="layui-card-body" style="height: 45px;">
-													<strong style="color:#f85659;font-size:22px;">￥<%=ab.getSalary() %> / 月</strong>
-												</div>
-												<div class="layui-card-body">
-													<span class="layui-badge layui-bg-orange">免费午餐</span>
-													<span class="layui-badge layui-bg-orange">公费旅游</span>
-													<span class="layui-badge layui-bg-orange"><%=ab.getAdvantage() %></span>
-												</div>
-												<div class="layui-card-body">
-												<i class="iconfont icon-renzheng" style="font-size: 22px; color: #1E9FFF;"></i>
-												<%=ab.getCompany_name() %>
-												<i class="iconfont icon-HNTE-fill" style="font-size: 22px; color: #ff552e;"></i>
-												<i class="iconfont icon-renzhengqiye" style="font-size: 22px; color: #1E9FFF;"></i>
-												</div>
-												<div class="layui-card-body" style="line-height:20px;"><%=ab.getSeek_position() %> | 不限 | 不限 </div>
-												<div class="layui-card-body">
-												<i class="iconfont icon-weixin"
-														style="font-size: 15px;color:#00b48a; margin-left: 45%;margin-right: 5px;"></i><span style="font-size: 12px;color:#a6a6a6;">微信扫一扫快速查看招聘进度</span>
-												</div>
-												
-											</div>
-										</div>
-									</div>	
-	
-									<div class="layui-col-md4">
-										<div class="grid-demo grid-demo-bg3">
-											<div class="layui-card" style="background-color: #F2F2F2;">
-												<div class="layui-card-body" style="margin-top: 28px;">
-													<ul class="layui-timeline">
-														<li class="layui-timeline-item"><i
-															class="layui-icon layui-timeline-axis">&#x1005;</i>
-															<div class="layui-timeline-content layui-text">
-																<h3 class="layui-timeline-title">初次面试</h3>
-															</div></li>
-														<li class="layui-timeline-item"><i
-															class="layui-icon layui-timeline-axis">&#x1005;</i>
-															<div class="layui-timeline-content layui-text">
-																<h3 class="layui-timeline-title">二轮面试</h3>
-															</div></li>
-														<li class="layui-timeline-item"><i
-															class="layui-icon layui-timeline-axis">&#x1005;</i>
-															<div class="layui-timeline-content layui-text">
-																<h3 class="layui-timeline-title">最终面试</h3>
-								
-															</div></li>
-														<li class="layui-timeline-item"><i
-															class="layui-icon layui-timeline-axis"></i>
-															<div class="layui-timeline-content layui-text">
-																<div class="layui-timeline-title">结果发布</div>
-															</div></li>
-													</ul>
-												</div>
-											</div>
-										</div>
+						List<UserSeekBean> list0=dao.getListOwnSeekStepInfo();
+						int i=0;
+						for(UserSeekBean ab:list0)
+						{
+						%>
+							<div class="layui-col-md6">
+								<div class="layui-card"
+									style="margin-left: 50px; margin-top: 10px;">
+									<blockquote class="layui-elem-quote">
+										<strong><%=ab.getCompany_name() %></strong> <span> <%=ab.getSeek_position() %></span><br>
+										<small style="color: #8d8d8d;"> 本次投递已被企业处理，简历不可修改</small>
+									</blockquote>
+
+									<div class="layui-card-body">
+
+										<div id="steps<%=i %>" class="steps"></div>
 									</div>
 								</div>
 							</div>
-							   <%} %>
-								<%
-								if(i%2==0)
-								{
-								%>
-							<div class="layui-col-md5 layui-col-md-offset2">
-
-								<div class="layui-row grid-demo">
-
-								<div class="layui-col-md8">
-									<div class="grid-demo grid-demo-bg3">
-										<div class="layui-card">
-											<div class="layui-card-header" style="margin-bottom:4px;"> 
-												<i class="iconfont icon-dingwei" style="font-size: 20px; color:#009688"></i>
-												<strong><%=ab.getCompany_location() %></strong> | 
-												<i class="iconfont icon-shoujizhengli" style="font-size: 20px; color:#55c5f1;"></i>
-												招<%=ab.getSeek_position() %>一名 
-												</div>
-											<div class="layui-card-body" style="height: 45px;">
-												<strong style="color:#f85659;font-size:22px;">￥<%=ab.getSalary() %> / 月</strong>
-											</div>
-											<div class="layui-card-body">
-												<span class="layui-badge layui-bg-orange">免费午餐</span>
-												<span class="layui-badge layui-bg-orange">公费旅游</span>
-												<span class="layui-badge layui-bg-orange"><%=ab.getAdvantage() %></span>
-											</div>
-											<div class="layui-card-body">
-											<i class="iconfont icon-renzheng" style="font-size: 22px; color: #1E9FFF;"></i>
-											<%=ab.getCompany_name() %>
-											<i class="iconfont icon-HNTE-fill" style="font-size: 22px; color: #ff552e;"></i>
-											<i class="iconfont icon-renzhengqiye" style="font-size: 22px; color: #1E9FFF;"></i>
-											</div>
-											<div class="layui-card-body" style="line-height:20px;"><%=ab.getSeek_position() %> | 不限 | 不限 </div>
-											<div class="layui-card-body">
-											<i class="iconfont icon-weixin"
-													style="font-size: 15px;color:#00b48a; margin-left: 45%;margin-right: 5px;"></i><span style="font-size: 12px;color:#a6a6a6;">微信扫一扫快速查看招聘进度</span>
-											</div>
-											
-										</div>
-									</div>
-								</div>	
-
-									<div class="layui-col-md4">
-										<div class="grid-demo grid-demo-bg3">
-											<div class="layui-card" style="background-color: #F2F2F2;">
-												<div class="layui-card-body" style="margin-top: 28px;">
-													<ul class="layui-timeline">
-														<li class="layui-timeline-item"><i
-															class="layui-icon layui-timeline-axis">&#x1005;</i>
-															<div class="layui-timeline-content layui-text">
-																<h3 class="layui-timeline-title">初次面试</h3>
-															</div></li>
-														<li class="layui-timeline-item"><i
-															class="layui-icon layui-timeline-axis">&#x1005;</i>
-															<div class="layui-timeline-content layui-text">
-																<h3 class="layui-timeline-title">二轮面试</h3>
-															</div></li>
-														<li class="layui-timeline-item"><i
-															class="layui-icon layui-timeline-axis">&#x1005;</i>
-															<div class="layui-timeline-content layui-text">
-																<h3 class="layui-timeline-title">最终面试</h3>
-								
-															</div></li>
-														<li class="layui-timeline-item"><i
-															class="layui-icon layui-timeline-axis"></i>
-															<div class="layui-timeline-content layui-text">
-																<div class="layui-timeline-title">结果发布</div>
-															</div></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<%}i+=1; %>
-							<%} %>
-							
-							-->
-
+							<%i++;} %>
 						</div>
-
-						<!-- 注释
-						<div class="layui-row"
-							style="margin: 10px; padding: 5px; background-color: #F2F2F2;">
-							<div class="layui-col-md5">
-								<%@ include file="job-card.jsp"%>
-							</div>
-
-							<div class="layui-col-md5 layui-col-md-offset2">
-
-								<%@ include file="job-card.jsp"%>
-							</div>
-
-						</div>
-						 -->
 					</div>
 
 					<!-- 我的简历 -->
@@ -474,6 +287,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<small style="color: #2b4f6c;">已投岗位：</small><br>
 											<small class="gwS">字节跳动 - 算法工程师（远程实习）.</small><br> 
 											<small class="gwS">滴滴出行 - 视觉深度学习算法工程师.</small><br> 
+
 											<small class="gwS">酷家乐 - 运筹优化算法工程师.</small><br> 
 											<small class="gwS">同花顺智能资产有限公司 - 量化研究员.</small><br> 
 											<a class="layui-btn"
@@ -487,6 +301,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 					</div>
+					
+					
+					
 				</div>
 			</div>
 
@@ -525,7 +342,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 				rendersteps(2); //现在的步骤是0
 				function rendersteps(step) {
-					steps.render(data, '#steps', step);
+					steps.render(data, '#steps0', step);
 				}
 
 			});
@@ -556,6 +373,66 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				rendersteps(1); //现在的步骤是0
 				function rendersteps(step) {
 					steps.render(data, '#steps1', step);
+				}
+
+			});
+		</script>
+		
+		<script>
+			layui.config({
+				base : '../js/steps/',
+			}).use('steps');
+			layui.use([ 'table', 'form', 'jquery', 'laypage', 'element',
+					'layer', 'steps' ], function() {
+				var $ = layui.jquery, steps = layui.steps;
+
+				var data = [ {
+					'title' : "投递简历",
+					"desc" : "2021-03-23"
+				}, {
+					'title' : "简历初选",
+					"desc" : "2021-03-24"
+				}, {
+					'title' : "一轮面试",
+					"desc" : "2021-03-28"
+				}, {
+					'title' : "二轮面试",
+					"desc" : "暂定"
+				}, ];
+
+				rendersteps(3); //现在的步骤是0
+				function rendersteps(step) {
+					steps.render(data, '#steps2', step);
+				}
+
+			});
+		</script>
+		
+		<script>
+			layui.config({
+				base : '../js/steps/',
+			}).use('steps');
+			layui.use([ 'table', 'form', 'jquery', 'laypage', 'element',
+					'layer', 'steps' ], function() {
+				var $ = layui.jquery, steps = layui.steps;
+
+				var data = [ {
+					'title' : "投递简历",
+					"desc" : "2021-03-23"
+				}, {
+					'title' : "简历初选",
+					"desc" : "2021-03-24"
+				}, {
+					'title' : "一轮面试",
+					"desc" : "2021-03-28"
+				}, {
+					'title' : "二轮面试",
+					"desc" : "暂定"
+				}, ];
+
+				rendersteps(1); //现在的步骤是0
+				function rendersteps(step) {
+					steps.render(data, '#steps3', step);
 				}
 
 			});

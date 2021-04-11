@@ -28,6 +28,10 @@
 <link rel="stylesheet" href="../res/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
+<%
+		String msg = (String) request.getAttribute("msg");
+Date date=new Date();
+	%>
 	<div class="layui-layout layui-layout-admin">
 		<%@ include file="lly-header.jsp"%>
 		<div class="layui-side layui-bg-black">
@@ -219,11 +223,12 @@
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
+								<form action="AddNewProjectServlet" method="post">
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-xiugai"
 											style="color: #1296db; font-size: 1.25rem;"></i> <strong
 											style="color: #2b4f6c;">项目编号：</strong><span
-											style="color: #777777;">Y129842</span>
+											style="color: #777777;">SZ001F004</span>
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-suggestion"
@@ -231,7 +236,7 @@
 											style="color: #2b4f6c;">项目名称：</strong> <input
 											class="form-control form-control-sm"
 											style="display: inline-block; width: 55%;" type="text"
-											placeholder="请输入项目名称">
+											placeholder="请输入项目名称" name="projectname">
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-zhaopingangwei"
@@ -289,7 +294,7 @@
 											style="color: #1296db; font-size: 1.25rem;"></i> <strong
 											style="color: #2b4f6c;">项目内容：</strong>
 										<textarea class="form-control form-control-sm"
-											style="display: inline-block; width: 75%;" rows="4"></textarea>
+											style="display: inline-block; width: 75%;" rows="4" name="projectcontent"></textarea>
 									</div>
 
 									<div style="margin-bottom: 5px;">
@@ -308,13 +313,21 @@
 									</div>
 
 									<div style="display: inline-block;">
-										<button type="button" class="layui-btn "
+										<button type="submit" class="layui-btn "
 											style="background-color: #1296db; padding: 0 30px;">确定添加</button>
 
 									</div>
 									<a href="#"><span
 										style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
 											更多</span></a> <br>
+									</form>
+										<%
+									if (msg != null) {
+								%>
+								<%=msg%>
+								<%
+									}
+								%>
 								</div>
 							</div>
 						</div>
@@ -339,8 +352,8 @@
 									</div>
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag1" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important; display: block;">
+											<a><img id="drag1" src="../img/avatar.png" width="69"
+												style="border-radius: 50% !important; display: block;"></a>
 											<strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												Cindy</strong>
@@ -379,25 +392,26 @@
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
+									<form action="NianMoEvaluateServlet" method="post">
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-lunkuohua2_yonghu"
 											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">职员编号：</strong><span
-											style="color: #777777;">Y129842</span>
+											style="color: #777777;">SZ001F0001</span>
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
 										<strong style="color: #2b4f6c;">职员姓名：</strong><span
-											style="color: #777777;">陈杉</span>
+											style="color: #777777;">张琪</span>
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 										<strong style="color: #2b4f6c;">职员岗位：</strong><span
-											style="color: #777777;">咸鱼岗</span>
+											style="color: #777777;">普通员工</span>
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-zhaopingangwei"
 											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
-											style="color: #777777;">2020/12/03</span>
+											style="color: #777777;"><%=date %></span>
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
@@ -438,20 +452,21 @@
 												<span style="color: #777777; padding-right: 48px;">其他</span>
 												<input class="form-control form-control-sm"
 													style="display: inline-block; width: 55%;" type="text"
-													placeholder="请输入">
+													placeholder="请输入" name="other">
 											</div>
 
 										</div>
 									</div>
 
 									<div style="display: inline-block;">
-										<button type="button" class="layui-btn "
+										<button type="submit" class="layui-btn "
 											style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
 
 									</div>
 									<a href="#"><span
 										style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
 											更多</span></a> <br>
+											</form>
 								</div>
 							</div>
 						</div>
@@ -477,20 +492,20 @@
 												style="border-radius: 50% !important; display: block;">
 											<strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												Cindy</strong>
+												张琪</strong>
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												陈沈清</strong>
+												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												陈沈清</strong>
+												王光</strong>
 										</div>
 									</div>
 
@@ -515,25 +530,26 @@
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
+									<form action="BigMistakeEvaluateServlet" method="post">
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-lunkuohua2_yonghu"
 											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">职员编号：</strong><span
-											style="color: #777777;">Y129842</span>
+											style="color: #777777;">SZ001F0001</span>
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
 										<strong style="color: #2b4f6c;">职员姓名：</strong><span
-											style="color: #777777;">陈杉</span>
+											style="color: #777777;">张琪</span>
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 										<strong style="color: #2b4f6c;">职员岗位：</strong><span
-											style="color: #777777;">咸鱼岗</span>
+											style="color: #777777;">普通员工</span>
 									</div>
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-zhaopingangwei"
 											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
-											style="color: #777777;">2020/12/03</span>
+											style="color: #777777;"><%=date %></span>
 									</div>
 
 									<div style="margin-bottom: 5px;">
@@ -541,11 +557,11 @@
 										<strong style="color: #2b4f6c;">事件类型：</strong>
 										<select
 											class="form-control form-control-sm"
-											style="display: inline-block; width: 35%;">
+											style="display: inline-block; width: 35%;" name="kind">
 											<option selected disabled style="display: none;" value="">请选择事件类型</option>
-											<option>1</option>
-											<option>2</option>
-											<option>5</option>
+											<option>泄露机密</option>
+											<option>打架斗殴</option>
+											<option>其他</option>
 										</select>
 									</div>
 
@@ -553,27 +569,28 @@
 										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
 										<strong style="color: #2b4f6c;">事件描述：</strong>
 										<textarea class="form-control form-control-sm"
-											style="display: inline-block; width: 75%;" rows="3"></textarea>
+											style="display: inline-block; width: 75%;" rows="3" name="description"></textarea>
 									</div>
 
 									<div style="margin-bottom: 5px;">
 										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
 										<strong style="color: #2b4f6c;">其他说明：</strong>
 										<textarea class="form-control form-control-sm"
-											style="display: inline-block; width: 75%;" rows="3"></textarea>
+											style="display: inline-block; width: 75%;" rows="3" name="other"></textarea>
 
 									</div>
 
 
 
 									<div style="display: inline-block;">
-										<button type="button" class="layui-btn "
+										<button type="submit" class="layui-btn "
 											style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
 
 									</div>
 									<a href="#"><span
 										style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
 											更多</span></a> <br>
+								</form>
 								</div>
 							</div>
 						</div>
@@ -599,20 +616,20 @@
 												style="border-radius: 50% !important; display: block;">
 											<strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												Cindy</strong>
+												张琪</strong>
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												陈沈清</strong>
+												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												陈沈清</strong>
+												王光</strong>
 										</div>
 									</div>
 

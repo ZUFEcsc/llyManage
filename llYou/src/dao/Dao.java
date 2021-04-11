@@ -1,9 +1,12 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import bean.CompanyBean;
@@ -139,7 +142,7 @@ public class Dao {
     	Connection conn=DBUtil.getConnection();
     	Statement stmt=null;
 		ResultSet rs=null;
-		String sql="select b.name,b.sex,b.age,b.learn_experience,j.position_kind,j.state "
+		String sql="select b.name,b.sex,b.age,b.learn_experience,j.position_kind,j.state,j.identity_card "
 				+ "from user_basic_info b,job_seeking j "
 				+ "where j.company_number='SZ001F' and b.name=j.name";
 		try{
@@ -154,6 +157,7 @@ public class Dao {
 				ab.setLearn_experience(rs.getString(4));
 				ab.setSeek_position(rs.getString(5));
 				ab.setState(rs.getString(6));
+				ab.setIdentity(rs.getString(7));
 				list.add(ab);
 			}
 		}catch(Exception e)
@@ -253,4 +257,214 @@ public class Dao {
 		}
     	return list;
     }
+	
+	public boolean UptoFirstStepUpdate(String identity)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update job_seeking set state='1100' where identity_card=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, identity);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	public boolean UptoSecondStepUpdate(String identity)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update job_seeking set state='1110' where identity_card=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, identity);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	public boolean UptoThirdStepUpdate(String identity)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update job_seeking set state='1111' where identity_card=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, identity);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean DowntoZeroStepUpdate(String identity)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update job_seeking set state='1000' where identity_card=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, identity);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean DowntoFirstStepUpdate(String identity)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update job_seeking set state='1100' where identity_card=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, identity);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean NewProjectInsert(String projectnumber,String projectname,String projectresponser,String projectmember,String projectcontent,String projectstarttime)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="insert into company_project_info(project_number,project_name,project_member,company_number,project_responser,project_content,start_time,end_time,state) values(?,?,?,'SZ001F',?,?,?,null,'1')";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, projectnumber);
+			pstmt.setString(2, projectname);
+			pstmt.setString(3, projectmember);
+			pstmt.setString(4, projectresponser);
+			pstmt.setString(5, projectcontent);
+			pstmt.setString(6, projectstarttime);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean KaoQinEvaluateInsert(String chuqin,String qingjia,String chidao,String kuanggong,String zaotui,String other)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="insert into clock_in_evaluate(number,name,position,evaluate_time,clock_in_days,leave_withreason_days,delay_days,leave_inadvance_days,leave_noreason_days,evaluate_people,other) values('SZ001F0001','张琪','普通员工',?,?,?,?,?,?,'王畅畅',?)";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+			Date date=new Date();
+			pstmt.setString(1, sdf.format(date).toString());
+			pstmt.setString(2, chuqin);
+			pstmt.setString(3, qingjia);
+			pstmt.setString(4, chidao);
+			pstmt.setString(5, zaotui);
+			pstmt.setString(6, kuanggong);
+			pstmt.setString(7, other);
+			
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean NianmoEvaluateInsert(String other)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="insert into department_manager_evaluate(number,name,position,evaluate_time,work_ability,work_efficiency,develop_potential,communicate_ability,satisfy_degree,evaluate_people,other) values('SZ001F0001','张琪','普通员工',?,'优秀','优秀','优秀','优秀','优秀','王颖',?)";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+			Date date=new Date();
+			pstmt.setString(1, sdf.format(date).toString());
+			pstmt.setString(2, other);
+			
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean BigMistakeEvaluateInsert(String kind,String description,String other)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="insert into important_mistake_evaluate(number,name,position,evaluate_time,evaluate_people,mistake_kind,mistake_description,other) values('SZ001F0001','张琪','普通员工',?,'王颖',?,?,?)";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+			Date date=new Date();
+			pstmt.setString(1, sdf.format(date).toString());
+			pstmt.setString(2, kind);
+			pstmt.setString(3, description);
+			pstmt.setString(4, other);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
 }

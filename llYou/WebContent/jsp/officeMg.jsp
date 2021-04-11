@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*,dao.*,bean.*"
 	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><!DOCTYPE html>
-
 <html>
 <head>
 <%@ include file="bootstrap.jsp"%>
@@ -51,6 +50,13 @@ tbody tr th {
 <link rel="stylesheet" href="../res/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
+<%
+Date date=new Date();
+
+%>
+	<%
+		String msg = (String) request.getAttribute("msg");
+	%>
 	<div class="layui-layout layui-layout-admin">
 		<%@ include file="lly-header.jsp"%>
 		<div class="layui-side layui-bg-black">
@@ -98,26 +104,27 @@ tbody tr th {
 									<strong style="color: #fff; font-size:1.25rem;">点击组员头像即可开始评价</strong>
 								</div>
 								<div class="layui-card-body" style="margin-top:20px;margin-left:20px;">
+								<form action="kaoqinEvaluateServlet" method="post">
 									<div style="margin-bottom: 10px;">
 										<i class="iconfont icon-lunkuohua2_yonghu"
 											style="color: #5FB878;font-size:1.25rem;"></i> 
 										<strong style="color: #2b4f6c;">职员编号：</strong><span
-											style="color: #777777;">Y129842</span>
+											style="color: #777777;">SZ001F0001</span>
 									</div>
 									<div style="margin-bottom: 10px;">
 										<i class="iconfont icon-xingbie" style="color: #5FB878;font-size:1.25rem;"></i>
 										<strong style="color: #2b4f6c;">职员姓名：</strong><span
-											style="color: #777777;">陈杉</span>
+											style="color: #777777;">张琪</span>
 									</div>
 									<div style="margin-bottom: 10px;">
 										<i class="iconfont icon-jiqiren2" style="color: #5FB878;font-size:1.25rem;"></i>
 										<strong style="color: #2b4f6c;">职员岗位：</strong><span
-											style="color: #777777;">咸鱼岗</span>
+											style="color: #777777;">普通员工</span>
 									</div>
 									<div style="margin-bottom: 10px;">
 										<i class="iconfont icon-zhaopingangwei"
 											style="color: #5FB878;font-size:1.25rem;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
-											style="color: #777777;">2020/12/03</span>
+											style="color: #777777;"><%=date %></span>
 									</div>
 									<div style="margin-bottom: 10px;">
 										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;font-size:1.25rem;"></i>
@@ -131,7 +138,7 @@ tbody tr th {
 													style="color: #777777; display: inline-block; padding-right: 20px;">出勤天数</span>
 												<input class="form-control form-control-sm"
 													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30"> <span
+													placeholder="30" name="chuqin"> <span
 													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
 													30天</span>
 											</div>
@@ -139,7 +146,7 @@ tbody tr th {
 												<span style="color: #777777; padding-right: 20px;">请假天数</span>
 												<input class="form-control form-control-sm"
 													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30"> <span
+													placeholder="30" name="qingjia"> <span
 													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
 													30天</span>
 											</div>
@@ -147,7 +154,7 @@ tbody tr th {
 												<span style="color: #777777; padding-right: 20px;">迟到天数</span>
 												<input class="form-control form-control-sm"
 													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30"> <span
+													placeholder="30" name="chidao"> <span
 													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
 													30天</span>
 											</div>
@@ -156,7 +163,7 @@ tbody tr th {
 												<span style="color: #777777; padding-right: 20px;">早退天数</span>
 												<input class="form-control form-control-sm"
 													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30"> <span
+													placeholder="30" name="zaotui"> <span
 													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
 													30天</span>
 											</div>
@@ -165,7 +172,7 @@ tbody tr th {
 												<span style="color: #777777; padding-right: 20px;">矿工天数</span>
 												<input class="form-control form-control-sm"
 													style="display: inline-block; width: 30%;" type="text"
-													placeholder="30"> <span
+													placeholder="30" name="kuanggong"> <span
 													style="color: #2b4f6c; display: inline-block; padding-left: 30px;">/
 													30天</span>
 
@@ -174,20 +181,28 @@ tbody tr th {
 												<span style="color: #777777; padding-right: 48px;">备注</span>
 												<input class="form-control form-control-sm"
 													style="display: inline-block; width: 55%;" type="text"
-													placeholder="请输入备注">
+													placeholder="请输入备注" name="other">
 											</div>
 
 										</div>
 									</div>
 
 									<div style="display: inline-block;">
-										<button type="button" class="layui-btn "
+										<button type="submit" class="layui-btn "
 											style="background-color: #5FB878;">提交评价</button>
 
 									</div>
 									<a href="#"><span
 										style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
 											更多</span></a> <br>
+								</form>
+								<%
+									if (msg != null) {
+								%>
+								<%=msg%>
+								<%
+									}
+								%>
 								</div>
 							</div>
 						</div>
@@ -210,20 +225,20 @@ tbody tr th {
 												style="border-radius: 50% !important; display: block;">
 											<strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												Cindy</strong>
+												张琪</strong>
 										</div>
 
 										<div style="display: inline-block;padding:0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												陈沈清</strong>
+												张培</strong>
 										</div>
 										<div style="display: inline-block;padding:0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
 												style="border-radius: 50% !important;"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
-												陈沈清</strong>
+												王光</strong>
 										</div>
 									</div>
 
