@@ -26,11 +26,12 @@
 </style>
 <title>部门主管页面</title>
 <link rel="stylesheet" href="../res/layui/css/layui.css">
+
 </head>
 <body class="layui-layout-body">
-<%
+	<%
 		String msg = (String) request.getAttribute("msg");
-Date date=new Date();
+		Date date = new Date();
 	%>
 	<div class="layui-layout layui-layout-admin">
 		<%@ include file="lly-header.jsp"%>
@@ -82,8 +83,7 @@ Date date=new Date();
 			<!-- 内容主体区域 -->
 			<div class="layui-tab layui-tab-brief" lay-filter="demo">
 				<ul class="layui-tab-title">
-					<li class="layui-this" lay-id="XMXX">项目信息 <!--lay-allowclose="true"(div) <i class="layui-icon layui-unselect layui-tab-close">ဆ</i> -->
-					</li>
+					<li class="layui-this" lay-id="XMXX">项目信息</li>
 				</ul>
 				<div class="layui-tab-content">
 					<!-- 项目信息  -->
@@ -223,48 +223,26 @@ Date date=new Date();
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
-								<form action="AddNewProjectServlet" method="post">
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-xiugai"
-											style="color: #1296db; font-size: 1.25rem;"></i> <strong
-											style="color: #2b4f6c;">项目编号：</strong><span
-											style="color: #777777;">SZ001F004</span>
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-suggestion"
-											style="color: #1296db; font-size: 1.25rem;"></i> <strong
-											style="color: #2b4f6c;">项目名称：</strong> <input
-											class="form-control form-control-sm"
-											style="display: inline-block; width: 55%;" type="text"
-											placeholder="请输入项目名称" name="projectname">
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-zhaopingangwei"
-											style="color: #1296db; font-size: 1.25rem;"></i> <strong
-											style="color: #2b4f6c;">项目负责人：</strong>
-									</div>
-									<div class="layui-panel">
-										<div
-											style="padding: 0px 0px 0px 140px; display: inline-block;">
-											<div style="display: inline-block; padding: 0px 5px;">
-												<img src="../img/avatar.png" width="39"
-													style="border-radius: 50% !important;"> <span
-													style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
-													郭美丽</span>
-											</div>
-
-											<div style="display: inline-block; padding: 0px 5px;">
-												<img src="../icon/add.png" width="39"
-													style="border-radius: 50% !important;"> <span
-													style="display: block; color: #101010; margin-left: 8px; font-size: 0.75px;">
-													添加</span>
-											</div>
+									<form action="AddNewProjectServlet" method="post">
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-xiugai"
+												style="color: #1296db; font-size: 1.25rem;"></i> <strong
+												style="color: #2b4f6c;">项目编号：</strong><span
+												style="color: #777777;">SZ001F004</span>
 										</div>
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #1296db; font-size: 1.25rem;"></i> <strong
-											style="color: #2b4f6c;">项目成员：</strong>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-suggestion"
+												style="color: #1296db; font-size: 1.25rem;"></i> <strong
+												style="color: #2b4f6c;">项目名称：</strong> <input
+												class="form-control form-control-sm"
+												style="display: inline-block; width: 55%;" type="text"
+												placeholder="请输入项目名称" name="projectname">
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-zhaopingangwei"
+												style="color: #1296db; font-size: 1.25rem;"></i> <strong
+												style="color: #2b4f6c;">项目负责人：</strong>
+										</div>
 										<div class="layui-panel">
 											<div
 												style="padding: 0px 0px 0px 140px; display: inline-block;">
@@ -272,14 +250,9 @@ Date date=new Date();
 													<img src="../img/avatar.png" width="39"
 														style="border-radius: 50% !important;"> <span
 														style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
-														陈沈清</span>
+														郭美丽</span>
 												</div>
-												<div style="display: inline-block; padding: 0px 5px;">
-													<img src="../img/avatar.png" width="39"
-														style="border-radius: 50% !important;"> <span
-														style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
-														解远远</span>
-												</div>
+
 												<div style="display: inline-block; padding: 0px 5px;">
 													<img src="../icon/add.png" width="39"
 														style="border-radius: 50% !important;"> <span
@@ -288,46 +261,76 @@ Date date=new Date();
 												</div>
 											</div>
 										</div>
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-shoujizhengli"
-											style="color: #1296db; font-size: 1.25rem;"></i> <strong
-											style="color: #2b4f6c;">项目内容：</strong>
-										<textarea class="form-control form-control-sm"
-											style="display: inline-block; width: 75%;" rows="4" name="projectcontent"></textarea>
-									</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #1296db; font-size: 1.25rem;"></i> <strong
+												style="color: #2b4f6c;">项目成员：</strong>
+											<div class="layui-panel">
+												<div
+													style="padding: 0px 0px 0px 140px; display: inline-block;">
+													<div style="display: inline-block; padding: 0px 5px;">
+														<img src="../img/avatar.png" width="39"
+															style="border-radius: 50% !important;"> <span
+															style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
+															陈沈清</span>
+													</div>
+													<div style="display: inline-block; padding: 0px 5px;">
+														<img src="../img/avatar.png" width="39"
+															style="border-radius: 50% !important;"> <span
+															style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
+															解远远</span>
+													</div>
+													<div style="display: inline-block; padding: 0px 5px;">
+														<img src="../icon/add.png" width="39"
+															style="border-radius: 50% !important;"> <span
+															style="display: block; color: #101010; margin-left: 8px; font-size: 0.75px;">
+															添加</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #1296db; font-size: 1.25rem;"></i> <strong
+												style="color: #2b4f6c;">项目内容：</strong>
+											<textarea class="form-control form-control-sm"
+												style="display: inline-block; width: 75%;" rows="4"
+												name="projectcontent"></textarea>
+										</div>
 
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-shijian"
-											style="color: #1296db; font-size: 1.25rem;"></i> <strong
-											style="color: #2b4f6c;">起始时间：</strong> 
-											<input type="date" name="starttime" class="form-control form-control-sm"
-											value="2000-01-01" style="display: inline-block; width: 75%;">
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-jiezhishijian"
-											style="color: #1296db; font-size: 1.15rem;"></i> <strong
-											style="color: #2b4f6c;">结束时间：</strong>
-											<input type="date" name="endtime" class="form-control form-control-sm"
-											value="2021-09-01" style="display: inline-block; width: 75%;">
-									</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-shijian"
+												style="color: #1296db; font-size: 1.25rem;"></i> <strong
+												style="color: #2b4f6c;">起始时间：</strong> <input type="date"
+												name="starttime" class="form-control form-control-sm"
+												value="2000-01-01"
+												style="display: inline-block; width: 75%;">
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-jiezhishijian"
+												style="color: #1296db; font-size: 1.15rem;"></i> <strong
+												style="color: #2b4f6c;">结束时间：</strong> <input type="date"
+												name="endtime" class="form-control form-control-sm"
+												value="2021-09-01"
+												style="display: inline-block; width: 75%;">
+										</div>
 
-									<div style="display: inline-block;">
-										<button type="submit" class="layui-btn "
-											style="background-color: #1296db; padding: 0 30px;">确定添加</button>
+										<div style="display: inline-block;">
+											<button type="submit" class="layui-btn "
+												style="background-color: #1296db; padding: 0 30px;">确定添加</button>
 
-									</div>
-									<a href="#"><span
-										style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-											更多</span></a> <br>
+										</div>
+										<a href="#"><span
+											style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+												更多</span></a> <br>
 									</form>
-										<%
-									if (msg != null) {
-								%>
-								<%=msg%>
-								<%
-									}
-								%>
+									<%
+										if (msg != null) {
+									%>
+									<%=msg%>
+									<%
+										}
+									%>
 								</div>
 							</div>
 						</div>
@@ -382,7 +385,7 @@ Date date=new Date();
 
 					<!-- 年末评价 -->
 					<div class="layui-tab-item " id="item-NMPJ" style="display: none;">
-						<div class="layui-col-md5"
+						<div class="layui-col-md4"
 							style="margin-top: 20px; margin-left: 20px;">
 							<div class="layui-card" style="font-size: 1.15rem;">
 								<div class="layui-card-header"
@@ -393,87 +396,101 @@ Date date=new Date();
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<form action="NianMoEvaluateServlet" method="post">
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 
-											<label for="exampleInputNumber1"><strong style="color: #2b4f6c;">职员编号：</strong></label>
-											<input type="text" id="exampleInputNumber1" placeholder="SZ001F0001">
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-										<label for="exampleInputName1"><strong style="color: #2b4f6c;">职员姓名：</strong></label>
-										<input type="text" id="exampleInputName1" placeholder="张琪">
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-										<label for="exampleInputPosition1"><strong style="color: #2b4f6c;">职员岗位：</strong></label>
-										<input type="text" id="exampleInputPosition1" placeholder="普通员工">
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
-											style="color: #777777;"><%=date %></span>
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">评价内容：</strong>
-									</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> <label
+												for="exampleInputNumber1"><strong
+												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
+												class="form-control form-control-sm"
+												style="display: inline-block; width: 60%;"
+												id="exampleInputNumber1" placeholder="SZ001F0001">
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											<label for="exampleInputName1"><strong
+												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
+												class="form-control form-control-sm"
+												style="display: inline-block; width: 60%;"
+												id="exampleInputName1" placeholder="张琪">
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											<label for="exampleInputPosition1"><strong
+												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
+												class="form-control form-control-sm"
+												style="display: inline-block; width: 60%;"
+												id="exampleInputPosition1" placeholder="普通员工">
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
+												style="color: #777777;"><%=date%></span>
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价内容：</strong>
+										</div>
 
-									<div class="layui-panel">
-										<div
-											style="padding: 0px 0px 0px 100px; display: inline-block;">
-											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 10px;">工作能力</span>
-												<div id="nlstar" class="star" style="display: inline-block;"></div>
+										<div class="layui-panel">
+											<div
+												style="padding: 0px 0px 0px 100px; display: inline-block;">
+												<div style="margin-bottom: 5px;">
+													<span style="color: #777777; padding-right: 10px;">工作能力</span>
+													<div id="nlstar" class="star"
+														style="display: inline-block;"></div>
+
+												</div>
+												<div style="margin-bottom: 5px;">
+													<span style="color: #777777; padding-right: 10px;">工作效率</span>
+													<div id="xlstar" class="star"
+														style="display: inline-block;"></div>
+
+												</div>
+												<div style="margin-bottom: 5px;">
+													<span style="color: #777777; padding-right: 10px;">发展潜力</span>
+													<div id="fzstar" class="star"
+														style="display: inline-block;"></div>
+
+												</div>
+
+												<div style="margin-bottom: 5px;">
+													<span style="color: #777777; padding-right: 10px;">交流能力</span>
+													<div id="ljstar" class="star"
+														style="display: inline-block;"></div>
+
+												</div>
+
+												<div style="margin-bottom: 5px;">
+													<span style="color: #777777; padding-right: 10px;">喜爱程度</span>
+													<div id="xastar" class="star"
+														style="display: inline-block;"></div>
+
+												</div>
+												<div style="margin-bottom: 5px;">
+													<span style="color: #777777; padding-right: 48px;">其他</span>
+													<input class="form-control form-control-sm"
+														style="display: inline-block; width: 55%;" type="text"
+														placeholder="请输入" name="other">
+												</div>
 
 											</div>
-											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 10px;">工作效率</span>
-												<div id="xlstar" class="star" style="display: inline-block;"></div>
+										</div>
 
-											</div>
-											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 10px;">发展潜力</span>
-												<div id="fzstar" class="star" style="display: inline-block;"></div>
-
-											</div>
-
-											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 10px;">交流能力</span>
-												<div id="ljstar" class="star" style="display: inline-block;"></div>
-
-											</div>
-
-											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 10px;">喜爱程度</span>
-												<div id="xastar" class="star" style="display: inline-block;"></div>
-
-											</div>
-											<div style="margin-bottom: 5px;">
-												<span style="color: #777777; padding-right: 48px;">其他</span>
-												<input class="form-control form-control-sm"
-													style="display: inline-block; width: 55%;" type="text"
-													placeholder="请输入" name="other">
-											</div>
+										<div style="display: inline-block;">
+											<button type="submit" class="layui-btn "
+												style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
 
 										</div>
-									</div>
-
-									<div style="display: inline-block;">
-										<button type="submit" class="layui-btn "
-											style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
-
-									</div>
-									<a href="#"><span
-										style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-											更多</span></a> <br>
-											</form>
+										<a href="#"><span
+											style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+												更多</span></a> <br>
+									</form>
 								</div>
 							</div>
 						</div>
 
-						<div class="layui-col-md5 layui-col-md-offset1"
-							style="margin-top: 20px;">
+						<div class="layui-col-md7"
+							style="margin-top: 20px; margin-left: 20px; width: 62%;">
 							<div class="layui-card">
 								<div class="layui-card-header"
 									style="background-color: #eb6100;">
@@ -490,25 +507,51 @@ Date date=new Date();
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
 											<img id="drag1" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important; display: block;" onclick="pay('11')">
-											<strong
-												style="display: block; color: #101010; margin-left: 14px;">
+												style="border-radius: 50% !important; display: block;"
+												onclick="pay('11')"> <strong
+												style="display: block; color: #101010; margin-left: 20px;">
 												张琪</strong>
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important;" onclick="pay('22')"> <strong
-												style="display: block; color: #101010; margin-left: 14px;">
+												style="border-radius: 50% !important;" onclick="pay('22')">
+											<strong
+												style="display: block; color: #101010; margin-left: 20px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
-												style="border-radius: 50% !important;" onclick="pay('33')"> <strong
-												style="display: block; color: #101010; margin-left: 14px;">
+												style="border-radius: 50% !important;" onclick="pay('33')">
+											<strong
+												style="display: block; color: #101010; margin-left: 20px;">
 												王光</strong>
 										</div>
 									</div>
+
+									<!-- border: solid 1px black; -->
+									<div id="rader"
+										style="margin-left: -30px; width: 370px; height: 330px; display: inline-block; "></div>
+									<div id="bar"
+										style="margin-right: -15px; width: 420px; height: 330px; display: inline-block;"></div>
+									<script
+										src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+									<script
+										src="https://code.highcharts.com.cn/highcharts/highcharts-3d.js"></script>
+									<script
+										src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+									<script
+										src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+									<script type="text/javascript"
+										src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+									<script type="text/javascript"
+										src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+									<script type="text/javascript"
+										src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+									<script type="text/javascript"
+										src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+									<script
+										src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
 								</div>
 
@@ -532,67 +575,77 @@ Date date=new Date();
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<form action="BigMistakeEvaluateServlet" method="post">
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 
-											<label for="exampleInputNumber2"><strong style="color: #2b4f6c;">职员编号：</strong></label>
-											<input type="text" id="exampleInputNumber2" placeholder="SZ001F0001">
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-										<label for="exampleInputName2"><strong style="color: #2b4f6c;">职员姓名：</strong></label>
-										<input type="text" id="exampleInputName2" placeholder="张琪">
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-										<label for="exampleInputPosition2"><strong style="color: #2b4f6c;">职员岗位：</strong></label>
-										<input type="text" id="exampleInputPosition2" placeholder="普通员工">
-									</div>
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
-											style="color: #777777;"><%=date %></span>
-									</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> <label
+												for="exampleInputNumber2"><strong
+												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
+												class="form-control form-control-sm"
+												style="display: inline-block; width: 60%;"
+												id="exampleInputNumber2" placeholder="SZ001F0001">
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											<label for="exampleInputName2"><strong
+												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
+												class="form-control form-control-sm"
+												style="display: inline-block; width: 60%;"
+												id="exampleInputName2" placeholder="张琪">
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
+											<label for="exampleInputPosition2"><strong
+												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
+												class="form-control form-control-sm"
+												style="display: inline-block; width: 60%;"
+												id="exampleInputPosition2" placeholder="普通员工">
+										</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
+												style="color: #777777;"><%=date%></span>
+										</div>
 
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">事件类型：</strong>
-										<select
-											class="form-control form-control-sm"
-											style="display: inline-block; width: 35%;" name="kind">
-											<option selected disabled style="display: none;" value="">请选择事件类型</option>
-											<option>泄露机密</option>
-											<option>打架斗殴</option>
-											<option>其他</option>
-										</select>
-									</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">事件类型：</strong>
+											<select class="form-control form-control-sm"
+												style="display: inline-block; width: 35%;" name="kind">
+												<option selected disabled style="display: none;" value="">请选择事件类型</option>
+												<option>泄露机密</option>
+												<option>打架斗殴</option>
+												<option>其他</option>
+											</select>
+										</div>
 
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">事件描述：</strong>
-										<textarea class="form-control form-control-sm"
-											style="display: inline-block; width: 75%;" rows="3" name="description"></textarea>
-									</div>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">事件描述：</strong>
+											<textarea class="form-control form-control-sm"
+												style="display: inline-block; width: 75%;" rows="3"
+												name="description"></textarea>
+										</div>
 
-									<div style="margin-bottom: 5px;">
-										<i class="iconfont icon-shoujizhengli" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">其他说明：</strong>
-										<textarea class="form-control form-control-sm"
-											style="display: inline-block; width: 75%;" rows="3" name="other"></textarea>
+										<div style="margin-bottom: 5px;">
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">其他说明：</strong>
+											<textarea class="form-control form-control-sm"
+												style="display: inline-block; width: 75%;" rows="3"
+												name="other"></textarea>
 
-									</div>
+										</div>
 
 
 
-									<div style="display: inline-block;">
-										<button type="submit" class="layui-btn "
-											style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
+										<div style="display: inline-block;">
+											<button type="submit" class="layui-btn "
+												style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
 
-									</div>
-									<a href="#"><span
-										style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-											更多</span></a> <br>
-								</form>
+										</div>
+										<a href="#"><span
+											style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
+												更多</span></a> <br>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -615,21 +668,23 @@ Date date=new Date();
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
 											<img id="drag1" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important; display: block;" onclick="pay('11')">
-											<strong
+												style="border-radius: 50% !important; display: block;"
+												onclick="pay('11')"> <strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												张琪</strong>
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/avatar.png" width="69"
-												style="border-radius: 50% !important;" onclick="pay('22')"> <strong
+												style="border-radius: 50% !important;" onclick="pay('22')">
+											<strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
-												style="border-radius: 50% !important;" onclick="pay('33')"> <strong
+												style="border-radius: 50% !important;" onclick="pay('33')">
+											<strong
 												style="display: block; color: #101010; margin-left: 14px;">
 												王光</strong>
 										</div>
@@ -650,7 +705,7 @@ Date date=new Date();
 			<%@ include file="lly-footer.jsp"%>
 		</div>
 	</div>
-
+	<script type="text/javascript" src="../dist/jquery.raty.min.js"></script>
 	<script src="../res/layui/layui.js"></script>
 	<script>
 		//JavaScript代码区域
@@ -659,9 +714,9 @@ Date date=new Date();
 		});
 	</script>
 
-	<script type="text/javascript">
+	<!-- 评分 -->
+	<script>
 		$('#nlstar').raty({
-
 			half : true,
 			path : '../icon/',
 			score : 3,
@@ -695,6 +750,194 @@ Date date=new Date();
 			score : 4,
 		});
 	</script>
+
+	<!-- 雷达图 -->
+	<script type="text/javascript">
+		var dom = document.getElementById("rader");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = {
+		    title:{
+		        show:false,
+		        text:"年度评价",
+		        x:'center',
+		        y:'top',
+		        padding:10,
+		        textStyle: {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+		                fontFamily: 'Arial',
+		                fontSize: 22,
+		                fontStyle: 'normal',
+		                fontWeight: 'bold',
+		            },
+		    },
+		
+		    angleAxis: {
+		        type: 'category',
+		        data: ['工作能力', '工作效率', '发展潜力', '交流能力', '喜爱程度'],
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 12,
+		　　　　　　　　
+		　　　　　　},
+		    },
+		    radiusAxis: {
+		    },
+		    polar: {
+		    },
+		    series: [{
+		        type: 'bar',
+		        data: [3, 0, 0, 0, 0],
+		        coordinateSystem: 'polar',
+		        name: '工作能力',
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 12,
+		　　　　　　　　
+		　　　　　　},
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0, 4, 0, 0, 0 ],
+		        coordinateSystem: 'polar',
+		        name: '工作效率',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,4.5,0,0],
+		        coordinateSystem: 'polar',
+		        name: '发展潜力',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,0,2,0],
+		        coordinateSystem: 'polar',
+		        name: '交流能力',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,0,0,3.5],
+		        coordinateSystem: 'polar',
+		        name: '喜爱程度',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }],
+		    legend: {
+		        show: true,
+		        data: ['工作能力', '工作效率', '发展潜力', '交流能力', '喜爱程度'],
+		        orient: 'vertical', // 'vertical'
+		        x:3, // 'center' | 'left' | {number},
+		        y:55, // 'center' | 'bottom' | {number}
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 10,
+		　　　　　　},
+		        borderColor: 'rgba(89, 100, 114,0.1)',
+		        borderWidth: 2,
+		    }
+		};
+		myChart.setOption(option);
+
+       </script>
+
+	<!-- 柱形图 -->
+	<script>
+        var chart = Highcharts.chart('bar', {
+		chart: {
+			type: 'column',
+			options3d: {
+				enabled: true,
+				alpha: 0,
+				beta: 0,
+				viewDistance: 25,
+				depth: 40
+			},
+			marginTop: 80,
+			marginRight: 40
+		},
+		title: {
+			text: '年度综合评分',
+			style: {
+				fontFamily: 'Arial',
+	                fontSize: 18,
+	                fontStyle: 'normal',
+	                fontWeight: 'bold',
+				},
+	
+		},
+		xAxis: {
+			categories:['工作量', '工作效率', '团队能力', '贡献力', '创造力', '领导力'],
+			labels: {
+	                style: {
+	                    fontSize: '12px',
+	                    fontWeight: 'bold'
+	                }
+	            }
+	
+		},
+		yAxis: {
+			allowDecimals: false,
+			min: 0,
+			title: {
+				text: '评分',
+				style: {
+					color:'#596472',
+	                fontSize: 12,
+	                fontStyle: 'normal',
+	                fontWeight: 'bold',
+				},
+			},
+			labels: {
+	                style: {
+	                    fontSize: '12px',
+	                    fontWeight: 'bold'
+	                }
+	            }
+	
+	
+	
+		},
+		legend : {
+	    itemStyle : {
+	        'fontSize' : '12px'
+	    }
+	},
+		tooltip: {
+			headerFormat: '<b>{point.key}</b><br>',
+			pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+		},
+		plotOptions: {
+			column: {
+				stacking: 'normal',
+				depth: 40
+			}
+		},
+		series: [{
+			name: '部门平均得分',
+			data: [ 23, 44, 57, 62,87,77],
+			stack: 'male',
+			color:'#90ed7d'
+		}, {
+			name: '个人得分',
+			data: [30, 40, 34, 95,88,76],
+			stack: 'female',
+			color:'#f7a35c'
+		}]
+	});
+        </script>
 
 	<script>
 		layui.use('element', function() {
@@ -754,62 +997,67 @@ Date date=new Date();
 
 		});
 	</script>
-<script>
-//触发按钮点击事件
-function pay(reg){
-	//获取id
-	var userid=reg;
-	//alert(userid);
-	getUserList(userid);
-}
 
-
-//通过ajax向后台发送id触发查询并返回数据
-function getUserList(userid){
-	
-	$.post("${pageContext.request.contextPath}/jsp/AjaxServlet",{"userid":userid},function(r){
-		//打印返回的数据
-		console.log(r);
-		//切割返回的数据
-		var recList = r;
-		var entName="";
-		var userlist=new Array();//用户信息数组
-		for(var i=0;i<recList.length;i++){
-			
-			if(recList[i]!=","){
-				var entName = entName+recList[i];
-			
-			}
-			if(recList[i]==","){
-				console.log(entName);
-				userlist.push(entName);
-				entName="";
-			}
-			
+	<script>
+		//触发按钮点击事件
+		function pay(reg) {
+			//获取id
+			var userid = reg;
+			//alert(userid);
+			getUserList(userid);
 		}
-		//console.log(userlist[0]);
-		var usernumber=userlist[0]; //获取用户姓名
-		var username=userlist[1]; //获取用户性别
-		var userposition=userlist[2]; //获取用户学历
-		
-		//改变左侧输入框的内容
-		var usernumberid=document.getElementById("exampleInputNumber1");
-		usernumberid.value=usernumber;
-		var usernameid=document.getElementById("exampleInputName1");
-		usernameid.value=username;
-		var userpositionid=document.getElementById("exampleInputPosition1");
-		userpositionid.value=userposition;
-		var usernumberid2=document.getElementById("exampleInputNumber2");
-		usernumberid2.value=usernumber;
-		var usernameid2=document.getElementById("exampleInputName2");
-		usernameid2.value=username;
-		var userpositionid2=document.getElementById("exampleInputPosition2");
-		userpositionid2.value=userposition;
-		
-	});
-	
-}
 
-</script>
+		//通过ajax向后台发送id触发查询并返回数据
+		function getUserList(userid) {
+
+			$.post("${pageContext.request.contextPath}/jsp/AjaxServlet", {
+				"userid" : userid
+			}, function(r) {
+				//打印返回的数据
+				console.log(r);
+				//切割返回的数据
+				var recList = r;
+				var entName = "";
+				var userlist = new Array();//用户信息数组
+				for (var i = 0; i < recList.length; i++) {
+
+					if (recList[i] != ",") {
+						var entName = entName + recList[i];
+
+					}
+					if (recList[i] == ",") {
+						console.log(entName);
+						userlist.push(entName);
+						entName = "";
+					}
+
+				}
+				//console.log(userlist[0]);
+				var usernumber = userlist[0]; //获取用户姓名
+				var username = userlist[1]; //获取用户性别
+				var userposition = userlist[2]; //获取用户学历
+
+				//改变左侧输入框的内容
+				var usernumberid = document
+						.getElementById("exampleInputNumber1");
+				usernumberid.value = usernumber;
+				var usernameid = document.getElementById("exampleInputName1");
+				usernameid.value = username;
+				var userpositionid = document
+						.getElementById("exampleInputPosition1");
+				userpositionid.value = userposition;
+				var usernumberid2 = document
+						.getElementById("exampleInputNumber2");
+				usernumberid2.value = usernumber;
+				var usernameid2 = document.getElementById("exampleInputName2");
+				usernameid2.value = username;
+				var userpositionid2 = document
+						.getElementById("exampleInputPosition2");
+				userpositionid2.value = userposition;
+
+			});
+
+		}
+	</script>
 </body>
 </html>
