@@ -450,7 +450,6 @@
 													<span style="color: #777777; padding-right: 10px;">发展潜力</span>
 													<div id="fzstar" class="star"
 														style="display: inline-block;"></div>
-
 												</div>
 
 												<div style="margin-bottom: 5px;">

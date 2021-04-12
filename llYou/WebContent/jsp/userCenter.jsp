@@ -70,11 +70,15 @@
 										</tr>
 										<tr class="uc-tr">
 											<td>性别： 女</td>
+											<td>出生年月：2000.12</td>
+										</tr>
+										<tr class="uc-tr">
 											<td>政治面貌： 共青团员</td>
+											<td>担任职位： 团支书</td>
 										</tr>
 										<tr class="uc-tr">
 											<td>所属企业： 溜溜游大学</td>
-											<td>担任职位： 团支书</td>
+											<td>联系邮箱：87xxx657@163.com</td>
 										</tr>
 									</tbody>
 								</table>
@@ -173,7 +177,6 @@
 								</div>
 									<div id="ability1"
 										style="width: 100%; height: 320px;display:inline-block;"></div>
-
 									<script type="text/javascript"
 										src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 									<script type="text/javascript"
@@ -229,7 +232,8 @@
 
 		var option;
 
-		var colors = [ '#FFAE57', '#FF7853', '#EA5151', '#CC3F57', '#9A2555' ];
+		//var colors = [ '#FFAE57', '#FF7853', '#EA5151', '#CC3F57', '#9A2555' ];
+		var colors = [ '#74c69d', '#52b788', '#40916c', '#2d6a4f', '#1b4332' ];
 		var bgColor = '#fff';
 
 		var itemStyle = {

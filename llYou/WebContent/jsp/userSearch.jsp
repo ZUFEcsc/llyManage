@@ -179,6 +179,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<i class="iconfont icon-weixin"
 											style="font-size: 15px; color: #00b48a;"></i> <span
 											style="font-size: 12px; line-height: 20px; color: #a6a6a6;">简历投递</span>
+											
 									</span>
 									</a>
 								</div>
@@ -194,13 +195,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<span class="layui-badge layui-bg-orange">公费旅游</span> <span
 													class="layui-badge layui-bg-orange"><%=ab.getAdvantage() %></span>
 													<br></td>
-												<td width="30%"><i class="iconfont icon-renzheng"
-													style="font-size: 22px; color: #1E9FFF;"></i> <%=ab.getCompany_name() %>
+												<td width="30%">
 													<i class="iconfont icon-HNTE-fill"
-													style="font-size: 22px; color: #ff552e;"></i> <i
-													class="iconfont icon-renzhengqiye"
-													style="font-size: 22px; color: #1E9FFF;"></i> <br> <span
-													style="line-height: 20px; color: #c2c2c2;"><%=ab.getSeek_position() %>
+													style="font-size: 22px; color: #ff552e;"></i> 
+													<i class="iconfont icon-renzhengqiye"
+													style="font-size: 22px; color: #1E9FFF;"></i>
+													 <%=ab.getCompany_name() %>
+													<i class="iconfont icon-renzheng"
+													style="font-size: 22px; color: #1E9FFF;"></i>
+													<a class="layui-btn-xs" href="#">
+													<i class="iconfont icon-ziyuan25"
+													style="font-size: 22px; color: #16c2c2;"></i>
+													查看企业画像，了解更多</a>
+													<br> 
+													
+													<span
+													style="font-size: 12px; color: #c2c2c2;"><%=ab.getSeek_position() %>
 														| <%=ab.getWork_experience() %> | 不限 </span></td>
 												<td></td>
 												<td>
