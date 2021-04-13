@@ -23,8 +23,15 @@
 	src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="../res/layui/css/layui.css">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+</style>
 </head>
-<body class="layui-layout-body">
+
+<body class="">
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header" style="height: 80px;">
 			<div class="layui-logo" style="line-height: 80px;">
@@ -63,128 +70,137 @@
 				<li class="layui-nav-item"><a href="">退出登录</a></li>
 			</ul>
 		</div>
-		<div class="layui-row layui-col-space10 layui-bg-gray"
-			style="padding: 5px;">
-			<div class="layui-col-md3">
-			
-				<div class="layui-card">
-					<div class="layui-card-header" style="text-align:center;">
-					<strong style="font-size:18px;">企业基本信息</strong>
-					</div>
-					<div class="layui-card-body" >
-						<div>
-									<table style="margin:17px 0;">
-										<colgroup>
-											<col width="80">
-											<col>
-										</colgroup>
-										<tbody>
-											<tr class="uc-tr">
-												<td>企业名称</td>
-												<td>创新创业公司
-												<span class="layui-badge layui-bg-blue">B轮</span>
-												<span class="layui-badge layui-bg-blue">高新技术企业</span>
-												</td>
-											</tr>
-											<tr class="uc-tr">
-												<td>法定代表人</td>
-												<td>贾法人</td>
-											</tr>
-											<tr class="uc-tr">
-												<td>注册资本</td>
-												<td>3000万元人民币</td>
-											</tr>
-											<tr class="uc-tr">
-												<td>成立日期</td>
-												<td>2007-09-27</td>
-											</tr>
-											<tr class="uc-tr">
-												<td>官网</td>
-												<td>www.llyou.com</td>
-											</tr>
-											<tr class="uc-tr">
-												<td>电话</td>
-												<td>010-987654321
-												</td>
-											</tr>
-											<tr class="uc-tr">
-												<td>邮箱</td>
-												<td>chuangxinchuangye@163.com</td>
-											</tr>
-											<tr class="uc-tr">
-												<td>地址</td>
-												<td>滨海新区创新创业楼6幢</td>
-											</tr>
-											<tr class="uc-tr">
-												<td>品牌/产品</td>
-												<td>创新创业产品BLUE</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-					</div>
-				</div>
-				
-				
-				<div class="layui-card">
-					<div class="layui-card-body">
-						 <div id="line" style="width:360px;height:310px;"></div>
-					</div>
-				</div>
-				
-			</div>
-			
-			<div class="layui-col-md3" style="width:23%;">
-				<div class="layui-card">
-					<div class="layui-card-header" style="text-align:center;">
-					<strong style="font-size:18px;">综合信用得分</strong>
-					</div>
-					<div class="layui-card-body" style="margin-left:-15px;">
-						<div id="score"
-							style="width: 360px; height: 250px; "></div>
-					</div>
-				</div>
-				
-				
-				
-				
-				<div class="layui-card">
-					<div class="layui-card-header">企业族谱信息</div>
-					<div class="layui-card-body">
-						<div id="score"
-							style="width: 360px; height: 250px; border: solid 1px black;"></div>
+		<div class="layui-layout-body">
+			<div class="layui-row layui-col-space10 layui-bg-gray"
+				style="padding: 5px;">
+				<div class="layui-col-md6">
 
+					<div class="layui-card">
+						<div class="layui-card-header" style="text-align: center;">
+							<strong style="font-size: 18px;">企业基本信息</strong>
+						</div>
+						<div class="layui-card-body">
+							<div>
+								<table style="margin: 0px 0;">
+									<colgroup>
+										<col width="70">
+										<col width="300">
+										<col width="80">
+										<col width="200">
+									</colgroup>
+									<tbody>
+										<tr class="uc-tr">
+											<td>
+											<strong style="color:#2b4f6c;">
+											企业名称
+											</strong></td>
+											<td>
+											<span style="color:#777777;">创新创业公司</span>
+											 <span class="layui-badge layui-bg-blue">B轮</span>
+												<span class="layui-badge layui-bg-blue">高新技术企业</span>
+											</td>
+											<td>
+											<strong style="color:#2b4f6c;">法定代表人</strong></td>
+											<td><span style="color:#777777;">贾法人</span></td>
+										</tr>
+										<tr class="uc-tr">
+											<td><strong style="color:#2b4f6c;">注册资本</strong></td>
+											<td><span style="color:#777777;">3000万元人民币</span></td>
+											<td><strong style="color:#2b4f6c;">成立日期</strong></td>
+											<td><span style="color:#777777;">2007-09-27</span></td>
+										</tr>
+										<tr class="uc-tr">
+											<td><strong style="color:#2b4f6c;">官网</strong></td>
+											<td><span style="color:#777777;">www.llyou.com</span></td>
+											<td><strong style="color:#2b4f6c;">联系电话</strong></td>
+											<td><span style="color:#777777;">010-987654321</span></td>
+										</tr>
+										<tr class="uc-tr">
+											<td><strong style="color:#2b4f6c;">邮箱</strong></td>
+											<td><span style="color:#777777;">chuangxinchuangye@163.com</span></td>
+										</tr>
+										<tr class="uc-tr">
+											<td><strong style="color:#2b4f6c;">地址</strong></td>
+											<td><span style="color:#777777;">滨海新区创新创业楼6幢</span></td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="layui-card">
+						<div class="layui-card-body">
+
+							<div id="line" style="width: 720px; height: 395px;"></div>
+
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="layui-col-md6">
+					<div class="layui-card">
+						<div class="layui-card-header" style="text-align: center;">
+							<strong style="font-size: 18px;">员工画像</strong>
+						</div>
+						<div class="layui-card-body">
+						<!-- border: solid 1px black; -->
+							<div id="barpie"
+								style="width: 720px; height: 552px; "></div>
+						</div>
 					</div>
 				</div>
-			</div>
-			
-			<div class="layui-col-md3" style="width:22%;">
-				<div class="layui-card">
-					<div class="layui-card-body" style="margin-left:-13px;">
-						<div id="bar" style="width:320px;height:292px;"></div>
+
+				<div class="layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header" style="text-align: center;">
+							<strong style="font-size: 18px;">综合信用得分</strong>
+						</div>
+						<div class="layui-card-body" style="margin-left: -15px;">
+							<div id="score" style="width: 360px; height: 250px;"></div>
+						</div>
 					</div>
 				</div>
-				
-				
-				
-				<div class="layui-card">
-					<div class="layui-card-body" style="margin-left:-13px;">
-						<div id="wordcloud"
-							style="width: 320px; height: 310px; "></div>
+
+				<div class="layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">企业族谱信息</div>
+						<div class="layui-card-body">
+							<div id="score"
+								style="width: 360px; height: 250px; border: solid 1px black;"></div>
+
+						</div>
 					</div>
 				</div>
-				
-			</div>
-			
-			<div class="layui-col-md3" style="width:30%;">
-				<div class="layui-card">
-					<div class="layui-card-header" style="text-align:center;">
-					<strong style="font-size:18px;">员工画像</strong>
+
+				<div class="layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-body" style="margin-left: -13px;">
+							<div id="bar" style="width: 320px; height: 292px;"></div>
+						</div>
 					</div>
-					<div class="layui-card-body">
-						 <div id="barpie" style="width:420px;height:580px;border:solid 1px black;"></div>
-					</div>
+
 				</div>
+
+				<div class="layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-body" style="margin-left: -13px;">
+							<div id="wordcloud" style="width: 320px; height: 310px;"></div>
+						</div>
+					</div>
+
+				</div>
+
+
+
+
+
+
+
 			</div>
 		</div>
 
@@ -192,9 +208,8 @@
 
 		<div
 			style="position: fixed; width: 100%; bottom: 0; height: 44px; line-height: 44px; text-align: center; background-color: #eee;">
-			<!-- 底部固定区域 -->
-			© 溜溜游团队出品
-		</div>
+
+			© 溜溜游团队出品</div>
 	</div>
 	<script src="../res/layui/layui.js"></script>
 
@@ -405,7 +420,7 @@
 			}]
 		});
 	</script>
-	
+
 	<!-- 发展历程 -->
 	<script>
 		function onChartLoad() {
@@ -416,7 +431,8 @@
 				radius,
 				badgeColor = Highcharts.Color(Highcharts.getOptions().colors[0]).brighten(-0.2).get(),
 				spike;
-			if (this.chartWidth < 530) {
+			//this.chartWidth < 530
+			if (this.chartWidth < 1030) {
 				return;
 			}
 			// Draw the spiked disc
@@ -453,7 +469,7 @@
 			})
 			.css({
 				color: 'white',
-				fontSize: '10px',
+				fontSize: '20px',
 				fontStyle: 'italic',
 				fontFamily: "'Brush Script MT', sans-serif"
 			})
@@ -780,7 +796,7 @@
 		}
 		var chart = Highcharts.chart('line', options);
     </script>
-	
+
 	<!-- 词云 -->
 	<script>
       	text2="高自由度 高自由度 高自由度 工作环境很nice 工作环境很nice 工作环境很nice 工作环境很nice 工作环境很nice 工作环境很nice 工作环境很nice 工作环境很nice 工作环境很nice 工作环境很nice 工作环境很nice 高自由度 薪资高 薪资高  福利待遇好 企业文化强 企业文化强 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 福利待遇好 有挑战性 有挑战性 有挑战性 有挑战性 常加班 老板平易近人 有挑战性 有挑战性 有挑战性 有挑战性 有挑战性 有挑战性 有挑战性 常加班 老板平易近人 老板平易近人 老板平易近人 老板平易近人 常加班 996 996 996 996 996 996 996 996 996 996 996 996 996 996 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 团队凝聚力强 有挑战性 有挑战性 有挑战性 有挑战性 有挑战性 有挑战性 996 996 996 996 996 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 90后多 老板平易近人 老板平易近人 老板平易近人 老板平易近人 常加班 老板平易近人 老板平易近人 老板平易近人 老板平易近人 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 上升空间大 高自由度 高自由度 薪资高 薪资高  福利待遇好 企业文化强 企业文化强  常加班 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 上升空间大 企业文化强  常加班 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 上升空间大 高自由度 高自由度 高自由度 薪资高 薪资高  福利待遇好 企业文化强 企业文化强  常加班 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 上升空间大 高自由度 高自由度 薪资高 薪资高  福利待遇好 企业文化强 企业文化强  常加班 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 发展稳定 发展稳定 上升空间大 上升空间大 高自由度 高自由度 薪资高 薪资高  福利待遇好 企业文化强 企业文化强  常加班 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 上升空间大 企业文化强  常加班 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 上升空间大 高自由度 高自由度 高自由度 薪资高 薪资高  福利待遇好 企业文化强 企业文化强  常加班 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 上升空间大 高自由度 高自由度 薪资高 薪资高  福利待遇好 企业文化强 企业文化强  常加班 常加班  常加班 常加班 发展稳定 发展稳定 上升空间大 上升空间大 上升空间大 上升空间大 上升空间大 上升空间大";

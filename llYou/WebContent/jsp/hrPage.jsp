@@ -35,7 +35,7 @@ tbody tr th {
 		String msg = (String) request.getAttribute("msg");
 	%>
 	<div class="layui-layout layui-layout-admin">
-		<%@ include file="lly-header.jsp"%>
+		<%@ include file="enterprise-header.jsp"%>
 		<div class="layui-side layui-bg-black">
 			<div class="layui-side-scroll">
 				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
@@ -192,7 +192,6 @@ tbody tr th {
 
 					<!-- 简历池 -->
 					<div class="layui-tab-item" id="item-JLC" style="display: none;">
-
 
 						<div class="layui-col-md2">
 							<div class="selectbox">
@@ -433,10 +432,10 @@ tbody tr th {
 												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 											综合评分：
-											<div class="layui-progress" lay-showPercent="yes"
-												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+											<div class="layui-progress" style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
 											</div>
+											<span style="display: inline-block;font-size:7px; color: #838383;"> 80分</span>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
 													style="background-color: #5FB878;">
@@ -537,10 +536,10 @@ tbody tr th {
 												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 											综合评分：
-											<div class="layui-progress" lay-showPercent="yes"
-												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+											<div class="layui-progress"	style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
 											</div>
+											<span style="display: inline-block;font-size:7px; color: #838383;"> 80分</span>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
 													style="background-color: #5FB878;"><a href="UptoSecondStepServlet?identity=<%=ab.getIdentity()%>">通过</a></button>
@@ -638,10 +637,10 @@ tbody tr th {
 												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
 											综合评分：
-											<div class="layui-progress" lay-showPercent="yes"
-												style="width: 50%; display: inline-block; margin: -12px 0px 0px 100px;">
+											<div class="layui-progress" style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
-											</div>
+											</div>											
+											<span style="display: inline-block;font-size:7px; color: #838383;"> 80分</span>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
 													style="background-color: #5FB878;"><a href="UptoThirdStepServlet?identity=<%=ab.getIdentity()%>">通过</a></button>

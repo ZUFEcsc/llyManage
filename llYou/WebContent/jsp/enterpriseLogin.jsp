@@ -125,7 +125,7 @@ body {
       }
 </style>
 
-<title>管理员登录</title>
+<title>企业成员登录</title>
 </head>
 <body>
 
@@ -133,18 +133,29 @@ body {
 		<div class="text-center mb-4">
 			<img class="mb-4" src="/llYou/img/you.png"
 				alt="" width="72" height="72">
-			<h1 class="h3 mb-3 font-weight-normal">管理员登录</h1>
+			<h1 class="h3 mb-3 font-weight-normal">企业成员登录</h1>
 		</div>
 
 		<div class="">
 			<i class="iconfont icon-admin" style="font-size:24px;"></i>
-			<input style="display:inline-block;width:90%;margin-top:-22px;" type="text" class="form-control" placeholder="管理员登录" required
+			<input style="display:inline-block;width:90%;margin-top:-22px;" type="text" class="form-control" placeholder="登录账号" required
 				autofocus>
 		</div>
 
 		<div class="">
 			<i class="iconfont icon-mima" style="font-size:24px;"></i>
-			<input style="display:inline-block;width:90%;margin-top:-8px;" type="password" class="form-control" placeholder="密码" required>	
+			<input style="display:inline-block;width:90%;margin-top:-8px;" type="password" class="form-control" placeholder="登录密码" required>	
+		</div>
+		
+		<div class="">
+		<i class="iconfont icon-lunkuohua2_yonghu" style="font-size:24px;"></i>
+			<select id="inputType" class="form-control" style="display:inline-block;width:90%;margin-top:2px;">
+				<option  selected disabled style="display: none;" value="">请选择用户类型</option>
+				<option>HR</option>
+				<option>办公室主任</option>
+				<option>项目经理</option>
+				<option>部门主管</option>
+			</select>
 		</div>
 		
 		<div class="" style="margin-top:3px;">
@@ -158,7 +169,7 @@ body {
 		<p style="color: red; font-size: small; text-align: right;">${info}</p>
 
 		<p style="float: right;">
-			用户登录？<span><a href="login.jsp">跳转</a></span>
+			没有账号？<span><a href="qyReg.jsp">申请</a></span>
 		</p>
 		<div class="checkbox mb-3">
 			<label style="float: left;"> <input type="checkbox"

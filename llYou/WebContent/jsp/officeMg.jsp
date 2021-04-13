@@ -58,7 +58,7 @@ tbody tr th {
 		String msg = (String) request.getAttribute("msg");
 	%>
 	<div class="layui-layout layui-layout-admin">
-		<%@ include file="lly-header.jsp"%>
+		<%@ include file="enterprise-header.jsp"%>
 		<div class="layui-side layui-bg-black">
 			<div class="layui-side-scroll">
 				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
@@ -99,11 +99,11 @@ tbody tr th {
 					<div class="layui-tab-item layui-show" id="item-KQPJ">
 						<div class="layui-col-md4"
 							style="margin-top: 20px; margin-left: 20px;">
-							<div class="layui-card" style="font-size: 1.15rem;">
+							<div class="layui-card" style="font-size: 1.0rem;">
 								<div class="layui-card-header"
-									style="background-color: #5FB878;">
+									style="background-color: #00a5cf;">
 									<i class="iconfont icon-jia" style="color: #fff;"></i> <strong
-										style="color: #fff; font-size: 1.25rem;">点击组员头像即可开始评价</strong>
+										style="color: #fff; font-size: 1.1rem;">点击组员头像即可开始评价</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
@@ -206,7 +206,7 @@ tbody tr th {
 
 										<div style="display: inline-block;">
 											<button type="submit" class="layui-btn "
-												style="background-color: #5FB878;">提交评价</button>
+												style="background-color: #00a5cf;">提交评价</button>
 
 										</div>
 										<a href="#"><span
@@ -228,13 +228,13 @@ tbody tr th {
 							style="margin-top: 20px; margin-left: 20px; width: 62%">
 							<div class="layui-card">
 								<div class="layui-card-header"
-									style="background-color: #eb6100;">
-									<strong style="color: #fff; font-size: 1.25rem;">待评价组员：</strong>
+									style="background-color: #25a18e;">
+									<strong style="color: #fff; font-size: 1.1rem;">待评价组员：</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn layui-btn-danger">A组</a> <a
+										<a href="#" class="layui-btn" style="background-color:#34a0a4;">A组</a> <a
 											href="#" class="layui-btn layui-btn-primary">B组</a> <a
 											href="#" class="layui-btn layui-btn-primary">C组</a> <a
 											href="#" class="layui-btn layui-btn-primary">D组</a>
@@ -266,9 +266,10 @@ tbody tr th {
 
 									<!--  border: solid 1px black; -->
 									<div id="calendar"
-										style="margin-left: -30px; width: 420px; height: 330px; display: inline-block;"></div>
+										style="margin-left: -30px;margin-top:30px; width: 420px; height: 330px; display: inline-block;"></div>
+										
 									<div id="pie1"
-										style="margin-right: -15px; width: 375px; height: 330px; display: inline-block;">
+										style="margin-right: -15px;margin-top:0px; width: 375px; height: 330px; display: inline-block;">
 									</div>
 									<script type="text/javascript"
 										src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
@@ -375,14 +376,15 @@ tbody tr th {
 				calendar : [ {
 					left : 'center',
 					top : 'middle',
-					cellSize : [ 58, 64 ],
+					cellSize : [ 50, 50 ],
 					yearLabel : {
 						show : false
 					},
 					orient : 'vertical',
 					dayLabel : {
 						firstDay : 1,
-						nameMap : 'cn'
+						nameMap : 'cn',
+						
 					},
 					monthLabel : {
 						show : false
@@ -400,8 +402,7 @@ tbody tr th {
 								formatter : function(params) {
 									var d = echarts.number
 											.parseDate(params.value[0]);
-									return d.getDate() + '\n\n'
-											+ params.value[2] + '\n\n';
+									return d.getDate() + '\n\n';
 								},
 								color : '#000'
 							},

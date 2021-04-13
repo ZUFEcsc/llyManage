@@ -38,7 +38,7 @@ tbody tr th {
 </head>
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
-		<%@ include file="lly-header.jsp"%>
+		<%@ include file="enterprise-header.jsp"%>
 		<div class="layui-side layui-bg-black">
 			<div class="layui-side-scroll">
 				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
@@ -135,7 +135,7 @@ tbody tr th {
 						%>
 							<div class="layui-col-md3">
 								<div class="layui-card">
-									<div class="layui-card-header" style="background: #ffc107;">
+									<div class="layui-card-header" style="background: #9cd2f7;">
 										<strong><%=ab.getProject_number() %></strong> <span style="float: right;">
 											<i class="iconfont icon-jiazaizhong"
 											style="color: #ffffff; font-size: 18px;"></i> 进行中…

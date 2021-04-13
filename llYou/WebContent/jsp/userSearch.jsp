@@ -1,8 +1,9 @@
 <%@ page language="java" import="java.util.*,dao.*,bean.*"
 	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><!DOCTYPE html>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
 <html>
 <head>
@@ -54,7 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
-		<%@ include file="lly-header.jsp"%>
+		<%@ include file="user-header.jsp"%>
 		<div class="layui-side layui-bg-black">
 			<div class="layui-side-scroll">
 				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
@@ -162,24 +163,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<hr>
 						</div>
 						<%
-						Dao dao = new Dao();
-						List<CompanySeekBean> list = dao.getListCompanySeekInfo();
-						for(CompanySeekBean ab:list)
-						{
-					%>
+							Dao dao = new Dao();
+							List<CompanySeekBean> list = dao.getListCompanySeekInfo();
+							for (CompanySeekBean ab : list) {
+						%>
 						<div class="layui-row"
 							style="margin: 10px; padding: 5px; background-color: #F2F2F2;">
 							<div class="layui-card">
 								<div class="layui-card-header">
 									<i class="iconfont icon-dingwei"
-										style="font-size: 20px; color: #009688"></i> <strong><%=ab.getCompany_location() %></strong>
+										style="font-size: 20px; color: #009688"></i> <strong><%=ab.getCompany_location()%></strong>
 									|
-									<%=ab.getSeek_position() %>高薪 <a href="#"> <span class=""
+									<%=ab.getSeek_position()%>高薪 <a href="#"> <span class=""
 										style="padding: 6px 3px 24px 10px; line-height: 20px;">
 											<i class="iconfont icon-weixin"
 											style="font-size: 15px; color: #00b48a;"></i> <span
 											style="font-size: 12px; line-height: 20px; color: #a6a6a6;">简历投递</span>
-											
+
 									</span>
 									</a>
 								</div>
@@ -189,36 +189,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 											<tr>
 												<td width="40%"><strong
-													style="color: #f85659; font-size: 22px;">￥ <%=ab.getSalary() %>
+													style="color: #f85659; font-size: 22px;">￥ <%=ab.getSalary()%>
 														/ 月
 												</strong> <br> <span class="layui-badge layui-bg-orange">免费午餐</span>
 													<span class="layui-badge layui-bg-orange">公费旅游</span> <span
-													class="layui-badge layui-bg-orange"><%=ab.getAdvantage() %></span>
+													class="layui-badge layui-bg-orange"><%=ab.getAdvantage()%></span>
 													<br></td>
-												<td width="30%">
-													<i class="iconfont icon-HNTE-fill"
-													style="font-size: 22px; color: #ff552e;"></i> 
-													<i class="iconfont icon-renzhengqiye"
-													style="font-size: 22px; color: #1E9FFF;"></i>
-													 <%=ab.getCompany_name() %>
+												<td width="30%"><i class="iconfont icon-HNTE-fill"
+													style="font-size: 22px; color: #ff552e;"></i> <i
+													class="iconfont icon-renzhengqiye"
+													style="font-size: 22px; color: #1E9FFF;"></i> <%=ab.getCompany_name()%>
 													<i class="iconfont icon-renzheng"
-													style="font-size: 22px; color: #1E9FFF;"></i>
-													<a class="layui-btn-xs" href="#">
-													<i class="iconfont icon-ziyuan25"
-													style="font-size: 22px; color: #16c2c2;"></i>
-													查看企业画像，了解更多</a>
-													<br> 
-													
-													<span
-													style="font-size: 12px; color: #c2c2c2;"><%=ab.getSeek_position() %>
-														| <%=ab.getWork_experience() %> | 不限 </span></td>
+													style="font-size: 22px; color: #1E9FFF;"></i> <a
+													class="layui-btn-xs" href="enterpriseDraw.jsp"> <i
+														class="iconfont icon-ziyuan25"
+														style="font-size: 22px; color: #16c2c2;"></i> 查看企业画像，了解更多
+												</a> <br> <span style="font-size: 12px; color: #c2c2c2;"><%=ab.getSeek_position()%>
+														| <%=ab.getWork_experience()%> | 不限 </span></td>
 												<td></td>
 												<td>
 													<button type="button"
 														class="layui-btn layui-btn-sm layui-btn-danger"
 														style="margin: 0px;">
 														<i class="layui-icon layui-icon-templeate-1"></i>申请
-													</button> <span style="margin-left: 10px; color: #c2c2c2;"><%=ab.getDeliver_time() %></span>
+													</button> <span style="margin-left: 10px; color: #c2c2c2;"><%=ab.getDeliver_time()%></span>
 												</td>
 											</tr>
 
@@ -227,7 +221,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</div>
 							</div>
 						</div>
-						<%} %>
+						<%
+							}
+						%>
 
 					</div>
 
@@ -259,34 +255,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="layui-row" style="margin: 10px; padding: 5px;">
 
 							<%
-						List<UserSeekBean> list0=dao.getListOwnSeekStepInfo();
-						int i=0;
-						for(UserSeekBean ab:list0)
-						{
-						%>
+								List<UserSeekBean> list0 = dao.getListOwnSeekStepInfo();
+								int i = 0;
+								for (UserSeekBean ab : list0) {
+							%>
 							<div class="layui-col-md6">
 								<div class="layui-card"
-									style="margin-left: 50px; margin-top: 10px;">
+									style="margin-left: 10px; margin-top: 20px;">
 									<blockquote class="layui-elem-quote">
-										<strong><%=ab.getCompany_name() %></strong> <span> <%=ab.getSeek_position() %></span><br>
+										<strong><%=ab.getCompany_name()%></strong> <span> <%=ab.getSeek_position()%></span><br>
 										<small style="color: #8d8d8d;"> 本次投递已被企业处理，简历不可修改</small>
 									</blockquote>
 
 									<div class="layui-card-body">
 
-										<div id="steps<%=i %>" class="steps"></div>
+										<div id="steps<%=i%>" class="steps"></div>
 									</div>
 								</div>
 							</div>
-							<%i++;} %>
+							<%
+								i++;
+								}
+							%>
 						</div>
 					</div>
 
 					<!-- 我的简历 -->
 					<div class="layui-tab-item " id="item-WDJL" style="display: none;">
 						<div class="layui-row layui-col-space15">
-							<div class="layui-col-md4" style="margin-left:20px;">
-								<div class="single-member effect-3" style="box-shadow:2px 1px 8px #909090;">
+							<div class="layui-col-md3" style="margin-left: 20px;">
+								<div class="single-member effect-3"
+									style="box-shadow: 2px 1px 8px #909090;">
 									<div class="member-image">
 										<img src="../img/person/p1.jpg" alt="Member">
 									</div>
@@ -294,14 +293,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<h3 style="margin-bottom: 16px;">未命名简历</h3>
 										<h4 style="margin-bottom: 14px;">应聘岗位：JAVA工程师</h4>
 										<div style="text-align: left;">
-											<small style="color: #2b4f6c;">已投岗位：</small><br>
-											<small class="gwS">字节跳动 - 算法工程师（远程实习）.</small><br> 
-											<small class="gwS">滴滴出行 - 视觉深度学习算法工程师.</small><br> 
-
-											<small class="gwS">酷家乐 - 运筹优化算法工程师.</small><br> 
-											<small class="gwS">同花顺智能资产有限公司 - 量化研究员.</small><br> 
-											<a class="layui-btn"
-												style="margin-top: 12px; width:100%; background-color: 009688; font-size: 18px;"
+											<small style="color: #2b4f6c;">已投岗位：</small><br> <small
+												class="gwS">字节跳动 - 算法工程师（远程实习）.</small><br> <small
+												class="gwS">滴滴出行 - 视觉深度学习算法工程师.</small><br> <small
+												class="gwS">酷家乐 - 运筹优化算法工程师.</small><br> <small
+												class="gwS">同花顺智能资产有限公司 - 量化研究员.</small><br> <a
+												class="layui-btn"
+												style="margin-top: 12px; width: 100%; background-color: 009688; font-size: 18px;"
 												href="#">查 看 详 情</a>
 
 										</div>
@@ -309,11 +307,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 								</div>
 							</div>
+
+
+							<div class="layui-col-md3" style="margin-left: -20px;">
+								<div class="single-member effect-3"
+									style="box-shadow: 2px 1px 8px #909090;">
+									<div class="member-image">
+										<img src="../img/person/p1.jpg" alt="Member">
+									</div>
+									<div class="member-info">
+										<h3 style="margin-bottom: 16px;">应聘c简历</h3>
+										<h4 style="margin-bottom: 14px;">应聘岗位：C语言工程师</h4>
+										<div style="text-align: left;">
+											<small style="color: #2b4f6c;">已投岗位：</small><br> <small
+												class="gwS">字节跳动 - 算法工程师（远程实习）.</small><br> <small
+												class="gwS">滴滴出行 - 视觉深度学习算法工程师.</small><br> <small
+												class="gwS">酷家乐 - 运筹优化算法工程师.</small><br> <small
+												class="gwS">同花顺智能资产有限公司 - 量化研究员.</small><br> <a
+												class="layui-btn"
+												style="margin-top: 12px; width: 100%; background-color: 009688; font-size: 18px;"
+												href="#">查 看 详 情</a>
+
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+
+
 						</div>
 					</div>
-					
-					
-					
+
+
+
 				</div>
 			</div>
 
@@ -387,7 +414,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			});
 		</script>
-		
+
 		<script>
 			layui.config({
 				base : '../js/steps/',
@@ -417,7 +444,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			});
 		</script>
-		
+
 		<script>
 			layui.config({
 				base : '../js/steps/',

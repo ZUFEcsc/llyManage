@@ -34,7 +34,7 @@
 		Date date = new Date();
 	%>
 	<div class="layui-layout layui-layout-admin">
-		<%@ include file="lly-header.jsp"%>
+		<%@ include file="enterprise-header.jsp"%>
 		<div class="layui-side layui-bg-black">
 			<div class="layui-side-scroll">
 				<!-- 用户卡片 -->
@@ -144,7 +144,7 @@
 									<%
 										if (ab.getState().equals("进行中")) {
 									%>
-									<div class="layui-card-header" style="background: #ffc107;">
+									<div class="layui-card-header" style="background: #9cd2f7;">
 										<strong><%=ab.getProject_number()%></strong> <span
 											style="float: right;"> <i
 											class="iconfont icon-jiazaizhong"
@@ -157,7 +157,7 @@
 									<%
 										if (ab.getState().equals("已结束")) {
 									%>
-									<div class="layui-card-header" style="background: #009688;">
+									<div class="layui-card-header" style="background: #dce9fc;">
 										<strong><%=ab.getProject_number()%></strong> <span
 											style="float: right;"> <i
 											class="iconfont icon-jiazaizhong"
@@ -215,11 +215,11 @@
 					<div class="layui-tab-item " id="item-TJXM" style="display: none;">
 						<div class="layui-col-md5"
 							style="margin-top: 20px; margin-left: 20px;">
-							<div class="layui-card" style="font-size: 1.15rem;">
+							<div class="layui-card" style="font-size: 1.0rem;">
 								<div class="layui-card-header"
-									style="background-color: #1296db;">
+									style="background-color: #00a5cf;">
 									<i class="iconfont icon-jia" style="color: #fff;"></i> <strong
-										style="color: #fff; font-size: 1.25rem;">添加项目</strong>
+										style="color: #fff; font-size: 1.1rem;">添加项目</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
@@ -246,12 +246,14 @@
 										<div class="layui-panel">
 											<div
 												style="padding: 0px 0px 0px 140px; display: inline-block;">
+												<!-- 
 												<div style="display: inline-block; padding: 0px 5px;">
 													<img src="../img/avatar.png" width="39"
 														style="border-radius: 50% !important;"> <span
 														style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
 														郭美丽</span>
-												</div>
+												</div>												
+												 -->												
 
 												<div style="display: inline-block; padding: 0px 5px;">
 													<img src="../icon/add.png" width="39"
@@ -268,18 +270,8 @@
 											<div class="layui-panel">
 												<div
 													style="padding: 0px 0px 0px 140px; display: inline-block;">
-													<div style="display: inline-block; padding: 0px 5px;">
-														<img src="../img/avatar.png" width="39"
-															style="border-radius: 50% !important;"> <span
-															style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
-															陈沈清</span>
-													</div>
-													<div style="display: inline-block; padding: 0px 5px;">
-														<img src="../img/avatar.png" width="39"
-															style="border-radius: 50% !important;"> <span
-															style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
-															解远远</span>
-													</div>
+													
+													
 													<div style="display: inline-block; padding: 0px 5px;">
 														<img src="../icon/add.png" width="39"
 															style="border-radius: 50% !important;"> <span
@@ -315,10 +307,9 @@
 												style="display: inline-block; width: 75%;">
 										</div>
 
-										<div style="display: inline-block;">
+										<div style="display: inline-block;padding-top:25px;">
 											<button type="submit" class="layui-btn "
-												style="background-color: #1296db; padding: 0 30px;">确定添加</button>
-
+												style="background-color: #00a5cf; padding: 0 30px;">确定添加</button>
 										</div>
 										<a href="#"><span
 											style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
@@ -342,13 +333,13 @@
 							style="margin-top: 20px;">
 							<div class="layui-card">
 								<div class="layui-card-header"
-									style="background-color: #eb6100;">
-									<strong style="color: #fff; font-size: 1.25rem;">待评价组员：</strong>
+									style="background-color: #25a18e;">
+									<strong style="color: #fff; font-size: 1.1rem;">待评价组员：</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn layui-btn-danger">A组</a> <a
+										<a href="#" class="layui-btn" style="background-color:#34a0a4;">A组</a> <a
 											href="#" class="layui-btn layui-btn-primary">B组</a> <a
 											href="#" class="layui-btn layui-btn-primary">C组</a> <a
 											href="#" class="layui-btn layui-btn-primary">D组</a>
@@ -387,11 +378,11 @@
 					<div class="layui-tab-item " id="item-NMPJ" style="display: none;">
 						<div class="layui-col-md4"
 							style="margin-top: 20px; margin-left: 20px;">
-							<div class="layui-card" style="font-size: 1.15rem;">
+							<div class="layui-card" style="font-size: 1.0rem;">
 								<div class="layui-card-header"
-									style="background-color: #5FB878;">
+									style="background-color: #00a5cf;">
 									<i class="iconfont icon-jia" style="color: #fff;"></i> <strong
-										style="color: #fff; font-size: 1.25rem;">点击组员头像即可开始评价</strong>
+										style="color: #fff; font-size: 1.1rem;">点击组员头像即可开始评价</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
@@ -475,9 +466,9 @@
 											</div>
 										</div>
 
-										<div style="display: inline-block;">
+										<div style="display: inline-block;padding-top:25px;">
 											<button type="submit" class="layui-btn "
-												style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
+												style="background-color: #00a5cf; padding: 0 30px;">提交评价</button>
 
 										</div>
 										<a href="#"><span
@@ -492,13 +483,13 @@
 							style="margin-top: 20px; margin-left: 20px; width: 62%;">
 							<div class="layui-card">
 								<div class="layui-card-header"
-									style="background-color: #eb6100;">
-									<strong style="color: #fff; font-size: 1.25rem;">待评价组员：</strong>
+									style="background-color: #25a18e;">
+									<strong style="color: #fff; font-size: 1.1rem;">待评价组员：</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn layui-btn-danger">A组</a> <a
+										<a href="#" class="layui-btn" style="background-color:#34a0a4;">A组</a> <a
 											href="#" class="layui-btn layui-btn-primary">B组</a> <a
 											href="#" class="layui-btn layui-btn-primary">C组</a> <a
 											href="#" class="layui-btn layui-btn-primary">D组</a>
@@ -530,7 +521,8 @@
 
 									<!-- border: solid 1px black; -->
 									<div id="rader"
-										style="margin-left: -30px; width: 370px; height: 330px; display: inline-block; "></div>
+										style="margin-left: -30px; width: 370px; height: 320px; display: inline-block;"></div>
+
 									<div id="bar"
 										style="margin-right: -15px; width: 420px; height: 330px; display: inline-block;"></div>
 									<script
@@ -565,11 +557,11 @@
 					<div class="layui-tab-item " id="item-ZDSJ" style="display: none;">
 						<div class="layui-col-md5"
 							style="margin-top: 20px; margin-left: 20px;">
-							<div class="layui-card" style="font-size: 1.15rem;">
+							<div class="layui-card" style="font-size: 1.0rem;">
 								<div class="layui-card-header"
-									style="background-color: #5FB878;">
+									style="background-color: #00a5cf;">
 									<i class="iconfont icon-jia" style="color: #fff;"></i> <strong
-										style="color: #fff; font-size: 1.25rem;">点击组员头像即可开始评价</strong>
+										style="color: #fff; font-size: 1.1rem;">点击组员头像即可开始评价</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
@@ -636,9 +628,9 @@
 
 
 
-										<div style="display: inline-block;">
+										<div style="display: inline-block;padding-top:25px;">
 											<button type="submit" class="layui-btn "
-												style="background-color: #5FB878; padding: 0 30px;">提交评价</button>
+												style="background-color: #00a5cf; padding: 0 30px;">提交评价</button>
 
 										</div>
 										<a href="#"><span
@@ -653,13 +645,13 @@
 							style="margin-top: 20px;">
 							<div class="layui-card">
 								<div class="layui-card-header"
-									style="background-color: #eb6100;">
-									<strong style="color: #fff; font-size: 1.25rem;">待评价组员：</strong>
+									style="background-color: #25a18e;">
+									<strong style="color: #fff; font-size: 1.1rem;">待评价组员：</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn layui-btn-danger">A组</a> <a
+										<a href="#" class="layui-btn" style="background-color:#34a0a4;">A组</a> <a
 											href="#" class="layui-btn layui-btn-primary">B组</a> <a
 											href="#" class="layui-btn layui-btn-primary">C组</a> <a
 											href="#" class="layui-btn layui-btn-primary">D组</a>
@@ -669,7 +661,7 @@
 											<img id="drag1" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important; display: block;"
 												onclick="pay('11')"> <strong
-												style="display: block; color: #101010; margin-left: 14px;">
+												style="display: block; color: #101010; margin-left: 20px;">
 												张琪</strong>
 										</div>
 
@@ -677,14 +669,14 @@
 											<img id="drag2" src="../img/avatar.png" width="69"
 												style="border-radius: 50% !important;" onclick="pay('22')">
 											<strong
-												style="display: block; color: #101010; margin-left: 14px;">
+												style="display: block; color: #101010; margin-left: 20px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../icon/jlc.png" width="69"
 												style="border-radius: 50% !important;" onclick="pay('33')">
 											<strong
-												style="display: block; color: #101010; margin-left: 14px;">
+												style="display: block; color: #101010; margin-left: 20px;">
 												王光</strong>
 										</div>
 									</div>
@@ -780,6 +772,7 @@
 		　　　　　　},
 		    },
 		    radiusAxis: {
+		    	
 		    },
 		    polar: {
 		    },
@@ -791,7 +784,6 @@
 		        textStyle : {
 		　　　　　　　　fontWeight : 'normal',
 		　　　　　　　　fontSize : 12,
-		　　　　　　　　
 		　　　　　　},
 		        stack: 'a',
 		        emphasis: {
@@ -835,11 +827,11 @@
 		        }
 		    }],
 		    legend: {
-		        show: true,
+		        show: false,
 		        data: ['工作能力', '工作效率', '发展潜力', '交流能力', '喜爱程度'],
-		        orient: 'vertical', // 'vertical'
+		        orient: 'horizontal', // 'vertical'
 		        x:3, // 'center' | 'left' | {number},
-		        y:55, // 'center' | 'bottom' | {number}
+		        y:0, // 'center' | 'bottom' | {number}
 		        textStyle : {
 		　　　　　　　　fontWeight : 'normal',
 		　　　　　　　　fontSize : 10,

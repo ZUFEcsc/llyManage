@@ -30,7 +30,7 @@ tbody tr th {
 </head>
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
-		<%@ include file="lly-header.jsp"%>
+		<%@ include file="admin-header.jsp"%>
 		<div class="layui-side layui-bg-black">
 			<div class="layui-side-scroll">
 				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
@@ -451,7 +451,6 @@ tbody tr th {
 	<script>
 		layui.use('element', function() {
 			var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
-
 			//触发事件
 			var active = {
 				tabQYXX : function() {
