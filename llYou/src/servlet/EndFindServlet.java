@@ -7,17 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.Dao;
+
 /**
- * Servlet implementation class JudgeFirsttoSecondServlet
+ * Servlet implementation class EndFindServlet
  */
-@WebServlet("/jsp/JudgeServlet")
-public class JudgeServlet extends HttpServlet {
+@WebServlet("/jsp/EndFindServlet")
+public class EndFindServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JudgeServlet() {
+    public EndFindServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,17 +39,14 @@ public class JudgeServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		String m=request.getParameter("m");
-		if(m!=null) {
-			if(m.equals("1")) {
-//				request.setAttribute("msg", "<script language='javascript'>window.alert('ÒÑÍ¨¹ý!');</script>");
-				request.setAttribute("msg", "");
-			}
-			else if(m.equals("0")) {
-				request.setAttribute("msg", "");
-			}
+		Dao dao=new Dao();
+		String seeknumber=request.getParameter("number");
+		boolean b=dao.FindStateUpdate(seeknumber);
+		if(b) {
+			response.sendRedirect("JudgeServlet?m=1");
+		}else {
+			response.sendRedirect("JudgeServlet?m=0");
 		}
-		request.getRequestDispatcher("hrPage.jsp").forward(request, response);
 	}
 
 }

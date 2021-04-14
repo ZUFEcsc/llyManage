@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,dao.*,bean.*"
+<%@ page language="java" import="java.util.*,dao.*,bean.*,java.text.*"
 	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><!DOCTYPE html>
 <%
 	String path = request.getContextPath();
@@ -32,6 +32,8 @@
 	<%
 		String msg = (String) request.getAttribute("msg");
 		Date date = new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy年MM月dd日  HH时mm分ss秒 E");
+		String datestring=sdf.format(date).toString();
 	%>
 	<div class="layui-layout layui-layout-admin">
 		<%@ include file="enterprise-header.jsp"%>
@@ -394,7 +396,7 @@
 												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputNumber1" placeholder="SZ001F0001">
+												id="exampleInputNumber1" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
@@ -402,7 +404,7 @@
 												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputName1" placeholder="张琪">
+												id="exampleInputName1" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
@@ -410,12 +412,12 @@
 												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputPosition1" placeholder="普通员工">
+												id="exampleInputPosition1" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-zhaopingangwei"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
-												style="color: #777777;"><%=date%></span>
+												style="color: #777777;"><%=datestring%></span>
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-shoujizhengli"
@@ -573,7 +575,7 @@
 												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputNumber2" placeholder="SZ001F0001">
+												id="exampleInputNumber2" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
@@ -581,7 +583,7 @@
 												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputName2" placeholder="张琪">
+												id="exampleInputName2" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
@@ -589,12 +591,12 @@
 												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputPosition2" placeholder="普通员工">
+												id="exampleInputPosition2" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-zhaopingangwei"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">评价时间：</strong><span
-												style="color: #777777;"><%=date%></span>
+												style="color: #777777;"><%=datestring%></span>
 										</div>
 
 										<div style="margin-bottom: 5px;">

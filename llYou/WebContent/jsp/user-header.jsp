@@ -25,7 +25,7 @@
 	</ul>
 	<ul class="layui-nav layui-layout-right">
 		<li class="layui-nav-item"><a href="javascript:;"> <img
-				src="../img/avatar.png" class="layui-nav-img"> 陈沈清
+				src="../img/avatar.png" class="layui-nav-img"> 赵子龙
 		</a>
 			<dl class="layui-nav-child">
 				<dd>

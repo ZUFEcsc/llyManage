@@ -42,6 +42,10 @@
 				<div class="layui-col-md12">
 					<div class="layui-card">
 						<div class="layui-card-header" style="text-align: center;">
+							<a class="layui-btn-xs" href="userCenter.jsp" style="float:left;margin:10px 10px;"> <i
+														class="iconfont icon-ziyuan25"
+														style="font-size: 22px; color: #16c2c2;"></i> 返回
+												</a>
 							<strong style="font-size: 24px;">创新创业公司评价总览</strong>
 						</div>
 					</div>

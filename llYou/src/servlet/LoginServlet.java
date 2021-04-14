@@ -45,13 +45,24 @@ public class LoginServlet extends HttpServlet {
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		String code1=request.getParameter("code");
+		String name=null;
 		if(code.equals(code1)&&code1!=null&&code!=null) {
 			Dao dao=new Dao();
 			boolean b=dao.isExistUsername(username);
 			if(b) {
 				String password1=dao.FindPassword(username);
 				if(password.equals(password1)) {
-					request.getRequestDispatcher("index.jsp").forward(request, response);
+					name=dao.FindName(username);
+					dao.workInsert(name);
+					if(username.equals("useru")) {
+						response.sendRedirect("userSearch.jsp");
+					}else if(username.equals("userd")) {
+						response.sendRedirect("departmentMg.jsp");
+					}else if(username.equals("usero")) {
+						response.sendRedirect("officeMg.jsp");
+					}else if(username.equals("userp")) {
+						response.sendRedirect("projectMg.jsp");
+					}
 				}else {
 					request.setAttribute("msg", "<script language='javascript'>window.alert('密码错误，请重新输入!');</script>");
 					request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -65,6 +76,8 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("msg", "<script language='javascript'>window.alert('验证码错误!');</script>");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
+		
+		
 		
 	}
 

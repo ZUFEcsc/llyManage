@@ -16,6 +16,7 @@ import bean.CompanyUserBean;
 import bean.Hr_UserResumeBean;
 import bean.Mg_UserBean;
 import bean.UserSeekBean;
+import bean.WorkerLoginBean;
 import util.DBUtil;
 
 public class Dao {
@@ -561,6 +562,115 @@ public class Dao {
 			DBUtil.ColseJDBC(rs, pstmt, conn);
 		}
     	return password;
+		
+	}
+	
+	public boolean FindStateUpdate(String seeknumber)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update company_seek_info set state='2' where seek_number=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, seeknumber);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public boolean workInsert(String username)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="insert into worklogin(username) values(?)";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public List<WorkerLoginBean> getListLogin(){
+    	List<WorkerLoginBean> list=new ArrayList<WorkerLoginBean>();
+    	Connection conn=DBUtil.getConnection();
+    	Statement stmt=null;
+		ResultSet rs=null;
+		String sql="select * from worklogin";
+		try{
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				WorkerLoginBean ab = new WorkerLoginBean();
+				ab.setUsername(rs.getString(1));
+								
+				list.add(ab);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{
+			DBUtil.ColseJDBC(rs, stmt, conn);
+		}
+    	return list;
+    }
+	
+	public boolean Delete()
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="delete from worklogin";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	
+	public String FindName(String username)
+	{
+		String name=null;
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="select * from login_info where username=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			rs=pstmt.executeQuery();
+			if(rs.next())
+				name=rs.getString("name");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(rs, pstmt, conn);
+		}
+    	return name;
 		
 	}
 }

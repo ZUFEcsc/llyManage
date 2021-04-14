@@ -1,47 +1,95 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%><!DOCTYPE html>
+<%@ page language="java" import="java.util.*,dao.*,bean.*"
+	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><!DOCTYPE html>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
 <html>
 <head>
 <%@ include file="bootstrap.jsp"%>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>用户_个人中心</title>
+<title>HR页面</title>
 <style>
 .uc-tr {
 	height: 45px;
 }
+.layui-nav-child dd a {
+	margin-left: 30px;
+}
+
+tbody tr td {
+	line-height: 30px;
+}
+
+tbody tr th {
+	line-height: 30px;
+	color: #FF5722;
+}
+
 </style>
+
 <link rel="stylesheet" href="../res/layui/css/layui.css">
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="../js/selection/xlselection.css" />
 </head>
 <body class="layui-layout-body">
+	<%
+		String msg = (String) request.getAttribute("msg");
+	%>
 	<div class="layui-layout layui-layout-admin">
-		<%@ include file="user-header.jsp"%>
+		<%@ include file="enterprise-header.jsp"%>
 		<div class="layui-side layui-bg-black">
 			<div class="layui-side-scroll">
 				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-				<%@ include file="user-card.jsp"%>
+
+				<!-- 用户区别卡片 -->
+				<div style="margin: 10px 35px;">
+					<div class="userCard-img"
+						style="display: inline-block; padding-right: 5px;">
+						<img src="../img/avatar.png"
+							style="border-radius: 50% !important; width: 42px; margin-bottom: 10px;">
+					</div>
+					<div class="userCard-text" style="display: inline-block;">
+						<h5 style="padding-bottom: 3px">陈沈清</h5>
+						<span class="layui-badge layui-bg-orange">HR</span>
+					</div>
+				</div>
+
 				<ul class="layui-nav layui-nav-tree" lay-filter="test">
 					<li class="layui-nav-item layui-nav-itemed"><a class=""
-						href="javascript:;">招聘查询</a>
+						href="javascript:;"> 招聘管理 </a>
 						<dl class="layui-nav-child">
 							<dd>
-								<a href="userSearch.jsp">招聘信息查询</a>
+								<a href="#" class="site-demo-active" data-url="ZPXX"
+									data-id="ZPXX" data-type="tabZPXX">招聘信息</a>
 							</dd>
+							<dd>
+								<a href="#" class="site-demo-active" data-url="JLC"
+									data-id="JLC" data-type="tabJLC">简历池</a>
+							</dd>
+							<dd>
+								<a href="#" class="site-demo-active" data-url="DYJD"
+									data-id="DYJD" data-type="tabDYJD">第一阶段</a>
+							</dd>
+							<dd>
+								<a href="#" class="site-demo-active" data-url="DEJD"
+									data-id="DEJD" data-type="tabDEJD">第二阶段</a>
+							</dd>
+
 						</dl></li>
-					<li class="layui-nav-item"><a href="javascript:;">我的招聘</a>
+					<li class="layui-nav-item"><a
+						href="javascript:;">用户管理 </a>
 						<dl class="layui-nav-child">
 							<dd>
-								<a href="userSearch.jsp">我的招聘进度</a>
+								<a href="#" class="site-demo-active" data-url="YHXX"
+									data-id="YHXX" data-type="tabYHXX">用户信息</a>
+							</dd>
+							<dd>
+								<a href="#" class="site-demo-active" data-url="XXXG"
+									data-id="XXXG" data-type="tabXXXG">信息修改</a>
 							</dd>
 						</dl></li>
 				</ul>
@@ -49,12 +97,22 @@
 		</div>
 
 		<div class="layui-body">
-			<!-- 内容主体区域 -->
+		<!-- 内容主体区域 -->
 			<fieldset class="layui-elem-field layui-field-title"
 				style="margin-top: 20px;">
 				<legend>
 					<i class="layui-icon layui-icon-username"
-						style="font-size: 30px; color: #1E9FFF;"></i> 个人中心
+						style="font-size: 30px; color: #1E9FFF;"></i> 用户档案
+						<div style="display: inline-block;margin-left:20px;">
+							<button type="button" class="layui-btn layui-btn-xs"
+								style="background-color: #25a18e;">
+								<a href="#">通过筛选</a>
+							</button>
+							<button type="button" class="layui-btn layui-btn-xs"
+								style="background-color: #25a18e;">
+								驳回</button>
+
+						</div>
 				</legend>
 			</fieldset>
 			<div
@@ -880,7 +938,7 @@
 		};
 		myChart.setOption(option);
 	</script>
-
+		
 
 </body>
 </html>

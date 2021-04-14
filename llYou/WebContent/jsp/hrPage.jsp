@@ -25,7 +25,9 @@ tbody tr th {
 	line-height: 30px;
 	color: #FF5722;
 }
+
 </style>
+
 <link rel="stylesheet" href="../res/layui/css/layui.css">
 
 <link rel="stylesheet" href="../js/selection/xlselection.css" />
@@ -154,9 +156,9 @@ tbody tr th {
 									Dao dao = new Dao();
 									List<CompanySeekBean> list = dao.getListHRCompanySeekInfo();
 									for (CompanySeekBean ab : list) {
-										if (ab.getState().equals("1"))
+										if (ab.getState().equals("2"))
 											ab.setState("已结束");
-										else if (ab.getState().equals("2"))
+										else if (ab.getState().equals("1"))
 											ab.setState("进行中");
 								%>
 								<tr>
@@ -168,8 +170,12 @@ tbody tr th {
 									<td>
 										<%
 											if (ab.getState().equals("进行中")) {
-										%> <a href="#"
-										class="layui-btn layui-btn-sm layui-btn-primary">结束招聘</a> <%
+										%> 
+										
+										<a href="EndFindServlet?number=<%=ab.getSeek_number()%>"
+										class="layui-btn layui-btn-sm layui-btn-primary" type="button">结束招聘</a>
+										
+										 <%
  	}
  %>
 									</td>
@@ -1020,6 +1026,24 @@ tbody tr th {
 
 		});
 	</script>
+
+<script>
+function openResult(){    /* 绑定事件 */
+
+	layui.use('layer', function(){
+		  var layer = layui.layer;
+		  layer.open({
+			  title: '确认框'
+			  
+			  ,content: '配置各种参数，试试效果'
+			  ,btn: ['取消', '确认']
+			});    
+		}); 
+		
+	
+} 
+</script>
+
 
 </body>
 </html>

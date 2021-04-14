@@ -53,8 +53,10 @@ public class UptoFirstStepServlet extends HttpServlet {
 		Dao dao=new Dao();
 		boolean b=dao.UptoFirstStepUpdate(identity);
 		if(b) {
+//			response.sendRedirect("hrPage.jsp");
 			response.sendRedirect("JudgeServlet?m=1");
 		}else {
+//			response.sendRedirect("hrPage.jsp");
 			response.sendRedirect("JudgeServlet?m=0");
 		}
 		

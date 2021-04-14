@@ -1,5 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=utf-8" import="java.util.*,dao.*,bean.*"
 	pageEncoding="utf-8"%>
+	
+<%
+Dao daod=new Dao();
+String username=null;
+List<WorkerLoginBean> listl=daod.getListLogin();
+for(WorkerLoginBean ab:listl)
+	username=ab.getUsername();
+%>
 <div class="layui-header">
 	<div class="layui-logo">
 		<img src="../img/you2.png"
@@ -26,7 +34,7 @@
 	</ul>
 	<ul class="layui-nav layui-layout-right">
 		<li class="layui-nav-item"><a href="javascript:;"> <img
-				src="../img/avatar.png" class="layui-nav-img"> 陈沈清
+				src="../img/avatar.png" class="layui-nav-img"> <%=username %>
 		</a>
 			<dl class="layui-nav-child">
 				<dd>
@@ -36,6 +44,6 @@
 					<a href="">我的消息</a>
 				</dd>
 			</dl></li>
-		<li class="layui-nav-item"><a href="">退出登录</a></li>
+		<li class="layui-nav-item"><a href="ExitServlet">退出登录</a></li>
 	</ul>
 </div>
