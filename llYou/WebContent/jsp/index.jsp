@@ -20,19 +20,20 @@
 				<li class="layui-nav-item"><a href="">首页</a></li>
 				<li class="layui-nav-item"><a href="">产品中心</a></li>
 				<li class="layui-nav-item"><a href="">服务支持</a></li>
-				<li class="layui-nav-item"><a href="javascript:;">其它系统</a>
+				<li class="layui-nav-item"><a href="javascript:;">请登录</a>
 					<dl class="layui-nav-child">
 						<dd>
-							<a href="">a管理</a>
+							<a href="login.jsp">用户登录</a>
 						</dd>
 						<dd>
-							<a href="">b管理</a>
+							<a href="adminLogin.jsp">系统管理员登录</a>
 						</dd>
 						<dd>
-							<a href="">c管理</a>
+							<a href="enterpriseLogin.jsp">企业成员登录</a>
 						</dd>
 					</dl></li>
 			</ul>
+			<!-- 
 			<ul class="layui-nav layui-layout-right" style="line-height:80px;">
 				<li class="layui-nav-item"><a href="javascript:;"> <img
 						src="../img/avatar.png" class="layui-nav-img"> 陈沈清
@@ -47,24 +48,25 @@
 					</dl></li>
 				<li class="layui-nav-item"><a href="">退出登录</a></li>
 			</ul>
+			 -->
 		</div>
 
 		<div class="layui-carousel" id="test10">
 			<div carousel-item="">
 				<div>
-					<img src="../img/9.png">
+					<img src="../img/index1.png" style="width:100%;">
 				</div>
 				<div>
-					<img src="../img/8.jpg">
+					<img src="../img/index2.png" style="width:100%;">
 				</div>
 				<div>
-					<img src="//res.layui.com/images/layui/demo/3.png">
+					<img src="../img/index1.png" style="width:100%;">
 				</div>
 				<div>
-					<img src="//res.layui.com/images/layui/demo/4.png">
+					<img src="../img/index2.png" style="width:100%;">
 				</div>
 				<div>
-					<img src="//res.layui.com/images/layui/demo/5.png">
+					<img src="../img/index1.png" style="width:100%;">
 				</div>
 			</div>
 		</div>

@@ -11,16 +11,16 @@ import javax.servlet.http.HttpSession;
 import dao.Dao;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class CompanyLoginServlet
  */
-@WebServlet("/jsp/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/jsp/CompanyLoginServlet")
+public class CompanyLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public CompanyLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,14 +46,18 @@ public class LoginServlet extends HttpServlet {
 		String password=request.getParameter("password");
 		String code1=request.getParameter("code");
 		String name=null;
+		//System.out.println(username);
+		//System.out.println(password);
 		if(code.equals(code1)&&code1!=null&&code!=null) {
 			Dao dao=new Dao();
 			boolean b=dao.isExistUsername(username);
+			System.out.println(b);
 			if(b) {
 				String password1=dao.FindPassword(username);
 				if(password.equals(password1)) {
 					name=dao.FindName(username);
-					dao.workInsert(name);
+					boolean a=dao.workInsert(name);
+					System.out.println(a);
 					if(username.equals("useru")) {
 						response.sendRedirect("userSearch.jsp");
 					}else if(username.equals("userd")) {
@@ -69,20 +73,17 @@ public class LoginServlet extends HttpServlet {
 					}
 				}else {
 					request.setAttribute("msg", "<script language='javascript'>window.alert('密码错误，请重新输入!');</script>");
-					request.getRequestDispatcher("login.jsp").forward(request, response);
+					request.getRequestDispatcher("enterpriseLogin.jsp").forward(request, response);
 				}
 			}
 			else {
 				request.setAttribute("msg", "<script language='javascript'>window.alert('用户名不存在，请先注册!');</script>");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("enterpriseLogin.jsp").forward(request, response);
 			}
 		}else {
 			request.setAttribute("msg", "<script language='javascript'>window.alert('验证码错误!');</script>");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("enterpriseLogin.jsp").forward(request, response);
 		}
-		
-		
-		
 	}
 
 }

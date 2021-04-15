@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=utf-8" import="java.util.*,dao.*,bean.*"
 	pageEncoding="utf-8"%><!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +24,44 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body class="layui-layout-body">
+<%
+Dao daoa=new Dao();
+String name=null;
+String sex=null,nation=null,age=null,feature=null,position=null,company=null;
+List<WorkerLoginBean> listl=daoa.getListLogin();
+for(WorkerLoginBean ab:listl)
+	name=ab.getUsername();
+List<UserBasicInfoBean> listt=daoa.getListUserBasicInfo(name);
+for(UserBasicInfoBean abb:listt){
+	sex=abb.getSex();
+	nation=abb.getNation();
+	age=abb.getAge();
+	feature=abb.getFeature();
+	position=abb.getPosition();
+	
+}
+company="深圳阿里";
+if(name.equals("孙蕾")){
+	sex="女";
+	nation="汉族";
+	age="35";
+	feature="群众";
+	position="系统管理员";
+	company="溜溜游公司";
+}
+if(position.equals("1")){
+	position="普通员工";
+}else if(position.equals("2")){
+	position="部门主管";
+}else if(position.equals("3")){
+	position="项目经理";
+}else if(position.equals("4")){
+	position="办公室主任";
+}else if(position.equals("5")){
+	position="HR";
+}
+%>
+
 	<div class="layui-layout layui-layout-admin">
 		<%@ include file="user-header.jsp"%>
 		<div class="layui-side layui-bg-black">
@@ -64,7 +102,7 @@
 					<div class="layui-col-md7">
 						<div class="layui-card">
 							<div style="display: inline-block;">
-								<img src="../img/lc.png"
+								<img src="../img/head.png"
 									style="width: 90%; float: left; padding: 5px 10px;">
 							</div>
 							<div class="layui-card-body" style="display: inline-block;">
@@ -76,25 +114,25 @@
 									<tbody>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">姓名：</strong><span
-												style="color: #777777;">陈杉</span></td>
+												style="color: #777777;"><%=name %></span></td>
 											<td><strong style="color: #2b4f6c;">民族：</strong><span
 												style="color: #777777;">汉族</span></td>
 										</tr>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">性别：</strong><span
-												style="color: #777777;">女</span></td>
-											<td><strong style="color: #2b4f6c;">出生年月：</strong><span
-												style="color: #777777;">2000.12</span></td>
+												style="color: #777777;"><%=sex %></span></td>
+											<td><strong style="color: #2b4f6c;">年龄：</strong><span
+												style="color: #777777;"><%=age %></span></td>
 										</tr>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">政治面貌： </strong><span
-												style="color: #777777;">共青团员</span></td>
+												style="color: #777777;"><%=feature %></span></td>
 											<td><strong style="color: #2b4f6c;">担任职位：</strong><span
-												style="color: #777777;">团支书</span></td>
+												style="color: #777777;"><%=position %></span></td>
 										</tr>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">所属企业：</strong><span
-												style="color: #777777;">溜溜游大学</span></td>
+												style="color: #777777;"><%=company %></span></td>
 											<td><strong style="color: #2b4f6c;">联系邮箱：</strong><span
 												style="color: #777777;">87xxx657@163.com</span></td>
 										</tr>

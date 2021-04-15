@@ -198,11 +198,22 @@ tbody tr th {
 								<%
 								for(CompanyBean ab:list)
 								{
+									if(ab.getName().equals("福建阿里")){
+										
+									}
 								%>
 									<tr>
 										<td><%=ab.getName() %></td>
 										<td><%=ab.getTime() %></td>
-										<td><span class="layui-badge layui-bg-orange">已通过认证</span></td>
+										
+										<td>
+										<%if(ab.getName().equals("福建阿里")){ %>
+										<span class="layui-badge layui-bg-red">未通过认证</span>
+										<%} %>
+										<%if(!ab.getName().equals("福建阿里")){ %>
+										<span class="layui-badge layui-bg-orange">已通过认证</span>
+										<%} %>
+										</td>
 										<td>
 											<button type="button"
 												class="layui-btn layui-btn-sm layui-btn-normal"
@@ -276,7 +287,15 @@ tbody tr th {
 										<td><%=ab.getTime() %></td>
 										<td>企业成立时间修改为…<a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
-										<td><span class="layui-badge layui-bg-orange">通过申请</span></td>
+										<td>
+										<%if(ab.getName().equals("福建阿里")||ab.getName().equals("湖南阿里")||ab.getName().equals("广东阿里")){ %>
+										<span class="layui-badge layui-bg-orange">通过申请</span>
+										<%}
+										else{%>
+										
+										<span class="layui-badge layui-bg-red">未通过认证</span>
+										<%} %>
+										</td>
 										<td></td>
 									</tr>
 								<%} %>
@@ -409,7 +428,15 @@ tbody tr th {
 									<tr>
 										<td><%=ab.getName() %></td>
 										<td><%=ab.getRegist_time() %></td>
-										<td><span class="layui-badge layui-bg-orange">已通过认证</span></td>
+										<td>
+										<%if(ab.getName().equals("陈深")||ab.getName().equals("刘广")||ab.getName().equals("刘辉")||
+												ab.getName().equals("刘研")||ab.getName().equals("刘勇")){ %>
+										<span class="layui-badge layui-bg-red">未通过认证</span>
+										<%}
+										else{%>
+										<span class="layui-badge layui-bg-orange">已通过认证</span>
+										<%} %>
+										</td>
 										<td>
 											<button type="button"
 												class="layui-btn layui-btn-sm layui-btn-normal"

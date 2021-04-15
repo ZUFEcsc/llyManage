@@ -39,12 +39,19 @@ public class ExitServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+		String x=request.getParameter("x");
 		Dao dao=new Dao();
 		boolean b=dao.Delete();
 		if(b) {
-			response.sendRedirect("login.jsp");
+			if(x.equals("1")) {
+			response.sendRedirect("index.jsp");
+			}else if(x.equals("2")) {
+				response.sendRedirect("index.jsp");
+			}else if(x.equals("3")) {
+				response.sendRedirect("index.jsp");
+			}
 		}else {
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("index.jsp");
 		}
 	}
 

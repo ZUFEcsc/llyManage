@@ -49,9 +49,11 @@ public class DowntoFirstStepServlet extends HttpServlet {
 		Dao dao=new Dao();
 		boolean b=dao.DowntoFirstStepUpdate(identity);
 		if(b) {
-			response.sendRedirect("JudgeServlet?m=1");
+			response.sendRedirect("hrPage.jsp");
+//			response.sendRedirect("JudgeServlet?m=1");
 		}else {
-			response.sendRedirect("JudgeServlet?m=0");
+			response.sendRedirect("hrPage.jsp");
+//			response.sendRedirect("JudgeServlet?m=0");
 		}
 	}
 

@@ -67,7 +67,7 @@
 							<a href="">我的消息</a>
 						</dd>
 					</dl></li>
-				<li class="layui-nav-item"><a href="">退出登录</a></li>
+				<li class="layui-nav-item"><a href="ExitServlet?x=2">退出登录</a></li>
 			</ul>
 		</div>
 		<div class="layui-layout-body">
@@ -77,6 +77,10 @@
 
 					<div class="layui-card">
 						<div class="layui-card-header" style="text-align: center;">
+						<a class="layui-btn-xs" href="userSearch.jsp" style="float:left;margin:10px 10px;"> <i
+														class="iconfont icon-ziyuan25"
+														style="font-size: 22px; color: #16c2c2;"></i> 返回
+												</a>
 							<strong style="font-size: 18px;">企业基本信息</strong>
 						</div>
 						<div class="layui-card-body">
@@ -95,7 +99,7 @@
 											企业名称
 											</strong></td>
 											<td>
-											<span style="color:#777777;">创新创业公司</span>
+											<span style="color:#777777;">安徽阿里</span>
 											 <span class="layui-badge layui-bg-blue">B轮</span>
 												<span class="layui-badge layui-bg-blue">高新技术企业</span>
 											</td>
@@ -168,11 +172,11 @@
 
 				<div class="layui-col-md3">
 					<div class="layui-card">
-						<div class="layui-card-header">企业族谱信息</div>
-						<div class="layui-card-body">
-							<div id="score"
-								style="width: 360px; height: 250px; border: solid 1px black;"></div>
-
+						<div class="layui-card-header" style="text-align: center;">
+							<strong style="font-size: 18px;">企业族谱信息</strong>
+						</div>
+						<div class="layui-card-body" style="margin-left: -13px;margin-top: -10px;">
+							<div id="relation" style="width:370px;height:260px;"></div>
 						</div>
 					</div>
 				</div>
@@ -180,7 +184,7 @@
 				<div class="layui-col-md3">
 					<div class="layui-card">
 						<div class="layui-card-body" style="margin-left: -13px;">
-							<div id="bar" style="width: 320px; height: 292px;"></div>
+							<div id="bar" style="width: 320px; height: 295px;"></div>
 						</div>
 					</div>
 
@@ -220,6 +224,237 @@
 		});
 	</script>
 
+	<!-- 企业关系图 -->
+	<script type="text/javascript">
+	var dom = document.getElementById("relation");
+	var myChart = echarts.init(dom);
+	var app = {};
+	myChart.showLoading();
+	var graph={
+	    "nodes": [
+	      {
+	        "id": "0",
+	        "name": "安徽阿里有限公司管理人",
+	        "symbolSize": 85.12381,
+	        "x": -500.82776,
+	        "y": 199.6904,
+	        "value": 28.685715,
+	        "category": 0
+	      },
+	      {
+	        "id": "1",
+	        "name": "法务",
+	        "symbolSize": 58.6666666666666665,
+	        "x": -418.08344,
+	        "y": 166.8853,
+	        "value": 4,
+	        "category": 1
+	      },
+	      {
+	        "id": "2",
+	        "name": "副总裁",
+	        "symbolSize": 41.323809333333333,
+	        "x": -212.76357,
+	        "y": 385.29176,
+	        "value": 9.485714,
+	        "category": 2
+	      },
+	      {
+	        "id": "3",
+	        "name": "税务人",
+	        "symbolSize": 29.323809333333333,
+	        "x": -142.82404,
+	        "y": 255.26283,
+	        "value": 9.485714,
+	        "category": 3
+	      },
+	      {
+	        "id": "4",
+	        "name": "控股股东",
+	        "symbolSize": 48.6666666666666665,
+	        "x": -379.30386,
+	        "y": 149.06424,
+	        "value": 4,
+	        "category": 4
+	      },
+	      {
+	        "id": "5",
+	        "name": "北京XX公司管理人",
+	        "symbolSize": 25.6666666666666665,
+	        "x": -417.26337,
+	        "y": 206.03506,
+	        "value": 4,
+	        "category": 5
+	      },
+	      {
+	        "id": "6",
+	        "name": "股东",
+	        "symbolSize": 59.6666666666666665,
+	        "x": -332.6012,
+	        "y": 285.16974,
+	        "value": 4,
+	        "category": 6
+	      },
+	      {
+	        "id": "7",
+	        "name": "高管",
+	        "symbolSize": 41.6666666666666665,
+	        "x": -382.69568,
+	        "y": 275.09113,
+	        "value": 4,
+	        "category": 7
+	      }
+	    ],
+	    "links": [
+	      {
+	        "source": "1",
+	        "target": "0"
+	      },
+	      {
+	        "source": "2",
+	        "target": "0"
+	      },
+	      {
+	        "source": "3",
+	        "target": "0"
+	      },
+	      {
+	        "source": "5",
+	        "target": "0"
+	      },
+	      {
+	        "source": "6",
+	        "target": "0"
+	      },
+	      {
+	        "source": "7",
+	        "target": "0"
+	      },
+	      {
+	        "source": "3",
+	        "target": "4"
+	      },
+	      {
+	        "source": "4",
+	        "target": "6"
+	      },
+	      {
+	        "source": "4",
+	        "target": "5"
+	      },
+	      {
+	        "source": "5",
+	        "target": "6"
+	      },
+	      {
+	        "source": "1",
+	        "target": "2"
+	      },
+	      {
+	        "source": "1",
+	        "target": "4"
+	      },
+	      {
+	        "source": "2",
+	        "target": "3"
+	      },
+	      {
+	        "source": "3",
+	        "target": "7"
+	      }
+	    ],
+	    "categories": [
+	      {
+	        "name": "类目0"
+	      },
+	      {
+	        "name": "类目1"
+	      },
+	      {
+	        "name": "类目2"
+	      },
+	      {
+	        "name": "类目3"
+	      },
+	      {
+	        "name": "类目4"
+	      },
+	      {
+	        "name": "类目5"
+	      },
+	      {
+	        "name": "类目6"
+	      },
+	      {
+	        "name": "类目7"
+	      }
+	    ]
+	  };
+	console.log(graph);
+	myChart.hideLoading();
+	
+	graph.nodes.forEach(function (node) {
+	    node.label = {
+	        show: node.symbolSize > 0,
+	        fontSize:12,
+	        position:'top'
+	    };
+	});
+	option = {
+	    title:{
+	    show:false,
+	    text:"企业族谱图",
+	    x:'center',
+	    y:'top',
+	    padding:10,
+	    textStyle: {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+	            fontFamily: 'Arial',
+	            fontSize: 22,
+	            fontStyle: 'normal',
+	            fontWeight: 'bold',
+	        },
+	},
+	    tooltip: {},
+	    legend: [{
+	        // selectedMode: 'single',
+	        data: graph.categories.map(function (a) {
+	            return a.name;
+	        }),
+	        show:false
+	    }],
+	    animationDuration: 1500,
+	    animationEasingUpdate: 'quinticInOut',
+	    series: [
+	        {
+	            name: 'Les Miserables',
+	            type: 'graph',
+	            layout: 'none',
+	            data: graph.nodes,
+	            links: graph.links,
+	            categories: graph.categories,
+	            roam: true,
+	            label: {
+	                position: 'right',
+	                formatter: '{b}'
+	            },
+	            lineStyle: {
+	                color: 'source',
+	                curveness: 0.3
+	            },
+	            emphasis: {
+	                focus: 'adjacency',
+	                lineStyle: {
+	                    width: 10
+	                }
+	            }
+	        }
+	    ]
+	};
+	
+	myChart.setOption(option);
+
+    </script>
+       
 	<!-- 雷达图 -->
 	<script type="text/javascript">
 		var dom = document.getElementById("score");
@@ -631,7 +866,7 @@
 				}]
 			},
 			title: {
-				text: 'XXX公司发展历程',
+				text: '安徽阿里公司发展历程',
 				style: {
 					fontFamily: 'Arial',
 		                fontSize: 18,

@@ -44,6 +44,6 @@ for(WorkerLoginBean ab:listl)
 					<a href="">我的消息</a>
 				</dd>
 			</dl></li>
-		<li class="layui-nav-item"><a href="ExitServlet">退出登录</a></li>
+		<li class="layui-nav-item"><a href="ExitServlet?x=2">退出登录</a></li>
 	</ul>
 </div>

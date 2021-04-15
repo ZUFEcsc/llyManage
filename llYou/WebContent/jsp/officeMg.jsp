@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,dao.*,bean.*"
+<%@ page language="java" import="java.util.*,dao.*,bean.*,java.text.*"
 	contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><!DOCTYPE html>
 <html>
 <head>
@@ -52,10 +52,10 @@ tbody tr th {
 </head>
 <body class="layui-layout-body">
 	<%
-		Date date = new Date();
-	%>
-	<%
 		String msg = (String) request.getAttribute("msg");
+		Date date = new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy年MM月dd日  HH时mm分ss秒 E");
+		String datestring=sdf.format(date).toString();
 	%>
 	<div class="layui-layout layui-layout-admin">
 		<%@ include file="enterprise-header.jsp"%>
@@ -115,7 +115,7 @@ tbody tr th {
 												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputNumber1" placeholder="SZ001F0001">
+												id="exampleInputNumber1" placeholder="输入或点击头像获取编号">
 
 										</div>
 										<div style="margin-bottom: 10px;">
@@ -125,7 +125,7 @@ tbody tr th {
 												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputName1" placeholder="张琪">
+												id="exampleInputName1" placeholder="输入或点击头像获取职员姓名">
 										</div>
 										<div style="margin-bottom: 10px;">
 											<i class="iconfont icon-jiqiren2"
@@ -134,13 +134,13 @@ tbody tr th {
 												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputPosition1" placeholder="普通员工">
+												id="exampleInputPosition1" placeholder="输入或点击头像获取职员岗位">
 										</div>
 										<div style="margin-bottom: 10px;">
 											<i class="iconfont icon-zhaopingangwei"
 												style="color: #5FB878; font-size: 1.25rem;"></i> <strong
 												style="color: #2b4f6c;">评价时间：</strong><span
-												style="color: #777777;"><%=date%></span>
+												style="color: #777777;"><%=datestring%></span>
 										</div>
 										<div style="margin-bottom: 10px;">
 											<i class="iconfont icon-shoujizhengli"
@@ -241,7 +241,7 @@ tbody tr th {
 									</div>
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
-											<img id="drag1" src="../img/avatar.png" width="69"
+											<img id="drag1" src="../img/girl.png" width="69"
 												style="border-radius: 50% !important; display: block;"
 												onclick="pay('11')"> <strong
 												style="display: block; color: #101010; margin-left: 21px;">
@@ -249,14 +249,14 @@ tbody tr th {
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag2" src="../img/avatar.png" width="69"
+											<img id="drag2" src="../img/girl2.png" width="69"
 												style="border-radius: 50% !important;" onclick="pay('22')">
 											<strong
 												style="display: block; color: #101010; margin-left: 21px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag3" src="../icon/jlc.png" width="69"
+											<img id="drag3" src="../img/boy.png" width="69"
 												style="border-radius: 50% !important;" onclick="pay('33')">
 											<strong
 												style="display: block; color: #101010; margin-left: 21px;">

@@ -25,7 +25,6 @@ tbody tr th {
 	line-height: 30px;
 	color: #FF5722;
 }
-
 </style>
 
 <link rel="stylesheet" href="../res/layui/css/layui.css">
@@ -170,14 +169,12 @@ tbody tr th {
 									<td>
 										<%
 											if (ab.getState().equals("进行中")) {
-										%> 
-										
-										<a href="EndFindServlet?number=<%=ab.getSeek_number()%>"
+										%> <a href="EndFindServlet?number=<%=ab.getSeek_number()%>"
 										class="layui-btn layui-btn-sm layui-btn-primary" type="button">结束招聘</a>
-										
-										 <%
- 	}
- %>
+
+										<%
+											}
+										%>
 									</td>
 									<td>
 										<button type="button"
@@ -423,33 +420,42 @@ tbody tr th {
 									<div class="layui-card">
 										<div class="layui-card-header">
 											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
-											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+											<strong style="color: #2b4f6c;">标签： </strong> <span
+												class="layui-badge layui-bg-orange">工作狂魔</span> <span
 												class="layui-badge layui-bg-orange">亲和待人</span>
 										</div>
 										<div class="layui-card-body">
 											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：<%=ab.getName()%><br> <i
-												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：<%=ab.getSex()%><br> <i
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">姓名：</strong>
+											<span style="color: #777777;"><%=ab.getName()%></span><br>
+											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">性别：</strong> <span
+												style="color: #777777;"><%=ab.getSex()%></span><br> <i
 												class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
-											年龄：<%=ab.getAge()%><br> <i class="iconfont icon-xueli"
-												style="color: #5FB878;"></i> 学历：<%=ab.getLearn_experience()%><br>
+											<strong style="color: #2b4f6c;">年龄：</strong> <span
+												style="color: #777777;"><%=ab.getAge()%></span><br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i> <strong
+												style="color: #2b4f6c;">学历：</strong> <span
+												style="color: #777777;"><%=ab.getLearn_experience()%></span><br>
 											<i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">招聘职位：</strong>
+											<span style="color: #777777;"><%=ab.getSeek_position()%></span><br>
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											综合评分：
-											<div class="layui-progress" style="width: 50%; display: inline-block;">
+											<strong style="color: #2b4f6c;">综合评分：</strong>
+											<div class="layui-progress"
+												style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
 											</div>
-											<span style="display: inline-block;font-size:7px; color: #838383;"> 80分</span>
+											<span
+												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
 													style="background-color: #5FB878;">
-													<a href="UptoFirstStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
+													<a
+														href="UptoFirstStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
 												</button>
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">
-													驳回</button>
+													style="background-color: #5FB878;">驳回</button>
 
 											</div>
 											<a href="#"><span
@@ -527,30 +533,46 @@ tbody tr th {
 									<div class="layui-card">
 										<div class="layui-card-header">
 											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
-											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+											<strong style="color: #2b4f6c;">标签：</strong> <span
+												class="layui-badge layui-bg-orange">工作狂魔</span> <span
 												class="layui-badge layui-bg-orange">亲和待人</span>
 										</div>
 										<div class="layui-card-body">
 											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：<%=ab.getName()%><br> <i
-												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：<%=ab.getSex()%><br> <i
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">姓名：</strong>
+											<span style="color: #777777;"><%=ab.getName()%></span><br>
+											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">性别：</strong> <span
+												style="color: #777777;"><%=ab.getSex()%></span><br> <i
 												class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
-											年龄：<%=ab.getAge()%><br> <i class="iconfont icon-xueli"
-												style="color: #5FB878;"></i> 学历：<%=ab.getLearn_experience()%><br>
+											<strong style="color: #2b4f6c;">年龄：</strong> <span
+												style="color: #777777;"><%=ab.getAge()%></span><br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i> <strong
+												style="color: #2b4f6c;">学历：</strong> <span
+												style="color: #777777;"><%=ab.getLearn_experience()%></span><br>
 											<i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">招聘职位：</strong>
+											<span style="color: #777777;"><%=ab.getSeek_position()%></span><br>
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											综合评分：
-											<div class="layui-progress"	style="width: 50%; display: inline-block;">
+											<strong style="color: #2b4f6c;">综合评分：</strong>
+											<div class="layui-progress"
+												style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
 											</div>
-											<span style="display: inline-block;font-size:7px; color: #838383;"> 80分</span>
+											<span
+												style="display: inline-block; font-size: 7px; color: #838383;">
+												80分</span>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;"><a href="UptoSecondStepServlet?identity=<%=ab.getIdentity()%>">通过</a></button>
+													style="background-color: #5FB878;">
+													<a
+														href="UptoSecondStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
+												</button>
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;"><a href="DowntoZeroStepServlet?identity=<%=ab.getIdentity()%>">驳回</a></button>
+													style="background-color: #5FB878;">
+													<a
+														href="DowntoZeroStepServlet?identity=<%=ab.getIdentity()%>">驳回</a>
+												</button>
 
 											</div>
 											<a href="#"><span
@@ -628,30 +650,46 @@ tbody tr th {
 									<div class="layui-card">
 										<div class="layui-card-header">
 											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
-											标签： <span class="layui-badge layui-bg-orange">工作狂魔</span> <span
+											<strong style="color: #2b4f6c;">标签：</strong> <span
+												class="layui-badge layui-bg-orange">工作狂魔</span> <span
 												class="layui-badge layui-bg-orange">亲和待人</span>
 										</div>
 										<div class="layui-card-body">
 											<i class="iconfont icon-lunkuohua2_yonghu"
-												style="color: #5FB878;"></i> 姓名：<%=ab.getName()%><br> <i
-												class="iconfont icon-xingbie" style="color: #5FB878;"></i>
-											性别：<%=ab.getSex()%><br> <i
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">姓名：</strong>
+											<span style="color: #777777;"><%=ab.getName()%></span><br>
+											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">性别：</strong> <span
+												style="color: #777777;"><%=ab.getSex()%></span><br> <i
 												class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
-											年龄：<%=ab.getAge()%><br> <i class="iconfont icon-xueli"
-												style="color: #5FB878;"></i> 学历：<%=ab.getLearn_experience()%><br>
+											<strong style="color: #2b4f6c;">年龄：</strong> <span
+												style="color: #777777;"><%=ab.getAge()%></span><br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i> <strong
+												style="color: #2b4f6c;">学历：</strong> <span
+												style="color: #777777;"><%=ab.getLearn_experience()%></span><br>
 											<i class="iconfont icon-shoujizhengli"
-												style="color: #5FB878;"></i> 招聘职位：<%=ab.getSeek_position()%><br>
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">招聘职位：</strong>
+											<span style="color: #777777;"><%=ab.getSeek_position()%></span><br>
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											综合评分：
-											<div class="layui-progress" style="width: 50%; display: inline-block;">
+											<strong style="color: #2b4f6c;">综合评分：</strong>
+											<div class="layui-progress"
+												style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
-											</div>											
-											<span style="display: inline-block;font-size:7px; color: #838383;"> 80分</span>
+											</div>
+											<span
+												style="display: inline-block; font-size: 7px; color: #838383;">
+												80分</span>
 											<div style="display: inline-block;">
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;"><a href="UptoThirdStepServlet?identity=<%=ab.getIdentity()%>">通过</a></button>
+													style="background-color: #5FB878;">
+													<a
+														href="UptoThirdStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
+												</button>
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;"><a href="DowntoFirstStepServlet?identity=<%=ab.getIdentity()%>">驳回</a></button>
+													style="background-color: #5FB878;">
+													<a
+														href="DowntoFirstStepServlet?identity=<%=ab.getIdentity()%>">驳回</a>
+												</button>
 
 											</div>
 											<a href="#"><span
@@ -664,7 +702,7 @@ tbody tr th {
 									}
 									}
 								%>
-<%
+								<%
 									if (msg != null) {
 								%>
 								<%=msg%>
@@ -732,7 +770,9 @@ tbody tr th {
 										if (ab.getPosition_kind().equals("3"))
 											ab.setPosition_kind("项目经理");
 										if (ab.getPosition_kind().equals("4"))
-											ab.setPosition_kind("总裁");
+											ab.setPosition_kind("办公室主任");
+										if (ab.getPosition_kind().equals("5"))
+											ab.setPosition_kind("hr");
 								%>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
@@ -803,7 +843,7 @@ tbody tr th {
 								</thead>
 								<tbody>
 									<tr>
-										<td>Y20189</td>
+										<th scope="row">Y20189</th>
 										<td>陈聪明</td>
 										<td>员工陈不错子多次矿工，申请辞去… <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
@@ -812,7 +852,7 @@ tbody tr th {
 										<td></td>
 									</tr>
 									<tr>
-										<td>Y20189</td>
+										<th scope="row">Y20189</th>
 										<td>陈聪明</td>
 										<td>员工陈不错子多次矿工，申请辞去… <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
@@ -821,7 +861,7 @@ tbody tr th {
 										<td></td>
 									</tr>
 									<tr>
-										<td>Y20189</td>
+										<th scope="row">Y20189</th>
 										<td>陈聪明</td>
 										<td>员工陈不错子多次矿工，申请辞去… <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
@@ -1027,22 +1067,22 @@ tbody tr th {
 		});
 	</script>
 
-<script>
-function openResult(){    /* 绑定事件 */
+	<script>
+		function openResult() { /* 绑定事件 */
 
-	layui.use('layer', function(){
-		  var layer = layui.layer;
-		  layer.open({
-			  title: '确认框'
-			  
-			  ,content: '配置各种参数，试试效果'
-			  ,btn: ['取消', '确认']
-			});    
-		}); 
-		
-	
-} 
-</script>
+			layui.use('layer', function() {
+				var layer = layui.layer;
+				layer.open({
+					title : '确认框'
+
+					,
+					content : '配置各种参数，试试效果',
+					btn : [ '取消', '确认' ]
+				});
+			});
+
+		}
+	</script>
 
 
 </body>

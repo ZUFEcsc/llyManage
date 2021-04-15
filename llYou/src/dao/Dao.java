@@ -15,6 +15,7 @@ import bean.CompanySeekBean;
 import bean.CompanyUserBean;
 import bean.Hr_UserResumeBean;
 import bean.Mg_UserBean;
+import bean.UserBasicInfoBean;
 import bean.UserSeekBean;
 import bean.WorkerLoginBean;
 import util.DBUtil;
@@ -673,4 +674,36 @@ public class Dao {
     	return name;
 		
 	}
+	
+	public List<UserBasicInfoBean> getListUserBasicInfo(String name){
+    	List<UserBasicInfoBean> list=new ArrayList<UserBasicInfoBean>();
+    	Connection conn=DBUtil.getConnection();
+    	PreparedStatement pstmt=null;
+    	Statement stmt=null;
+		ResultSet rs=null;
+		String sql="select u.name,u.sex,u.nation,u.age,u.political_feature,c.position_kind,c.company_number from user_basic_info u,company_username_info c where u.name=c.name and c.name=?";
+		try{
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				UserBasicInfoBean ab = new UserBasicInfoBean();
+				ab.setName(rs.getString(1));
+				ab.setSex(rs.getString(2));
+				ab.setNation(rs.getString(3));
+				ab.setAge(rs.getString(4));
+				ab.setFeature(rs.getString(5));
+				ab.setPosition(rs.getString(6));
+				ab.setCompany(rs.getString(7));
+				list.add(ab);
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{
+			DBUtil.ColseJDBC(rs, stmt, conn);
+		}
+    	return list;
+    }
 }

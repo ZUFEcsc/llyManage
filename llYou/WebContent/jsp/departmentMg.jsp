@@ -348,24 +348,24 @@
 									</div>
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding: 0 10px;">
-											<a><img id="drag1" src="../img/avatar.png" width="69"
+											<a><img id="drag1" src="../img/girl.png" width="69"
 												style="border-radius: 50% !important; display: block;"></a>
 											<strong
-												style="display: block; color: #101010; margin-left: 14px;">
-												Cindy</strong>
+												style="display: block; color: #101010; margin-left: 20px;">
+												张琪</strong>
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag2" src="../img/avatar.png" width="69"
+											<img id="drag2" src="../img/girl2.png" width="69"
 												style="border-radius: 50% !important;"> <strong
-												style="display: block; color: #101010; margin-left: 14px;">
-												陈沈清</strong>
+												style="display: block; color: #101010; margin-left: 20px;">
+												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag3" src="../icon/jlc.png" width="69"
+											<img id="drag3" src="../img/boy.png" width="69"
 												style="border-radius: 50% !important;"> <strong
-												style="display: block; color: #101010; margin-left: 14px;">
-												陈沈清</strong>
+												style="display: block; color: #101010; margin-left: 20px;">
+												王光</strong>
 										</div>
 									</div>
 
@@ -396,7 +396,7 @@
 												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputNumber1" placeholder="">
+												id="exampleInputNumber1" placeholder="输入或点击头像获取编号">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
@@ -404,7 +404,7 @@
 												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputName1" placeholder="">
+												id="exampleInputName1" placeholder="输入或点击头像获取职员姓名">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
@@ -412,7 +412,7 @@
 												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputPosition1" placeholder="">
+												id="exampleInputPosition1" placeholder="输入或点击头像获取职员岗位">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-zhaopingangwei"
@@ -498,7 +498,7 @@
 									</div>
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
-											<img id="drag1" src="../img/avatar.png" width="69"
+											<img id="drag1" src="../img/girl.png" width="69"
 												style="border-radius: 50% !important; display: block;"
 												onclick="pay('11')"> <strong
 												style="display: block; color: #101010; margin-left: 20px;">
@@ -506,14 +506,14 @@
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag2" src="../img/avatar.png" width="69"
+											<img id="drag2" src="../img/girl2.png" width="69"
 												style="border-radius: 50% !important;" onclick="pay('22')">
 											<strong
 												style="display: block; color: #101010; margin-left: 20px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag3" src="../icon/jlc.png" width="69"
+											<img id="drag3" src="../img/boy.png" width="69"
 												style="border-radius: 50% !important;" onclick="pay('33')">
 											<strong
 												style="display: block; color: #101010; margin-left: 20px;">
@@ -575,7 +575,7 @@
 												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputNumber2" placeholder="">
+												id="exampleInputNumber2" placeholder="输入或点击头像获取编号">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
@@ -583,7 +583,7 @@
 												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputName2" placeholder="">
+												id="exampleInputName2" placeholder="输入或点击头像获取职员姓名">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
@@ -591,7 +591,7 @@
 												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputPosition2" placeholder="">
+												id="exampleInputPosition2" placeholder="输入或点击头像获取职员岗位">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-zhaopingangwei"
@@ -660,7 +660,7 @@
 									</div>
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
-											<img id="drag1" src="../img/avatar.png" width="69"
+											<img id="drag1" src="../img/girl.png" width="69"
 												style="border-radius: 50% !important; display: block;"
 												onclick="pay('11')"> <strong
 												style="display: block; color: #101010; margin-left: 20px;">
@@ -668,14 +668,14 @@
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag2" src="../img/avatar.png" width="69"
+											<img id="drag2" src="../img/girl2.png" width="69"
 												style="border-radius: 50% !important;" onclick="pay('22')">
 											<strong
 												style="display: block; color: #101010; margin-left: 20px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
-											<img id="drag3" src="../icon/jlc.png" width="69"
+											<img id="drag3" src="../img/boy.png" width="69"
 												style="border-radius: 50% !important;" onclick="pay('33')">
 											<strong
 												style="display: block; color: #101010; margin-left: 20px;">

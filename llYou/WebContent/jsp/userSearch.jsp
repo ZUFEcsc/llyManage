@@ -102,51 +102,49 @@
 									<div class="form-group col-md">
 										<select class="form-control">
 											<option selected disabled style="display: none;" value="">请选择职位类别</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+											<option>普通员工</option>
+											<option>部门主管</option>
+											<option>项目经理</option>
+											<option>办公室主任</option>
+											<option>hr</option>
+											<option>其他</option>
 										</select>
 									</div>
 									<div class="form-group col-md">
 										<select class="form-control">
 											<option selected disabled style="display: none;" value="">请选择行业类别</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+											<option>互联网</option>
+											<option>金融</option>
+											<option>教育</option>
+											<option>行政</option>
+											<option>其他</option>
 										</select>
 									</div>
 									<div class="form-group col-md">
 										<select class="form-control">
 											<option selected disabled style="display: none;" value="">理想薪资</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+											<option>1W以下</option>
+											<option>1W-3W</option>
+											<option>3W-5W</option>
+											<option>5W-7W</option>
+											<option>7W以上</option>
 										</select>
 									</div>
 									<div class="form-group col-md">
 										<select class="form-control">
 											<option selected disabled style="display: none;" value="">学历要求</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+											<option>高中</option>
+											<option>本科</option>
+											<option>硕士</option>
+											<option>博士</option>
+											<option>其他</option>
 										</select>
 									</div>
 									<div class="form-group col-md">
 										<select class="form-control">
 											<option selected disabled style="display: none;" value="">工作经历要求</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+											<option>有经验</option>
+											<option>无经验</option>
 										</select>
 									</div>
 									<div class="form-group col-md-3">
@@ -195,10 +193,20 @@
 													<span class="layui-badge layui-bg-orange">公费旅游</span> <span
 													class="layui-badge layui-bg-orange"><%=ab.getAdvantage()%></span>
 													<br></td>
-												<td width="30%"><i class="iconfont icon-HNTE-fill"
-													style="font-size: 22px; color: #ff552e;"></i> <i
+												<td width="30%">
+												<%
+												if(ab.getCompany_name().equals("安徽阿里")||ab.getCompany_name().equals("福建阿里")||ab.getCompany_name().equals("四川阿里")||ab.getCompany_name().equals("深圳阿里")){%>
+												<i class="iconfont icon-HNTE-fill"
+													style="font-size: 22px; color: #ff552e;">
+													</i> 
+													<%} %>
+													
+													<i
 													class="iconfont icon-renzhengqiye"
-													style="font-size: 22px; color: #1E9FFF;"></i> <%=ab.getCompany_name()%>
+													style="font-size: 22px; color: #1E9FFF;">
+													</i> 
+													
+													<%=ab.getCompany_name()%>
 													<i class="iconfont icon-renzheng"
 													style="font-size: 22px; color: #1E9FFF;"></i> <a
 													class="layui-btn-xs" href="enterpriseDraw.jsp"> <i
@@ -282,6 +290,14 @@
 
 					<!-- 我的简历 -->
 					<div class="layui-tab-item " id="item-WDJL" style="display: none;">
+						
+						<div style="float: left;margin:20px 0px -20px 30px;">
+							<a href="#" class="layui-btn layui-btn-normal"> <i
+								class="iconfont icon-fabu" style="color: #fff; font-size: 22px;"></i>
+								新建简历
+							</a>
+							<hr>
+						</div>
 						<div class="layui-row layui-col-space15">
 							<div class="layui-col-md3" style="margin-left: 20px;">
 								<div class="single-member effect-3"
@@ -304,7 +320,6 @@
 
 										</div>
 									</div>
-
 								</div>
 							</div>
 

@@ -9,7 +9,6 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ include file="bootstrap.jsp"%>
-
 <style>
 html,
 body {
@@ -129,27 +128,26 @@ body {
 </head>
 <body>
 
-	<form class="form-signin">
+	<form class="form-signin" action="LoginServlet" method="post">
 		<div class="text-center mb-4">
 			<img class="mb-4" src="/llYou/img/you.png"
 				alt="" width="72" height="72">
 			<h1 class="h3 mb-3 font-weight-normal">管理员登录</h1>
 		</div>
-
-		<div class="">
-			<i class="iconfont icon-admin" style="font-size:24px;"></i>
-			<input style="display:inline-block;width:90%;margin-top:-22px;" type="text" class="form-control" placeholder="管理员登录" required
+  		<div class="">
+			<i class="iconfont icon-lunkuohua2_yonghu" style="font-size:24px;"></i>
+			<input style="display:inline-block;width:90%;margin-top:-22px;" type="text" class="form-control" name="username" placeholder="用户登录" required
 				autofocus>
 		</div>
 
 		<div class="">
 			<i class="iconfont icon-mima" style="font-size:24px;"></i>
-			<input style="display:inline-block;width:90%;margin-top:-8px;" type="password" class="form-control" placeholder="密码" required>	
+			<input style="display:inline-block;width:90%;margin-top:-8px;" type="password" class="form-control" name="password" placeholder="密码" required>			
 		</div>
 		
-		<div class="" style="margin-top:3px;">
+		<div style="margin-top:3px;">
 			<i class="iconfont icon-ecurityCode" style="font-size:24px;"></i>
-			<input type="text" class="form-control" style="display:inline-block;width:70%;" placeholder="验证码" required>
+			<input type="text" class="form-control" style="display:inline-block;width:70%" name="code" placeholder="验证码" required>
 			<img alt="验证码" src="ResImgServlet" style="display:inline-block;">
 		</div>
 		
@@ -158,7 +156,7 @@ body {
 		<p style="color: red; font-size: small; text-align: right;">${info}</p>
 
 		<p style="float: right;">
-			用户登录？<span><a href="login.jsp">跳转</a></span>
+			没有账号？<span><a href="userReg.jsp">注册</a></span>
 		</p>
 		<div class="checkbox mb-3">
 			<label style="float: left;"> <input type="checkbox"

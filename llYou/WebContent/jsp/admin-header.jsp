@@ -11,7 +11,7 @@
 	</ul>
 	<ul class="layui-nav layui-layout-right">
 		<li class="layui-nav-item"><a href="javascript:;"> <img
-				src="../img/avatar.png" class="layui-nav-img"> 陈沈清
+				src="../img/avatar.png" class="layui-nav-img"> 王蕾
 		</a>
 			<dl class="layui-nav-child">
 				<dd>
@@ -21,6 +21,6 @@
 					<a href="">我的消息</a>
 				</dd>
 			</dl></li>
-		<li class="layui-nav-item"><a href="">退出登录</a></li>
+		<li class="layui-nav-item"><a href="ExitServlet?x=1">退出登录</a></li>
 	</ul>
 </div>

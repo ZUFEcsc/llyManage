@@ -11,16 +11,16 @@ import javax.servlet.http.HttpSession;
 import dao.Dao;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class AdminLoginServlet
  */
-@WebServlet("/jsp/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/jsp/AdminLoginServlet")
+public class AdminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public AdminLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -69,20 +69,17 @@ public class LoginServlet extends HttpServlet {
 					}
 				}else {
 					request.setAttribute("msg", "<script language='javascript'>window.alert('密码错误，请重新输入!');</script>");
-					request.getRequestDispatcher("login.jsp").forward(request, response);
+					request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
 				}
 			}
 			else {
 				request.setAttribute("msg", "<script language='javascript'>window.alert('用户名不存在，请先注册!');</script>");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
 			}
 		}else {
 			request.setAttribute("msg", "<script language='javascript'>window.alert('验证码错误!');</script>");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
 		}
-		
-		
-		
 	}
 
 }
