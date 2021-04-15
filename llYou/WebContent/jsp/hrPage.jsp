@@ -103,7 +103,7 @@ tbody tr th {
 					<!-- 招聘信息 -->
 					<div class="layui-tab-item layui-show" id="item-ZPXX">
 						<div style="float: left;">
-							<a href="#" class="layui-btn layui-btn-normal"> <i
+							<a href="#" class="layui-btn layui-btn-normal" style="background-color:#25a18e;"> <i
 								class="iconfont icon-fabu" style="color: #fff; font-size: 22px;"></i>
 								发布招聘
 							</a>
@@ -199,7 +199,7 @@ tbody tr th {
 						<div class="layui-col-md2">
 							<div class="selectbox">
 								<a type="button" class="layui-btn layui-btn-normal selemenu"
-									style="color: #ffffff;"> <i class="iconfont icon-jiqiren2"
+									style="color: #ffffff;background-color:#25a18e;"> <i class="iconfont icon-jiqiren2"
 									style="color: #ffffff; font-size: 22px;"></i> 智能筛选
 								</a>
 
@@ -439,28 +439,46 @@ tbody tr th {
 												style="color: #777777;"><%=ab.getLearn_experience()%></span><br>
 											<i class="iconfont icon-shoujizhengli"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">招聘职位：</strong>
-											<span style="color: #777777;"><%=ab.getSeek_position()%></span><br>
-											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											<strong style="color: #2b4f6c;">综合评分：</strong>
+											<span style="color: #777777;"><%=ab.getSeek_position()%></span>
+											<br> <i class="iconfont icon-gangwei"
+												style="color: #5FB878; font-size: 16px;"></i> <strong
+												style="color: #2b4f6c;">人岗匹配：</strong>
+											<div class="layui-progress"
+												style="width: 50%; display: inline-block;">
+												<div class="layui-progress-bar" lay-percent="80%"
+													style="background-color: #ff9b85;"></div>
+											</div>
+											<span
+												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+
+
+											<br> <i class="iconfont icon-jiqiren2"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">综合评分：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
 											</div>
 											<span
 												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
-											<div style="display: inline-block;">
+
+											<div style="display: inline-block; margin-top: 10px;">
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">
+													style="background-color: #25a18e;">
 													<a
 														href="UptoFirstStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
 												</button>
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">驳回</button>
+													style="background-color: #ff9b85;">驳回</button>
 
 											</div>
-											<a href="#"><span
-												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-													更多</span></a> <br>
+											<div style="float: right; margin-top: 15px;">
+												<a class="layui-btn-xs" href="#">
+													<span style="color: #838383;">了解更多</span> <i
+													class="iconfont icon-ziyuan25"
+													style="font-size: 22px; color: #16c2c2;"></i>
+												</a>
+											</div>
+
 										</div>
 									</div>
 								</div>
@@ -487,7 +505,7 @@ tbody tr th {
 
 						<div style="float: left;">
 							<a href="#" class="layui-btn layui-btn-normal selemenu"
-								style="color: #ffffff;"> <i class="iconfont icon-jiqiren2"
+								style="color: #ffffff;background-color:#25a18e;"> <i class="iconfont icon-jiqiren2"
 								style="color: #ffffff; font-size: 22px;"></i> 智能筛选
 							</a>
 						</div>
@@ -553,31 +571,46 @@ tbody tr th {
 											<i class="iconfont icon-shoujizhengli"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">招聘职位：</strong>
 											<span style="color: #777777;"><%=ab.getSeek_position()%></span><br>
-											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											<strong style="color: #2b4f6c;">综合评分：</strong>
+											<i class="iconfont icon-gangwei"
+												style="color: #5FB878; font-size: 16px;"></i> <strong
+												style="color: #2b4f6c;">人岗匹配：</strong>
+											<div class="layui-progress"
+												style="width: 50%; display: inline-block;">
+												<div class="layui-progress-bar" lay-percent="80%"
+													style="background-color: #ff9b85;"></div>
+											</div>
+											<span
+												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+
+
+											<br> <i class="iconfont icon-jiqiren2"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">综合评分：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">
-												80分</span>
-											<div style="display: inline-block;">
+												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+
+											<div style="display: inline-block; margin-top: 10px;">
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">
+													style="background-color: #25a18e;">
 													<a
 														href="UptoSecondStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
 												</button>
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">
-													<a
-														href="DowntoZeroStepServlet?identity=<%=ab.getIdentity()%>">驳回</a>
+													style="background-color: #ff9b85;">
+													<a href="DowntoZeroStepServlet?identity=<%=ab.getIdentity()%>">驳回</a>	
 												</button>
 
 											</div>
-											<a href="#"><span
-												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-													更多</span></a> <br>
+											<div style="float: right; margin-top: 15px;">
+												<a class="layui-btn-xs" href="#">
+													<span style="color: #838383;">了解更多</span> <i
+													class="iconfont icon-ziyuan25"
+													style="font-size: 22px; color: #16c2c2;"></i>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -604,7 +637,7 @@ tbody tr th {
 
 						<div style="float: left;">
 							<a href="#" class="layui-btn layui-btn-normal selemenu"
-								style="color: #ffffff;"> <i class="iconfont icon-jiqiren2"
+								style="color: #ffffff;background-color:#25a18e;"> <i class="iconfont icon-jiqiren2"
 								style="color: #ffffff; font-size: 22px;"></i> 智能筛选
 							</a>
 						</div>
@@ -670,31 +703,48 @@ tbody tr th {
 											<i class="iconfont icon-shoujizhengli"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">招聘职位：</strong>
 											<span style="color: #777777;"><%=ab.getSeek_position()%></span><br>
-											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
-											<strong style="color: #2b4f6c;">综合评分：</strong>
+											<i class="iconfont icon-gangwei"
+												style="color: #5FB878; font-size: 16px;"></i> <strong
+												style="color: #2b4f6c;">人岗匹配：</strong>
+											<div class="layui-progress"
+												style="width: 50%; display: inline-block;">
+												<div class="layui-progress-bar" lay-percent="80%"
+													style="background-color: #ff9b85;"></div>
+											</div>
+											<span
+												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+
+
+											<br> <i class="iconfont icon-jiqiren2"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">综合评分：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
 												<div class="layui-progress-bar" lay-percent="80%"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">
-												80分</span>
-											<div style="display: inline-block;">
+												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+
+											<div style="display: inline-block; margin-top: 10px;">
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">
+													style="background-color: #25a18e;">
 													<a
 														href="UptoThirdStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
 												</button>
+												
 												<button type="button" class="layui-btn layui-btn-sm"
-													style="background-color: #5FB878;">
+													style="background-color: #ff9b85;">
 													<a
 														href="DowntoFirstStepServlet?identity=<%=ab.getIdentity()%>">驳回</a>
 												</button>
 
 											</div>
-											<a href="#"><span
-												style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
-													更多</span></a> <br>
+											<div style="float: right; margin-top: 15px;">
+												<a class="layui-btn-xs" href="#">
+													<span style="color: #838383;">了解更多</span> <i
+													class="iconfont icon-ziyuan25"
+													style="font-size: 22px; color: #16c2c2;"></i>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>

@@ -53,28 +53,15 @@
 
 <%@ include file="bootstrap.jsp"%>
 <body>
-	<div class="site-demo-button" id="layerDemo"
-		style="margin-bottom: 0; float: right; margin-left: 10px;">
-
-		<button type="button" class="layui-btn  layui-btn-normal"
-			data-method="notice" style="font-size: 18px; line-height: 18px;">
-			<i class="iconfont icon-jiqiren2"
-				style="color: #ffffff; font-size: 22px;"></i> <span
-				style="font-size: 18px;">智能筛选</span>
-		</button>
-	</div>
-
-
-
 	<div style="padding: 20px; background-color: #ffffff;">
 
 		<div class="layui-row layui-col-space15">
 			<div class="layui-col-md2">
 				<div class="selectbox">
-					<a type="button" class="layui-btn layui-btn-normal selemenu"> <i
+					<a type="button" class="layui-btn layui-btn-normal selemenu" style="background-color:#25a18e"> <i
 						class="iconfont icon-jiqiren2"
-						style="color: #ffffff; font-size: 22px;"></i> 
-						<span style="font-size: 18px;color: #ffffff; ">智能筛选</span>
+						style="color: #ffffff; font-size: 22px;"></i> <span
+						style="font-size: 18px; color: #ffffff;">智能筛选</span>
 					</a>
 
 					<!-- 
@@ -94,11 +81,12 @@
 									</svg>
 							</div>
 							<div style="display: inline-block;">
-								<span style=" color: #3f81c1; font-size: 16px;">请选择筛选条件</span>
-								<a href="#" class="layui-btn layui-btn-sm layui-btn-normal" style="margin-left:70px;">提交筛选</a>
+								<span style="color: #3f81c1; font-size: 16px;">请选择筛选条件</span> <a
+									href="#" class="layui-btn layui-btn-sm layui-btn-normal"
+									style="margin-left: 70px; background-color:#25a18e;">提交筛选</a>
 							</div>
 						</div>
-						
+
 						<div class="xzk">
 							<div class="leibie">
 								<input type="checkbox"
@@ -108,17 +96,15 @@
 
 							</div>
 							<ul class="shangquan">
-								<li>
-									<select	class="form-control form-control-sm"
-											style="display: inline-block;">
-											<option selected disabled style="display: none;" value="">请选择性别</option>
-											<option>男</option>
-											<option>女</option>
-										</select>
-								</li>
+								<li><select class="form-control form-control-sm"
+									style="display: inline-block;">
+										<option selected disabled style="display: none;" value="">请选择性别</option>
+										<option>男</option>
+										<option>女</option>
+								</select></li>
 							</ul>
 						</div>
-						
+
 						<div class="xzk">
 							<div class="leibie">
 								<input type="checkbox"
@@ -127,20 +113,20 @@
 									style="color: #777777; display: inline-block">年龄</label>
 
 							</div>
-							<ul class="shangquan" style="display: inline-block;width:200px">
+							<ul class="shangquan" style="display: inline-block; width: 200px">
 								<li>
-								<div style="display: inline-block;">
-									<input class="form-control form-control-sm"
-											style="display: inline-block;width:20%;" type="text"
-											placeholder="23"><span> - </span>
-									<input class="form-control form-control-sm"
-											style="display: inline-block;width:20%;" type="text"
+									<div style="display: inline-block;">
+										<input class="form-control form-control-sm"
+											style="display: inline-block; width: 20%;" type="text"
+											placeholder="23"><span> - </span> <input
+											class="form-control form-control-sm"
+											style="display: inline-block; width: 20%;" type="text"
 											placeholder="25"><span> 岁</span>
-											</div>
+									</div>
 								</li>
 							</ul>
 						</div>
-						
+
 						<div class="xzk">
 							<div class="leibie">
 								<input type="checkbox"
@@ -150,17 +136,15 @@
 
 							</div>
 							<ul class="shangquan">
-								<li>
-									<select	class="form-control form-control-sm"
-											style="display: inline-block;">
-											<option selected disabled style="display: none;" value="">请选择最低学历</option>
-											<option>高中</option>
-											<option>本科</option>
-										</select>
-								</li>
+								<li><select class="form-control form-control-sm"
+									style="display: inline-block;">
+										<option selected disabled style="display: none;" value="">请选择最低学历</option>
+										<option>高中</option>
+										<option>本科</option>
+								</select></li>
 							</ul>
 						</div>
-						
+
 						<div class="xzk">
 							<div class="leibie">
 								<input type="checkbox"
@@ -175,7 +159,7 @@
 								</li>
 							</ul>
 						</div>
-						
+
 						<div class="xzk">
 							<div class="leibie">
 								<input type="checkbox"
@@ -250,16 +234,13 @@
 									style="color: #777777; display: inline-block">过往标签</label>
 
 							</div>
-							<ul class="shangquan" style="width:200px">
-								<li>
-								<span class="layui-badge layui-bg-orange">亲和待人</span>
-								<span class="layui-badge layui-bg-orange">工作狂魔</span>
-									<span class="layui-badge layui-bg-gray">技术大神</span>
-									<span class="layui-badge layui-bg-gray">效率之王</span>
-									
-								<span class="layui-badge layui-bg-orange">接单大佬</span>
-									<span class="layui-badge layui-bg-gray">沟通达人</span>
-								</li>
+							<ul class="shangquan" style="width: 200px">
+								<li><span class="layui-badge layui-bg-orange">亲和待人</span> <span
+									class="layui-badge layui-bg-orange">工作狂魔</span> <span
+									class="layui-badge layui-bg-gray">技术大神</span> <span
+									class="layui-badge layui-bg-gray">效率之王</span> <span
+									class="layui-badge layui-bg-orange">接单大佬</span> <span
+									class="layui-badge layui-bg-gray">沟通达人</span></li>
 							</ul>
 						</div>
 					</div>
@@ -268,6 +249,31 @@
 			</div>
 		</div>
 
+	</div>
+	
+	
+	<div id="jl1" class="item item--mod layui-col-md6">
+		<div>
+			<fieldset class="layui-elem-field">
+				<legend>求职意向</legend>
+				<div class="layui-field-box">软件行业-Java算法工程师</div>
+			</fieldset>
+			<fieldset class="layui-elem-field">
+				<legend>个人主页</legend>
+				<div class="layui-field-box">
+					GitHub：https://github.com/ZUFEcsc<br>
+					CSDN：https://blog.csdn.net/qq_44702847?type=blog
+				</div>
+			</fieldset>
+			<fieldset class="layui-elem-field">
+				<legend>自我评价</legend>
+				<div class="layui-field-box">
+					热爱互联网行业，关注行业动态，抗压能力强学习能力强<br> 对新技术充满好奇、不断探索提高<br>
+					工作态度认真负责，具有团队合作精神
+				</div>
+			</fieldset>
+
+		</div>
 	</div>
 
 	<script src="../res/layui/layui.js"></script>

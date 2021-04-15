@@ -123,215 +123,286 @@ tbody tr th {
 						</div>
 
 						<div class="layui-row layui-col-space15">
-						<%
-						Dao dao=new Dao();
-						List<CompanyProjectBean> list=dao.getListCompanyProjectInfo();
-						for(CompanyProjectBean ab:list)
-						{
-							if(ab.getState().equals("1"))
-							{
-								if(ab.getProject_responser().equals("张雨佳"))
-								{
-						%>
+							<%
+								Dao dao = new Dao();
+								List<CompanyProjectBean> list = dao.getListCompanyProjectInfo();
+								for (CompanyProjectBean ab : list) {
+									if (ab.getState().equals("1")) {
+										if (ab.getProject_responser().equals("张雨佳")) {
+							%>
 							<div class="layui-col-md3">
 								<div class="layui-card">
 									<div class="layui-card-header" style="background: #9cd2f7;">
-										<strong><%=ab.getProject_number() %></strong> <span style="float: right;">
-											<i class="iconfont icon-jiazaizhong"
+										<strong><%=ab.getProject_number()%></strong> <span
+											style="float: right;"> <i
+											class="iconfont icon-jiazaizhong"
 											style="color: #ffffff; font-size: 18px;"></i> 进行中…
 										</span>
 									</div>
 									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">项目姓名：</strong> <span
-											style="color: #777777;"><%=ab.getProject_name() %></span><br> <i
-											class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">项目负责人：</strong> <span
-											style="color: #777777;"><%=ab.getProject_responser() %></span><br> <i
-											class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">项目内容：</strong> <span
-											style="color: #777777;"><%=ab.getProject_content() %></span><br> <i
-											class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> 
-										<strong style="color: #2b4f6c;">项目成员：</strong><span
-											style="color: #777777;"><%=ab.getProject_member() %></span><br> <i
-											class="iconfont icon-shijian" style="color: #5FB878;"></i> 
-										<strong	style="color: #2b4f6c;">起始时间：</strong><span
-											style="color: #777777;"><%=ab.getStart_time() %></span><br> <i
-											class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">结束时间：</strong><span
-											style="color: #777777;">未知</span><br>
+										<table>
+											<colgroup>
+												<col width="110">
+												<col width="140">
+											</colgroup>
+											<tbody>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-xiangmu"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目姓名：</strong></td>
+
+													<td><span style="color: #777777;"><%=ab.getProject_name()%></span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">项目负责人：</strong></td>
+													<td><span style="color: #777777;"><%=ab.getProject_responser()%></span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-suggestion" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">项目内容：</strong></td>
+													<td><span style="color: #777777;"><%=ab.getProject_content()%></span>
+											</td>
+												</tr>
+												
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">项目成员：</strong></td>
+													<td><span style="color: #777777;"><%=ab.getProject_member()%></span></td>
+												</tr>
+												
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-shijian" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">起始时间：</strong></td>
+													<td> <span style="color: #777777;"><%=ab.getStart_time()%></span></td>
+												</tr>
+												
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-jiezhishijian"
+												style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">结束时间：</strong></td>
+													<td><span style="color: #777777;">未知</span></td>
+												</tr>
+
+
+											</tbody>
+											</table>
+											
 											<a href="#" style="margin-left: 80%"><span
-												style="font-size: 12px; color: #838383;">
-													查看详情</span></a> 
-									</div>
-								</div>
-							</div>
-<%} 
-							}
-}%>
-						</div>
+												style="font-size: 12px; color: #838383;"> 查看详情</span></a>
+											</div>
+											</div>
+											</div>
+											<%
+												}
+													}
+												}
+											%>
+											</div>
 
 
-					</div>
+											</div>
 
-					<!-- 项目评价 -->
-					<div class="layui-tab-item " id="item-XMPJ" style="display: none;">
+											<!-- 项目评价 -->
+											<div class="layui-tab-item " id="item-XMPJ"
+												style="display: none;">
 
-						<div>
-							<form style="float: right;">
-								<div class="form-row">
-									<div class="form-group col-md">
-										<select class="form-control">
-											<option selected disabled style="display: none;" value="">请选择项目状态</option>
-											<option>所有已完成项目</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-										</select>
-									</div>
-									<a href="#" type="submit"><i
-										class="layui-icon layui-icon-search"
-										style="font-size: 30px; color: #1E9FFF;"></i></a>
-								</div>
-							</form>
-						</div>
-						<div>
-							<table class="table">
-								<thead>
-									<tr>
-										<th scope="col"><i class="iconfont icon-bianhao"
-											style="color: #999999"></i>项目编号</th>
-										<th scope="col"><i class="iconfont icon-suggestion"
-											style="color: #6449ff;"></i>项目名称</th>
-										<th scope="col"><i class="iconfont icon-zhaopingangwei"
-											style="color: #009688; font-size: 18px;"></i>项目负责人</th>
-										<th scope="col"><i
-											class="iconfont icon-shangbiaorenzheng"
-											style="font-size: 18px; color: #fc5531;"></i>项目状态</th>
-										<th scope="col"><i class="iconfont icon--_caozuo"
-											style="font-size: 18px; color: #5aa9e6;"></i>操作</th>
-									</tr>
+												<div>
+													<form style="float: right;">
+														<div class="form-row">
+															<div class="form-group col-md">
+																<select class="form-control">
+																	<option selected disabled style="display: none;"
+																		value="">请选择项目状态</option>
+																	<option>所有已完成项目</option>
+																	<option>2</option>
+																	<option>3</option>
+																	<option>4</option>
+																	<option>5</option>
+																</select>
+															</div>
+															<a href="#" type="submit"><i
+																class="layui-icon layui-icon-search"
+																style="font-size: 30px; color: #1E9FFF;"></i></a>
+														</div>
+													</form>
+												</div>
+												<div>
+													<table class="table">
+														<thead>
+															<tr>
+																<th scope="col"><i class="iconfont icon-bianhao"
+																	style="color: #999999"></i>项目编号</th>
+																<th scope="col"><i class="iconfont icon-suggestion"
+																	style="color: #6449ff;"></i>项目名称</th>
+																<th scope="col"><i
+																	class="iconfont icon-zhaopingangwei"
+																	style="color: #009688; font-size: 18px;"></i>项目负责人</th>
+																<th scope="col"><i
+																	class="iconfont icon-shangbiaorenzheng"
+																	style="font-size: 18px; color: #fc5531;"></i>项目状态</th>
+																<th scope="col"><i class="iconfont icon--_caozuo"
+																	style="font-size: 18px; color: #5aa9e6;"></i>操作</th>
+															</tr>
 
-								</thead>
-								<tbody>
+														</thead>
+														<tbody>
 
-									<tr>
-										<th scope="row"><i class="iconfont icon-6"
-											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-										<td>桌游开发</td>
-										<td>陈沈清</td>
-										<td><span class="layui-badge layui-bg-orange">待评价</span></td>
+															<tr>
+																<th scope="row"><i class="iconfont icon-6"
+																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+																<td>桌游开发</td>
+																<td>陈沈清</td>
+																<td><span class="layui-badge layui-bg-orange">待评价</span></td>
 
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<i class="iconfont icon-gengduo"></i><span
-													style="font-size: 14px;"> 去评价</span>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><i class="iconfont icon-6"
-											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-										<td>桌游开发</td>
-										<td>陈沈清</td>
-										<td><span class="layui-badge layui-bg-green">已评价</span></td>
+																<td>
+																	<button type="button"
+																		class="layui-btn layui-btn-sm layui-btn-normal"
+																		style="margin: 0px;">
+																		<i class="iconfont icon-gengduo"></i><span
+																			style="font-size: 14px;"> 去评价</span>
+																	</button>
+																</td>
+															</tr>
+															<tr>
+																<th scope="row"><i class="iconfont icon-6"
+																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+																<td>桌游开发</td>
+																<td>陈沈清</td>
+																<td><span class="layui-badge layui-bg-green">已评价</span></td>
 
-										<td></td>
-									</tr>
-									<tr>
-										<th scope="row"><i class="iconfont icon-6"
-											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-										<td>桌游开发</td>
-										<td>陈沈清</td>
-										<td><span class="layui-badge layui-bg-green">已评价</span></td>
+																<td></td>
+															</tr>
+															<tr>
+																<th scope="row"><i class="iconfont icon-6"
+																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+																<td>桌游开发</td>
+																<td>陈沈清</td>
+																<td><span class="layui-badge layui-bg-green">已评价</span></td>
 
-										<td></td>
-									</tr>
-									<tr>
-										<th scope="row"><i class="iconfont icon-6"
-											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-										<td>桌游开发</td>
-										<td>陈沈清</td>
-										<td><span class="layui-badge layui-bg-green">已评价</span></td>
+																<td></td>
+															</tr>
+															<tr>
+																<th scope="row"><i class="iconfont icon-6"
+																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+																<td>桌游开发</td>
+																<td>陈沈清</td>
+																<td><span class="layui-badge layui-bg-green">已评价</span></td>
 
-										<td></td>
-									</tr>
-									<tr>
-										<th scope="row"><i class="iconfont icon-6"
-											style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-										<td>桌游开发</td>
-										<td>陈沈清</td>
-										<td><span class="layui-badge layui-bg-orange">待评价</span></td>
+																<td></td>
+															</tr>
+															<tr>
+																<th scope="row"><i class="iconfont icon-6"
+																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
+																<td>桌游开发</td>
+																<td>陈沈清</td>
+																<td><span class="layui-badge layui-bg-orange">待评价</span></td>
 
-										<td>
-											<button type="button"
-												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<i class="iconfont icon-gengduo"></i><span
-													style="font-size: 14px;"> 去评价</span>
-											</button>
-										</td>
-									</tr>
+																<td>
+																	<button type="button"
+																		class="layui-btn layui-btn-sm layui-btn-normal"
+																		style="margin: 0px;">
+																		<i class="iconfont icon-gengduo"></i><span
+																			style="font-size: 14px;"> 去评价</span>
+																	</button>
+																</td>
+															</tr>
 
-								</tbody>
-							</table>
-						</div>
+														</tbody>
+													</table>
+												</div>
 
-					</div>
+											</div>
 
-				</div>
-			</div>
+											</div>
+											</div>
 
-			<%@ include file="lly-footer.jsp"%>
-		</div>
-	</div>
-	<script src="../res/layui/layui.js"></script>
-	<script>
-		//JavaScript代码区域
-		layui.use('element', function() {
-			var element = layui.element;
-		});
-	</script>
+											<%@ include file="lly-footer.jsp"%>
+											</div>
+											</div>
+											<script src="../res/layui/layui.js"></script>
+											<script>
+												//JavaScript代码区域
+												layui
+														.use(
+																'element',
+																function() {
+																	var element = layui.element;
+																});
+											</script>
 
-	<script>
-		layui.use('element', function() {
-			var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+											<script>
+												layui
+														.use(
+																'element',
+																function() {
+																	var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
 
-			var active = {
-				tabXMXX : function() {
-					element.tabChange('demo', 'XMXX');
-				},
-				tabXMPJ : function() {
-					if ($("#item-XMPJ")[0].style.display == "") {
-					} else {
-						element.tabAdd('demo', {
-							title : '项目评价',
-							id : 'XMPJ'
-						});
-						$("#item-XMPJ")[0].style.display = ""
-					}
-					element.tabChange('demo', 'XMPJ');
-				},
-			};
+																	var active = {
+																		tabXMXX : function() {
+																			element
+																					.tabChange(
+																							'demo',
+																							'XMXX');
+																		},
+																		tabXMPJ : function() {
+																			if ($("#item-XMPJ")[0].style.display == "") {
+																			} else {
+																				element
+																						.tabAdd(
+																								'demo',
+																								{
+																									title : '项目评价',
+																									id : 'XMPJ'
+																								});
+																				$("#item-XMPJ")[0].style.display = ""
+																			}
+																			element
+																					.tabChange(
+																							'demo',
+																							'XMPJ');
+																		},
+																	};
 
-			$('.site-demo-active').on('click', function() {
-				var othis = $(this), type = othis.data('type');
-				active[type] ? active[type].call(this, othis) : '';
-			});
+																	$(
+																			'.site-demo-active')
+																			.on(
+																					'click',
+																					function() {
+																						var othis = $(this), type = othis
+																								.data('type');
+																						active[type] ? active[type]
+																								.call(
+																										this,
+																										othis)
+																								: '';
+																					});
 
-			//Hash地址的定位
-			var layid = location.hash.replace(/^#demo=/, '');
-			element.tabChange('demo', layid);
+																	//Hash地址的定位
+																	var layid = location.hash
+																			.replace(
+																					/^#demo=/,
+																					'');
+																	element
+																			.tabChange(
+																					'demo',
+																					layid);
 
-			element.on('tab(demo)', function(elem) {
-				location.hash = 'demo=' + $(this).attr('lay-id');
-			});
+																	element
+																			.on(
+																					'tab(demo)',
+																					function(
+																							elem) {
+																						location.hash = 'demo='
+																								+ $(
+																										this)
+																										.attr(
+																												'lay-id');
+																					});
 
-		});
-	</script>
+																});
+											</script>
 </body>
 </html>

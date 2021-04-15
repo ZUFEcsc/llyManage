@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" import="java.util.*,dao.*,bean.*"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%><!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +6,72 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>用户_个人中心</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>HR_个人档案</title>
+
+<link rel="stylesheet" href="../res/layui/css/layui.css">
 <style>
-.uc-tr {
-	height: 45px;
+* {
+	margin: 0;
+	padding: 0;
+}
+
+tbody tr td {
+	line-height: 30px;
+}
+
+tbody tr th {
+	line-height: 30px;
+	color: #FF5722;
+}
+
+.header {
+	text-align: center;
+	line-height: 30px
+}
+
+.item {
+	padding: 1em;
+	background: #eee;
+	display: none;
+	position: relative;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+	border-radius: 3px;
+	color: #000;
+}
+
+.item-close {
+	cursor: pointer;
+	right: 5px;
+	top: 5px;
+	position: absolute;
+	background: #222;
+	color: #fff;
+	border-radius: 100%;
+	font-size: 14px;
+	height: 24px;
+	line-height: 22px;
+	text-align: center;
+	width: 24px;
+}
+
+.container {
+	margin: 150px auto;
+	max-width: 960px;
+	text-align: center;
 }
 </style>
-<link rel="stylesheet" href="../res/layui/css/layui.css">
+
+<link href="../js/userIntroduction/animate.css" rel="stylesheet" />
+<script src="../res/layui/layui.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/wordcloud.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 <script type="text/javascript"
@@ -21,118 +80,83 @@
 	src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
-<body class="layui-layout-body">
-<%
-Dao daoa=new Dao();
-String name=null;
-String sex=null,nation=null,age=null,feature=null,position=null,company=null;
-List<WorkerLoginBean> listl=daoa.getListLogin();
-for(WorkerLoginBean ab:listl)
-	name=ab.getUsername();
-List<UserBasicInfoBean> listt=daoa.getListUserBasicInfo(name);
-for(UserBasicInfoBean abb:listt){
-	sex=abb.getSex();
-	nation=abb.getNation();
-	age=abb.getAge();
-	feature=abb.getFeature();
-	position=abb.getPosition();
-	
-}
-company="深圳阿里";
-if(name.equals("孙蕾")){
-	sex="女";
-	nation="汉族";
-	age="35";
-	feature="群众";
-	position="系统管理员";
-	company="溜溜游公司";
-}
-if(position.equals("1")){
-	position="普通员工";
-}else if(position.equals("2")){
-	position="部门主管";
-}else if(position.equals("3")){
-	position="项目经理";
-}else if(position.equals("4")){
-	position="办公室主任";
-}else if(position.equals("5")){
-	position="HR";
-}
-%>
 
+<body class="">
 	<div class="layui-layout layui-layout-admin">
-		<%@ include file="user-header.jsp"%>
-		<div class="layui-side layui-bg-black">
-			<div class="layui-side-scroll">
-				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-				<%@ include file="user-card.jsp"%>
-				<ul class="layui-nav layui-nav-tree" lay-filter="test">
-					<li class="layui-nav-item layui-nav-itemed"><a class=""
-						href="javascript:;">招聘查询</a>
-						<dl class="layui-nav-child">
-							<dd>
-								<a href="userSearch.jsp">招聘信息查询</a>
-							</dd>
-						</dl></li>
-					<li class="layui-nav-item"><a href="javascript:;">我的招聘</a>
-						<dl class="layui-nav-child">
-							<dd>
-								<a href="userSearch.jsp">我的招聘进度</a>
-							</dd>
-						</dl></li>
-				</ul>
-			</div>
-		</div>
 
-		<div class="layui-body">
-			<!-- 内容主体区域 -->
-			<fieldset class="layui-elem-field layui-field-title"
-				style="margin-top: 20px;">
-				<legend>
-					<i class="layui-icon layui-icon-username"
-						style="font-size: 30px; color: #1E9FFF;"></i> 个人中心
-				</legend>
-			</fieldset>
-			<div
-				style="padding: 10px; background-color: #F2F2F2; display: inline-block;">
-				<div class="layui-row layui-col-space15">
+		<%@ include file="enterprise-header.jsp"%>
+		<div class="layui-layout-body">
+			<div class="layui-row layui-col-space10 layui-bg-gray"
+				style="padding: 5px;">
+				<div class="layui-col-md7">
+					<div class="layui-card">
 
-					<div class="layui-col-md7">
-						<div class="layui-card">
+						<div class="layui-card-header">
+							<strong>基本信息</strong>
+						</div>
+
+						<div class="layui-card-body" style="display: inline-block;">
 							<div style="display: inline-block;">
 								<img src="../img/head.png"
-									style="width: 90%; float: left; padding: 5px 10px;">
+									style="width: 86%; float: left; padding: 5px 10px;">
 							</div>
-							<div class="layui-card-body" style="display: inline-block;">
+							<div style="float: right; margin-right: -20px;">
+								<a href="javascript:findJl();"
+									class="layui-btn layui-btn-normal btn2"
+									style="background-color: #25a18e;"> <i
+									class="iconfont icon-fabu"
+									style="color: #fff; font-size: 22px;"></i> 查看简历
+								</a>
+
+								<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+								<script src="../js/userIntroduction/jquery.popup.min.js"></script>
+								<script>
+									function findJl() {
+										$('#jl1').popup({
+											time : 1000,
+											classAnimateShow : 'slideInUp',
+											classAnimateHide : 'fadeOut',
+											onPopupClose : function e() {
+												// console.log('0')
+											},
+											onPopupInit : function e() {
+												// console.log('1')
+											}
+										});
+									}
+								</script>
+							</div>
+
+							<div style="display: inline-block; margin-bottom: 20px;">
 								<table>
 									<colgroup>
 										<col width="160">
-										<col>
+										<col width="310">
 									</colgroup>
 									<tbody>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">姓名：</strong><span
-												style="color: #777777;"><%=name %></span></td>
+												style="color: #777777;">赵子树</span></td>
 											<td><strong style="color: #2b4f6c;">民族：</strong><span
 												style="color: #777777;">汉族</span></td>
 										</tr>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">性别：</strong><span
-												style="color: #777777;"><%=sex %></span></td>
+												style="color: #777777;">男</span></td>
 											<td><strong style="color: #2b4f6c;">年龄：</strong><span
-												style="color: #777777;"><%=age %></span></td>
+												style="color: #777777;"> 30</span></td>
 										</tr>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">政治面貌： </strong><span
-												style="color: #777777;"><%=feature %></span></td>
+												style="color: #777777;">群众</span></td>
 											<td><strong style="color: #2b4f6c;">担任职位：</strong><span
-												style="color: #777777;"><%=position %></span></td>
+												style="color: #777777;">无</span></td>
 										</tr>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">所属企业：</strong><span
-												style="color: #777777;"><%=company %></span></td>
+												style="color: #777777;">无</span></td>
 											<td><strong style="color: #2b4f6c;">联系邮箱：</strong><span
 												style="color: #777777;">87xxx657@163.com</span></td>
 										</tr>
@@ -140,71 +164,71 @@ if(position.equals("1")){
 								</table>
 							</div>
 						</div>
-
-						<div class="layui-card">
-							<div class="layui-card-header">
-								<strong>获奖情况</strong>
-							</div>
-							<div class="layui-card-body" style="display: inline-block;">
-								<table>
-									<colgroup>
-										<col width="100">
-										<col>
-									</colgroup>
-									<tbody>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;"> 2020.12</strong></td>
-											<td><span style="color: #777777;">国家级大学生创新创业项目立项</span></td>
-										</tr>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;">2020.05</strong></td>
-											<td><span style="color: #777777;">第四十四届国际大学生程序设计竞赛亚洲区预赛瞎编站优胜奖</span></td>
-										</tr>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;">2019.10</strong></td>
-											<td><span style="color: #777777;">第九届大学生服务外包创新创业大赛不知道几等奖</span></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
 					</div>
 
-					<div class="layui-col-md5">
-						<div class="layui-card">
-							<div class="layui-card-header">
-								<strong>个人分析</strong>
-							</div>
-							<div class="layui-card-body">
-								<div id="xrt"
-									style="display: inline-block; width: 100%; height: 350px;"></div>
-
-							</div>
-
+					<div class="layui-card">
+						<div class="layui-card-header">
+							<strong>获奖情况</strong>
+						</div>
+						<div class="layui-card-body" style="display: inline-block;">
+							<table>
+								<colgroup>
+									<col width="100">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr class="uc-tr">
+										<td><strong style="color: #2b4f6c;"> 2020.12</strong></td>
+										<td><span style="color: #777777;">国家级大学生创新创业项目立项</span></td>
+									</tr>
+									<tr class="uc-tr">
+										<td><strong style="color: #2b4f6c;">2020.05</strong></td>
+										<td><span style="color: #777777;">第四十四届国际大学生程序设计竞赛亚洲区预赛瞎编站优胜奖</span></td>
+									</tr>
+									<tr class="uc-tr">
+										<td><strong style="color: #2b4f6c;">2019.10</strong></td>
+										<td><span style="color: #777777;">第九届大学生服务外包创新创业大赛不知道几等奖</span></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
+				</div>
+
+				<div class="layui-col-md5">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							<strong>个人分析</strong>
+						</div>
+						<div class="layui-card-body">
+							<div id="xrt"
+								style="display: inline-block; width: 100%; height: 350px;"></div>
+
+						</div>
+
+					</div>
+				</div>
 
 
-					<div class="layui-col-md12">
-						<div class="layui-card">
-							<div class="layui-card-header">
-								<strong> 
-									<a id="xlHref" href="#" onclick="xlMsg()" style="color: #009345;">学历信息</a>
-									|
-									<a id="jzHref" href="#" onclick="jzMsg()"  style="color: #777777">就职信息</a>
-								</strong>
-							</div>
+				<div class="layui-col-md12">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							<strong> <a id="xlHref" href="#" onclick="xlMsg()"
+								style="color: #009345;">学历信息</a> | <a id="jzHref" href="#"
+								onclick="jzMsg()" style="color: #777777">就职信息</a>
+							</strong>
+						</div>
 
-							<div class="layui-card-body">
+						<div class="layui-card-body">
 							<div id="xlCard">
-								<div
-									style="width: 51%; padding-left: 10px; display: inline-block;">
-									<table style="margin-bottom: 180px;">
+								<div width="49%"
+									style="padding-left: 10px; display: inline-block;">
+									<table style="margin-bottom: 240px;">
 										<colgroup>
 											<col width="160">
 											<col width="90">
 											<col width="170">
-											<col width="135">
+											<col width="205">
 										</colgroup>
 										<tbody>
 											<tr class="uc-tr">
@@ -237,121 +261,141 @@ if(position.equals("1")){
 										</tbody>
 									</table>
 								</div>
-								<div
-									style="width: 48%; padding-left: 10px; display: inline-block;">
+								<div width="51%"
+									style="padding-left: 10px; display: inline-block;">
 									<div class="layui-card-header">
 										<strong> 综合能力评价 </strong>
 									</div>
 									<div id="ability1"
-										style="width: 600px; height: 320px; display: inline-block;"></div>
+										style="width: 650px; height: 320px; display: inline-block;"></div>
 								</div>
 
 							</div>
-							</div>
-
-
-							<div id="jzCard" style="display:none;width:100%;padding-left: 15px;margin-top: -10px;">
-								<div style="width: 51%; padding-left: 10px; display: inline-block;">
-									<table style="margin-bottom: 180px;">
-										<colgroup>
-											<col width="140">
-											<col width="170">
-											<col width="125">
-											<col width="110">
-										</colgroup>
-										<tbody>
-											<tr class="uc-tr">
-												<td><strong style="color: #2b4f6c;">时间</strong></td>
-												<td><strong style="color: #2b4f6c;">企业名称</strong></td>
-
-												<td><strong style="color: #2b4f6c;">担任职务</strong></td>
-												<td><strong style="color: #2b4f6c;">更多</strong></td>
-											</tr>
-											
-											<tr class="uc-tr">
-												<td><strong style="color: #777777;">2020.06 -
-														2020.09</strong></td>
-												<td><span style="color: #777777;">深圳腾腾有限公司</span></td>
-												<td><span style="color: #777777;">UI设计师</span></td>
-												<td><a class="layui-btn-xs"
-													href="enterpriseEvaluate.jsp"> <i
-														class="iconfont icon-ziyuan25"
-														style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
-												</a></td>
-											</tr>
-											<tr class="uc-tr">
-												<td><strong style="color: #777777;">2018.06 -
-														2019.08</strong></td>
-												<td><span style="color: #777777;">创新创业大公司</span></td>
-												<td><span style="color: #777777;">JAVA算法工程师</span></td>
-												<td><a class="layui-btn-xs"
-													href="enterpriseEvaluate.jsp"> <i
-														class="iconfont icon-ziyuan25"
-														style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
-												</a></td>
-											</tr>
-											<tr class="uc-tr">
-												<td><strong style="color: #777777;">2019.06 -
-														2019.09</strong></td>
-												<td><span style="color: #777777;">导师信息可视化实验室</span></td>
-												<td><span style="color: #777777;">数据分析</span></td>
-												<td><a class="layui-btn-xs"
-													href="enterpriseEvaluate.jsp"> <i
-														class="iconfont icon-ziyuan25"
-														style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
-												</a></td>
-											</tr>
-											
-										</tbody>
-									</table>
-								</div>
-								<div
-									style="width: 48%; padding-left: 10px; display: inline-block;">
-									<div class="layui-card-header">
-										<strong> 综合能力评价 </strong>
-									</div>
-									<div id="ability2"
-										style="width: 600px; height: 320px; display: inline-block;"></div>
-								</div>
-
-							</div>
-
-<!-- $("xlMsg")[0].style.display = "none";
-	 $("jzMsg")[0].style.display = "display-inline"; -->
-							<script>
-								function xlMsg(){
-									$("#jzHref").css('color', '#777777');
-									$("#xlHref").css('color', '#009345');
-									
-									$("#jzCard").css('display', 'none');
-									$("#xlCard").css('display', 'inline-block');
-									
-								}
-								function jzMsg(){
-									$("#jzHref").css('color', '#009345');
-									$("#xlHref").css('color', '#777777');
-									
-									$("#jzCard").css('display', 'inline-block');
-									$("#xlCard").css('display', 'none');
-								}
-							</script>
 						</div>
+
+
+						<div id="jzCard"
+							style="display: none; width: 100%; padding-left: 15px; margin-top: -10px;">
+							<div class="layui-col-md5" width="49%"
+								style="padding-left: 10px; display: inline-block;">
+								<table style="margin-bottom: 180px;">
+									<colgroup>
+										<col width="140">
+										<col width="170">
+										<col width="125">
+										<col width="170">
+									</colgroup>
+									<tbody>
+										<tr class="uc-tr">
+											<td><strong style="color: #2b4f6c;">时间</strong></td>
+											<td><strong style="color: #2b4f6c;">企业名称</strong></td>
+
+											<td><strong style="color: #2b4f6c;">担任职务</strong></td>
+											<td><strong style="color: #2b4f6c;">更多</strong></td>
+										</tr>
+
+										<tr class="uc-tr">
+											<td><strong style="color: #777777;">2020.06 -
+													2020.09</strong></td>
+											<td><span style="color: #777777;">深圳腾腾有限公司</span></td>
+											<td><span style="color: #777777;">UI设计师</span></td>
+											<td><a class="layui-btn-xs"
+												href="enterpriseEvaluate.jsp"> <i
+													class="iconfont icon-ziyuan25"
+													style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
+											</a></td>
+										</tr>
+										<tr class="uc-tr">
+											<td><strong style="color: #777777;">2018.06 -
+													2019.08</strong></td>
+											<td><span style="color: #777777;">创新创业大公司</span></td>
+											<td><span style="color: #777777;">JAVA算法工程师</span></td>
+											<td><a class="layui-btn-xs"
+												href="enterpriseEvaluate.jsp"> <i
+													class="iconfont icon-ziyuan25"
+													style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
+											</a></td>
+										</tr>
+										<tr class="uc-tr">
+											<td><strong style="color: #777777;">2019.06 -
+													2019.09</strong></td>
+											<td><span style="color: #777777;">导师信息可视化实验室</span></td>
+											<td><span style="color: #777777;">数据分析</span></td>
+											<td><a class="layui-btn-xs"
+												href="enterpriseEvaluate.jsp"> <i
+													class="iconfont icon-ziyuan25"
+													style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
+											</a></td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+							<div class="layui-col-md7"
+								style="padding-left: 10px; display: inline-block;">
+								<div class="layui-card-header">
+									<strong> 综合能力评价 </strong>
+								</div>
+								<div id="ability2"
+									style="width: 650px; height: 320px; display: inline-block;"></div>
+							</div>
+
+						</div>
+
+						<script>
+							function xlMsg() {
+								$("#jzHref").css('color', '#777777');
+								$("#xlHref").css('color', '#009345');
+
+								$("#jzCard").css('display', 'none');
+								$("#xlCard").css('display', 'inline-block');
+
+							}
+							function jzMsg() {
+								$("#jzHref").css('color', '#009345');
+								$("#xlHref").css('color', '#777777');
+
+								$("#jzCard").css('display', 'inline-block');
+								$("#xlCard").css('display', 'none');
+							}
+						</script>
 					</div>
+				</div>
 
-					<!-- <div class="layui-col-md12">
-						<div class="layui-card">
-							<div class="layui-card-header">学生档案</div>
-							<div class="layui-card-body">内容</div>
+				<div id="jl1" class="item item--mod layui-col-md6">
+					<fieldset class="layui-elem-field">
+						<legend><strong>求职意向</strong></legend>
+						<div class="layui-field-box">软件行业-Java算法工程师</div>
+					</fieldset>
+					<fieldset class="layui-elem-field">
+						<legend><strong>个人主页</strong></legend>
+						<div class="layui-field-box">
+							GitHub：https://github.com/ZUFEcsc<br>
+							CSDN：https://blog.csdn.net/qq_44702847?type=blog
 						</div>
-					</div> -->
-
+					</fieldset>
+					<fieldset class="layui-elem-field">
+						<legend><strong>自我评价</strong></legend>
+						<div class="layui-field-box">
+							热爱互联网行业，关注行业动态，抗压能力强学习能力强<br> 对新技术充满好奇、不断探索提高<br>
+							工作态度认真负责，具有团队合作精神
+						</div>
+					</fieldset>
+					<b class="item-close js-popup-close">x</b>
 				</div>
 			</div>
 		</div>
 
-		<%@ include file="lly-footer.jsp"%>
+
+
+		<div
+			style="position: fixed; width: 100%; bottom: 0; height: 44px; line-height: 44px; text-align: center; background-color: #eee;">
+
+			© 溜溜游团队出品</div>
 	</div>
-	<script src="../res/layui/layui.js"></script>
+
+	<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+
 	<script>
 		//JavaScript代码区域
 		layui.use('element', function() {
@@ -359,12 +403,6 @@ if(position.equals("1")){
 		});
 	</script>
 
-	<script>
-		layui.use('element', function() {
-			var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
-
-		});
-	</script>
 
 
 	<!-- 旭日图 -->
@@ -847,7 +885,7 @@ if(position.equals("1")){
 				show : false
 			},
 			yAxis : {
-				data:['专业技能', '学历水平', '工作能力', '领导能力', '协调能力','工作效率','发展潜力'],
+				data : [ '专业技能', '学历水平', '工作能力', '领导能力', '协调能力', '工作效率', '发展潜力' ],
 				inverse : true,
 				axisTick : {
 					show : false
@@ -929,7 +967,5 @@ if(position.equals("1")){
 		};
 		myChart.setOption(option);
 	</script>
-
-
 </body>
 </html>

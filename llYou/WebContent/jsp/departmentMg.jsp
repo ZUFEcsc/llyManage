@@ -23,6 +23,15 @@
 .layui-timeline-item i {
 	font-size: 25px;
 }
+
+tbody tr td {
+	line-height: 30px;
+}
+
+tbody tr th {
+	line-height: 30px;
+	color: #FF5722;
+}
 </style>
 <title>部门主管页面</title>
 <link rel="stylesheet" href="../res/layui/css/layui.css">
@@ -32,8 +41,8 @@
 	<%
 		String msg = (String) request.getAttribute("msg");
 		Date date = new Date();
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy年MM月dd日  HH时mm分ss秒 E");
-		String datestring=sdf.format(date).toString();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日  HH时mm分ss秒 E");
+		String datestring = sdf.format(date).toString();
 	%>
 	<div class="layui-layout layui-layout-admin">
 		<%@ include file="enterprise-header.jsp"%>
@@ -170,36 +179,62 @@
 										}
 									%>
 									<div class="layui-card-body">
-										<i class="iconfont icon-xiangmu" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">项目姓名：</strong> <span
-											style="color: #777777;"><%=ab.getProject_name()%></span><br>
-										<i class="iconfont icon-zhaopingangwei"
-											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">项目负责人：</strong>
-										<span style="color: #777777;"><%=ab.getProject_responser()%></span><br>
-										<i class="iconfont icon-suggestion" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">项目内容：</strong> <span
-											style="color: #777777;"><%=ab.getProject_content()%></span><br>
-										<i class="iconfont icon-lunkuohua2_yonghu"
-											style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">项目成员：</strong><span
-											style="color: #777777;"><%=ab.getProject_member()%></span><br>
-										<i class="iconfont icon-shijian" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">起始时间：</strong><span
-											style="color: #777777;"><%=ab.getStart_time()%></span><br>
-										<i class="iconfont icon-jiezhishijian" style="color: #5FB878;"></i>
-										<strong style="color: #2b4f6c;">结束时间：</strong>
-										<%
-											if (ab.getEnd_time() == null) {
-										%><span style="color: #777777;">未知</span>
-										<%
-											}
-										%>
-										<%
-											if (ab.getEnd_time() != null) {
-										%><span style="color: #777777;"><%=ab.getEnd_time()%></span>
-										<%
-											}
-										%>
-										<br> <a href="#" style="margin-left: 80%"><span
+										<table>
+											<colgroup>
+												<col width="110">
+												<col width="140">
+											</colgroup>
+											<tbody>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-xiangmu"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目姓名：</strong></td>
+													<td><span style="color: #777777;"><%=ab.getProject_name()%></span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-zhaopingangwei"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目负责人：</strong></td>
+													<td><span style="color: #777777;"><%=ab.getProject_responser()%></span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-suggestion"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目内容：</strong></td>
+													<td><span style="color: #777777;"><%=ab.getProject_content()%></span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-lunkuohua2_yonghu"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目成员：</strong></td>
+													<td><span style="color: #777777;"><%=ab.getProject_member()%></span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-shijian"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">起始时间：</strong></td>
+													<td><span style="color: #777777;"><%=ab.getStart_time()%></span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-jiezhishijian"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">结束时间：</strong></td>
+													<td>
+														<%
+															if (ab.getEnd_time() == null) {
+														%><span style="color: #777777;">未知</span> <%
+														 	}
+														 %> <%
+														 	if (ab.getEnd_time() != null) {
+														 %><span style="color: #777777;"><%=ab.getEnd_time()%></span> <%
+														 	}
+														 %>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+										<a href="#" style="margin-left: 80%"><span
 											style="font-size: 12px; color: #838383;"> 查看详情</span></a>
 
 									</div>
@@ -255,7 +290,7 @@
 														style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
 														郭美丽</span>
 												</div>												
-												 -->												
+												 -->
 
 												<div style="display: inline-block; padding: 0px 5px;">
 													<img src="../icon/add.png" width="39"
@@ -272,8 +307,8 @@
 											<div class="layui-panel">
 												<div
 													style="padding: 0px 0px 0px 140px; display: inline-block;">
-													
-													
+
+
 													<div style="display: inline-block; padding: 0px 5px;">
 														<img src="../icon/add.png" width="39"
 															style="border-radius: 50% !important;"> <span
@@ -309,7 +344,7 @@
 												style="display: inline-block; width: 75%;">
 										</div>
 
-										<div style="display: inline-block;padding-top:25px;">
+										<div style="display: inline-block; padding-top: 25px;">
 											<button type="submit" class="layui-btn "
 												style="background-color: #00a5cf; padding: 0 30px;">确定添加</button>
 										</div>
@@ -341,10 +376,11 @@
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn" style="background-color:#34a0a4;">A组</a> <a
-											href="#" class="layui-btn layui-btn-primary">B组</a> <a
-											href="#" class="layui-btn layui-btn-primary">C组</a> <a
-											href="#" class="layui-btn layui-btn-primary">D组</a>
+										<a href="#" class="layui-btn"
+											style="background-color: #34a0a4;">A组</a> <a href="#"
+											class="layui-btn layui-btn-primary">B组</a> <a href="#"
+											class="layui-btn layui-btn-primary">C组</a> <a href="#"
+											class="layui-btn layui-btn-primary">D组</a>
 									</div>
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding: 0 10px;">
@@ -396,7 +432,7 @@
 												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputNumber1" placeholder="输入或点击头像获取编号">
+												id="exampleInputNumber1" placeholder=" ">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
@@ -404,7 +440,7 @@
 												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputName1" placeholder="输入或点击头像获取职员姓名">
+												id="exampleInputName1" placeholder=" ">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
@@ -412,7 +448,7 @@
 												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputPosition1" placeholder="输入或点击头像获取职员岗位">
+												id="exampleInputPosition1" placeholder=" ">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-zhaopingangwei"
@@ -468,7 +504,7 @@
 											</div>
 										</div>
 
-										<div style="display: inline-block;padding-top:25px;">
+										<div style="display: inline-block; padding-top: 25px;">
 											<button type="submit" class="layui-btn "
 												style="background-color: #00a5cf; padding: 0 30px;">提交评价</button>
 
@@ -491,10 +527,11 @@
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn" style="background-color:#34a0a4;">A组</a> <a
-											href="#" class="layui-btn layui-btn-primary">B组</a> <a
-											href="#" class="layui-btn layui-btn-primary">C组</a> <a
-											href="#" class="layui-btn layui-btn-primary">D组</a>
+										<a href="#" class="layui-btn"
+											style="background-color: #34a0a4;">A组</a> <a href="#"
+											class="layui-btn layui-btn-primary">B组</a> <a href="#"
+											class="layui-btn layui-btn-primary">C组</a> <a href="#"
+											class="layui-btn layui-btn-primary">D组</a>
 									</div>
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
@@ -523,10 +560,10 @@
 
 									<!-- border: solid 1px black; -->
 									<div id="rader"
-										style="margin-left: -30px; width: 370px; height: 320px; display: inline-block;"></div>
+										style="margin-left: -30px; width: 370px; height: 320px; display: none;"></div>
 
 									<div id="bar"
-										style="margin-right: -15px; width: 420px; height: 330px; display: inline-block;"></div>
+										style="margin-right: -15px; width: 420px; height: 330px; display: none;"></div>
 									<script
 										src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
 									<script
@@ -630,7 +667,7 @@
 
 
 
-										<div style="display: inline-block;padding-top:25px;">
+										<div style="display: inline-block; padding-top: 25px;">
 											<button type="submit" class="layui-btn "
 												style="background-color: #00a5cf; padding: 0 30px;">提交评价</button>
 
@@ -653,10 +690,11 @@
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
 									<div>
-										<a href="#" class="layui-btn" style="background-color:#34a0a4;">A组</a> <a
-											href="#" class="layui-btn layui-btn-primary">B组</a> <a
-											href="#" class="layui-btn layui-btn-primary">C组</a> <a
-											href="#" class="layui-btn layui-btn-primary">D组</a>
+										<a href="#" class="layui-btn"
+											style="background-color: #34a0a4;">A组</a> <a href="#"
+											class="layui-btn layui-btn-primary">B组</a> <a href="#"
+											class="layui-btn layui-btn-primary">C组</a> <a href="#"
+											class="layui-btn layui-btn-primary">D组</a>
 									</div>
 									<div style="margin-top: 25px;">
 										<div style="display: inline-block; padding-right: 10px;">
@@ -998,6 +1036,9 @@
 			var userid = reg;
 			//alert(userid);
 			getUserList(userid);
+			
+			$("#rader").css('display', 'inline-block');
+			$("#bar").css('display', 'inline-block');
 		}
 
 		//通过ajax向后台发送id触发查询并返回数据

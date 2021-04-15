@@ -7,11 +7,10 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script src="/llYou/dist/echarts.min.js"></script>
-<script src="/llYou/dist/echarts-wordcloud.min.js"></script>
 
 <script src="/llYou/dist/jquery.raty.min.js"></script>
 
 <link rel="icon" href="/llYou/img/you.png">
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2414271_3khdtmuxlra.css">
-<script src="//at.alicdn.com/t/font_2414271_3khdtmuxlra.js"></script>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2414271_w1iuakzotr.css">
+<script src="//at.alicdn.com/t/font_2414271_w1iuakzotr.js"></script>

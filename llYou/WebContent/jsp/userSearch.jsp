@@ -168,7 +168,9 @@
 						<div class="layui-row"
 							style="margin: 10px; padding: 5px; background-color: #F2F2F2;">
 							<div class="layui-card">
+							<i class="iconfont icon-recommend" style="float:left;color:#ff6600;font-size:44px;margin-top:-3px;"></i>
 								<div class="layui-card-header">
+								
 									<i class="iconfont icon-dingwei"
 										style="font-size: 20px; color: #009688"></i> <strong><%=ab.getCompany_location()%></strong>
 									|
@@ -292,7 +294,7 @@
 					<div class="layui-tab-item " id="item-WDJL" style="display: none;">
 						
 						<div style="float: left;margin:20px 0px -20px 30px;">
-							<a href="#" class="layui-btn layui-btn-normal"> <i
+							<a href="#" class="layui-btn layui-btn-normal" style="background-color:#25a18e;"> <i
 								class="iconfont icon-fabu" style="color: #fff; font-size: 22px;"></i>
 								新建简历
 							</a>
