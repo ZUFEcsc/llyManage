@@ -12,6 +12,7 @@ public class CompanyProjectBean {
 	private Date start_time;
 	private Date end_time;
 	private String state;
+	private String evaluate_state;
 	public String getProject_number() {
 		return project_number;
 	}
@@ -67,8 +68,17 @@ public class CompanyProjectBean {
 	public void setState(String state) {
 		this.state = state;
 	}
+	
+	public String getEvaluate_state() {
+		return evaluate_state;
+	}
+	public void setEvaluate_state(String evaluate_state) {
+		this.evaluate_state = evaluate_state;
+	}
+	
 	public CompanyProjectBean(String project_number, String company_number, String project_name, String project_content,
-			String project_member, String project_responser, Date start_time, Date end_time,String state) {
+			String project_member, String project_responser, Date start_time, Date end_time, String state,
+			String evaluate_state) {
 		super();
 		this.project_number = project_number;
 		this.company_number = company_number;
@@ -78,7 +88,8 @@ public class CompanyProjectBean {
 		this.project_responser = project_responser;
 		this.start_time = start_time;
 		this.end_time = end_time;
-		this.state=state;
+		this.state = state;
+		this.evaluate_state = evaluate_state;
 	}
 	public CompanyProjectBean()
 	{

@@ -7,6 +7,16 @@
 %>
 <html>
 <head>
+<script type="text/javascript"
+	src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 <%@ include file="bootstrap.jsp"%>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -45,11 +55,11 @@ tbody tr th {
 				<div style="margin: 10px 35px;">
 					<div class="userCard-img"
 						style="display: inline-block; padding-right: 5px;">
-						<img src="../img/avatar.png"
+						<img src="../img/boy.png"
 							style="border-radius: 50% !important; width: 42px; margin-bottom: 10px;">
 					</div>
 					<div class="userCard-text" style="display: inline-block;">
-						<h5 style="padding-bottom: 3px">陈沈清</h5>
+						<h5 style="padding-bottom: 3px">王汪</h5>
 						<span class="layui-badge layui-bg-orange">HR</span>
 					</div>
 				</div>
@@ -59,20 +69,20 @@ tbody tr th {
 						href="javascript:;"> 招聘管理 </a>
 						<dl class="layui-nav-child">
 							<dd>
-								<a href="#" class="site-demo-active" data-url="ZPXX"
+								<a href="#1" class="site-demo-active" data-url="ZPXX"
 									data-id="ZPXX" data-type="tabZPXX">招聘信息</a>
 							</dd>
 							<dd>
-								<a href="#" class="site-demo-active" data-url="JLC"
+								<a href="#2" class="site-demo-active" data-url="JLC"
 									data-id="JLC" data-type="tabJLC">简历池</a>
 							</dd>
 							<dd>
-								<a href="#" class="site-demo-active" data-url="DYJD"
-									data-id="DYJD" data-type="tabDYJD">第一阶段</a>
+								<a href="#3" class="site-demo-active" data-url="DYJD"
+									data-id="DYJD" data-type="tabDYJD">初面</a>
 							</dd>
 							<dd>
-								<a href="#" class="site-demo-active" data-url="DEJD"
-									data-id="DEJD" data-type="tabDEJD">第二阶段</a>
+								<a href="#4" class="site-demo-active" data-url="DEJD"
+									data-id="DEJD" data-type="tabDEJD">二面</a>
 							</dd>
 
 						</dl></li>
@@ -103,7 +113,8 @@ tbody tr th {
 					<!-- 招聘信息 -->
 					<div class="layui-tab-item layui-show" id="item-ZPXX">
 						<div style="float: left;">
-							<a href="#" class="layui-btn layui-btn-normal" style="background-color:#25a18e;"> <i
+							<a href="#" class="layui-btn layui-btn-normal"
+								style="background-color: #25a18e;"> <i
 								class="iconfont icon-fabu" style="color: #fff; font-size: 22px;"></i>
 								发布招聘
 							</a>
@@ -169,9 +180,14 @@ tbody tr th {
 									<td>
 										<%
 											if (ab.getState().equals("进行中")) {
-										%> <a href="EndFindServlet?number=<%=ab.getSeek_number()%>"
-										class="layui-btn layui-btn-sm layui-btn-primary" type="button">结束招聘</a>
-
+										%> <!-- 
+										<a href="EndFindServlet?number=<%=ab.getSeek_number()%>"
+										class="layui-btn layui-btn-sm layui-btn-primary" type="button">结束招聘
+										</a>
+											 -->
+										<button type="button"
+											class="layui-btn layui-btn-sm layui-btn-primary"
+											data-toggle="modal" data-target="#exampleModal">结束招聘</button>
 										<%
 											}
 										%>
@@ -199,7 +215,8 @@ tbody tr th {
 						<div class="layui-col-md2">
 							<div class="selectbox">
 								<a type="button" class="layui-btn layui-btn-normal selemenu"
-									style="color: #ffffff;background-color:#25a18e;"> <i class="iconfont icon-jiqiren2"
+									style="color: #ffffff; background-color: #25a18e;"> <i
+									class="iconfont icon-jiqiren2"
 									style="color: #ffffff; font-size: 22px;"></i> 智能筛选
 								</a>
 
@@ -464,16 +481,15 @@ tbody tr th {
 											<div style="display: inline-block; margin-top: 10px;">
 												<button type="button" class="layui-btn layui-btn-sm"
 													style="background-color: #25a18e;">
-													<a
-														href="UptoFirstStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
+													<a href="UptoFirstStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
 												</button>
 												<button type="button" class="layui-btn layui-btn-sm"
 													style="background-color: #ff9b85;">驳回</button>
 
 											</div>
 											<div style="float: right; margin-top: 15px;">
-												<a class="layui-btn-xs" href="#">
-													<span style="color: #838383;">了解更多</span> <i
+												<a class="layui-btn-xs" href="hrMore.jsp"> <span
+													style="color: #838383;">了解更多</span> <i
 													class="iconfont icon-ziyuan25"
 													style="font-size: 22px; color: #16c2c2;"></i>
 												</a>
@@ -500,12 +516,13 @@ tbody tr th {
 					</div>
 
 
-					<!-- 第一阶段 -->
+					<!-- 初面 -->
 					<div class="layui-tab-item" id="item-DYJD" style="display: none;">
 
 						<div style="float: left;">
 							<a href="#" class="layui-btn layui-btn-normal selemenu"
-								style="color: #ffffff;background-color:#25a18e;"> <i class="iconfont icon-jiqiren2"
+								style="color: #ffffff; background-color: #25a18e;"> <i
+								class="iconfont icon-jiqiren2"
 								style="color: #ffffff; font-size: 22px;"></i> 智能筛选
 							</a>
 						</div>
@@ -600,13 +617,14 @@ tbody tr th {
 												</button>
 												<button type="button" class="layui-btn layui-btn-sm"
 													style="background-color: #ff9b85;">
-													<a href="DowntoZeroStepServlet?identity=<%=ab.getIdentity()%>">驳回</a>	
+													<a
+														href="DowntoZeroStepServlet?identity=<%=ab.getIdentity()%>">驳回</a>
 												</button>
 
 											</div>
 											<div style="float: right; margin-top: 15px;">
-												<a class="layui-btn-xs" href="#">
-													<span style="color: #838383;">了解更多</span> <i
+												<a class="layui-btn-xs" href="#"> <span
+													style="color: #838383;">了解更多</span> <i
 													class="iconfont icon-ziyuan25"
 													style="font-size: 22px; color: #16c2c2;"></i>
 												</a>
@@ -632,12 +650,13 @@ tbody tr th {
 					</div>
 
 
-					<!-- 第二阶段 -->
+					<!-- 二面 -->
 					<div class="layui-tab-item" id="item-DEJD" style="display: none;">
 
 						<div style="float: left;">
 							<a href="#" class="layui-btn layui-btn-normal selemenu"
-								style="color: #ffffff;background-color:#25a18e;"> <i class="iconfont icon-jiqiren2"
+								style="color: #ffffff; background-color: #25a18e;"> <i
+								class="iconfont icon-jiqiren2"
 								style="color: #ffffff; font-size: 22px;"></i> 智能筛选
 							</a>
 						</div>
@@ -730,7 +749,7 @@ tbody tr th {
 													<a
 														href="UptoThirdStepServlet?identity=<%=ab.getIdentity()%>">通过</a>
 												</button>
-												
+
 												<button type="button" class="layui-btn layui-btn-sm"
 													style="background-color: #ff9b85;">
 													<a
@@ -739,8 +758,8 @@ tbody tr th {
 
 											</div>
 											<div style="float: right; margin-top: 15px;">
-												<a class="layui-btn-xs" href="#">
-													<span style="color: #838383;">了解更多</span> <i
+												<a class="layui-btn-xs" href="#"> <span
+													style="color: #838383;">了解更多</span> <i
 													class="iconfont icon-ziyuan25"
 													style="font-size: 22px; color: #16c2c2;"></i>
 												</a>
@@ -936,6 +955,26 @@ tbody tr th {
 
 		<%@ include file="lly-footer.jsp"%>
 	</div>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div style="margin-left:10px;margin-top:10px;">
+				<img src="../img/warn.png"
+			style="border-radius: 50% !important; width: 30px;"><span style="margin-left:6px;font-size:25px;margin-top:10px;">消息提示框</span>	
+				</div>
+				</br>
+				<h4 style="margin-left:10px;font-size:19px;">您是否要结束该招聘进程？</h4></br></br>
+				<div style="margin-left:350px;">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						onclick="clicktest()">确定</button>
+				</div></br>
+			</div>
+		</div>
+	</div>
 	<script src="../res/layui/layui.js"></script>
 
 	<script>
@@ -947,6 +986,9 @@ tbody tr th {
 
 	<!-- 下拉框 -->
 	<script>
+	function clicktest(){
+		window.location.href="EndFindServlet?number="+"SZ18003";
+	}
 		$(".selemenu").click(
 				function() {
 					$(this).next().slideToggle();
@@ -1057,7 +1099,7 @@ tbody tr th {
 				tabDYJD : function() {
 					if ($("#item-DYJD")[0].style.display == "none") {
 						element.tabAdd('demo', {
-							title : '第一阶段',
+							title : '初面',
 							id : 'DYJD'
 						});
 						$("#item-DYJD")[0].style.display = "";
@@ -1068,7 +1110,7 @@ tbody tr th {
 				tabDEJD : function() {
 					if ($("#item-DEJD")[0].style.display == "none") {
 						element.tabAdd('demo', {
-							title : '第二阶段',
+							title : '二面',
 							id : 'DEJD'
 						});
 						$("#item-DEJD")[0].style.display = "";
@@ -1132,6 +1174,8 @@ tbody tr th {
 			});
 
 		}
+		
+		
 	</script>
 
 

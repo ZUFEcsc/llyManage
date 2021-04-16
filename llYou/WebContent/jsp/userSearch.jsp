@@ -168,11 +168,16 @@
 						<div class="layui-row"
 							style="margin: 10px; padding: 5px; background-color: #F2F2F2;">
 							<div class="layui-card">
+							<%
+												if(ab.getCompany_location().equals("上海")||ab.getCompany_location().equals("北京")){
+												%>
 							<i class="iconfont icon-recommend" style="float:left;color:#ff6600;font-size:44px;margin-top:-3px;"></i>
-								<div class="layui-card-header">
+								<%} %><div class="layui-card-header">
+								
 								
 									<i class="iconfont icon-dingwei"
-										style="font-size: 20px; color: #009688"></i> <strong><%=ab.getCompany_location()%></strong>
+										style="font-size: 20px; color: #009688"></i> 
+										<strong><%=ab.getCompany_location()%></strong>
 									|
 									<%=ab.getSeek_position()%>高薪 <a href="#"> <span class=""
 										style="padding: 6px 3px 24px 10px; line-height: 20px;">
@@ -197,7 +202,8 @@
 													<br></td>
 												<td width="30%">
 												<%
-												if(ab.getCompany_name().equals("安徽阿里")||ab.getCompany_name().equals("福建阿里")||ab.getCompany_name().equals("四川阿里")||ab.getCompany_name().equals("深圳阿里")){%>
+												if(ab.getCompany_name().equals("安徽阿里")||ab.getCompany_name().equals("福建阿里")||ab.getCompany_name().equals("四川阿里")||ab.getCompany_name().equals("深圳阿里")){
+												%>
 												<i class="iconfont icon-HNTE-fill"
 													style="font-size: 22px; color: #ff552e;">
 													</i> 
@@ -385,7 +391,7 @@
 					"desc" : "2021-03-23"
 				}, {
 					'title' : "简历初选",
-					"desc" : "2021-03-24"
+					"desc" : "暂定"
 				}, {
 					'title' : "一轮面试",
 					"desc" : "暂定"
@@ -418,7 +424,7 @@
 					"desc" : "2021-03-24"
 				}, {
 					'title' : "一轮面试",
-					"desc" : "2021-03-28"
+					"desc" : "暂定"
 				}, {
 					'title' : "二轮面试",
 					"desc" : "暂定"
@@ -475,10 +481,10 @@
 					"desc" : "2021-03-23"
 				}, {
 					'title' : "简历初选",
-					"desc" : "2021-03-24"
+					"desc" : "暂定"
 				}, {
 					'title' : "一轮面试",
-					"desc" : "2021-03-28"
+					"desc" : "暂定"
 				}, {
 					'title' : "二轮面试",
 					"desc" : "暂定"

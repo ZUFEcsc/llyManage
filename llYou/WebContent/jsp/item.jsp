@@ -35,6 +35,29 @@
 #transferDialoge .layui-form-item .layui-input-inline {
 	width: 115px;
 }
+
+.xzk{
+width:380px;
+}
+
+.citylist2 {
+	box-shadow: 0px 5px 5px #ccc;;
+	font-size: 14px;
+	color: #666;
+	padding: 10px 20px;
+	position: absolute;
+	top:20;
+    left:0;
+    z-index:10;
+	background: #fff;
+	border-bottom: 1px solid #f6f6f6;
+	display: none;
+}
+.citylist2 .leibie {
+	width: 50px;
+	float: left;
+	line-height: 40px;
+}
 </style>
 
 <link rel="stylesheet" href="../res/layui/css/layui.css">
@@ -63,17 +86,7 @@
 						style="color: #ffffff; font-size: 22px;"></i> <span
 						style="font-size: 18px; color: #ffffff;">智能筛选</span>
 					</a>
-
-					<!-- 
-						<div class="selemediv">
-							<div class="selemenu">
-								<span class="sqinput">
-								</span>
-							</div>				
-						</div>-->
-
 					<div class="citylist2">
-
 						<div class="xzk" style="line-height: 45px;">
 							<div style="display: inline-block;">
 								<svg class="icon" aria-hidden="true" style="font-size: 8px;">
@@ -83,169 +96,63 @@
 							<div style="display: inline-block;">
 								<span style="color: #3f81c1; font-size: 16px;">请选择筛选条件</span> <a
 									href="#" class="layui-btn layui-btn-sm layui-btn-normal"
-									style="margin-left: 70px; background-color:#25a18e;">提交筛选</a>
+									style="margin-left: 160px; background-color:#25a18e;">提交筛选</a>
 							</div>
 						</div>
-
 						<div class="xzk">
 							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <label
+								<span>性格</span>
+							</div>
+							<ul class="shangquan">
+								
+								<li><input type="checkbox"
+									style="display: inline-block; margin:0px -3px 3px 5px;"> <label
 									class="form-check-label"
-									style="color: #777777; display: inline-block">性别</label>
-
-							</div>
-							<ul class="shangquan">
-								<li><select class="form-control form-control-sm"
-									style="display: inline-block;">
-										<option selected disabled style="display: none;" value="">请选择性别</option>
-										<option>男</option>
-										<option>女</option>
-								</select></li>
-							</ul>
-						</div>
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <label
+									style="color: #777777; display: inline-block">进取性</label></li>
+								<li><input type="checkbox"
+									style="display: inline-block;  margin:0px -3px 3px 5px;"> <label
 									class="form-check-label"
-									style="color: #777777; display: inline-block">年龄</label>
-
-							</div>
-							<ul class="shangquan" style="display: inline-block; width: 200px">
-								<li>
-									<div style="display: inline-block;">
-										<input class="form-control form-control-sm"
-											style="display: inline-block; width: 20%;" type="text"
-											placeholder="23"><span> - </span> <input
-											class="form-control form-control-sm"
-											style="display: inline-block; width: 20%;" type="text"
-											placeholder="25"><span> 岁</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <label
+									style="color: #777777; display: inline-block">外向性</label></li>
+								<li><input type="checkbox"
+									style="display: inline-block; margin:0px -3px 3px 5px;"> <label
 									class="form-check-label"
-									style="color: #777777; display: inline-block">最低学历</label>
-
-							</div>
-							<ul class="shangquan">
-								<li><select class="form-control form-control-sm"
-									style="display: inline-block;">
-										<option selected disabled style="display: none;" value="">请选择最低学历</option>
-										<option>高中</option>
-										<option>本科</option>
-								</select></li>
-							</ul>
-						</div>
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <label
+									style="color: #777777; display: inline-block">尽责性</label></li>
+								<li><input type="checkbox"
+									style="display: inline-block; margin:0px -3px 3px 5px;"> <label
 									class="form-check-label"
-									style="color: #777777; display: inline-block">工作能力</label>
-
-							</div>
-							<ul class="shangquan">
-								<li>
-									<div id="nlstar" class="star" style="display: inline-block;"></div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <span
-									style="color: #777777;">工作效率</span>
-							</div>
-							<ul class="shangquan">
-								<li>
-									<div id="xlstar" class="star" style="display: inline-block;"></div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <span
-									style="color: #777777;">沟通能力</span>
-							</div>
-							<ul class="shangquan">
-								<li>
-									<div id="gtstar" class="star" style="display: inline-block;"></div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <span
-									style="color: #777777;">工作经验</span>
-							</div>
-							<ul class="shangquan">
-								<li>
-									<div id="jystar" class="star" style="display: inline-block;"></div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <span
-									style="color: #777777;">专业技能</span>
-							</div>
-							<ul class="shangquan">
-								<li>
-									<div id="zystar" class="star" style="display: inline-block;"></div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <span
-									style="color: #777777;">匹配程度</span>
-							</div>
-							<ul class="shangquan">
-								<li>
-									<div id="ppstar" class="star" style="display: inline-block;"></div>
-								</li>
-							</ul>
-						</div>
-
-
-						<div class="xzk">
-							<div class="leibie">
-								<input type="checkbox"
-									style="display: inline-block; margin-bottom: 3px;"> <label
+									style="color: #777777; display: inline-block">宜人性</label></li>
+								<li><input type="checkbox"
+									style="display: inline-block; margin:0px -3px 3px 5px;"> <label
 									class="form-check-label"
-									style="color: #777777; display: inline-block">过往标签</label>
-
+									style="color: #777777; display: inline-block">情绪性</label></li>
+							</ul>							
+						</div>
+						<div class="xzk">
+							<div class="leibie">
+								<span>驱动力</span>
 							</div>
-							<ul class="shangquan" style="width: 200px">
-								<li><span class="layui-badge layui-bg-orange">亲和待人</span> <span
-									class="layui-badge layui-bg-orange">工作狂魔</span> <span
-									class="layui-badge layui-bg-gray">技术大神</span> <span
-									class="layui-badge layui-bg-gray">效率之王</span> <span
-									class="layui-badge layui-bg-orange">接单大佬</span> <span
-									class="layui-badge layui-bg-gray">沟通达人</span></li>
+							<ul class="shangquan">
+								<li><input type="checkbox"
+									style="display: inline-block;margin:0px -3px 3px 5px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">奖励</label></li>
+								<li><input type="checkbox"
+									style="display: inline-block; margin:0px -3px 3px 5px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">亲和</label></li>
+								<li><input type="checkbox"
+									style="display: inline-block; margin:0px -3px 3px 5px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">影响力</label></li>
+								<li><input type="checkbox"
+									style="display: inline-block;margin:0px -3px 3px 5px;"> <label
+									class="form-check-label"
+									style="color: #777777; display: inline-block">成就</label></li>
 							</ul>
 						</div>
 					</div>
+					
 				</div>
-
 			</div>
 		</div>
 

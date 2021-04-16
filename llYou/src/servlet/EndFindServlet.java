@@ -42,11 +42,12 @@ public class EndFindServlet extends HttpServlet {
 		Dao dao=new Dao();
 		String seeknumber=request.getParameter("number");
 		boolean b=dao.FindStateUpdate(seeknumber);
-		if(b) {
-			response.sendRedirect("JudgeServlet?m=1");
-		}else {
-			response.sendRedirect("JudgeServlet?m=0");
-		}
+		response.sendRedirect("hrPage.jsp#1");
+//		if(b) {
+//			response.sendRedirect("JudgeServlet?m=1");
+//		}else {
+//			response.sendRedirect("JudgeServlet?m=0");
+//		}
 	}
 
 }

@@ -49,10 +49,10 @@ public class UptoThirdStepServlet extends HttpServlet {
 		Dao dao=new Dao();
 		boolean b=dao.UptoThirdStepUpdate(identity);
 		if(b) {
-			response.sendRedirect("hrPage.jsp");
+			response.sendRedirect("hrPage#4.jsp");
 //			response.sendRedirect("JudgeServlet?m=1");
 		}else {
-			response.sendRedirect("hrPage.jsp");
+			response.sendRedirect("hrPage#4.jsp");
 //			response.sendRedirect("JudgeServlet?m=0");
 		}
 	}

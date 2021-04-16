@@ -137,27 +137,36 @@ body {
 		</div>
   		<div class="">
 			<i class="iconfont icon-lunkuohua2_yonghu" style="font-size:24px;"></i>
-			<input style="display:inline-block;width:90%;margin-top:-22px;" type="text" class="form-control" name="username" placeholder="用户登录" required
+			<input style="display:inline-block;width:90%;margin-top:-16px;" type="text" class="form-control" name="username" placeholder="用户登录" required
 				autofocus>
 		</div>
 
 		<div class="">
 			<i class="iconfont icon-mima" style="font-size:24px;"></i>
-			<input style="display:inline-block;width:90%;margin-top:-8px;" type="password" class="form-control" name="password" placeholder="密码" required>			
+			<input style="display:inline-block;width:90%;margin-top:-9px;" type="password" class="form-control" name="password" placeholder="密码" required>			
 		</div>
 		
-		<div style="margin-top:3px;">
+		<div class="form-label-group">
+			<i class="iconfont icon-guanliyuan" style="font-size:24px;"></i>
+			<select style="display:inline-block;width:90%;margin-top:0px;" class="form-control">
+			  <option selected="selected" disabled="disabled" style='display: none' value='用户类型'>用户类型</option> 
+			  <option>HR主管</option>
+			  <option>部门经理</option>
+			  <option>办公室主任</option>
+			</select>
+		</div>
+		
+		<div style="margin-top:-17px;">
 			<i class="iconfont icon-ecurityCode" style="font-size:24px;"></i>
 			<input type="text" class="form-control" style="display:inline-block;width:70%" name="code" placeholder="验证码" required>
 			<img alt="验证码" src="ResImgServlet" style="display:inline-block;">
 		</div>
 		
-		
-
+	
 		<p style="color: red; font-size: small; text-align: right;">${info}</p>
 
 		<p style="float: right;">
-			没有账号？<span><a href="userReg.jsp">注册</a></span>
+			没有账号？<span><a href="qy	Reg.jsp">注册</a></span>
 		</p>
 		<div class="checkbox mb-3">
 			<label style="float: left;"> <input type="checkbox"

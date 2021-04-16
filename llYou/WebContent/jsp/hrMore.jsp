@@ -10,6 +10,9 @@
 <title>HR_个人档案</title>
 
 <link rel="stylesheet" href="../res/layui/css/layui.css">
+
+<link rel="stylesheet" href="../js/selection/xlselection.css" />
+
 <style>
 * {
 	margin: 0;
@@ -62,6 +65,30 @@ tbody tr th {
 	max-width: 960px;
 	text-align: center;
 }
+
+.xzk {
+	width: 380px;
+}
+
+.citylist2 {
+	box-shadow: 0px 5px 5px #ccc;;
+	font-size: 14px;
+	color: #666;
+	padding: 10px 20px;
+	position: absolute;
+	top: 20;
+	left: 0;
+	z-index: 10;
+	background: #fff;
+	border-bottom: 1px solid #f6f6f6;
+	display: none;
+}
+
+.citylist2 .leibie {
+	width: 50px;
+	float: left;
+	line-height: 40px;
+}
 </style>
 
 <link href="../js/userIntroduction/animate.css" rel="stylesheet" />
@@ -98,11 +125,24 @@ tbody tr th {
 						</div>
 
 						<div class="layui-card-body" style="display: inline-block;">
-							<div style="display: inline-block;">
+
+
+							<div style="display: inline-block; float: left;">
 								<img src="../img/head.png"
 									style="width: 86%; float: left; padding: 5px 10px;">
 							</div>
-							<div style="float: right; margin-right: -20px;">
+							<div
+								style="display: inline-block; margin: 5px 0px 5px 0px; float: left;">
+								<button type="button" class="layui-btn layui-btn-xs"
+									style="background-color: #25a18e;">
+									<a href="#">通过筛选</a>
+								</button>
+								<button type="button" class="layui-btn layui-btn-xs"
+									style="background-color: #25a18e;">驳回</button>
+
+							</div>
+
+							<div style="float: right; margin-right: 30px;">
 								<a href="javascript:findJl();"
 									class="layui-btn layui-btn-normal btn2"
 									style="background-color: #25a18e;"> <i
@@ -129,7 +169,7 @@ tbody tr th {
 								</script>
 							</div>
 
-							<div style="display: inline-block; margin-bottom: 20px;">
+							<div style="display: inline-block; margin: 10px 0px;">
 								<table>
 									<colgroup>
 										<col width="160">
@@ -163,6 +203,43 @@ tbody tr th {
 									</tbody>
 								</table>
 							</div>
+
+
+							<div style="float: right; margin: -40px 50px 0px 0px;">
+								<a class="layui-btn-xs" href="#" style="margin: 10px 10px;"
+									data-toggle="modal" data-target="#exampleModal"> <i
+									class="iconfont icon-ziyuan25"
+									style="font-size: 22px; color: #16c2c2;"></i> 申请查看联系方式
+								</a>
+							</div>
+
+
+
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1"
+								role="dialog" aria-labelledby="exampleModalLabel"
+								aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">向赵子树发送查看联系方式的申请</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											提交申请的同时会附带您所在企业的基本信息以及现阶段您的招聘岗位信息，获得用户同意之后可以获取到赵子树的联系方式，包括微信和联系电话等，您确定提交发送吗？
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-dismiss="modal">取消</button>
+											<button data-method="confirmTrans" data-dismiss="modal"
+												type="button" class="btn btn-primary" onclick="tcClick()">确定</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -189,6 +266,10 @@ tbody tr th {
 										<td><strong style="color: #2b4f6c;">2019.10</strong></td>
 										<td><span style="color: #777777;">第九届大学生服务外包创新创业大赛不知道几等奖</span></td>
 									</tr>
+									<tr class="uc-tr">
+										<td><strong style="color: #2b4f6c;">2018.10</strong></td>
+										<td><span style="color: #777777;">数学建模竞赛（美赛）二等奖</span></td>
+									</tr>
 								</tbody>
 							</table>
 						</div>
@@ -201,8 +282,85 @@ tbody tr th {
 							<strong>个人分析</strong>
 						</div>
 						<div class="layui-card-body">
+							<div class="layui-col-md2" style="float: left;">
+								<div class="selectbox">
+									<a type="button" class="layui-btn layui-btn-normal selemenu"
+										style="background-color: #25a18e"> <i
+										class="iconfont icon-jiqiren2"
+										style="color: #ffffff; font-size: 22px;"></i> <span
+										style="color: #ffffff;">智能筛选</span>
+									</a>
+									<div class="citylist2">
+										<div class="xzk" style="line-height: 45px;">
+											
+											<div style="display: inline-block;">
+											<img style="display: inline-block;" src="../icon/ai.png"
+												width=8%> 
+												<span style="color: #3f81c1; font-size: 16px;">请选择筛选条件</span>
+												<a href="#" class="layui-btn layui-btn-sm layui-btn-normal"
+													style="margin-left: 160px; background-color: #25a18e;" onclick="sxClick()">提交筛选</a>
+											</div>
+										</div>
+										<div class="xzk">
+											<div class="leibie">
+												<span>性格</span>
+											</div>
+											<ul class="shangquan">
+
+												<li><input type="checkbox" checked ="checked"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label"
+													style="color: #777777; display: inline-block">进取性</label></li>
+												<li><input type="checkbox" checked ="checked"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label"
+													style="color: #777777; display: inline-block">外向性</label></li>
+												<li><input type="checkbox" checked ="checked"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label"
+													style="color: #777777; display: inline-block">尽责性</label></li>
+												<li><input type="checkbox" checked ="checked"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label"
+													style="color: #777777; display: inline-block">宜人性</label></li>
+												<li><input type="checkbox" checked ="checked"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label"
+													style="color: #777777; display: inline-block">情绪性</label></li>
+											</ul>
+										</div>
+										<div class="xzk">
+											<div class="leibie">
+												<span>驱动力</span>
+											</div>
+											<ul class="shangquan">
+												<li><input type="checkbox" checked ="checked"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label"
+													style="color: #777777; display: inline-block">奖励</label></li>
+												<li><input type="checkbox"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label" checked ="checked"
+													style="color: #777777; display: inline-block">亲和</label></li>
+												<li><input type="checkbox"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label" checked ="checked"
+													style="color: #777777; display: inline-block">影响力</label></li>
+												<li><input type="checkbox"
+													style="display: inline-block; margin: 0px -3px 3px 5px;">
+													<label class="form-check-label"
+													style="color: #777777; display: inline-block">成就</label></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 							<div id="xrt"
-								style="display: inline-block; width: 100%; height: 350px;"></div>
+								style="display: inline-block; width: 100%; height: 335px;"></div>
+
+							<div id="xrt2"
+								style="display: none;margin-left:100px;width: 400%; height: 335px;"></div>
 
 						</div>
 
@@ -364,18 +522,24 @@ tbody tr th {
 
 				<div id="jl1" class="item item--mod layui-col-md6">
 					<fieldset class="layui-elem-field">
-						<legend><strong>求职意向</strong></legend>
+						<legend>
+							<strong>求职意向</strong>
+						</legend>
 						<div class="layui-field-box">软件行业-Java算法工程师</div>
 					</fieldset>
 					<fieldset class="layui-elem-field">
-						<legend><strong>个人主页</strong></legend>
+						<legend>
+							<strong>个人主页</strong>
+						</legend>
 						<div class="layui-field-box">
 							GitHub：https://github.com/ZUFEcsc<br>
 							CSDN：https://blog.csdn.net/qq_44702847?type=blog
 						</div>
 					</fieldset>
 					<fieldset class="layui-elem-field">
-						<legend><strong>自我评价</strong></legend>
+						<legend>
+							<strong>自我评价</strong>
+						</legend>
 						<div class="layui-field-box">
 							热爱互联网行业，关注行业动态，抗压能力强学习能力强<br> 对新技术充满好奇、不断探索提高<br>
 							工作态度认真负责，具有团队合作精神
@@ -394,18 +558,303 @@ tbody tr th {
 			© 溜溜游团队出品</div>
 	</div>
 
-	<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
-
 	<script>
 		//JavaScript代码区域
 		layui.use('element', function() {
 			var element = layui.element;
 		});
+
+		function tcClick() {
+			alert("发送成功！");
+		}
+		
+		function sxClick() {
+			$("#xrt").css('display', 'none');
+			$("#xrt2").css('display', 'inline-block');
+			alert("筛选成功！");
+		}
 	</script>
 
+	<script>
+		$('#myModal').on('shown.bs.modal', function() {
+			$('#myInput').trigger('focus')
+		})
+	</script>
 
+	<!-- 下拉框 -->
+	<script>
+		$(".selemenu").click(
+				function() {
+					$(this).next().slideToggle();
+					$(this).parents().siblings().find(".citylist,.citylist2")
+							.slideUp();
+				})
+
+		$(function() {
+			$(document).not($(".selectbox")).click(function() {
+				$(".citylist,.citylist2").slideUp();
+			})
+			$(".selectbox").click(function(event) {
+				event.stopPropagation();
+			})
+		})
+	</script>
 
 	<!-- 旭日图 -->
+
+	<script>
+		var myChart = echarts.init(document.getElementById('xrt2'));
+
+		var option;
+
+		//var colors = [ '#FFAE57', '#FF7853', '#EA5151', '#CC3F57', '#9A2555' ];
+		var colors = [ '#74c69d', '#52b788', '#40916c', '#2d6a4f', '#1b4332' ];
+		var bgColor = '#fff';
+
+		var itemStyle = {
+			star5 : {
+				color : colors[0]
+			},
+			star4 : {
+				color : colors[1]
+			},
+			star3 : {
+				color : colors[2]
+			},
+			star2 : {
+				color : colors[3]
+			}
+		};
+
+		var data = [ {
+			name : '性格',
+			itemStyle : {
+				color : colors[1]
+			},
+			children : [ {
+				name : '进取性',
+				children : [ {
+					name : '3☆',
+					children : [ {
+						name : '对抗性'
+					}, ]
+				} ]
+			}, {
+				name : '外向性',
+				children : [ {
+					name : '4☆',
+					children : [ {
+						name : '社交性'
+					} ]
+				}, {
+					name : '3☆',
+					children : [ {
+						name : '沟通能力'
+					} ]
+				} ]
+			}, {
+				name : '尽责性',
+				children : [ {
+					name : '4☆',
+					children : [ {
+						name : '责任感'
+					} ]
+				}, ]
+			}, {
+				name : '宜人性',
+				children : [ {
+					name : '4☆',
+					children : [ {
+						name : '同理心'
+					} ]
+				}, ]
+			}, {
+				name : '情绪性',
+				children : [ {
+					name : '3☆',
+					children : [ {
+						name : '敏感'
+					} ]
+				}, {
+					name : '4☆',
+					children : [ {
+						name : '忧虑'
+					} ]
+				}, ]
+			}, ]
+		}, {
+			name : '驱动力',
+			itemStyle : {
+				color : colors[2]
+			},
+			children : [ {
+				name : '影响力',
+				children : [ {
+					name : '5☆',
+					children : [ {
+						name : '竞争力'
+					} ]
+				} ]
+
+			}, {
+				name : '亲和',
+				children : [ {
+					name : '2☆',
+					children : [ {
+						name : '人际互动'
+					} ]
+				} ]
+			}, {
+				name : '奖励',
+				children : [ {
+					name : '5☆',
+					children : [ {
+						name : '工作氛围'
+					} ]
+				}, {
+					name : '4☆',
+					children : [ {
+						name : '薪酬'
+					} ]
+				} ]
+			} ]
+		} ];
+
+		for (var j = 0; j < data.length; ++j) {
+			var level1 = data[j].children;
+			for (var i = 0; i < level1.length; ++i) {
+				var block = level1[i].children;
+				var bookScore = [];
+				var bookScoreId;
+				for (var star = 0; star < block.length; ++star) {
+					var style = (function(name) {
+						switch (name) {
+						case '5☆':
+							bookScoreId = 0;
+							return itemStyle.star5;
+						case '4☆':
+							bookScoreId = 1;
+							return itemStyle.star4;
+						case '3☆':
+							bookScoreId = 2;
+							return itemStyle.star3;
+						case '2☆':
+							bookScoreId = 3;
+							return itemStyle.star2;
+						}
+					})(block[star].name);
+
+					block[star].label = {
+						color : style.color,
+						downplay : {
+							opacity : 1
+						}
+					};
+
+					if (block[star].children) {
+						style = {
+							opacity : 1,
+							color : style.color
+						};
+						block[star].children.forEach(function(book) {
+							book.value = 1;
+							book.itemStyle = style;
+
+							book.label = {
+								color : style.color
+							};
+
+							var value = 1;
+							if (bookScoreId === 0 || bookScoreId === 3) {
+								value = 5;
+							}
+
+							if (bookScore[bookScoreId]) {
+								bookScore[bookScoreId].value += value;
+							} else {
+								bookScore[bookScoreId] = {
+									color : colors[bookScoreId],
+									value : value
+								};
+							}
+						});
+					}
+				}
+
+				level1[i].itemStyle = {
+					color : data[j].itemStyle.color
+				};
+			}
+		}
+
+		option = {
+			backgroundColor : bgColor,
+			color : colors,
+			series : [ {
+				type : 'sunburst',
+				center : [ '50%', '48%' ],
+				data : data,
+				sort : function(a, b) {
+					if (a.depth === 1) {
+						return b.getValue() - a.getValue();
+					} else {
+						return a.dataIndex - b.dataIndex;
+					}
+				},
+				label : {
+					rotate : 'radial',
+					color : bgColor
+				},
+				itemStyle : {
+					borderColor : bgColor,
+					borderWidth : 2
+				},
+				levels : [ {}, {
+					r0 : 0,
+					r : 40,
+					label : {
+						rotate : 0
+					}
+				}, {
+					r0 : 40,
+					r : 95
+				}, {
+					r0 : 95,
+					r : 120,
+					itemStyle : {
+						shadowBlur : 2,
+						shadowColor : colors[2],
+						color : 'transparent'
+					},
+					label : {
+						rotate : 'tangential',
+						fontSize : 10,
+						color : colors[0]
+					}
+				}, {
+					r0 : 120,
+					r : 125,
+					itemStyle : {
+						shadowBlur : 0,
+						shadowColor : colors[0]
+					},
+					label : {
+						position : 'outside',
+						textShadowBlur : 0,
+						textShadowColor : '#333'
+					},
+					downplay : {
+						label : {
+							opacity : 1
+						}
+					}
+				} ]
+			} ]
+		};
+
+		option && myChart.setOption(option);
+	</script>
+
 	<script type="text/javascript">
 		var myChart = echarts.init(document.getElementById('xrt'));
 
@@ -576,7 +1025,7 @@ tbody tr th {
 					children : [ {
 						name : '灵活性'
 					}, {
-						name : '独立自主'
+						name : '独立'
 					}, {
 						name : '薪酬'
 					} ]

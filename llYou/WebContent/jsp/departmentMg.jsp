@@ -35,7 +35,16 @@ tbody tr th {
 </style>
 <title>部门主管页面</title>
 <link rel="stylesheet" href="../res/layui/css/layui.css">
-
+<script type="text/javascript"
+	src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 </head>
 <body class="layui-layout-body">
 	<%
@@ -52,11 +61,11 @@ tbody tr th {
 				<div style="margin: 10px 35px;">
 					<div class="userCard-img"
 						style="display: inline-block; padding-right: 5px;">
-						<img src="../img/avatar.png"
+						<img src="../img/boy.png"
 							style="border-radius: 50% !important; width: 42px; margin-bottom: 10px;">
 					</div>
 					<div class="userCard-text" style="display: inline-block;">
-						<h5 style="padding-bottom: 4px">陈沈清</h5>
+						<h5 style="padding-bottom: 4px">王畅畅</h5>
 						<span class="layui-badge layui-bg-orange">部门主管</span>
 					</div>
 				</div>
@@ -194,7 +203,7 @@ tbody tr th {
 												<tr class="uc-tr">
 													<td><i class="iconfont icon-zhaopingangwei"
 														style="color: #5FB878;"></i> <strong
-														style="color: #2b4f6c;">项目负责人：</strong></td>
+														style="color: #2b4f6c;">负责人：</strong></td>
 													<td><span style="color: #777777;"><%=ab.getProject_responser()%></span></td>
 												</tr>
 												<tr class="uc-tr">
@@ -223,12 +232,13 @@ tbody tr th {
 														<%
 															if (ab.getEnd_time() == null) {
 														%><span style="color: #777777;">未知</span> <%
-														 	}
-														 %> <%
-														 	if (ab.getEnd_time() != null) {
-														 %><span style="color: #777777;"><%=ab.getEnd_time()%></span> <%
-														 	}
-														 %>
+ 	}
+ %> <%
+ 	if (ab.getEnd_time() != null) {
+ %><span style="color: #777777;"><%=ab.getEnd_time()%></span>
+														<%
+															}
+														%>
 													</td>
 												</tr>
 
@@ -278,42 +288,35 @@ tbody tr th {
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-zhaopingangwei"
 												style="color: #1296db; font-size: 1.25rem;"></i> <strong
-												style="color: #2b4f6c;">项目负责人：</strong>
+												style="color: #2b4f6c;">项目负责人：</strong> <label
+												style="font-size: 15px;"><input type="checkbox"
+												style="margin-left: 10px;" /><span style="color:#777777">张雨佳 </span></label> <label
+												style="font-size: 15px;"><input type="checkbox"
+												style="margin-left: 10px;" />
+												<span style="color:#777777">万山</span> </label> <a href="#"
+												style="font-size: 10px; color: grey;">其他</a>
 										</div>
-										<div class="layui-panel">
-											<div
-												style="padding: 0px 0px 0px 140px; display: inline-block;">
-												<!-- 
-												<div style="display: inline-block; padding: 0px 5px;">
-													<img src="../img/avatar.png" width="39"
-														style="border-radius: 50% !important;"> <span
-														style="display: block; color: #101010; margin-left: 2px; font-size: 0.75px;">
-														郭美丽</span>
-												</div>												
-												 -->
 
-												<div style="display: inline-block; padding: 0px 5px;">
-													<img src="../icon/add.png" width="39"
-														style="border-radius: 50% !important;"> <span
-														style="display: block; color: #101010; margin-left: 8px; font-size: 0.75px;">
-														添加</span>
-												</div>
-											</div>
-										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-lunkuohua2_yonghu"
 												style="color: #1296db; font-size: 1.25rem;"></i> <strong
 												style="color: #2b4f6c;">项目成员：</strong>
-											<div class="layui-panel">
+											<div id="textadd" style="display: none;">
+												<span style="color: black;">张琪，张培</span>
+											</div>
+											<div class="layui-panel" id="imgadd">
+												<!-- <div id="textadd" style="display: none;"><label>张培</label></div> -->
 												<div
-													style="padding: 0px 0px 0px 140px; display: inline-block;">
-
-
+													style="padding: 0px 0px 10px 100px; display: inline-block;">
 													<div style="display: inline-block; padding: 0px 5px;">
 														<img src="../icon/add.png" width="39"
-															style="border-radius: 50% !important;"> <span
+															style="border-radius: 50% !important;">
+														<button type="button" class="layui-btn layui-btn-primary"
+															style="border: none; padding: 0px;" data-toggle="modal"
+															data-target="#exampleModal">添加</button>
+														<!-- <span
 															style="display: block; color: #101010; margin-left: 8px; font-size: 0.75px;">
-															添加</span>
+															添加</span> -->
 													</div>
 												</div>
 											</div>
@@ -537,21 +540,21 @@ tbody tr th {
 										<div style="display: inline-block; padding-right: 10px;">
 											<img id="drag1" src="../img/girl.png" width="69"
 												style="border-radius: 50% !important; display: block;"
-												onclick="pay('11')"> <strong
+												onclick="pay1('11')"> <strong
 												style="display: block; color: #101010; margin-left: 20px;">
 												张琪</strong>
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/girl2.png" width="69"
-												style="border-radius: 50% !important;" onclick="pay('22')">
+												style="border-radius: 50% !important;" onclick="pay1('22')">
 											<strong
 												style="display: block; color: #101010; margin-left: 20px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../img/boy.png" width="69"
-												style="border-radius: 50% !important;" onclick="pay('33')">
+												style="border-radius: 50% !important;" onclick="pay1('33')">
 											<strong
 												style="display: block; color: #101010; margin-left: 20px;">
 												王光</strong>
@@ -612,7 +615,7 @@ tbody tr th {
 												style="color: #2b4f6c;">职员编号：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputNumber2" placeholder="输入或点击头像获取编号">
+												id="exampleInputNumber2" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
@@ -620,7 +623,7 @@ tbody tr th {
 												style="color: #2b4f6c;">职员姓名：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputName2" placeholder="输入或点击头像获取职员姓名">
+												id="exampleInputName2" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-jiqiren2" style="color: #5FB878;"></i>
@@ -628,7 +631,7 @@ tbody tr th {
 												style="color: #2b4f6c;">职员岗位：</strong></label> <input type="text"
 												class="form-control form-control-sm"
 												style="display: inline-block; width: 60%;"
-												id="exampleInputPosition2" placeholder="输入或点击头像获取职员岗位">
+												id="exampleInputPosition2" placeholder="">
 										</div>
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-zhaopingangwei"
@@ -700,21 +703,21 @@ tbody tr th {
 										<div style="display: inline-block; padding-right: 10px;">
 											<img id="drag1" src="../img/girl.png" width="69"
 												style="border-radius: 50% !important; display: block;"
-												onclick="pay('11')"> <strong
+												onclick="pay2('11')"> <strong
 												style="display: block; color: #101010; margin-left: 20px;">
 												张琪</strong>
 										</div>
 
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag2" src="../img/girl2.png" width="69"
-												style="border-radius: 50% !important;" onclick="pay('22')">
+												style="border-radius: 50% !important;" onclick="pay2('22')">
 											<strong
 												style="display: block; color: #101010; margin-left: 20px;">
 												张培</strong>
 										</div>
 										<div style="display: inline-block; padding: 0 10px;">
 											<img id="drag3" src="../img/boy.png" width="69"
-												style="border-radius: 50% !important;" onclick="pay('33')">
+												style="border-radius: 50% !important;" onclick="pay2('33')">
 											<strong
 												style="display: block; color: #101010; margin-left: 20px;">
 												王光</strong>
@@ -736,6 +739,30 @@ tbody tr th {
 			<%@ include file="lly-footer.jsp"%>
 		</div>
 	</div>
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div style="margin-left: 10px; margin-top: 10px;">
+					<span style="margin-left: 6px; font-size: 25px; margin-top: 10px;">请勾选项目负责人：</span>
+				</div>
+				</br> <label style="font-size: 20px;"><input type="checkbox"
+					value="1" style="margin-left: 20px;" />张琪 </label> <label
+					style="font-size: 20px;"><input type="checkbox" value="2"
+					style="margin-left: 20px;" />张培 </label> <label style="font-size: 20px;"><input
+					type="checkbox" value="3" style="margin-left: 20px;" />王光 </label> <label
+					style="font-size: 20px;"><input type="checkbox" value="4"
+					style="margin-left: 20px;" />赵子龙 </label>
+				<div style="margin-left: 350px;">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						onclick="clicktest()">确定</button>
+				</div>
+				</br>
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="../dist/jquery.raty.min.js"></script>
 	<script src="../res/layui/layui.js"></script>
 	<script>
@@ -743,6 +770,12 @@ tbody tr th {
 		layui.use('element', function() {
 			var element = layui.element;
 		});
+		
+		function clicktest(){
+			$("#imgadd").css('display', 'none');
+			$("#textadd").css('display', 'inline-block');
+			
+		}
 	</script>
 
 	<!-- 评分 -->
@@ -1031,18 +1064,18 @@ tbody tr th {
 
 	<script>
 		//触发按钮点击事件
-		function pay(reg) {
+		function pay1(reg) {
 			//获取id
 			var userid = reg;
 			//alert(userid);
-			getUserList(userid);
+			getUserList1(userid);
 			
 			$("#rader").css('display', 'inline-block');
 			$("#bar").css('display', 'inline-block');
 		}
 
 		//通过ajax向后台发送id触发查询并返回数据
-		function getUserList(userid) {
+		function getUserList1(userid) {
 
 			$.post("${pageContext.request.contextPath}/jsp/AjaxServlet", {
 				"userid" : userid
@@ -1080,6 +1113,53 @@ tbody tr th {
 				var userpositionid = document
 						.getElementById("exampleInputPosition1");
 				userpositionid.value = userposition;
+				
+
+			});
+
+		}
+		function pay2(reg) {
+			//获取id
+			var userid = reg;
+			//alert(userid);
+			getUserList2(userid);
+			
+			$("#rader").css('display', 'inline-block');
+			$("#bar").css('display', 'inline-block');
+		}
+
+		//通过ajax向后台发送id触发查询并返回数据
+		function getUserList2(userid) {
+
+			$.post("${pageContext.request.contextPath}/jsp/AjaxServlet", {
+				"userid" : userid
+			}, function(r) {
+				//打印返回的数据
+				console.log(r);
+				//切割返回的数据
+				var recList = r;
+				var entName = "";
+				var userlist = new Array();//用户信息数组
+				for (var i = 0; i < recList.length; i++) {
+
+					if (recList[i] != ",") {
+						var entName = entName + recList[i];
+
+					}
+					if (recList[i] == ",") {
+						console.log(entName);
+						userlist.push(entName);
+						entName = "";
+					}
+
+				}
+				//console.log(userlist[0]);
+				var usernumber = userlist[0]; //获取用户姓名
+				var username = userlist[1]; //获取用户性别
+				var userposition = userlist[2]; //获取用户学历
+
+				//改变左侧输入框的内容
+				
 				var usernumberid2 = document
 						.getElementById("exampleInputNumber2");
 				usernumberid2.value = usernumber;

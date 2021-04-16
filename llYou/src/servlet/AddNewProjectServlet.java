@@ -42,7 +42,7 @@ public class AddNewProjectServlet extends HttpServlet {
 		String projectnumber="SZ001F004";
 		String projectname=request.getParameter("projectname");
 		String projectresponser="张雨佳";
-		String projectmember="王光，张培";
+		String projectmember="张琪，张培";
 		String projectcontent=request.getParameter("projectcontent");
 		String startdate=request.getParameter("starttime");
 		Dao dao=new Dao();

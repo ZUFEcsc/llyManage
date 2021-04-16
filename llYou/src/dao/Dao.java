@@ -234,7 +234,7 @@ public class Dao {
     	Connection conn=DBUtil.getConnection();
     	Statement stmt=null;
 		ResultSet rs=null;
-		String sql="select project_number,project_name,project_responser,project_member,project_content,start_time,end_time,state from company_project_info where company_number='SZ001F'";
+		String sql="select project_number,project_name,project_responser,project_member,project_content,start_time,end_time,state,evaluate_state from company_project_info where company_number='SZ001F'";
 		try{
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -249,6 +249,7 @@ public class Dao {
 				ab.setStart_time(rs.getDate(6));
 				ab.setEnd_time(rs.getDate(7));
 				ab.setState(rs.getString(8));
+				ab.setEvaluate_state(rs.getString(9));
 				list.add(ab);
 			}
 		}catch(Exception e)

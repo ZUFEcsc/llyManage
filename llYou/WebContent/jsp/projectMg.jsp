@@ -249,67 +249,41 @@ tbody tr th {
 
 														</thead>
 														<tbody>
-
+<%
+								for (CompanyProjectBean ab : list) {
+									if (ab.getState().equals("1")) {
+										
+							%>
 															<tr>
 																<th scope="row"><i class="iconfont icon-6"
-																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-																<td>桌游开发</td>
-																<td>陈沈清</td>
-																<td><span class="layui-badge layui-bg-orange">待评价</span></td>
+																	style="font-size: 16px; color: #e29c45;"></i> <%=ab.getProject_number() %></th>
+																<td><%=ab.getProject_name() %></td>
+																<td><%=ab.getProject_responser() %></td>
+																<td>
+																<%if(ab.getEvaluate_state().equals("待评价")){ %>
+																<span class="layui-badge layui-bg-orange">待评价</span>
+																<%}else{ %>
+																<span class="layui-badge layui-bg-green">已评价</span>
+																<%} %>
+																</td>
 
 																<td>
+																<%if(ab.getEvaluate_state().equals("待评价")){ %>
 																	<button type="button"
 																		class="layui-btn layui-btn-sm layui-btn-normal"
 																		style="margin: 0px;">
 																		<i class="iconfont icon-gengduo"></i><span
 																			style="font-size: 14px;"> 去评价</span>
 																	</button>
+																	<%} %>
 																</td>
 															</tr>
-															<tr>
-																<th scope="row"><i class="iconfont icon-6"
-																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-																<td>桌游开发</td>
-																<td>陈沈清</td>
-																<td><span class="layui-badge layui-bg-green">已评价</span></td>
-
-																<td></td>
-															</tr>
-															<tr>
-																<th scope="row"><i class="iconfont icon-6"
-																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-																<td>桌游开发</td>
-																<td>陈沈清</td>
-																<td><span class="layui-badge layui-bg-green">已评价</span></td>
-
-																<td></td>
-															</tr>
-															<tr>
-																<th scope="row"><i class="iconfont icon-6"
-																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-																<td>桌游开发</td>
-																<td>陈沈清</td>
-																<td><span class="layui-badge layui-bg-green">已评价</span></td>
-
-																<td></td>
-															</tr>
-															<tr>
-																<th scope="row"><i class="iconfont icon-6"
-																	style="font-size: 16px; color: #e29c45;"></i> Y20189</th>
-																<td>桌游开发</td>
-																<td>陈沈清</td>
-																<td><span class="layui-badge layui-bg-orange">待评价</span></td>
-
-																<td>
-																	<button type="button"
-																		class="layui-btn layui-btn-sm layui-btn-normal"
-																		style="margin: 0px;">
-																		<i class="iconfont icon-gengduo"></i><span
-																			style="font-size: 14px;"> 去评价</span>
-																	</button>
-																</td>
-															</tr>
-
+															<%
+												}
+													}
+												
+											%>
+															
 														</tbody>
 													</table>
 												</div>

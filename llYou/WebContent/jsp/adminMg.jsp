@@ -38,9 +38,7 @@ tbody tr th {
 
 				<ul class="layui-nav layui-nav-tree" lay-filter="test">
 					<li class="layui-nav-item layui-nav-itemed"><a class=""
-						href="javascript:;"> <i
-							class="layui-icon layui-icon-release layui-icon-list"
-							style="font-size: 22px; margin-right: 10px;"></i>企业管理
+						href="javascript:;"> 企业管理
 					</a>
 						<dl class="layui-nav-child">
 							<dd>
@@ -57,8 +55,7 @@ tbody tr th {
 							</dd>
 						</dl></li>
 					<li class="layui-nav-item layui-nav-itemed"><a
-						href="javascript:;"> <i class="layui-icon layui-icon-release"
-							style="font-size: 22px; margin-right: 10px;"></i>用户管理
+						href="javascript:;"> 用户管理
 					</a>
 						<dl class="layui-nav-child">
 							<dd>
