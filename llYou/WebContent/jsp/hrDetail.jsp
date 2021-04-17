@@ -13,9 +13,14 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>HR页面</title>
 <style>
+.anchorBL {
+	display: none;
+}
+
 .uc-tr {
 	height: 45px;
 }
+
 .layui-nav-child dd a {
 	margin-left: 30px;
 }
@@ -29,11 +34,38 @@ tbody tr th {
 	color: #FF5722;
 }
 
+.layui-card-header {
+	text-align: center;
+}
 </style>
 
 <link rel="stylesheet" href="../res/layui/css/layui.css">
-
-<link rel="stylesheet" href="../js/selection/xlselection.css" />
+<script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/highcharts-more.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/highcharts-3d.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script
+	src="https://code.highcharts.com.cn/highcharts/modules/wordcloud.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+<script type="text/javascript"
+	src="https://api.map.baidu.com/api?v=2.0&ak=Tycwp3FnwQuq9ATHo0qdGoSmjZIOM7Hb"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+<script src="../js/map/china.js"></script>
 </head>
 <body class="layui-layout-body">
 	<%
@@ -80,8 +112,7 @@ tbody tr th {
 							</dd>
 
 						</dl></li>
-					<li class="layui-nav-item"><a
-						href="javascript:;">用户管理 </a>
+					<li class="layui-nav-item"><a href="javascript:;">用户管理 </a>
 						<dl class="layui-nav-child">
 							<dd>
 								<a href="#" class="site-demo-active" data-url="YHXX"
@@ -97,265 +128,97 @@ tbody tr th {
 		</div>
 
 		<div class="layui-body">
-		<!-- 内容主体区域 -->
-			<fieldset class="layui-elem-field layui-field-title"
-				style="margin-top: 20px;">
-				<legend>
-					<i class="layui-icon layui-icon-username"
-						style="font-size: 30px; color: #1E9FFF;"></i> 用户档案
-						<div style="display: inline-block;margin-left:20px;">
-							<button type="button" class="layui-btn layui-btn-xs"
-								style="background-color: #25a18e;">
-								<a href="#">通过筛选</a>
-							</button>
-							<button type="button" class="layui-btn layui-btn-xs"
-								style="background-color: #25a18e;">
-								驳回</button>
-
-						</div>
-				</legend>
-			</fieldset>
-			<div
-				style="padding: 10px; background-color: #F2F2F2; display: inline-block;">
-				<div class="layui-row layui-col-space15">
-
-					<div class="layui-col-md7">
-						<div class="layui-card">
-							<div style="display: inline-block;">
-								<img src="../img/lc.png"
-									style="width: 90%; float: left; padding: 5px 10px;">
+			<!-- 内容主体区域 -->
+			<div class="layui-tab layui-tab-brief" lay-filter="demo">
+				<ul class="layui-tab-title">
+					<li class="layui-this" lay-id="ZPXX">企业信息 <!--lay-allowclose="true"(div) <i class="layui-icon layui-unselect layui-tab-close">ဆ</i> -->
+					</li>
+				</ul>
+				<div class="layui-tab-content">
+					<div class="layui-tab-item layui-col-space10" id="item-ZPXX"
+						style="display: inline-block; width: 100%">
+						<div class="layui-col-md4">
+							<div class="layui-card">
+								<div class="layui-card-header">
+									<strong style="font-size: 18px;">本周平台企业上线情况</strong>
+								</div>
+								<div class="layui-card-body" style="display: inline-block;">
+									<div id="linebar"
+										style="margin-left: -10px; width: 420px; height: 280px;"></div>
+								</div>
 							</div>
-							<div class="layui-card-body" style="display: inline-block;">
-								<table>
-									<colgroup>
-										<col width="160">
-										<col>
-									</colgroup>
-									<tbody>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;">姓名：</strong><span
-												style="color: #777777;">陈杉</span></td>
-											<td><strong style="color: #2b4f6c;">民族：</strong><span
-												style="color: #777777;">汉族</span></td>
-										</tr>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;">性别：</strong><span
-												style="color: #777777;">女</span></td>
-											<td><strong style="color: #2b4f6c;">出生年月：</strong><span
-												style="color: #777777;">2000.12</span></td>
-										</tr>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;">政治面貌： </strong><span
-												style="color: #777777;">共青团员</span></td>
-											<td><strong style="color: #2b4f6c;">担任职位：</strong><span
-												style="color: #777777;">团支书</span></td>
-										</tr>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;">所属企业：</strong><span
-												style="color: #777777;">溜溜游大学</span></td>
-											<td><strong style="color: #2b4f6c;">联系邮箱：</strong><span
-												style="color: #777777;">87xxx657@163.com</span></td>
-										</tr>
-									</tbody>
-								</table>
+
+							<div class="layui-card">
+								<div class="layui-card-body" style="display: inline-block;">
+									<div id="halfcircle1"
+										style="margin-left: -10px; width: 420px; height: 320px;"></div>
+								</div>
 							</div>
 						</div>
 
-						<div class="layui-card">
-							<div class="layui-card-header">
-								<strong>获奖情况</strong>
+						<div class="layui-col-md4">
+							<div class="layui-card">
+
+								<div class="layui-card-body">
+									<div id="lines"
+										style="margin-left: -10px; width: 420px; height: 328px;"></div>
+								</div>
 							</div>
-							<div class="layui-card-body" style="display: inline-block;">
-								<table>
-									<colgroup>
-										<col width="100">
-										<col>
-									</colgroup>
-									<tbody>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;"> 2020.12</strong></td>
-											<td><span style="color: #777777;">国家级大学生创新创业项目立项</span></td>
-										</tr>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;">2020.05</strong></td>
-											<td><span style="color: #777777;">第四十四届国际大学生程序设计竞赛亚洲区预赛瞎编站优胜奖</span></td>
-										</tr>
-										<tr class="uc-tr">
-											<td><strong style="color: #2b4f6c;">2019.10</strong></td>
-											<td><span style="color: #777777;">第九届大学生服务外包创新创业大赛不知道几等奖</span></td>
-										</tr>
-									</tbody>
-								</table>
+
+
+							<div class="layui-card">
+								<div class="layui-card-body">
+									<div id="halfcircle2" style="margin-left:-10px;width:420px;height:320px;"></div>
+								</div>
 							</div>
 						</div>
+
+						<div class="layui-col-md4">
+							<div class="layui-card">
+
+								<div class="layui-card-body">
+									<div id="wordcould"
+										style="margin-left: -10px; width: 420px; height: 684px;"></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="layui-col-md5">
+							<div class="layui-card">
+								<div class="layui-card-header">
+									<strong style="font-size: 18px;">平台用户地域分布</strong>
+								</div>
+								<div class="layui-card-body" style="display: inline-block;">
+									<div id="map"
+										style="margin-left: -10px; width: 520px; height: 285px;"></div>
+								</div>
+							</div>
+
+							<div class="layui-card">
+								<div class="layui-card-body" style="display: inline-block;">
+									<div id="ddd"
+										style="margin-left: -10px; width: 520px; height: 320px; border: solid 1px black;"></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="layui-col-md7">
+							<div class="layui-card">
+								<div class="layui-card-header">
+									<strong style="font-size: 18px;">平台用户信息总览</strong>
+								</div>
+								<div class="layui-card-body" style="display: inline-block;">
+									<div id="barpie"
+										style="margin-left: -10px; width: 740px; height: 645px;"></div>
+								</div>
+							</div>
+						</div>
+
 					</div>
-
-					<div class="layui-col-md5">
-						<div class="layui-card">
-							<div class="layui-card-header">
-								<strong>个人分析</strong>
-							</div>
-							<div class="layui-card-body">
-								<div id="xrt"
-									style="display: inline-block; width: 100%; height: 350px;"></div>
-
-							</div>
-
-						</div>
-					</div>
-
-
-					<div class="layui-col-md12">
-						<div class="layui-card">
-							<div class="layui-card-header">
-								<strong> 
-									<a id="xlHref" href="#" onclick="xlMsg()" style="color: #009345;">学历信息</a>
-									|
-									<a id="jzHref" href="#" onclick="jzMsg()"  style="color: #777777">就职信息</a>
-								</strong>
-							</div>
-
-							<div class="layui-card-body">
-							<div id="xlCard">
-								<div
-									style="width: 51%; padding-left: 10px; display: inline-block;">
-									<table style="margin-bottom: 220px;">
-										<colgroup>
-											<col width="160">
-											<col width="90">
-											<col width="170">
-											<col width="135">
-										</colgroup>
-										<tbody>
-											<tr class="uc-tr">
-												<td><strong style="color: #2b4f6c;">2018.09 -
-														2020.06</strong></td>
-												<td><span style="color: #777777;">本科</span></td>
-												<td><span style="color: #777777;">大学生创新创业大学</span></td>
-												<td><span style="color: #777777;">电子商务专业前1%</span></td>
-											</tr>
-											<tr class="uc-tr">
-												<td><strong style="color: #2b4f6c;">2015.09 -
-														2018.06</strong></td>
-												<td><span style="color: #777777;">高中</span></td>
-												<td><span style="color: #777777;">大学生创新创业高中</span></td>
-												<td><span style="color: #777777;">优秀毕业生</span></td>
-											</tr>
-											<tr class="uc-tr">
-												<td><strong style="color: #2b4f6c;">2012.09 -
-														2015.06</strong></td>
-												<td><span style="color: #777777;">初中</span></td>
-												<td><span style="color: #777777;">大学生创新创业初中</span></td>
-												<td><span style="color: #777777;">三好学生</span></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<div
-									style="width: 48%; padding-left: 10px; display: inline-block;">
-									<div class="layui-card-header">
-										<strong> 综合能力评价 </strong>
-									</div>
-									<div id="ability1"
-										style="width: 600px; height: 320px; display: inline-block;"></div>
-								</div>
-
-							</div>
-							</div>
-
-
-							<div id="jzCard" style="display:none;width:100%;padding-left: 15px;margin-top: -10px;">
-								<div style="width: 51%; padding-left: 10px; display: inline-block;">
-									<table style="margin-bottom: 220px;">
-										<colgroup>
-											<col width="140">
-											<col width="155">
-											<col width="120">
-											<col width="120">
-										</colgroup>
-										<tbody>
-											<tr class="uc-tr">
-												<td><strong style="color: #2b4f6c;">2020.06 -
-														2020.09</strong></td>
-												<td><span style="color: #777777;">深圳腾腾有限公司</span></td>
-
-												<td><a class="layui-btn-xs"
-													href="enterpriseEvaluate.jsp"> <i
-														class="iconfont icon-ziyuan25"
-														style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
-												</a></td>
-												<td><span style="color: #777777;">UI设计师</span></td>
-											</tr>
-											<tr class="uc-tr">
-												<td><strong style="color: #2b4f6c;">2018.06 -
-														2019.08</strong></td>
-												<td><span style="color: #777777;">创新创业大公司</span></td>
-												<td><a class="layui-btn-xs"
-													href="enterpriseEvaluate.jsp"> <i
-														class="iconfont icon-ziyuan25"
-														style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
-												</a></td>
-
-												<td><span style="color: #777777;">JAVA算法工程师</span></td>
-											</tr>
-											<tr class="uc-tr">
-												<td><strong style="color: #2b4f6c;">2019.06 -
-														2019.09</strong></td>
-												<td><span style="color: #777777;">导师信息可视化实验室</span></td>
-
-												<td><a class="layui-btn-xs"
-													href="enterpriseEvaluate.jsp"> <i
-														class="iconfont icon-ziyuan25"
-														style="font-size: 22px; color: #16c2c2;"></i> 查看企业评价
-												</a></td>
-												<td><span style="color: #777777;">数据分析</span></td>
-											</tr>
-											
-										</tbody>
-									</table>
-								</div>
-								<div
-									style="width: 48%; padding-left: 10px; display: inline-block;">
-									<div class="layui-card-header">
-										<strong> 综合能力评价 </strong>
-									</div>
-									<div id="ability2"
-										style="width: 600px; height: 320px; display: inline-block;"></div>
-								</div>
-
-							</div>
-
-<!-- $("xlMsg")[0].style.display = "none";
-	 $("jzMsg")[0].style.display = "display-inline"; -->
-							<script>
-								function xlMsg(){
-									$("#jzHref").css('color', '#777777');
-									$("#xlHref").css('color', '#009345');
-									
-									$("#jzCard").css('display', 'none');
-									$("#xlCard").css('display', 'inline-block');
-									
-								}
-								function jzMsg(){
-									$("#jzHref").css('color', '#009345');
-									$("#xlHref").css('color', '#777777');
-									
-									$("#jzCard").css('display', 'inline-block');
-									$("#xlCard").css('display', 'none');
-								}
-							</script>
-						</div>
-					</div>
-
-					<!-- <div class="layui-col-md12">
-						<div class="layui-card">
-							<div class="layui-card-header">学生档案</div>
-							<div class="layui-card-body">内容</div>
-						</div>
-					</div> -->
 
 				</div>
 			</div>
+
 		</div>
 
 		<%@ include file="lly-footer.jsp"%>
@@ -368,577 +231,1255 @@ tbody tr th {
 		});
 	</script>
 
-	<script>
-		layui.use('element', function() {
-			var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+	<!-- 用户平台上线linebar -->
+	<script type="text/javascript">
+		var dom = document.getElementById("linebar");
+		var myChart = echarts.init(dom);
+		var app = {};
+		
+		option = {
+		    title:{
+		        show:false,
+		        text:"本周平台用户上线情况",
+		        x:'center',
+		        y:'top',
+		        padding:10,
+		        textStyle: {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+		                fontFamily: 'Arial',
+		                fontSize: 18,
+		                fontStyle: 'normal',
+		                fontWeight: 'bold',
+		            },
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        axisPointer: {
+		            type: 'cross',
+		            crossStyle: {
+		                color: '#999'
+		            }
+		        }
+		    },
+		    toolbox: {
+		        feature: {
+		            dataView: {show: true, readOnly: false},
+		            magicType: {show: true, type: ['line', 'bar']},
+		            restore: {show: true},
+		            saveAsImage: {show: true}
+		        }
+		    },
+		    legend: {
+		        data: ['上线', '未上线', '差值'],
+		        orient: 'vertical', // 'vertical'
+		        x:550, // 'center' | 'left' | {number},
+		        y:60, // 'center' | 'bottom' | {number}
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 12,
+		　　　　　　},
+		        borderColor: 'rgba(89, 100, 114,0.8)',
+		        borderWidth: 2,
+		    },
+		    xAxis: [
+		        {
+		            type: 'category',
+		            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+		            axisPointer: {
+		                type: 'shadow'
+		            },axisLabel: {
+		                formatter: '{value} ',
+		                textStyle: {
+		          fontSize : 12     //更改坐标轴文字大小
+		        }
+		            }
+		        }
+		    ],
+		    yAxis: [
+		        {
+		            type: 'value',
+		            name: '人次',
+		            min: 0,
+		            max: 5000,
+		            interval: 500,
+		            axisLabel: {
+		                formatter: '{value} ',
+		                textStyle: {
+		          fontSize : 12     //更改坐标轴文字大小
+		        }
+		            }
+		        }
+		    ],
+		    series: [
+		        {
+		            name: '上线',
+		            type: 'bar',
+		            color:'#fac958',
+		            data: [2320,3470,4370,3680,3790,3835,3760]
+		        },
+		        {
+		            name: '未上线',
+		            type: 'bar',
+		            color:'#91cd76',
+		            data: [1720,1570,1670,1880,1790,1865,1940]
+		        },
+		        {
+		            name: '差值',
+		            type: 'line',
+		            color:'#ef6667',
+		
+		            data: [500,1900,2700,1800,2000,1970,1820]
+		        }
+		    ]
+		};
+		myChart.setOption(option);
+       </script>
 
+	<!-- 本月新增用户 lines -->
+	<script>
+			Highcharts.chart('lines', {
+			chart: {
+				type: 'area',
+				options3d: {
+					enabled: true,
+					alpha: 15,
+					beta:20,
+					depth: 200
+				}
+			},
+			title: {
+				text: "本月新增用户",
+				style: {
+					fontFamily: 'Arial',
+		                fontSize: 18,
+		                fontStyle: 'normal',
+		                fontWeight: 'bold',
+					},
+			},
+			yAxis: {
+				title: {
+					text: '人数',
+					x: -40,
+					style: {
+					fontFamily: 'Arial',
+		                fontSize: 12,
+		                fontStyle: 'normal',
+		                fontWeight: 'bold',
+					},
+				},
+				labels: {
+					format: '{value:,.0f}',
+					style: {
+		                    fontSize: '12px',
+		                    fontWeight: 'bold'
+		                }
+				},
+				gridLineDashStyle: 'Dash'
+			},
+			xAxis: [{
+				visible: true,
+				style: {
+		                    fontSize: '12px',
+		                    fontWeight: 'bold'
+		                }
+			}, {
+				visible: false
+			}, {
+				visible: false
+			}, {
+				visible: false
+			}, {
+				visible: false
+			}],
+			plotOptions: {
+				area: {
+					depth: 100,
+					marker: {
+						enabled: false
+					},
+					states: {
+						inactive: {
+							enabled: false
+						}
+					}
+				}
+			},
+			tooltip: {
+				valueSuffix: ' MAMSL'
+			},
+			legend : {
+		    itemStyle : {
+		        'fontSize' : '12px'
+		    }
+		},
+			series: [{
+				name: "新增用户",
+				lineColor: 'rgb(43, 144, 143)',
+				color: 'rgb(43, 144, 143)',
+				fillColor: 'rgb(119, 206, 199)',
+				data: [
+					['1', 80],
+					['2', 59],
+					['3', 52],
+					['4', 32],
+					['5', 31],
+					['6', 68],
+					['7', 100],
+					['8', 84],
+					['9', 168],
+					['10', 159],
+					['11', 146],
+					['12', 135],
+					['13', 67],
+					['14', 72],
+					['15', 40],
+					['16', 72],
+					['17', 52],
+					['18', 70],
+					['19',48],
+					['20', 55],
+					['21',88],
+					['22', 85],
+					['23', 70],
+					['24', 78],
+					['25', 70],
+					['26', 62],
+					['27', 67],
+					['28', 60],
+					['29', 63],
+					['30', 66],
+					['31', 61],
+				]
+			}]
 		});
 	</script>
 
-
-	<!-- 旭日图 -->
-	<script type="text/javascript">
-		var myChart = echarts.init(document.getElementById('xrt'));
-
-		var option;
-
-		//var colors = [ '#FFAE57', '#FF7853', '#EA5151', '#CC3F57', '#9A2555' ];
-		var colors = [ '#74c69d', '#52b788', '#40916c', '#2d6a4f', '#1b4332' ];
-		var bgColor = '#fff';
-
-		var itemStyle = {
-			star5 : {
-				color : colors[0]
-			},
-			star4 : {
-				color : colors[1]
-			},
-			star3 : {
-				color : colors[2]
-			},
-			star2 : {
-				color : colors[3]
-			}
-		};
-
-		var data = [ {
-			name : '性格',
-			itemStyle : {
-				color : colors[1]
-			},
-			children : [ {
-				name : '进取性',
-				children : [ {
-					name : '5☆',
-					children : [ {
-						name : '独立性',
-					} ]
-				}, {
-					name : '3☆',
-					children : [ {
-						name : '对抗性'
-					}, ]
-				} ]
-			}, {
-				name : '外向性',
-				children : [ {
-					name : '5☆',
-					children : [ {
-						name : '活力'
-					} ]
-				}, {
-					name : '4☆',
-					children : [ {
-						name : '社交性'
-					} ]
-				}, {
-					name : '3☆',
-					children : [ {
-						name : '沟通能力'
-					} ]
-				} ]
-			}, {
-				name : '尽责性',
-				children : [ {
-					name : '5☆',
-					children : [ {
-						name : '条理性'
-					} ]
-				}, {
-					name : '4☆',
-					children : [ {
-						name : '责任感'
-					} ]
-				}, ]
-			}, {
-				name : '宜人性',
-				children : [ {
-					name : '5☆',
-					children : [ {
-						name : '利他性'
-					} ]
-				}, {
-					name : '4☆',
-					children : [ {
-						name : '信任'
-					}, {
-						name : '同理心'
-					} ]
-				}, ]
-			}, {
-				name : '情绪性',
-				children : [ {
-					name : '3☆',
-					children : [ {
-						name : '敏感'
-					} ]
-				}, {
-					name : '4☆',
-					children : [ {
-						name : '焦虑'
-					}, {
-						name : '忧虑'
-					} ]
-				}, ]
-			}, ]
-		}, {
-			name : '驱动力',
-			itemStyle : {
-				color : colors[2]
-			},
-			children : [ {
-				name : '成就',
-				children : [ {
-					name : '4☆',
-					children : [ {
-						name : '积极性'
-					}, {
-						name : '多样性'
-					} ]
-				}, {
-					name : '3☆',
-					children : [ {
-						name : '已获成就'
-					} ]
-				} ]
-			}, {
-				name : '影响力',
-				children : [ {
-					name : '5☆',
-					children : [ {
-						name : '竞争力'
-					}, {
-						name : '面对客户'
-					} ]
-				}, {
-					name : '3☆',
-					children : [ {
-						name : '权力向导'
-					} ]
-				} ]
-
-			}, {
-				name : '亲和',
-				children : [ {
-					name : '5☆',
-					children : [ {
-						name : '获得认同'
-					} ]
-				}, {
-					name : '4☆',
-					children : [ {
-						name : '关心他人'
-					} ]
-				}, {
-					name : '2☆',
-					children : [ {
-						name : '人际互动'
-					} ]
-				} ]
-			}, {
-				name : '奖励',
-				children : [ {
-					name : '5☆',
-					children : [ {
-						name : '工作氛围'
-					} ]
-				}, {
-					name : '4☆',
-					children : [ {
-						name : '灵活性'
-					}, {
-						name : '独立自主'
-					}, {
-						name : '薪酬'
-					} ]
-				} ]
-			} ]
-		} ];
-
-		for (var j = 0; j < data.length; ++j) {
-			var level1 = data[j].children;
-			for (var i = 0; i < level1.length; ++i) {
-				var block = level1[i].children;
-				var bookScore = [];
-				var bookScoreId;
-				for (var star = 0; star < block.length; ++star) {
-					var style = (function(name) {
-						switch (name) {
-						case '5☆':
-							bookScoreId = 0;
-							return itemStyle.star5;
-						case '4☆':
-							bookScoreId = 1;
-							return itemStyle.star4;
-						case '3☆':
-							bookScoreId = 2;
-							return itemStyle.star3;
-						case '2☆':
-							bookScoreId = 3;
-							return itemStyle.star2;
-						}
-					})(block[star].name);
-
-					block[star].label = {
-						color : style.color,
-						downplay : {
-							opacity : 1
-						}
-					};
-
-					if (block[star].children) {
-						style = {
-							opacity : 1,
-							color : style.color
-						};
-						block[star].children.forEach(function(book) {
-							book.value = 1;
-							book.itemStyle = style;
-
-							book.label = {
-								color : style.color
-							};
-
-							var value = 1;
-							if (bookScoreId === 0 || bookScoreId === 3) {
-								value = 5;
-							}
-
-							if (bookScore[bookScoreId]) {
-								bookScore[bookScoreId].value += value;
-							} else {
-								bookScore[bookScoreId] = {
-									color : colors[bookScoreId],
-									value : value
-								};
-							}
-						});
-					}
-				}
-
-				level1[i].itemStyle = {
-					color : data[j].itemStyle.color
+	<!-- 词云图 -->
+	<script>
+		var text2=" 稳定就业 稳定就业 稳定就业 创业 稳定 职业规划 跨境电商 创业 稳定 职业规划 跨境电商 创业 稳定 职业规划 跨境电商 创业 稳定 职业规划 跨境电商 创业 稳定 职业规划 跨境电商 创业 稳定 职业规划 跨境电商 创业 稳定 创业 稳定 创业 稳定创业 稳定  跨境电商 创业 稳定 职业规划 跨境电商 创业 稳定 职业规划 跨境电商 策划 趋势 压力 专业 加班 经验 策划 趋势 压力 专业 加班 经验 策划 趋势 压力 专业 加班 经验 策划 趋势 压力 专业 加班 经验 策划 趋势 压力 专业 加班 经验 策划 经验 策划 经验 策划 趋势 压力 专业 加班 专业 加班 专业 加班 专业 加班 专业 加班 经验 学生 学生 学生 学生 学生 学生 学生 学生 学生 学生 学生 学生 学生  大专  大专  大专 大专 大专 大专 大专  大专 高薪 高薪 高薪 高薪 高薪 高薪 应届生 应届生 应届生 应届生 应届生 应届生 应届生 应届生 应届生 应届生 试用期  试用期 试用期 试用期 试用期 试用期 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水 薪水  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试  面试 转行 转行 转行 转行 转行 转行 转行 转行  新媒体  新媒体  新媒体  新媒体  新媒体  新媒体  新媒体  新媒体  新媒体  创新 创新 创新 创新 创新 创新 创新 创新 创新 创新"
+		var data = text2.split(/[,\. ]+/g)
+		.reduce(function (arr, word) {
+			var obj = arr.find(function (obj) {
+				return obj.name === word;
+			});
+			if (obj) {
+				obj.weight += 1;
+			} else {
+				obj = {
+					name: word,
+					weight: 1
 				};
+				arr.push(obj);
 			}
-		}
-
-		option = {
-			backgroundColor : bgColor,
-			color : colors,
-			series : [ {
-				type : 'sunburst',
-				center : [ '50%', '48%' ],
-				data : data,
-				sort : function(a, b) {
-					if (a.depth === 1) {
-						return b.getValue() - a.getValue();
-					} else {
-						return a.dataIndex - b.dataIndex;
-					}
-				},
-				label : {
-					rotate : 'radial',
-					color : bgColor
-				},
-				itemStyle : {
-					borderColor : bgColor,
-					borderWidth : 2
-				},
-				levels : [ {}, {
-					r0 : 0,
-					r : 40,
-					label : {
-						rotate : 0
-					}
-				}, {
-					r0 : 40,
-					r : 95
-				}, {
-					r0 : 95,
-					r : 120,
-					itemStyle : {
-						shadowBlur : 2,
-						shadowColor : colors[2],
-						color : 'transparent'
+			return arr;
+		}, []);
+		Highcharts.chart('wordcould', {
+			series: [{
+				type: 'wordcloud',
+				data: data
+			}],
+			title: {
+				text: '今日提问关键词TOP20',
+				style: {
+					fontFamily: 'Arial',
+		                fontSize: 18,
+		                fontStyle: 'normal',
+		                fontWeight: 'bold',
 					},
-					label : {
-						rotate : 'tangential',
-						fontSize : 10,
-						color : colors[0]
-					}
-				}, {
-					r0 : 120,
-					r : 125,
-					itemStyle : {
-						shadowBlur : 0,
-						shadowColor : colors[0]
-					},
-					label : {
-						position : 'outside',
-						textShadowBlur : 0,
-						textShadowColor : '#333'
-					},
-					downplay : {
-						label : {
-							opacity : 1
-						}
-					}
-				} ]
-			} ]
-		};
-
-		option && myChart.setOption(option);
-	</script>
-
-
-	<!-- 象形条形图 -->
-	<script type="text/javascript">
-		var dom = document.getElementById("ability1");
-		var myChart = echarts.init(dom);
-		var app = {};
-		var spirit = 'image://data:https://echarts.apache.org/examples/image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHUAAACUCAYAAACtHGabAAAACXBIWXMAABcSAAAXEgFnn9JSAAAKTWlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVN3WJP3Fj7f92UPVkLY8LGXbIEAIiOsCMgQWaIQkgBhhBASQMWFiApWFBURnEhVxILVCkidiOKgKLhnQYqIWotVXDjuH9yntX167+3t+9f7vOec5/zOec8PgBESJpHmomoAOVKFPDrYH49PSMTJvYACFUjgBCAQ5svCZwXFAADwA3l4fnSwP/wBr28AAgBw1S4kEsfh/4O6UCZXACCRAOAiEucLAZBSAMguVMgUAMgYALBTs2QKAJQAAGx5fEIiAKoNAOz0ST4FANipk9wXANiiHKkIAI0BAJkoRyQCQLsAYFWBUiwCwMIAoKxAIi4EwK4BgFm2MkcCgL0FAHaOWJAPQGAAgJlCLMwAIDgCAEMeE80DIEwDoDDSv+CpX3CFuEgBAMDLlc2XS9IzFLiV0Bp38vDg4iHiwmyxQmEXKRBmCeQinJebIxNI5wNMzgwAABr50cH+OD+Q5+bk4eZm52zv9MWi/mvwbyI+IfHf/ryMAgQAEE7P79pf5eXWA3DHAbB1v2upWwDaVgBo3/ldM9sJoFoK0Hr5i3k4/EAenqFQyDwdHAoLC+0lYqG9MOOLPv8z4W/gi372/EAe/tt68ABxmkCZrcCjg/1xYW52rlKO58sEQjFu9+cj/seFf/2OKdHiNLFcLBWK8ViJuFAiTcd5uVKRRCHJleIS6X8y8R+W/QmTdw0ArIZPwE62B7XLbMB+7gECiw5Y0nYAQH7zLYwaC5EAEGc0Mnn3AACTv/mPQCsBAM2XpOMAALzoGFyolBdMxggAAESggSqwQQcMwRSswA6cwR28wBcCYQZEQAwkwDwQQgbkgBwKoRiWQRlUwDrYBLWwAxqgEZrhELTBMTgN5+ASXIHrcBcGYBiewhi8hgkEQcgIE2EhOogRYo7YIs4IF5mOBCJhSDSSgKQg6YgUUSLFyHKkAqlCapFdSCPyLXIUOY1cQPqQ28ggMor8irxHMZSBslED1AJ1QLmoHxqKxqBz0XQ0D12AlqJr0Rq0Hj2AtqKn0UvodXQAfYqOY4DRMQ5mjNlhXIyHRWCJWBomxxZj5Vg1Vo81Yx1YN3YVG8CeYe8IJAKLgBPsCF6EEMJsgpCQR1hMWEOoJewjtBK6CFcJg4Qxwicik6hPtCV6EvnEeGI6sZBYRqwm7iEeIZ4lXicOE1+TSCQOyZLkTgohJZAySQtJa0jbSC2kU6Q+0hBpnEwm65Btyd7kCLKArCCXkbeQD5BPkvvJw+S3FDrFiOJMCaIkUqSUEko1ZT/lBKWfMkKZoKpRzame1AiqiDqfWkltoHZQL1OHqRM0dZolzZsWQ8ukLaPV0JppZ2n3aC/pdLoJ3YMeRZfQl9Jr6Afp5+mD9HcMDYYNg8dIYigZaxl7GacYtxkvmUymBdOXmchUMNcyG5lnmA+Yb1VYKvYqfBWRyhKVOpVWlX6V56pUVXNVP9V5qgtUq1UPq15WfaZGVbNQ46kJ1Bar1akdVbupNq7OUndSj1DPUV+jvl/9gvpjDbKGhUaghkijVGO3xhmNIRbGMmXxWELWclYD6yxrmE1iW7L57Ex2Bfsbdi97TFNDc6pmrGaRZp3mcc0BDsax4PA52ZxKziHODc57LQMtPy2x1mqtZq1+rTfaetq+2mLtcu0W7eva73VwnUCdLJ31Om0693UJuja6UbqFutt1z+o+02PreekJ9cr1Dund0Uf1bfSj9Rfq79bv0R83MDQINpAZbDE4Y/DMkGPoa5hpuNHwhOGoEctoupHEaKPRSaMnuCbuh2fjNXgXPmasbxxirDTeZdxrPGFiaTLbpMSkxeS+Kc2Ua5pmutG003TMzMgs3KzYrMnsjjnVnGueYb7ZvNv8jYWlRZzFSos2i8eW2pZ8ywWWTZb3rJhWPlZ5VvVW16xJ1lzrLOtt1ldsUBtXmwybOpvLtqitm63Edptt3xTiFI8p0in1U27aMez87ArsmuwG7Tn2YfYl9m32zx3MHBId1jt0O3xydHXMdmxwvOuk4TTDqcSpw+lXZxtnoXOd8zUXpkuQyxKXdpcXU22niqdun3rLleUa7rrStdP1o5u7m9yt2W3U3cw9xX2r+00umxvJXcM970H08PdY4nHM452nm6fC85DnL152Xlle+70eT7OcJp7WMG3I28Rb4L3Le2A6Pj1l+s7pAz7GPgKfep+Hvqa+It89viN+1n6Zfgf8nvs7+sv9j/i/4XnyFvFOBWABwQHlAb2BGoGzA2sDHwSZBKUHNQWNBbsGLww+FUIMCQ1ZH3KTb8AX8hv5YzPcZyya0RXKCJ0VWhv6MMwmTB7WEY6GzwjfEH5vpvlM6cy2CIjgR2yIuB9pGZkX+X0UKSoyqi7qUbRTdHF09yzWrORZ+2e9jvGPqYy5O9tqtnJ2Z6xqbFJsY+ybuIC4qriBeIf4RfGXEnQTJAntieTE2MQ9ieNzAudsmjOc5JpUlnRjruXcorkX5unOy553PFk1WZB8OIWYEpeyP+WDIEJQLxhP5aduTR0T8oSbhU9FvqKNolGxt7hKPJLmnVaV9jjdO31D+miGT0Z1xjMJT1IreZEZkrkj801WRNberM/ZcdktOZSclJyjUg1plrQr1zC3KLdPZisrkw3keeZtyhuTh8r35CP5c/PbFWyFTNGjtFKuUA4WTC+oK3hbGFt4uEi9SFrUM99m/ur5IwuCFny9kLBQuLCz2Lh4WfHgIr9FuxYji1MXdy4xXVK6ZHhp8NJ9y2jLspb9UOJYUlXyannc8o5Sg9KlpUMrglc0lamUycturvRauWMVYZVkVe9ql9VbVn8qF5VfrHCsqK74sEa45uJXTl/VfPV5bdra3kq3yu3rSOuk626s91m/r0q9akHV0IbwDa0b8Y3lG19tSt50oXpq9Y7NtM3KzQM1YTXtW8y2rNvyoTaj9nqdf13LVv2tq7e+2Sba1r/dd3vzDoMdFTve75TsvLUreFdrvUV99W7S7oLdjxpiG7q/5n7duEd3T8Wej3ulewf2Re/ranRvbNyvv7+yCW1SNo0eSDpw5ZuAb9qb7Zp3tXBaKg7CQeXBJ9+mfHvjUOihzsPcw83fmX+39QjrSHkr0jq/dawto22gPaG97+iMo50dXh1Hvrf/fu8x42N1xzWPV56gnSg98fnkgpPjp2Snnp1OPz3Umdx590z8mWtdUV29Z0PPnj8XdO5Mt1/3yfPe549d8Lxw9CL3Ytslt0utPa49R35w/eFIr1tv62X3y+1XPK509E3rO9Hv03/6asDVc9f41y5dn3m978bsG7duJt0cuCW69fh29u0XdwruTNxdeo94r/y+2v3qB/oP6n+0/rFlwG3g+GDAYM/DWQ/vDgmHnv6U/9OH4dJHzEfVI0YjjY+dHx8bDRq98mTOk+GnsqcTz8p+Vv9563Or59/94vtLz1j82PAL+YvPv655qfNy76uprzrHI8cfvM55PfGm/K3O233vuO+638e9H5ko/ED+UPPR+mPHp9BP9z7nfP78L/eE8/sl0p8zAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAABvgSURBVHja7J17dBPXnce/dzR6WH7IwTbYxPgBBJsAtgwJXcchCM5ZEtJwcHqaRxs4hXQh+4dT3O1hd9ukJ05LT/dsT4lTyO7JSbfrQHabbdqNE/qgTjcR5KTOsxjCK4QGGwgy2ARJtoSec/ePGUkzo9HLGj2MdTk62PLM6KffZ76/+7u/e2eGUEoxHduota0BQA+ATgAm0Z9GAPQD6K22HBnGDGxkOkIdtbb1AHgqwWYOAN3VliN9Baj5D7QPwDdS2GXrTAM7raCOWts6Abw6hV3bqi1HhmYKVGaa2dub5f0KUDOsUguA+inuvlpIrApQ86xZ0tzfXIB647UC1Hxr77m0zSi0Gwcq2bvO/K5b25nmYQrZbx4BLQfQf8Ch16d5KGsBav60fgD1JzwsBl3aqR7jxWrLEXsBan6otAfA6tDv37eVTOUwDvA14kKfmgdALZDVd094WHR/XpoqUMtMK+znZZlQ6EeHIZ19Cbd7yrx49uYJlGni2j4CoHMmlQdDjc3jftQU648HnXrc7tJhfZkX95T6sLQogFptEBf9Gpg03BulDP3vmTg7k7dKJXvXdQN4Zqr7064BUhin5tl4NB2gAI4WSg/5lyilGzLtBaR5BFUYvrQWkNwgUIWw+1QBx42lVLUyVXMBaR5AVTnsmoSixYxuOR3SkL3rGsDPnphUPKwDgJl2DQwXlJq7sGtS+ZgmAEMzWbE5UyrZu64TU1sZmEp7DUD3TFNtTqAKtd0hTH0hWartEIBe2jXQX4Ca2eQoF0OYESHk993I6s06VCE5OpcH3/2QALifdg3YC1DTg9qH1C6byEZ7UYDbX4CaOlALgLfy2B83RHjONlQrRMtT8rxN2+Qqa1CngUrjqbdXUK+9AHX6qlSpOQS4vfkONytQs1RoKMAVWrbKhL030IjBJIyxh4WlNzNPqdO4L02lz91CuwasM0mpPbixWz2At8jedb1C+fPGVuoMUGleqjbTSu3GzGoh1fbckErNoxpvLosXnbnIkDOp1B7M7LYagFVYVDf9lZroWpgZ1hwALLRrYGi6K7WzAFQyrs2qYjMFtbvAMndgVYcqGF5YaZ9DsExBpVkH25fpIkUmoHYW2MVtreCvv50eUIXZmEKClMRwJ5MFCrWVuqXAK+n2VKYWnKs2ThX6iWsFVim1EfCXiNjzVamWAqOUWz0yUHlTE2ohQZpa26H2MKcANT9ab95BFTr8QtabXjasWvel1n2U8rY/vcPviXrvOKuDk+Tdzd561PKjKtkv2btuCDksDS4J+NDh82Ae58fSgA9L/T6YKJdwPwdhcFyrwwWGxQWNFu/oDPiz1pBLsGvUWDWRNtRcDGXKKIf1Xjfu9bpwh8+TFMBU2js6A/6gK8bv9UZc1GT1pnCHaNeAJR+gdiJLa3of8kziXq8L673urHn5OKvDy4ZSvFxUkq2Q3Zbu3KsaVpozrcqdLjs+HRvBHudYVoECwNKAD7smr+Kj8Qv4mXMMtcFApj+yOx+UakUGLqcooxweczux3e1QPbym2142lOBfi2/KVGh2AGhIp8qUl0p9yDOJj8YvYKfrWt4BBYCHPZN464vPsdNlz8ThTemO+Zk0Vdqg5vi0NhjAq3Yb9jjHcFPJrLweWJooh52ua/jo6gXFYVOaLXdQ1VTpQ8LZ3+HzgKmsg/HBXWAbl+cEGNEZk952XjCA/ms2tVW7MZ2J9LyA+sPJq9jjHIOJcjzQjd8D0RnBNqzICVRty93QNt2ZfAXnlnbsdF3Dq3YbytTrLjqnJdQyyuFVuw2PuZ28MSKgAKBtXgWmoi7rULmrIzCs3Z40WMZUDcPa7ejwedB/zYYlAZ8aZlhyBbU8HaD912zo8HkUgYZa0drtWYdKhWFTsmC5qyPQNt0JbfMqLA341AKbM6ir0wG6VPjiTGmlItAQbMOabVmFGrx0OvxzMmDDJ8GabWAbV8AkfL80wdYLiWhOhjRpASV6I4rWd8dNTrTNq1Lq49RuicBy4+dF224DU1mnFlhzVqFOdapo18TVMFAA0HdsSqrfTKWPEzd9xyNgSiunoNZTUZ8fK2JQn1uSORet3Q6iN8JEOexxjqWTPJnzXqk7XXY87JmMZI2NK1ICZVi7Hbrb7k8tk21aBeMDu1JOuKhCOVLbvComWLFamYq6sJ1LAz7scY5NG6gpJUl3+D3Y6YpM5jCllTCsTb2v1N9+PwxrtiU1liQ6I4iefxU/uCulEygogpQMWOpzSX7XtdwNzdzFAID1Xje2Cxl+NhLRdKAmfRaVCWFIGhY3pTTIlzvWuPF7CdXHVNZFKV3f8UhyH+Jzx/18OVilk8CwdhuInv+OuyavTqV/XZ1tqCmE3WuYJ5rdYBtXpF0tYirrUPzgrrjhWFMZfedZXcvdKLpnR8ITKjg+kvDEEoNVCtdMaSV0LXdH8onJqxn1s8c22OCxDXZnHGptMBAuLoSy3aTVkmQ4Ln5gFzRzFR6EHAMc27iCV3qcBIpOjCcVMUJguavKJ4HutvvDn9Ph8+AhUU6RZELakATMco9tsAf8PZQ7Mw51z8RYlFKmko0mUq1x4/dQdM8OybHZm5vj7xMngeKSgCoGS+PM8+o7NoV//kdXyotEGhIA3QL+Au+nIEyuZBRqaO2QWKVaUThSu7GNK1C8aTcMa7aBKa0EKa2Kr4IECVQqYHVxvhfbuDycNM0LBlJWawyYZo9tcAjAf0I6UzbECHG4IRNOfsztUC05SjWRKt60O+mIECuBohNjKZ1QibqJNNQqD7W9AI5AebGfnRHkfc5jG+zz2AbL1XJsGeUkY1KmtDKnVaFETSmBijWsmUrTzG2WqPWeKSzL8dgGLUK/uSPOZnZGiMcAf7fsYaHDTbs9fF0aYjIZdtUM3+IEiqq8Hkocor/mmZiKOt9C4odJDDGGmvZh0RsmAE95bIPDHttgZ1pQRUYTvRHa5lVxyjc0uVcWmjiBCme0KtnHNi4PnzDrve6kyodfq2tdCMCaQJ3iNhwrUaoH8KrHNtg/lf62NhiQ1Hd1LXdH96VTgZUlwERvRPEDPwTbsFx1+3S3fyVSZfMlXgazud7cixQWyhtq2sNQYz1MdiOAIY9tsFtJ5rEO3CFbs8M2rUoeSrJnfyYAy46pbVqlun1s4/JwlanDfz2hSWtmzy9O4RscEg9p7HE2NAF4xmMbtMoSqZj7LA14Jf0UU1Kh7ACJg8C/QKSv0PuUIuZy1nThxto/A/YRnTGcKXf4Ulyw5k+45nhIDHUoyTpkUn2tOPRqF92p8B1DX1JwDCFRvop+EZCwE2M4cCpgFfbJtH2hhGlpglpwnTGiIc4xCf9nF1OCOpykC0xCX9sb70Ke8BKVkkpJjZcKZzwJOYp/N2ECcnH4HM6cOImLI+dkDlRwXjzFJFCn3L6r42M4c/Ikzpw4kWSiRJOyj8yaF55siFfkry/moVK3B953joAxlST6VlYgcinjUIrn9w6PbdBCQJwUtEw+Po0akIdCD4QzPhTOFJVChHjG/7/v+efx3tuH+V8BLGy+FX//D99GkbGEdx4VHUM4UUjouOETJ4E6Fez79b59ePOPB4VjAbX19eh+4kkUGYsl9sVJt+Lap120Ct7x/4q7WL3VVA34A/C+fxxEy0JTHbeYcjQ0kmGmCBUAWldW1Oriht7mOyNhLORgpUSDRl403H9R/O5/f4P33z4s2ebsqZP43a9/E1E4RP1csgqN+l1q39EPP8BbBw8KQPi3L46M4PnduyX2UZHd0REgvn2hCBavX603lMHzzhCocxKauppE36wvPCwT0mB7nAyY76M/iY7Qt5RUxLyYk6moAzNrnuAwRH9RsUMER1BKQUTArQcPil0Sbm/98aDUeaGwJwebCHIYqNS+N0WfC1F3evb0KXw+MqwcejkqBZzAPqa0MuF88K1Xg6DOSYDVQDu/NhHUfglUcTyO1YK2cQQujEqlWl6tUA/TCsOBO6UOi1ImD5FSitA/yXuUwuN2S2CK85IzJ09KwdEkwEb9rGzfX0+dCn8uodLPd0+6wvZF+kzhG4Rs5xS6FwX7FIdMotY+zodmdsE8QBv3YqxD4iJS0lDZBbXwHzmN4Ghk5qLFFB0SiKEEoOBX1xNEweS/sAARsuFCjDEgUVBrRWVVRPhKjosXdpWAiuybVVkZ+7MV7KRi+wWaoTAdz754CwU6CJ8kkSJ9MiqVlHYZUSWiH/xldMpQqysBVgPfX06Bc/B13buqootNTJGJDy1lldEOE37mVSlyBCcKX1zk99p5dSBU6lQCYFZFJWZVVkSGHnLHxVOoJB9Ttu+W5sVRnxl61dbVSmwM2yyyhYTUm8A+prQSmjkLFP19JykHWA10K5clo1KrIlR5XI5qWhaamiogEIT3nSNhsC0mWQjW6qFdskaWPEQcRiD6khwncgbHv0Sd7fqNnYrh96uPPCJ0UxFVSBQR+iQFwDSk0jj23dv5FRQZjfzniU6qezZ2oqjIKMvsOGmfynGioVFi+yZMcxTdfS9TBe2yW5IZxkRNwDCxMihFrk0NAKsBAkH4jpwG/IEotb49PgJ2/u2SpEjssPCXk4csmUrBUSw1t+GbXY+HFVs7rw5/17UDy9qWR1QBCknAFY0XSbxhSxz7ZlVW4Fv/9F20mJeDEOCmigrc//DXsX7DRol9NKxWMWBIVZvAvmMKM0FlhMVtFgvYedWJgD4rVymfB8hCkzCb3hovCw4ImTApK8EbC4rw4Pu/kmxz/f6nopMisULlMOVhWR4lCRG6IiJKSUlkoK/wXsSNVCxIHipo3tj3pTf/HccclyXH3DSvFS+s/EoioCMAzMLIJa5SgQR339I2NYCp4FdPUOck1l2KHjwfHh9OyWGhzBFcrCREllQhOqGiMlUGvNdx6aP38PEv9+PM738Lj8PO93VEGnZzZV/oHTlQANiceKWlA0CnElBFqIaa9r5QtT9W069cBlLGx3pudBxfNt4s+fsx+6jEb8oDc1FJjxP3q5AmIUKfxf9J7jhxZKXhvizg9eLjl/fjszffgOPiCK6cPIpzb74R3ZfmyL6wn5yjivVepQRUBtRiqGmPWTCKNZ/aHfc80bIwdJjDYNd7SqX1KsdotOfCYV7mMPngnRMlSxwn6ns5IMpxkCpMaJ+9OQDXlSuRAEkpNHqDtNacQ/vCEe3KsNL8aaKpNXM8oDGhCjs9nRDs6hVgmxpwn0ypB2yno8Zt8moLhWxaCzG2lTiPd5xoAIgoOpRi7MSxyN8IMHtJKxatv08x9ObCvtBnHB6PfsDW5oY2xbougK2GmnaLbKVKSkqFoaa9J1HpMNTHzlm3ChtqImtsHX4vjjlGlepy0jM4/L/SeE+kEHHBIJRBywsBMWLq3LbbeaAgSZQOs2efw+/BAdsn0gSp3oz6IlMoxB4ShNVmqGk3C91iUi3Rul9LMmCVwsb+80dFJ7i0EEBlWWV00UBh1QCBgnIgmjER9fllkWWwprr6eAhzYh8AvC4DCgAvf3Zk+bs3dzCGmvZyQZU9iUJtylCF7MoC4MVEhfENNc2SSd19F4YUx4lSb5LoaTgiSmaIOIGR9ns0TtVo8f1fham2HrNvbUHFLU0KfiXRb2XRPv6kj2J1aKj7T1OZLUtZqTDUtNsNNe1bAKxJlBWL1er0e7H/wtHEsyREoXQnfkNxvlWxuhuOksVV1Vj28CYsuve+WGkuSLKrIjJg34jbjrdlF2BpOPo0VGpJX3ZhqGm3GmraLQDaADwrDH4l7fGFfyP5fdfpQ6lZk51VoLFcnjX75H5hKPad3fEna9ahijNjQ017t6GmvcFwcwdDg9xa6g+sRSCwtozRPdpoLB8IbXv+uiNKrRK/kOhxY7jiQoTKT2jyOlyJoYgU36L3JUnSoTEYZdq+8247XpL6xFHsU0+lQJp35rYCuLVulVUHQFOzklwqcxxyPnrzYRg1Z0Pb/OiTw9hc2yI4iIqKdwQAF3EEhXR1BES/y5alhH0tfp+QlIQZVUTMkn07jw/IVfrs6Z+eGPapCDXtq97GwK8VnQC/Iv/Pz50dZij2idX6ozNvi6REQMU10JAHCJE6SfIzJNtQSWGepBYyFQBE3susfYfHR3BgVJL1joy+MPo0bKLhhgq3SlfvUkabHRzDgGVZLL3s+Y54bvZHZw7j2MRlSYgMF7mVQljoxYgcxjDSArncqZAVzaO4UkWpUrl0M2Sfw+/B9iOvS4deAfroBMPgKiZgBLAkH5RqoZRWATACuIoJ6HU6GAjBb188Z2c5+gPxttuGDsjCFeE/nQjOYBgF1YW2Y8JnPREvHIISWJEEhTtpE8iGjlKZRqs4A/btOnMY5687xGH3B5f+bcQ6cQkoxSTG8in8zhZCcCkmKTfKIMiylDIMPfnj4z8jwOHQdh87L2PnyQGJFIjccQT82c8wojM/ohCeEZEpR2pPwOuRqZEK6pGGzqufnoHHYVdMctS2b/+Fo3jus/cjVTiKE5d2f/qDMYZB1fUr4dPNmi9QxYYYXaOgDAMty4LVaDDLFXiUAQlf/vbcuQ+w//NjUY4jjEhZktXwDAjDKM9JylfPg8B58Tw+fGFvBKy8jk546B+/vB+nXnsFH/38OXidjlAPKJsPVce+YxNXsPNEJDkyBYGjQxptRdvC8lk6HeyTE+H76lhUevBe2lAlIXjShoBXB71GQzUaDR3sPTWiC3Bbxds/dvS3OPzFeVnnxSuJMLwSiPACA1ACXmWEifRhiPRp4nVExbPn8NNu//MSAj7+eh7CMJK+9bP/ewOOC+fDww4eKv85kv5SBftGPA7c/ed9cPoj1xb1n9Zg8XVmUdCo2++4wsKISfq5iv2paolSJASDGq5cwSTLQsuyKNJoMPwvp19jOfxQvP2DH74iJE7ihIN3DBHFNAICogQztE84xPIZK2swYPaSVriuXMGHz+/B5RNHw6r1OOw43f9rXDkurcTpTSYhNBPh0CIlpmGfI+jFgx+8AocI6C/OMrA4eLv1FOvnr55jLleIeGmXVtRQvJUQcqvw82WAFM9vRbnGDb/fTxxeL/EHdKT1+4v+I0iwObRPGavHwB2b0VI6R1oojzXQlGWg4SW0gopCkvU4HRh68ecIeL3Kox0aqfrOXX475q/9W8miMMk6KkC2fjc5+0auO/DQB6/gmDOyqmGHjUHvOUZSIemuDz637cd/fHwJf3yaV1CFBIScAFAMQIcSol3WCKfbTbR+P1i/n7hICVn8zw1SsFo9fnLrOmye1yJxdswCghgsEA6LkRjMK8g1NoqPf7kPAZ8vZk13/tp1mLtipaQgL1nxCIU1u0nYd8x5GetkIfcbVwj6zmokQCmlWLA8iAs6bu2nO/5kbchHqGK1ugFyzbgQhnotdD4f0fl84AIBMhkgpPX7SyRgAeCJRXfhiaa7FGczpFUZEUwIC76IfDs+iw34vLj04Xu4fPxYuN/Ul5lQsbAJc1eshMFULi3QC+uNSHj6TSnTim/fgcufYNuR1xMCBaU4WgK0LQsABA7KPxh3OP+UCmCYEOICcDOACYCML2yDQeuBzucjQb8fPr+fGDkOi55o+YUc7KqKevxq5QMwaQ3RU1uyX4hcsTKgiFVCjLdKH9Ehl1KqXJZSsG/n8QHJsCUeUArgm7dw6KvkQknaUdo1YM5LqOIwzIMtIeNzboFhFg+2JBjEpN9PuGAQi7+79FtBhvxUvKtJq8cLbRtxX3WTAlOiXMtVWg4aryacLNio/lSZ6THHKLYdeV3SfwLAM+cYdNuYKKAA4GAJGtv8sLNC1s23Z2nXQHdeQu0jhGwBcEKsWONC1M4uwjWtB2wwSAKBAILBILntO82r3VrmN5A922ZDdRN+suxu1Ism3RUrRpLqeRJABfWRGImTTKZxa8gOvwe7Th/C3s/ek7xvCgK95xhsuaKRzRxQoTxM8GIVh60LgmKgoZYfT2WMFYYbRGDtALwoIZ6qBdBV+qAJBMAGg6SY49Cxtb6cM+r+cM6A2+XH6VrwJTzZvJoPyUrAaGQijcgBxpu1iXnpPlGuKYq2d/g92PPX97D3r+9KhisA0Oriw63ZJS1bUiq1b35bAOcMin5X5cHzGYEqD8VVfPKECYDoUANP1WzMrebwhc+HRW3zzYSQN60matqyMIgRvdQek1aPDTXNeHKxBfXGmyTdpiLMREDjwI2omEBeNHb4Pdhz9l1FmKEhS89FDcoDsWECwGuzOHQ2BeNZ9RrtGujMX6iCao1CcSIEFwBxowZN9y8r1xjYv4BE7uLVMy+I3hoODk30sTbUNGPD3CZsqjMrw0wFaALVhoLyAdsneP3SabwUvaYIAFDv5dVpcZKoMKvU1iwJwFqW0OdpheGMQ1WCCyEsl3/93rcopatlM5ywa4HemthwTVoD7qpswIa5zbirqoHvewlJz8BQEuP34PDYMF63ncaBS6fhiPEcN1MQ6L7EoOcCI02e4thxqIzCsiSpR3WmFYazBlXe3+Jr93aDYHfCxKuKQ99sDofinN11xnK0llejxVSNu6oaASDRpQsA+MtD7H4PDo+dw4jbjmP20RjrlWUwbQy6bdJQq3ieyFKwJFUaak/TroGeaQEVAPDIlxvA3zwk6Sc6Dusp+mdR9FVxOFqcms11xnLUF5fD4fMkhBar1XsJum0MtowxcWHGqjuloFJxa5xKUYJFbtoWOdAEN69Bg5eg28Y7dlhPYS2jsJr4/+XJlbydd9tx3p16JGt1EXReI+j8gkGri8S0lSD2yEucK0yh9Qi+yn+lPv7kPd++bZLsNruJxFlTbXYWGDJSDBVT2FmKISNgZynsGiRU9WohwSkPEJjdwv8uEkl8VGhJZLyqqjXrUIUb/YdDb3kAMLsJLA4GFifvUFMQN1RrXB7AsH7Kfn6Rdg1syXeoViR43orZRQTQ/P9qqDlX7elabqqhN1zvQIrPKM8qVLJ3XTeAZ6ayr8U5/dQ8oqcwtwRgTz9z2Uq7BvryLlESHsfcM9X9rWUU1rKgopotToJ6b/6pubuBUwMowF+kln9Qwd9LQrWH0g8V84lRn/CUkvIAYHHySrY4cx+yX5vFoX+Wao+ybkhJQNkIv0JydC6bTpUnYKud2YOsYtiNDKO6Bki+KbUn20qxs9EhW9wvZxJyZ1NQVaBQuMIwp1CFvvQb+dDHZQPy1oVBDBWrHv2s+VZR2oI8bbEgm92AxcGknGFvXRhEXxWntpmOVCPdjIYaH3IwnGGbXfwrlpodGqC7MWNALXlVUcpFgpTpZnYRlAd5JQPAsIGi/yZO7T4U4G+gsoV2DQylumOmlWrBDdZC/aU4bGdAnb1TnXbLBtQGFFpKMAWg9nQOlGmo5gKrpIYrvQD60oWZLai9Qgg2FdhFqbJfUOWQ2gfPeEVJGKd2Cy/TDFdkP4B+Ndb25hSqDHAngNDLNAPUaBVAWtW8ViavoMoAW4TQbEGC+dVp0o6Cn/y3Zhti3kCNA9ksZM2teQzwEPjn4w0BGMp0OJ22UOOALhdAm0U/m7IEDoLy7ALA4Vwq8IaAmkQCFhoylacxfAoBAwB7JrLRbLf/HwBxI17fueoAtgAAAABJRU5ErkJggg==';
-
-		var maxData = 10;
-
-		option = {
-			title : {
-				show : false,
-				text : "综合能力评价",
-				x : 'center',
-				y : 'top',
-				padding : 10,
-				textStyle : {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
-					fontFamily : 'Arial',
-					fontSize : 18,
-					fontStyle : 'normal',
-					fontWeight : 'bold',
-				},
-			},
-			tooltip : {},
-			xAxis : {
-				max : maxData,
-				splitLine : {
-					show : false
-				},
-				offset : 10,
-				axisLine : {
-					lineStyle : {
-						color : '#999'
-					}
-				},
-				axisLabel : {
-					margin : 8
-				},
-				show : false
-			},
-			yAxis : {
-				data : [ '执行能力', '学习能力', '领导能力', '服务意识', '发展潜力', '人际能力', '驱动能力' ],
-				inverse : true,
-				axisTick : {
-					show : false
-				},
-				axisLine : {
-					show : false
-				},
-				axisLabel : {
-					margin : 20,
-					color : '#000',
-					fontSize : 14
-				}
-			},
-			grid : {
-				top : 'center',
-				height : 280,
-				left : 100,
-				right : 80
-			},
-			series : [
-					{
-						// current data
-						type : 'pictorialBar',
-						symbol : spirit,
-						symbolRepeat : 'fixed',
-						symbolMargin : '20%',
-						symbolClip : true,
-						symbolSize : 28,
-						symbolBoundingData : maxData,
-						data : [ 8, 7, 6, 5, 6, 5, 6 ],
-						markLine : {
-							symbol : 'none',
-							label : {
-								formatter : 'max: {c}',
-								position : 'start'
-							},
-							lineStyle : {
-								color : 'green',
-								type : 'dotted',
-								opacity : 0.2,
-								width : 2
-							},
-							data : [ {
-								type : 'max'
-							} ]
-						},
-						z : 10
-					},
-					{
-						// full data
-						type : 'pictorialBar',
-
-						label : {
-							show : true,
-							formatter : function(params) {
-								return (params.value / maxData * 100)
-										.toFixed(1)
-										+ ' %';
-							},
-							position : 'right',
-							offset : [ 10, 0 ],
-							color : 'green',
-							fontSize : 18
-						},
-						itemStyle : {
-							normal : {
-								opacity : 0.4
-							}
-						},
-						animationDuration : 0,
-						symbolRepeat : 'fixed',
-						symbolMargin : '20%',
-						symbol : spirit,
-						symbolSize : 28,
-						symbolBoundingData : maxData,
-						data : [ 8, 7, 6, 5, 6, 5, 6 ],
-						z : 5
-					} ]
-		};
-		myChart.setOption(option);
-	</script>
-
-	<!-- 象形条形图 2-->
-	<script type="text/javascript">
-		var dom = document.getElementById("ability2");
-		var myChart = echarts.init(dom);
-		var app = {};
-		var spirit = 'image://data:https://echarts.apache.org/examples/image/png;base64,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';
-
-		var maxData = 10;
-
-		option = {
-			title : {
-				show : false,
-				text : "综合能力评价",
-				x : 'center',
-				y : 'top',
-				padding : 10,
-				textStyle : {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
-					fontFamily : 'Arial',
-					fontSize : 18,
-					fontStyle : 'normal',
-					fontWeight : 'bold',
-				},
-			},
-			tooltip : {},
-			xAxis : {
-				max : maxData,
-				splitLine : {
-					show : false
-				},
-				offset : 10,
-				axisLine : {
-					lineStyle : {
-						color : '#999'
-					}
-				},
-				axisLabel : {
-					margin : 8
-				},
-				show : false
-			},
-			yAxis : {
-				data:['专业技能', '学历水平', '工作能力', '领导能力', '协调能力','工作效率','发展潜力'],
-				inverse : true,
-				axisTick : {
-					show : false
-				},
-				axisLine : {
-					show : false
-				},
-				axisLabel : {
-					margin : 20,
-					color : '#000',
-					fontSize : 14
-				}
-			},
-			grid : {
-				top : 'center',
-				height : 280,
-				left : 100,
-				right : 80
-			},
-			series : [
-					{
-						// current data
-						type : 'pictorialBar',
-						symbol : spirit,
-						symbolRepeat : 'fixed',
-						symbolMargin : '20%',
-						symbolClip : true,
-						symbolSize : 28,
-						symbolBoundingData : maxData,
-						data : [ 8, 7, 6, 5, 6, 5, 6 ],
-						markLine : {
-							symbol : 'none',
-							label : {
-								formatter : 'max: {c}',
-								position : 'start'
-							},
-							lineStyle : {
-								color : 'green',
-								type : 'dotted',
-								opacity : 0.2,
-								width : 2
-							},
-							data : [ {
-								type : 'max'
-							} ]
-						},
-						z : 10
-					},
-					{
-						// full data
-						type : 'pictorialBar',
-
-						label : {
-							show : true,
-							formatter : function(params) {
-								return (params.value / maxData * 100)
-										.toFixed(1)
-										+ ' %';
-							},
-							position : 'right',
-							offset : [ 10, 0 ],
-							color : 'green',
-							fontSize : 18
-						},
-						itemStyle : {
-							normal : {
-								opacity : 0.4
-							}
-						},
-						animationDuration : 0,
-						symbolRepeat : 'fixed',
-						symbolMargin : '20%',
-						symbol : spirit,
-						symbolSize : 28,
-						symbolBoundingData : maxData,
-						data : [ 8, 7, 6, 5, 6, 5, 6 ],
-						z : 5
-					} ]
-		};
-		myChart.setOption(option);
-	</script>
 		
+			}
+		});
 
+	</script>
+
+	<!-- 昨日职业搜索指数 halfcircle1 -->
+	<script>
+		Highcharts.chart('halfcircle1', {
+			colors: ['#FFD700', '#C0C0C0', '#CD7F32'],
+			chart: {
+				type: 'column',
+				inverted: true,
+				polar: true
+			},
+			title: {
+				text: '昨日职业搜索指数(TOP 10)',
+		        style: {
+					fontFamily: 'Arial',
+		                fontSize: 18,
+		                fontStyle: 'normal',
+		                fontWeight: 'bold',
+					},
+			},
+			tooltip: {
+				outside: true
+			},
+			pane: {
+				size: '85%',
+				endAngle: 270
+			},
+			legend:{
+				enabled: false,
+			},
+			xAxis: {
+				tickInterval: 1,
+				labels: {
+					align: 'right',
+					useHTML: true,
+					allowOverlap: true,
+					step: 1,
+					y: 4,
+					style: {
+						fontSize: '12px',
+		                fontWeight:'bold'
+					}
+				},
+				lineWidth: 0,
+				categories: [
+					'实习',
+					'后勤',
+					'市场营销',
+					'Java技术员',
+					'产品运营',
+					'网络推广',
+					'算法工程师',
+					'产品经理',
+					'UI设计师',
+					'平面设计',
+				]
+			},
+			yAxis: {
+				lineWidth: 0,
+				tickInterval: 500,
+				reversedStacks: false,
+				endOnTick: true,
+				showLastLabel: true,
+		        labels: {
+		
+					style: {
+		                    fontSize: '12px',
+		                    fontWeight: 'bold'
+		                }
+				}
+			},
+			plotOptions: {
+				column: {
+					stacking: 'normal',
+					borderWidth: 0,
+					pointPadding: 0,
+					groupPadding: 0.25
+				}
+			},
+			series: [{
+				name: '',
+				data: [8098,7879,6834,6599,5490,4789,4089,3777,2897,1900]
+			}]
+		});
+	</script>
+
+	<!-- 昨日企业搜索指数halfcircle2 -->
+	<script>
+	  Highcharts.chart('halfcircle2', {
+	   colors: ['#a3ebb9', '#C0C0C0', '#CD7F32'],
+	   chart: {
+	    type: 'column',
+	    inverted: true,
+	    polar: true
+	   },
+	   title: {
+	    text: '昨日企业搜索指数(TOP 10)',
+	          style: {
+	     fontFamily: 'Arial',
+	                  fontSize: 18,
+	                  fontStyle: 'normal',
+	                  fontWeight: 'bold',
+	     },
+	   },
+	   tooltip: {
+	    outside: true
+	   },
+	   pane: {
+	    size: '85%',
+	    endAngle: 270
+	   },
+	   legend:{
+	    enabled: false,
+	   },
+	   xAxis: {
+	    tickInterval: 1,
+	    labels: {
+	     align: 'right',
+	     useHTML: true,
+	     allowOverlap: true,
+	     step: 1,
+	     y: 4,
+	     style: {
+	      fontSize: '12px',
+	                  fontWeight:'bold'
+	     }
+	    },
+	    lineWidth: 0,
+	    categories: [
+	     '琳俊网络',
+	     '广筑信息技术',
+	     '亿牛科技',
+	     '梅每珠宝',
+	     '企鹊桥',
+	     '美术宝',
+	     '跟谁学',
+	     '德悦',
+	     '亦优贸易',
+	     '嗳玖设计',
+	    ]
+	   },
+	   yAxis: {
+	    lineWidth: 0,
+	    tickInterval: 100,
+	    reversedStacks: false,
+	    endOnTick: true,
+	    showLastLabel: true,
+	          labels: {
+	  
+	     style: {
+	                      fontSize: '12px',
+	                      fontWeight: 'bold'
+	                  }
+	    }
+	   },
+	   plotOptions: {
+	    column: {
+	     stacking: 'normal',
+	     borderWidth: 0,
+	     pointPadding: 0,
+	     groupPadding: 0.25
+	    }
+	   },
+	   series: [{
+	    name: '',
+	    data: [3098,2879,2434,2599,1490,1189,489,377,287,190]
+	   }]
+	  });
+	</script>
+	
+	<!-- 平台用户信息总览 barpie -->
+	<script type="text/javascript">
+		var dom = document.getElementById("barpie");
+		var myChart = echarts.init(dom);
+		var app = {};
+		var builderJson = {
+		
+		"charts": {
+		  "高中及以下": 1330,
+		  "博士及以上": 765,
+		  "硕士": 2561,
+		  "大专": 4778,
+		  "本科": 9055,
+		  "其他":3089
+		
+		},
+		"components": {
+		  "100k以上": 288,
+		  "50-100k": 675,
+		  "5k以下": 680,
+		  "10k-50k": 3466,
+		  "8k-10k": 2736,
+		  "5k-8k": 6944,
+		  "暂无工作":10893
+		
+		},
+		
+		};
+		
+		var downloadJson = {
+		"男性": 4773,
+		"女性": 3079,
+		"空白": 210,
+		
+		};
+		
+		var themeJson = {
+		"20岁以下": 1294,
+		"20-30岁": 3325,
+		"30-40岁": 2608,
+		"40-50岁": 1321,
+		"50岁以上": 1179
+		};
+		
+		
+		var canvas = document.createElement('canvas');
+		var ctx = canvas.getContext('2d');
+		canvas.width = canvas.height = 100;
+		ctx.textAlign = 'center';
+		ctx.textBaseline = 'middle';
+		ctx.globalAlpha = 0.08;
+		ctx.font = '20px Microsoft Yahei';
+		ctx.translate(50, 50);
+		ctx.rotate(-Math.PI / 4);
+		
+		
+		option = {
+		  backgroundColor: {
+		      type: 'pattern',
+		      image: canvas,
+		      repeat: 'repeat'
+		  },
+		  tooltip: {},
+		  title: [{
+		      text: '学历分布',
+		      left: '25%',
+		      textAlign: 'center'
+		  },{
+		      text: '收入分布',
+		      left: '25%',
+		      top:'50%',
+		      textAlign: 'center'
+		  },  {
+		      text: '性别分布',
+		      left: '75%',
+		      textAlign: 'center'
+		  }, {
+		      text: '年龄分布',
+		      left: '75%',
+		      top: '50%',
+		      textAlign: 'center'
+		  }],
+		  grid: [{
+		      top: 30,
+		      width: '45%',
+		      bottom: '55%',
+		      left: 20,
+		      containLabel: true
+		  }, {
+		      top: '55%',
+		      width: '45%',
+		      bottom: 0,
+		      left: 20,
+		      containLabel: true
+		  }],
+		  xAxis: [{
+		      type: 'value',
+		      axisLabel: {
+		       show: true,
+		        textStyle: {
+		          fontSize : 14      //更改坐标轴文字大小
+		        }
+		     },
+		
+		      splitLine: {
+		          show: false
+		      }
+		  }, {
+		      type: 'value',
+		      axisLabel: {
+		       show: true,
+		        textStyle: {
+		          fontSize : 14      //更改坐标轴文字大小
+		        }
+		     },
+		      gridIndex: 1,
+		      splitLine: {
+		          show: false
+		      }
+		  }],
+		  yAxis: [{
+		      type: 'category',
+		      data: Object.keys(builderJson.charts),
+		      axisLabel: {
+		          interval: 0,
+		          rotate: 30,
+		          textStyle: {
+		          fontSize : 14      //更改坐标轴文字大小
+		        }
+		      },
+		      
+		      splitLine: {
+		          show: false
+		      }
+		  }, {
+		      gridIndex: 1,
+		      type: 'category',
+		      data: Object.keys(builderJson.components),
+		      axisLabel: {
+		          interval: 0,
+		          rotate: 30,
+		          textStyle: {
+		          fontSize : 14      //更改坐标轴文字大小
+		        }
+		      },
+		      splitLine: {
+		          show: false
+		      }
+		  }],
+		  series: [{
+		      type: 'bar',
+		      stack: 'chart',
+		      z: 3,
+		      itemStyle: {
+		          color: '#91cd76'
+		      },
+		      
+		      label: {
+		          position: 'right',
+		          show: true,
+		          normal: {
+		                            formatter: '{b} {d}%',
+		                            textStyle: {
+		                                fontWeight: 'normal',
+		                                fontSize: 14,
+		
+		                            },
+		                            color: '#2F4F4F',
+		
+		                        }
+		      },
+		      data: Object.keys(builderJson.charts).map(function (key) {
+		          return builderJson.charts[key];
+		      })
+		  }, {
+		      type: 'bar',
+		      stack: 'component',
+		      xAxisIndex: 1,
+		      yAxisIndex: 1,
+		      z: 3,
+		      
+		      itemStyle: {
+		          color: '#fac958'
+		      },
+		      label: {
+		          position: 'right',
+		          show: true,
+		          textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 14,
+		　　　　　　　　
+		　　　　　　},
+		      },
+		      data: Object.keys(builderJson.components).map(function (key) {
+		          return builderJson.components[key];
+		      })
+		  },{
+		      type: 'pie',
+		      radius: [0, '30%'],
+		      
+		      
+		      center: ['75%', '25%'],
+		      color:['#9dc8f1','#acf29e','#d7797f'],
+		      data: Object.keys(downloadJson).map(function (key) {
+		          return {
+		              name: key.replace('.js', ''),
+		              value: downloadJson[key]
+		          };
+		      })
+		  }, {
+		      type: 'pie',
+		      radius: [0, '30%'],
+		      label: {
+		                        normal: {
+		                            formatter: '{b} {d}%',
+		                            textStyle: {
+		                                fontWeight: 'normal',
+		                                fontSize: 14,
+		
+		                            },
+		                            color: '#2F4F4F',
+		
+		                        }
+		
+		                    },
+		      center: ['75%', '75%'],
+		      color:['#d7797f','#9dc8f1','#acf29e','#e2b864','#859dd5'],
+		      data: Object.keys(themeJson).map(function (key) {
+		          return {
+		              name: key.replace('.js', ''),
+		              value: themeJson[key]
+		          };
+		      })
+		  }]
+		};
+		
+		myChart.setOption(option);
+
+	</script>
+
+	<!-- 地图分布 map -->	
+	<script>
+	var chartDom = document.getElementById('map');
+	var myChart = echarts.init(chartDom);
+	var option;
+	
+	var data = [
+	     {name: '海门', value: 9},
+	     {name: '鄂尔多斯', value: 12},
+	     {name: '招远', value: 12},
+	     {name: '舟山', value: 12},
+	     {name: '齐齐哈尔', value: 14},
+	     {name: '盐城', value: 15},
+	     {name: '赤峰', value: 16},
+	     {name: '青岛', value: 18},
+	     {name: '乳山', value: 18},
+	     {name: '金昌', value: 19},
+	     {name: '泉州', value: 21},
+	     {name: '莱西', value: 21},
+	     {name: '日照', value: 21},
+	     {name: '胶南', value: 22},
+	     {name: '南通', value: 23},
+	     {name: '拉萨', value: 24},
+	     {name: '云浮', value: 24},
+	     {name: '梅州', value: 25},
+	     {name: '文登', value: 25},
+	     {name: '上海', value: 325},
+	     {name: '攀枝花', value: 25},
+	     {name: '威海', value: 25},
+	     {name: '承德', value: 25},
+	     {name: '厦门', value: 226},
+	     {name: '汕尾', value: 26},
+	     {name: '潮州', value: 26},
+	     {name: '丹东', value: 27},
+	     {name: '太仓', value: 27},
+	     {name: '曲靖', value: 27},
+	     {name: '烟台', value: 28},
+	     {name: '福州', value: 29},
+	     {name: '瓦房店', value: 30},
+	     {name: '即墨', value: 30},
+	     {name: '抚顺', value: 31},
+	     {name: '玉溪', value: 31},
+	     {name: '张家口', value: 31},
+	     {name: '阳泉', value: 31},
+	     {name: '莱州', value: 32},
+	     {name: '湖州', value: 132},
+	     {name: '汕头', value: 32},
+	     {name: '昆山', value: 33},
+	     {name: '宁波', value: 33},
+	     {name: '湛江', value: 33},
+	     {name: '揭阳', value: 34},
+	     {name: '荣成', value: 34},
+	     {name: '连云港', value: 35},
+	     {name: '葫芦岛', value: 35},
+	     {name: '常熟', value: 36},
+	     {name: '东莞', value: 36},
+	     {name: '河源', value: 36},
+	     {name: '淮安', value: 36},
+	     {name: '泰州', value: 36},
+	     {name: '南宁', value: 37},
+	     {name: '营口', value: 37},
+	     {name: '惠州', value: 37},
+	     {name: '江阴', value: 37},
+	     {name: '蓬莱', value: 37},
+	     {name: '韶关', value: 38},
+	     {name: '嘉峪关', value: 38},
+	     {name: '广州', value: 238},
+	     {name: '延安', value: 38},
+	     {name: '太原', value: 39},
+	     {name: '清远', value: 39},
+	     {name: '中山', value: 39},
+	     {name: '昆明', value: 39},
+	     {name: '寿光', value: 40},
+	     {name: '盘锦', value: 40},
+	     {name: '长治', value: 41},
+	     {name: '深圳', value: 241},
+	     {name: '珠海', value: 42},
+	     {name: '宿迁', value: 43},
+	     {name: '咸阳', value: 43},
+	     {name: '铜川', value: 44},
+	     {name: '平度', value: 44},
+	     {name: '佛山', value: 44},
+	     {name: '海口', value: 44},
+	     {name: '江门', value: 45},
+	     {name: '章丘', value: 45},
+	     {name: '肇庆', value: 46},
+	     {name: '大连', value: 47},
+	     {name: '临汾', value: 47},
+	     {name: '吴江', value: 47},
+	     {name: '石嘴山', value: 49},
+	     {name: '沈阳', value: 50},
+	     {name: '苏州', value: 250},
+	     {name: '茂名', value: 50},
+	     {name: '嘉兴', value: 51},
+	     {name: '长春', value: 51},
+	     {name: '胶州', value: 52},
+	     {name: '银川', value: 52},
+	     {name: '张家港', value: 52},
+	     {name: '三门峡', value: 53},
+	     {name: '锦州', value: 54},
+	     {name: '南昌', value: 154},
+	     {name: '柳州', value: 54},
+	     {name: '三亚', value: 54},
+	     {name: '自贡', value: 56},
+	     {name: '吉林', value: 56},
+	     {name: '阳江', value: 57},
+	     {name: '泸州', value: 57},
+	     {name: '西宁', value: 57},
+	     {name: '宜宾', value: 58},
+	     {name: '呼和浩特', value: 58},
+	     {name: '成都', value: 158},
+	     {name: '大同', value: 58},
+	     {name: '镇江', value: 59},
+	     {name: '桂林', value: 59},
+	     {name: '张家界', value: 59},
+	     {name: '宜兴', value: 59},
+	     {name: '北海', value: 60},
+	     {name: '西安', value: 61},
+	     {name: '金坛', value: 62},
+	     {name: '东营', value: 62},
+	     {name: '牡丹江', value: 63},
+	     {name: '遵义', value: 63},
+	     {name: '绍兴', value: 63},
+	     {name: '扬州', value: 64},
+	     {name: '常州', value: 64},
+	     {name: '潍坊', value: 65},
+	     {name: '重庆', value: 266},
+	     {name: '台州', value: 67},
+	     {name: '南京', value: 267},
+	     {name: '滨州', value: 70},
+	     {name: '贵阳', value: 71},
+	     {name: '无锡', value: 71},
+	     {name: '本溪', value: 71},
+	     {name: '克拉玛依', value: 72},
+	     {name: '渭南', value: 72},
+	     {name: '马鞍山', value: 72},
+	     {name: '宝鸡', value: 72},
+	     {name: '焦作', value: 75},
+	     {name: '句容', value: 75},
+	     {name: '北京', value: 379},
+	     {name: '徐州', value: 79},
+	     {name: '衡水', value: 180},
+	     {name: '包头', value: 80},
+	     {name: '绵阳', value: 80},
+	     {name: '乌鲁木齐', value: 84},
+	     {name: '枣庄', value: 84},
+	     {name: '杭州', value: 384},
+	     {name: '淄博', value: 85},
+	     {name: '鞍山', value: 86},
+	     {name: '溧阳', value: 86},
+	     {name: '库尔勒', value: 86},
+	     {name: '安阳', value: 90},
+	     {name: '开封', value: 90},
+	     {name: '济南', value: 92},
+	     {name: '德阳', value: 93},
+	     {name: '温州', value: 95},
+	     {name: '九江', value: 96},
+	     {name: '邯郸', value: 98},
+	     {name: '临安', value: 99},
+	     {name: '兰州', value: 99},
+	     {name: '沧州', value: 100},
+	     {name: '临沂', value: 103},
+	     {name: '南充', value: 104},
+	     {name: '天津', value: 105},
+	     {name: '富阳', value: 106},
+	     {name: '泰安', value: 112},
+	     {name: '诸暨', value: 112},
+	     {name: '郑州', value: 113},
+	     {name: '哈尔滨', value: 114},
+	     {name: '聊城', value: 116},
+	     {name: '芜湖', value: 117},
+	     {name: '唐山', value: 119},
+	     {name: '平顶山', value: 119},
+	     {name: '邢台', value: 119},
+	     {name: '德州', value: 120},
+	     {name: '济宁', value: 120},
+	     {name: '荆州', value: 127},
+	     {name: '宜昌', value: 130},
+	     {name: '义乌', value: 232},
+	     {name: '丽水', value: 133},
+	     {name: '洛阳', value: 134},
+	     {name: '秦皇岛', value: 136},
+	     {name: '株洲', value: 143},
+	     {name: '石家庄', value: 147},
+	     {name: '莱芜', value: 148},
+	     {name: '常德', value: 152},
+	     {name: '保定', value: 153},
+	     {name: '湘潭', value: 154},
+	     {name: '金华', value: 157},
+	     {name: '岳阳', value: 169},
+	     {name: '长沙', value: 175},
+	     {name: '衢州', value: 177},
+	     {name: '廊坊', value: 193},
+	     {name: '菏泽', value: 194},
+	     {name: '合肥', value: 229},
+	     {name: '武汉', value: 103},
+	     {name: '大庆', value: 79}
+	];
+	var geoCoordMap = {
+	    '海门':[121.15,31.89],
+	    '鄂尔多斯':[109.781327,39.608266],
+	    '招远':[120.38,37.35],
+	    '舟山':[122.207216,29.985295],
+	    '齐齐哈尔':[123.97,47.33],
+	    '盐城':[120.13,33.38],
+	    '赤峰':[118.87,42.28],
+	    '青岛':[120.33,36.07],
+	    '乳山':[121.52,36.89],
+	    '金昌':[102.188043,38.520089],
+	    '泉州':[118.58,24.93],
+	    '莱西':[120.53,36.86],
+	    '日照':[119.46,35.42],
+	    '胶南':[119.97,35.88],
+	    '南通':[121.05,32.08],
+	    '拉萨':[91.11,29.97],
+	    '云浮':[112.02,22.93],
+	    '梅州':[116.1,24.55],
+	    '文登':[122.05,37.2],
+	    '上海':[121.48,31.22],
+	    '攀枝花':[101.718637,26.582347],
+	    '威海':[122.1,37.5],
+	    '承德':[117.93,40.97],
+	    '厦门':[118.1,24.46],
+	    '汕尾':[115.375279,22.786211],
+	    '潮州':[116.63,23.68],
+	    '丹东':[124.37,40.13],
+	    '太仓':[121.1,31.45],
+	    '曲靖':[103.79,25.51],
+	    '烟台':[121.39,37.52],
+	    '福州':[119.3,26.08],
+	    '瓦房店':[121.979603,39.627114],
+	    '即墨':[120.45,36.38],
+	    '抚顺':[123.97,41.97],
+	    '玉溪':[102.52,24.35],
+	    '张家口':[114.87,40.82],
+	    '阳泉':[113.57,37.85],
+	    '莱州':[119.942327,37.177017],
+	    '湖州':[120.1,30.86],
+	    '汕头':[116.69,23.39],
+	    '昆山':[120.95,31.39],
+	    '宁波':[121.56,29.86],
+	    '湛江':[110.359377,21.270708],
+	    '揭阳':[116.35,23.55],
+	    '荣成':[122.41,37.16],
+	    '连云港':[119.16,34.59],
+	    '葫芦岛':[120.836932,40.711052],
+	    '常熟':[120.74,31.64],
+	    '东莞':[113.75,23.04],
+	    '河源':[114.68,23.73],
+	    '淮安':[119.15,33.5],
+	    '泰州':[119.9,32.49],
+	    '南宁':[108.33,22.84],
+	    '营口':[122.18,40.65],
+	    '惠州':[114.4,23.09],
+	    '江阴':[120.26,31.91],
+	    '蓬莱':[120.75,37.8],
+	    '韶关':[113.62,24.84],
+	    '嘉峪关':[98.289152,39.77313],
+	    '广州':[113.23,23.16],
+	    '延安':[109.47,36.6],
+	    '太原':[112.53,37.87],
+	    '清远':[113.01,23.7],
+	    '中山':[113.38,22.52],
+	    '昆明':[102.73,25.04],
+	    '寿光':[118.73,36.86],
+	    '盘锦':[122.070714,41.119997],
+	    '长治':[113.08,36.18],
+	    '深圳':[114.07,22.62],
+	    '珠海':[113.52,22.3],
+	    '宿迁':[118.3,33.96],
+	    '咸阳':[108.72,34.36],
+	    '铜川':[109.11,35.09],
+	    '平度':[119.97,36.77],
+	    '佛山':[113.11,23.05],
+	    '海口':[110.35,20.02],
+	    '江门':[113.06,22.61],
+	    '章丘':[117.53,36.72],
+	    '肇庆':[112.44,23.05],
+	    '大连':[121.62,38.92],
+	    '临汾':[111.5,36.08],
+	    '吴江':[120.63,31.16],
+	    '石嘴山':[106.39,39.04],
+	    '沈阳':[123.38,41.8],
+	    '苏州':[120.62,31.32],
+	    '茂名':[110.88,21.68],
+	    '嘉兴':[120.76,30.77],
+	    '长春':[125.35,43.88],
+	    '胶州':[120.03336,36.264622],
+	    '银川':[106.27,38.47],
+	    '张家港':[120.555821,31.875428],
+	    '三门峡':[111.19,34.76],
+	    '锦州':[121.15,41.13],
+	    '南昌':[115.89,28.68],
+	    '柳州':[109.4,24.33],
+	    '三亚':[109.511909,18.252847],
+	    '自贡':[104.778442,29.33903],
+	    '吉林':[126.57,43.87],
+	    '阳江':[111.95,21.85],
+	    '泸州':[105.39,28.91],
+	    '西宁':[101.74,36.56],
+	    '宜宾':[104.56,29.77],
+	    '呼和浩特':[111.65,40.82],
+	    '成都':[104.06,30.67],
+	    '大同':[113.3,40.12],
+	    '镇江':[119.44,32.2],
+	    '桂林':[110.28,25.29],
+	    '张家界':[110.479191,29.117096],
+	    '宜兴':[119.82,31.36],
+	    '北海':[109.12,21.49],
+	    '西安':[108.95,34.27],
+	    '金坛':[119.56,31.74],
+	    '东营':[118.49,37.46],
+	    '牡丹江':[129.58,44.6],
+	    '遵义':[106.9,27.7],
+	    '绍兴':[120.58,30.01],
+	    '扬州':[119.42,32.39],
+	    '常州':[119.95,31.79],
+	    '潍坊':[119.1,36.62],
+	    '重庆':[106.54,29.59],
+	    '台州':[121.420757,28.656386],
+	    '南京':[118.78,32.04],
+	    '滨州':[118.03,37.36],
+	    '贵阳':[106.71,26.57],
+	    '无锡':[120.29,31.59],
+	    '本溪':[123.73,41.3],
+	    '克拉玛依':[84.77,45.59],
+	    '渭南':[109.5,34.52],
+	    '马鞍山':[118.48,31.56],
+	    '宝鸡':[107.15,34.38],
+	    '焦作':[113.21,35.24],
+	    '句容':[119.16,31.95],
+	    '北京':[116.46,39.92],
+	    '徐州':[117.2,34.26],
+	    '衡水':[115.72,37.72],
+	    '包头':[110,40.58],
+	    '绵阳':[104.73,31.48],
+	    '乌鲁木齐':[87.68,43.77],
+	    '枣庄':[117.57,34.86],
+	    '杭州':[120.19,30.26],
+	    '淄博':[118.05,36.78],
+	    '鞍山':[122.85,41.12],
+	    '溧阳':[119.48,31.43],
+	    '库尔勒':[86.06,41.68],
+	    '安阳':[114.35,36.1],
+	    '开封':[114.35,34.79],
+	    '济南':[117,36.65],
+	    '德阳':[104.37,31.13],
+	    '温州':[120.65,28.01],
+	    '九江':[115.97,29.71],
+	    '邯郸':[114.47,36.6],
+	    '临安':[119.72,30.23],
+	    '兰州':[103.73,36.03],
+	    '沧州':[116.83,38.33],
+	    '临沂':[118.35,35.05],
+	    '南充':[106.110698,30.837793],
+	    '天津':[117.2,39.13],
+	    '富阳':[119.95,30.07],
+	    '泰安':[117.13,36.18],
+	    '诸暨':[120.23,29.71],
+	    '郑州':[113.65,34.76],
+	    '哈尔滨':[126.63,45.75],
+	    '聊城':[115.97,36.45],
+	    '芜湖':[118.38,31.33],
+	    '唐山':[118.02,39.63],
+	    '平顶山':[113.29,33.75],
+	    '邢台':[114.48,37.05],
+	    '德州':[116.29,37.45],
+	    '济宁':[116.59,35.38],
+	    '荆州':[112.239741,30.335165],
+	    '宜昌':[111.3,30.7],
+	    '义乌':[120.06,29.32],
+	    '丽水':[119.92,28.45],
+	    '洛阳':[112.44,34.7],
+	    '秦皇岛':[119.57,39.95],
+	    '株洲':[113.16,27.83],
+	    '石家庄':[114.48,38.03],
+	    '莱芜':[117.67,36.19],
+	    '常德':[111.69,29.05],
+	    '保定':[115.48,38.85],
+	    '湘潭':[112.91,27.87],
+	    '金华':[119.64,29.12],
+	    '岳阳':[113.09,29.37],
+	    '长沙':[113,28.21],
+	    '衢州':[118.88,28.97],
+	    '廊坊':[116.7,39.53],
+	    '菏泽':[115.480656,35.23375],
+	    '合肥':[117.27,31.86],
+	    '武汉':[114.31,30.52],
+	    '大庆':[125.03,46.58]
+	};
+	
+	var convertData = function (data) {
+	    var res = [];
+	    for (var i = 0; i < data.length; i++) {
+	        var geoCoord = geoCoordMap[data[i].name];
+	        if (geoCoord) {
+	            res.push({
+	                name: data[i].name,
+	                value: geoCoord.concat(data[i].value)
+	            });
+	        }
+	    }
+	    return res;
+	};
+	
+	option = {
+	    title: {
+	    	show:false,
+	        text: '平台用户地域分布',
+	        //subtext: 'data from PM25.in',
+	        //sublink: 'http://www.pm25.in',
+	        top:18,
+	        left: 'center',
+	        textStyle: {
+	            color: '#000',
+	            fontSize:30
+	        }
+	    },
+	    tooltip : {
+	        trigger: 'item'
+	    },
+	    bmap: {
+	        center: [165.114129, 23.550339],
+	        zoom: 5,
+	        roam: true,
+	        mapStyle: {
+	            styleJson: [{
+	                'featureType': 'water',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'color': '#d1d1d1'
+	                }
+	            }, {
+	                'featureType': 'land',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'color': '#f3f3f3'
+	                }
+	            }, {
+	                'featureType': 'railway',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'visibility': 'off'
+	                }
+	            }, {
+	                'featureType': 'highway',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'color': '#fdfdfd'
+	                }
+	            }, {
+	                'featureType': 'highway',
+	                'elementType': 'labels',
+	                'stylers': {
+	                    'visibility': 'off'
+	                }
+	            }, {
+	                'featureType': 'arterial',
+	                'elementType': 'geometry',
+	                'stylers': {
+	                    'color': '#fefefe'
+	                }
+	            }, {
+	                'featureType': 'arterial',
+	                'elementType': 'geometry.fill',
+	                'stylers': {
+	                    'color': '#fefefe'
+	                }
+	            }, {
+	                'featureType': 'poi',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'visibility': 'off'
+	                }
+	            }, {
+	                'featureType': 'green',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'visibility': 'off'
+	                }
+	            }, {
+	                'featureType': 'subway',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'visibility': 'off'
+	                }
+	            }, {
+	                'featureType': 'manmade',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'color': '#d1d1d1'
+	                }
+	            }, {
+	                'featureType': 'local',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'color': '#d1d1d1'
+	                }
+	            }, {
+	                'featureType': 'arterial',
+	                'elementType': 'labels',
+	                'stylers': {
+	                    'visibility': 'off'
+	                }
+	            }, {
+	                'featureType': 'boundary',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'color': '#fefefe'
+	                }
+	            }, {
+	                'featureType': 'building',
+	                'elementType': 'all',
+	                'stylers': {
+	                    'color': '#d1d1d1'
+	                }
+	            }, {
+	                'featureType': 'label',
+	                'elementType': 'labels.text.fill',
+	                'stylers': {
+	                    'color': '#999999'
+	                }
+	            }]
+	        }
+	    },
+	    series : [
+	        {
+	            name: 'pm2.5',
+	            type: 'scatter',
+	            coordinateSystem: 'bmap',
+	            data: convertData(data),
+	            symbolSize: function (val) {
+	                return val[2] / 10;
+	            },
+	            encode: {
+	                value: 2
+	            },
+	            label: {
+	                formatter: '{b}',
+	                position: 'right',
+	                show: false
+	            },
+	            emphasis: {
+	                label: {
+	                    show: true
+	                }
+	            }
+	        },
+	        {
+	            name: 'Top 5',
+	            type: 'effectScatter',
+	            coordinateSystem: 'bmap',
+	            data: convertData(data.sort(function (a, b) {
+	                return b.value - a.value;
+	            }).slice(0, 6)),
+	            symbolSize: function (val) {
+	                return val[2] / 10;
+	            },
+	            encode: {
+	                value: 2
+	            },
+	            showEffectOn: 'render',
+	            rippleEffect: {
+	                brushType: 'stroke'
+	            },
+	            hoverAnimation: true,
+	            label: {
+	                formatter: '{b}',
+	                position: 'right',
+	                show: true
+	            },
+	            itemStyle: {
+	                shadowBlur: 10,
+	                shadowColor: '#333'
+	            },
+	            zlevel: 1
+	        }
+	    ]
+	};
+	option && myChart.setOption(option);
+	
+	</script>
 </body>
 </html>

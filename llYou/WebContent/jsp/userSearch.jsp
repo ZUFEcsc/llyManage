@@ -151,96 +151,155 @@
 										<input type="text" class="form-control"
 											placeholder="请输入职位名、公司名等关键字">
 									</div>
-									<a href="#" class="layui-btn layui-btn-normal" type="submit">
+									<button class="layui-btn layui-btn-normal" onclick="change()">
 										<i class="layui-icon layui-icon-search"
-										style="font-size: 28px; color: #f0f0f0;"></i> <span
-										style="line-height: 30px; font-size: 18px;">找工作</span>
-									</a>
+											style="font-size: 28px; color: #f0f0f0;"></i> <span
+											style="line-height: 30px; font-size: 18px;">找工作</span>
+									</button>
 								</div>
 							</form>
 							<hr>
 						</div>
-						<%
-							Dao dao = new Dao();
-							List<CompanySeekBean> list = dao.getListCompanySeekInfo();
-							for (CompanySeekBean ab : list) {
-						%>
-						<div class="layui-row"
-							style="margin: 10px; padding: 5px; background-color: #F2F2F2;">
-							<div class="layui-card">
+						<div id="d1">
 							<%
-												if(ab.getCompany_location().equals("上海")||ab.getCompany_location().equals("北京")){
-												%>
-							<i class="iconfont icon-recommend" style="float:left;color:#ff6600;font-size:44px;margin-top:-3px;"></i>
-								<%} %><div class="layui-card-header">
-								
-								
-									<i class="iconfont icon-dingwei"
-										style="font-size: 20px; color: #009688"></i> 
-										<strong><%=ab.getCompany_location()%></strong>
-									|
-									<%=ab.getSeek_position()%>高薪 <a href="#"> <span class=""
-										style="padding: 6px 3px 24px 10px; line-height: 20px;">
-											<i class="iconfont icon-weixin"
-											style="font-size: 15px; color: #00b48a;"></i> <span
-											style="font-size: 12px; line-height: 20px; color: #a6a6a6;">简历投递</span>
+								Dao dao = new Dao();
+								List<CompanySeekBean> list = dao.getListCompanySeekInfo();
+								for (CompanySeekBean ab : list) {
+							%>
+							<div class="layui-row"
+								style="margin: 10px; padding: 5px; background-color: #F2F2F2;">
+								<div class="layui-card">
+									<%
+										if ((ab.getCompany_location().equals("上海") && ab.getCompany_name().equals("安徽阿里"))
+													|| (ab.getCompany_location().equals("福建") && ab.getCompany_name().equals("北京阿里"))) {
+									%>
+									<i class="iconfont icon-recommend"
+										style="float: left; color: #ff6600; font-size: 44px; margin-top: -3px;"></i>
+									<%
+										}
+									%><div class="layui-card-header">
 
-									</span>
-									</a>
+
+										<i class="iconfont icon-dingwei"
+											style="font-size: 20px; color: #009688"></i> <strong><%=ab.getCompany_location()%></strong>
+										|
+										<%=ab.getSeek_position()%>高薪 <a href="#"> <span class=""
+											style="padding: 6px 3px 24px 10px; line-height: 20px;">
+												<i class="iconfont icon-weixin"
+												style="font-size: 15px; color: #00b48a;"></i> <span
+												style="font-size: 12px; line-height: 20px; color: #a6a6a6;">简历投递</span>
+
+										</span>
+										</a>
+									</div>
+									<div class="layui-card-body">
+										<table class="table table-borderless" style="margin: 0px;">
+											<tbody>
+
+												<tr>
+													<td width="40%"><strong
+														style="color: #f85659; font-size: 22px;">￥ <%=ab.getSalary()%>
+															/ 月
+													</strong> <br> <span class="layui-badge layui-bg-orange">免费午餐</span>
+														<span class="layui-badge layui-bg-orange">公费旅游</span> <span
+														class="layui-badge layui-bg-orange"><%=ab.getAdvantage()%></span>
+														<br></td>
+													<td width="30%">
+														<%
+															if (ab.getCompany_name().equals("安徽阿里") || ab.getCompany_name().equals("福建阿里")
+																		|| ab.getCompany_name().equals("四川阿里") || ab.getCompany_name().equals("深圳阿里")) {
+														%> <i class="iconfont icon-HNTE-fill"
+														style="font-size: 22px; color: #ff552e;"> </i> <%
+ 	}
+ %> <i class="iconfont icon-renzhengqiye"
+														style="font-size: 22px; color: #1E9FFF;"> </i> <%=ab.getCompany_name()%>
+														<i class="iconfont icon-renzheng"
+														style="font-size: 22px; color: #1E9FFF;"></i> <a
+														class="layui-btn-xs" href="enterpriseDraw.jsp"> <i
+															class="iconfont icon-ziyuan25"
+															style="font-size: 22px; color: #16c2c2;"></i> 查看企业画像，了解更多
+													</a> <br> <span style="font-size: 12px; color: #c2c2c2;"><%=ab.getSeek_position()%>
+															| <%=ab.getWork_experience()%> | 不限 </span>
+													</td>
+													<td></td>
+													<td>
+														<button type="button"
+															class="layui-btn layui-btn-sm layui-btn-danger"
+															style="margin: 0px;" data-toggle="modal"
+															data-target="#exampleModal">
+															<i class="layui-icon layui-icon-templeate-1"></i>申请
+														</button> <span style="margin-left: 10px; color: #c2c2c2;"><%=ab.getDeliver_time()%></span>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
 								</div>
-								<div class="layui-card-body">
-									<table class="table table-borderless" style="margin: 0px;">
-										<tbody>
+							</div>
+							<%
+								}
+							%>
+						</div>
+						<div id="d2">
 
-											<tr>
-												<td width="40%"><strong
-													style="color: #f85659; font-size: 22px;">￥ <%=ab.getSalary()%>
-														/ 月
-												</strong> <br> <span class="layui-badge layui-bg-orange">免费午餐</span>
-													<span class="layui-badge layui-bg-orange">公费旅游</span> <span
-													class="layui-badge layui-bg-orange"><%=ab.getAdvantage()%></span>
-													<br></td>
-												<td width="30%">
-												<%
-												if(ab.getCompany_name().equals("安徽阿里")||ab.getCompany_name().equals("福建阿里")||ab.getCompany_name().equals("四川阿里")||ab.getCompany_name().equals("深圳阿里")){
-												%>
-												<i class="iconfont icon-HNTE-fill"
-													style="font-size: 22px; color: #ff552e;">
-													</i> 
-													<%} %>
-													
-													<i
-													class="iconfont icon-renzhengqiye"
-													style="font-size: 22px; color: #1E9FFF;">
-													</i> 
-													
-													<%=ab.getCompany_name()%>
-													<i class="iconfont icon-renzheng"
-													style="font-size: 22px; color: #1E9FFF;"></i> <a
-													class="layui-btn-xs" href="enterpriseDraw.jsp"> <i
-														class="iconfont icon-ziyuan25"
-														style="font-size: 22px; color: #16c2c2;"></i> 查看企业画像，了解更多
-												</a> <br> <span style="font-size: 12px; color: #c2c2c2;"><%=ab.getSeek_position()%>
-														| <%=ab.getWork_experience()%> | 不限 </span></td>
-												<td></td>
-												<td>
-													<button type="button"
-														class="layui-btn layui-btn-sm layui-btn-danger"
-														style="margin: 0px;">
-														<i class="layui-icon layui-icon-templeate-1"></i>申请
-													</button> <span style="margin-left: 10px; color: #c2c2c2;"><%=ab.getDeliver_time()%></span>
-												</td>
-											</tr>
+							<div class="layui-row"
+								style="margin: 10px; padding: 5px; background-color: #F2F2F2;">
+								<div class="layui-card">
 
-										</tbody>
-									</table>
+									<i class="iconfont icon-recommend"
+										style="float: left; color: #ff6600; font-size: 44px; margin-top: -3px;"></i>
+									<div class="layui-card-header">
+
+
+										<i class="iconfont icon-dingwei"
+											style="font-size: 20px; color: #009688"></i> <strong>上海</strong>
+										| 项目经理高薪 <a href="#"> <span class=""
+											style="padding: 6px 3px 24px 10px; line-height: 20px;">
+												<i class="iconfont icon-weixin"
+												style="font-size: 15px; color: #00b48a;"></i> <span
+												style="font-size: 12px; line-height: 20px; color: #a6a6a6;">简历投递</span>
+
+										</span>
+										</a>
+									</div>
+									<div class="layui-card-body">
+										<table class="table table-borderless" style="margin: 0px;">
+											<tbody>
+
+												<tr>
+													<td width="40%"><strong
+														style="color: #f85659; font-size: 22px;">￥ 2W-4W
+															/ 月 </strong> <br> <span class="layui-badge layui-bg-orange">免费午餐</span>
+														<span class="layui-badge layui-bg-orange">公费旅游</span> <span
+														class="layui-badge layui-bg-orange">五险一金，双休</span> <br></td>
+													<td width="30%"><i class="iconfont icon-HNTE-fill"
+														style="font-size: 22px; color: #ff552e;"> </i> <i
+														class="iconfont icon-renzhengqiye"
+														style="font-size: 22px; color: #1E9FFF;"> </i> 安徽阿里 <i
+														class="iconfont icon-renzheng"
+														style="font-size: 22px; color: #1E9FFF;"></i> <a
+														class="layui-btn-xs" href="enterpriseDraw.jsp"> <i
+															class="iconfont icon-ziyuan25"
+															style="font-size: 22px; color: #16c2c2;"></i> 查看企业画像，了解更多
+													</a> <br> <span style="font-size: 12px; color: #c2c2c2;">项目经理
+															| 有过相关工作经验 | 不限 </span></td>
+													<td></td>
+													<td>
+														<button type="button"
+															class="layui-btn layui-btn-sm layui-btn-danger"
+															style="margin: 0px;">
+															<i class="layui-icon layui-icon-templeate-1"></i>申请
+														</button> <span style="margin-left: 10px; color: #c2c2c2;">2020-07-23</span>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
 								</div>
 							</div>
 						</div>
-						<%
-							}
-						%>
-
 					</div>
 
 					<!-- 我的招聘进度 -->
@@ -298,9 +357,10 @@
 
 					<!-- 我的简历 -->
 					<div class="layui-tab-item " id="item-WDJL" style="display: none;">
-						
-						<div style="float: left;margin:20px 0px -20px 30px;">
-							<a href="#" class="layui-btn layui-btn-normal" style="background-color:#25a18e;"> <i
+
+						<div style="float: left; margin: 20px 0px -20px 30px;">
+							<a href="#" class="layui-btn layui-btn-normal"
+								style="background-color: #25a18e;"> <i
 								class="iconfont icon-fabu" style="color: #fff; font-size: 22px;"></i>
 								新建简历
 							</a>
@@ -369,6 +429,54 @@
 
 			<%@ include file="lly-footer.jsp"%>
 		</div>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div style="margin-left: 10px; margin-top: 10px;">
+						<img src="../img/choose.png"
+							style="border-radius: 30% !important; width: 30px;"><span
+							style="margin-left: 6px; font-size: 25px; margin-top: 10px;">请选择你的简历</span>
+					</div>
+					</br><small
+										class="gwS">默认简历：</small><div>
+					<div class="layui-col-md3" style="margin-left: 20px;">
+						<div class="single-member effect-3"
+							style="box-shadow: 2px 1px 8px #909090;">
+							<div class="member-image">
+								<img src="../img/person/p1.jpg" alt="Member">
+							</div>
+							<div class="member-info">
+								<h3 style="margin-bottom: 16px;">未命名简历</h3>
+								<h4 style="margin-bottom: 14px;">应聘岗位：JAVA工程师</h4>
+								<div style="text-align: left;">
+									<small style="color: #2b4f6c;">已投岗位：</small><br> <small
+										class="gwS">字节跳动 - 算法工程师（远程实习）.</small><br> <small
+										class="gwS">滴滴出行 - 视觉深度学习算法工程师.</small><br> <small
+										class="gwS">酷家乐 - 运筹优化算法工程师.</small><br> <small
+										class="gwS">同花顺智能资产有限公司 - 量化研究员.</small><br> <a
+										class="layui-btn"
+										style="margin-top: 12px; width: 100%; background-color: 009688; font-size: 18px;"
+										href="#">查 看 详 情</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="layui-btn"
+											style="background:#007bff;float:right;margin-right:50px;margin-top:140px;padding: 0 10px;"
+											>选择其他简历</button></div>
+					</br> </br>
+					<div style="margin-left: 350px;">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"
+							onclick="clicktest()">确定</button>
+					</div>
+					</br>
+				</div>
+			</div>
+		</div>
 		<script src="../res/layui/layui.js"></script>
 		<script>
 			//JavaScript代码区域
@@ -379,6 +487,9 @@
 
 		<!-- 步骤条 -->
 		<script>
+		function clicktest(){
+			alert("发送成功");
+		}
 			layui.config({
 				base : '../js/steps/',
 			}).use('steps');
@@ -546,6 +657,9 @@
 				});
 
 			});
+		</script>
+		<script>
+			//JavaScript代码区域
 		</script>
 	</div>
 </body>

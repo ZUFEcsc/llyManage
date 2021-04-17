@@ -11,7 +11,7 @@
 	</ul>
 	<ul class="layui-nav layui-layout-right">
 		<li class="layui-nav-item"><a href="javascript:;"> <img
-				src="../img/avatar.png" class="layui-nav-img"> 王蕾
+				src="../img/girl2.png" class="layui-nav-img"> 王蕾
 		</a>
 			<dl class="layui-nav-child">
 				<dd>

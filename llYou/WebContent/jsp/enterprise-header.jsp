@@ -33,8 +33,16 @@ for(WorkerLoginBean ab:listl)
 		</li>
 	</ul>
 	<ul class="layui-nav layui-layout-right">
-		<li class="layui-nav-item"><a href="javascript:;"> <img
-				src="../img/avatar.png" class="layui-nav-img"> <%=username %>
+		<li class="layui-nav-item"><a href="javascript:;">
+		<%if(username.equals("王蕾")) {%> <img
+				src="../img/girl2.png" class="layui-nav-img"><%} %> 
+				<%if(username.equals("王畅畅")||username.equals("王汪")) {%> <img
+				src="../img/boy.png" class="layui-nav-img"><%} %> 
+				<%if(username.equals("王颖")) {%> <img
+				src="../img/girl.png" class="layui-nav-img"><%} %> 
+				<%if(username.equals("张雨佳")) {%> <img
+				src="../img/girl.png" class="layui-nav-img"><%} %> 
+				<%=username %>
 		</a>
 			<dl class="layui-nav-child">
 				<dd>

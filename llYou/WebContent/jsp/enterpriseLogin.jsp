@@ -150,8 +150,9 @@ body {
 			<i class="iconfont icon-guanliyuan" style="font-size:24px;"></i>
 			<select style="display:inline-block;width:90%;margin-top:0px;" class="form-control">
 			  <option selected="selected" disabled="disabled" style='display: none' value='用户类型'>用户类型</option> 
-			  <option>HR主管</option>
-			  <option>部门经理</option>
+			  <option>HR</option>
+			  <option>部门主管</option>
+			  <option>项目经理</option>
 			  <option>办公室主任</option>
 			</select>
 		</div>

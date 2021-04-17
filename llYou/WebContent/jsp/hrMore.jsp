@@ -111,6 +111,7 @@ tbody tr th {
 </head>
 
 <body class="">
+<%String mac="UptoFirstStepServlet?identity="+"2300003"; %>
 	<div class="layui-layout layui-layout-admin">
 
 		<%@ include file="enterprise-header.jsp"%>
@@ -135,7 +136,7 @@ tbody tr th {
 								style="display: inline-block; margin: 5px 0px 5px 0px; float: left;">
 								<button type="button" class="layui-btn layui-btn-xs"
 									style="background-color: #25a18e;">
-									<a href="#">通过筛选</a>
+									<a href=<%=mac %>>通过筛选</a>
 								</button>
 								<button type="button" class="layui-btn layui-btn-xs"
 									style="background-color: #25a18e;">驳回</button>

@@ -34,6 +34,7 @@ tbody tr th {
 }
 </style>
 <title>部门主管页面</title>
+<script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <link rel="stylesheet" href="../res/layui/css/layui.css">
 <script type="text/javascript"
 	src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -45,6 +46,52 @@ tbody tr th {
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
+<style>
+#
+{
+margin
+
+
+:
+
+
+0;
+padding
+
+
+:
+
+
+0;
+}
+.masking {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: rgba(150, 150, 150, 0.8);
+	display: none;
+	top: 0;
+	left: 0;
+}
+
+.layer {
+	position: relative;
+	width: 200px;
+	height: 100px;
+	background: #FFFFFF;
+	
+	left: 60%;
+	margin-left: -250px;
+	top: 60%;
+	margin-top: -150px;
+}
+
+.close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+}
+</style>
 </head>
 <body class="layui-layout-body">
 	<%
@@ -235,10 +282,9 @@ tbody tr th {
  	}
  %> <%
  	if (ab.getEnd_time() != null) {
- %><span style="color: #777777;"><%=ab.getEnd_time()%></span>
-														<%
-															}
-														%>
+ %><span style="color: #777777;"><%=ab.getEnd_time()%></span> <%
+ 	}
+ %>
 													</td>
 												</tr>
 
@@ -290,10 +336,10 @@ tbody tr th {
 												style="color: #1296db; font-size: 1.25rem;"></i> <strong
 												style="color: #2b4f6c;">项目负责人：</strong> <label
 												style="font-size: 15px;"><input type="checkbox"
-												style="margin-left: 10px;" /><span style="color:#777777">张雨佳 </span></label> <label
-												style="font-size: 15px;"><input type="checkbox"
-												style="margin-left: 10px;" />
-												<span style="color:#777777">万山</span> </label> <a href="#"
+												style="margin-left: 10px;" /><span style="color: #777777">张雨佳
+											</span></label> <label style="font-size: 15px;"><input
+												type="checkbox" style="margin-left: 10px;" /> <span
+												style="color: #777777">万山</span> </label> <a href="#"
 												style="font-size: 10px; color: grey;">其他</a>
 										</div>
 
@@ -302,7 +348,8 @@ tbody tr th {
 												style="color: #1296db; font-size: 1.25rem;"></i> <strong
 												style="color: #2b4f6c;">项目成员：</strong>
 											<div id="textadd" style="display: none;">
-												<span style="color: black;">张琪，张培</span>
+												<span style="color: black;">张琪，张培</span> <a href="#"
+													style="font-size: 10px; color: grey;">重选</a>
 											</div>
 											<div class="layui-panel" id="imgadd">
 												<!-- <div id="textadd" style="display: none;"><label>张培</label></div> -->
@@ -355,13 +402,7 @@ tbody tr th {
 											style="font-size: 12px; line-height: 40px; color: #838383; margin-left: 10px; float: right;">
 												更多</span></a> <br>
 									</form>
-									<%
-										if (msg != null) {
-									%>
-									<%=msg%>
-									<%
-										}
-									%>
+									
 								</div>
 							</div>
 						</div>
@@ -508,7 +549,7 @@ tbody tr th {
 										</div>
 
 										<div style="display: inline-block; padding-top: 25px;">
-											<button type="submit" class="layui-btn "
+											<button type="submit" class="layui-btn"
 												style="background-color: #00a5cf; padding: 0 30px;">提交评价</button>
 
 										</div>
@@ -519,6 +560,7 @@ tbody tr th {
 								</div>
 							</div>
 						</div>
+
 
 						<div class="layui-col-md7"
 							style="margin-top: 20px; margin-left: 20px; width: 62%;">
@@ -562,10 +604,20 @@ tbody tr th {
 									</div>
 
 									<!-- border: solid 1px black; -->
-									<div id="rader"
+									<div id="rader1"
 										style="margin-left: -30px; width: 370px; height: 320px; display: none;"></div>
 
-									<div id="bar"
+									<div id="bar1"
+										style="margin-right: -15px; width: 420px; height: 330px; display: none;"></div>
+									<div id="rader2"
+										style="margin-left: -30px; width: 370px; height: 320px; display: none;"></div>
+
+									<div id="bar2"
+										style="margin-right: -15px; width: 420px; height: 330px; display: none;"></div>
+									<div id="rader3"
+										style="margin-left: -30px; width: 370px; height: 320px; display: none;"></div>
+
+									<div id="bar3"
 										style="margin-right: -15px; width: 420px; height: 330px; display: none;"></div>
 									<script
 										src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
@@ -593,7 +645,15 @@ tbody tr th {
 
 
 					</div>
-
+					<div class="masking">
+						<!--遮罩-->
+						<div class="layer">
+							<!--弹窗-->
+							<a class="close">x</a>
+							<img src="../img/yes2.png" width="69" style="margin-left:30px;margin-top:20px;repeat:no-repeat;">
+							<!--关闭-->
+						</div>
+					</div>
 
 					<!-- 重大事件评价 -->
 					<div class="layui-tab-item " id="item-ZDSJ" style="display: none;">
@@ -815,9 +875,9 @@ tbody tr th {
 		});
 	</script>
 
-	<!-- 雷达图 -->
+	<!-- 雷达图1 -->
 	<script type="text/javascript">
-		var dom = document.getElementById("rader");
+		var dom = document.getElementById("rader1");
 		var myChart = echarts.init(dom);
 		var app = {};
 		option = {
@@ -917,9 +977,9 @@ tbody tr th {
 
        </script>
 
-	<!-- 柱形图 -->
+	<!-- 柱形图1 -->
 	<script>
-        var chart = Highcharts.chart('bar', {
+        var chart = Highcharts.chart('bar1', {
 		chart: {
 			type: 'column',
 			options3d: {
@@ -1003,6 +1063,382 @@ tbody tr th {
 	});
         </script>
 
+	<!-- 雷达图2 -->
+	<script type="text/javascript">
+		var dom = document.getElementById("rader2");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = {
+		    title:{
+		        show:false,
+		        text:"年度评价",
+		        x:'center',
+		        y:'top',
+		        padding:10,
+		        textStyle: {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+		                fontFamily: 'Arial',
+		                fontSize: 22,
+		                fontStyle: 'normal',
+		                fontWeight: 'bold',
+		            },
+		    },
+		
+		    angleAxis: {
+		        type: 'category',
+		        data: ['工作能力', '工作效率', '发展潜力', '交流能力', '喜爱程度'],
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 12,
+		　　　　　　　　
+		　　　　　　},
+		    },
+		    radiusAxis: {
+		    	
+		    },
+		    polar: {
+		    },
+		    series: [{
+		        type: 'bar',
+		        data: [4, 0, 0, 0, 0],
+		        coordinateSystem: 'polar',
+		        name: '工作能力',
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 12,
+		　　　　　　},
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data:  [0, 3, 0, 0, 0 ],
+		        coordinateSystem: 'polar',
+		        name: '工作效率',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,3.5,0,0],
+		        coordinateSystem: 'polar',
+		        name: '发展潜力',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,0,2,0],
+		        coordinateSystem: 'polar',
+		        name: '交流能力',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,0,0,4.5],
+		        coordinateSystem: 'polar',
+		        name: '喜爱程度',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }],
+		    legend: {
+		        show: false,
+		        data: ['工作能力', '工作效率', '发展潜力', '交流能力', '喜爱程度'],
+		        orient: 'horizontal', // 'vertical'
+		        x:3, // 'center' | 'left' | {number},
+		        y:0, // 'center' | 'bottom' | {number}
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 10,
+		　　　　　　},
+		        borderColor: 'rgba(89, 100, 114,0.1)',
+		        borderWidth: 2,
+		    }
+		};
+		myChart.setOption(option);
+
+       </script>
+
+	<!-- 柱形图2 -->
+	<script>
+        var chart = Highcharts.chart('bar2', {
+		chart: {
+			type: 'column',
+			options3d: {
+				enabled: true,
+				alpha: 0,
+				beta: 0,
+				viewDistance: 25,
+				depth: 40
+			},
+			marginTop: 80,
+			marginRight: 40
+		},
+		title: {
+			text: '年度综合评分',
+			style: {
+				fontFamily: 'Arial',
+	                fontSize: 18,
+	                fontStyle: 'normal',
+	                fontWeight: 'bold',
+				},
+	
+		},
+		xAxis: {
+			categories:['工作量', '工作效率', '团队能力', '贡献力', '创造力', '领导力'],
+			labels: {
+	                style: {
+	                    fontSize: '12px',
+	                    fontWeight: 'bold'
+	                }
+	            }
+	
+		},
+		yAxis: {
+			allowDecimals: false,
+			min: 0,
+			title: {
+				text: '评分',
+				style: {
+					color:'#596472',
+	                fontSize: 12,
+	                fontStyle: 'normal',
+	                fontWeight: 'bold',
+				},
+			},
+			labels: {
+	                style: {
+	                    fontSize: '12px',
+	                    fontWeight: 'bold'
+	                }
+	            }
+	
+	
+	
+		},
+		legend : {
+	    itemStyle : {
+	        'fontSize' : '12px'
+	    }
+	},
+		tooltip: {
+			headerFormat: '<b>{point.key}</b><br>',
+			pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+		},
+		plotOptions: {
+			column: {
+				stacking: 'normal',
+				depth: 40
+			}
+		},
+		series: [{
+			name: '部门平均得分',
+			data: [ 77, 87, 33, 45,34,30],
+			stack: 'male',
+			color:'#90ed7d'
+		}, {
+			name: '个人得分',
+			data: [56, 50, 70,20,25,56],
+			stack: 'female',
+			color:'#f7a35c'
+		}]
+	});
+        </script>
+
+	<!-- 雷达图3 -->
+	<script type="text/javascript">
+		var dom = document.getElementById("rader3");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = {
+		    title:{
+		        show:false,
+		        text:"年度评价",
+		        x:'center',
+		        y:'top',
+		        padding:10,
+		        textStyle: {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+		                fontFamily: 'Arial',
+		                fontSize: 22,
+		                fontStyle: 'normal',
+		                fontWeight: 'bold',
+		            },
+		    },
+		
+		    angleAxis: {
+		        type: 'category',
+		        data: ['工作能力', '工作效率', '发展潜力', '交流能力', '喜爱程度'],
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 12,
+		　　　　　　　　
+		　　　　　　},
+		    },
+		    radiusAxis: {
+		    	
+		    },
+		    polar: {
+		    },
+		    series: [{
+		        type: 'bar',
+		        data: [1, 0, 0, 0, 0],
+		        coordinateSystem: 'polar',
+		        name: '工作能力',
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 12,
+		　　　　　　},
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data:  [0, 5, 0, 0, 0 ],
+		        coordinateSystem: 'polar',
+		        name: '工作效率',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,3,0,0],
+		        coordinateSystem: 'polar',
+		        name: '发展潜力',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,0,4,0],
+		        coordinateSystem: 'polar',
+		        name: '交流能力',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }, {
+		        type: 'bar',
+		        data: [0,0,0,0,3],
+		        coordinateSystem: 'polar',
+		        name: '喜爱程度',
+		        stack: 'a',
+		        emphasis: {
+		            focus: 'series'
+		        }
+		    }],
+		    legend: {
+		        show: false,
+		        data: ['工作能力', '工作效率', '发展潜力', '交流能力', '喜爱程度'],
+		        orient: 'horizontal', // 'vertical'
+		        x:3, // 'center' | 'left' | {number},
+		        y:0, // 'center' | 'bottom' | {number}
+		        textStyle : {
+		　　　　　　　　fontWeight : 'normal',
+		　　　　　　　　fontSize : 10,
+		　　　　　　},
+		        borderColor: 'rgba(89, 100, 114,0.1)',
+		        borderWidth: 2,
+		    }
+		};
+		myChart.setOption(option);
+
+       </script>
+
+	<!-- 柱形图3 -->
+	<script>
+        var chart = Highcharts.chart('bar3', {
+		chart: {
+			type: 'column',
+			options3d: {
+				enabled: true,
+				alpha: 0,
+				beta: 0,
+				viewDistance: 25,
+				depth: 40
+			},
+			marginTop: 80,
+			marginRight: 40
+		},
+		title: {
+			text: '年度综合评分',
+			style: {
+				fontFamily: 'Arial',
+	                fontSize: 18,
+	                fontStyle: 'normal',
+	                fontWeight: 'bold',
+				},
+	
+		},
+		xAxis: {
+			categories:['工作量', '工作效率', '团队能力', '贡献力', '创造力', '领导力'],
+			labels: {
+	                style: {
+	                    fontSize: '12px',
+	                    fontWeight: 'bold'
+	                }
+	            }
+	
+		},
+		yAxis: {
+			allowDecimals: false,
+			min: 0,
+			title: {
+				text: '评分',
+				style: {
+					color:'#596472',
+	                fontSize: 12,
+	                fontStyle: 'normal',
+	                fontWeight: 'bold',
+				},
+			},
+			labels: {
+	                style: {
+	                    fontSize: '12px',
+	                    fontWeight: 'bold'
+	                }
+	            }
+	
+	
+	
+		},
+		legend : {
+	    itemStyle : {
+	        'fontSize' : '12px'
+	    }
+	},
+		tooltip: {
+			headerFormat: '<b>{point.key}</b><br>',
+			pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+		},
+		plotOptions: {
+			column: {
+				stacking: 'normal',
+				depth: 40
+			}
+		},
+		series: [{
+			name: '部门平均得分',
+			data: [ 34, 67, 98, 45,34,30],
+			stack: 'male',
+			color:'#90ed7d'
+		}, {
+			name: '个人得分',
+			data: [86, 50, 70,20,25,56],
+			stack: 'female',
+			color:'#f7a35c'
+		}]
+	});
+        </script>
+
 	<script>
 		layui.use('element', function() {
 			var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
@@ -1070,8 +1506,7 @@ tbody tr th {
 			//alert(userid);
 			getUserList1(userid);
 			
-			$("#rader").css('display', 'inline-block');
-			$("#bar").css('display', 'inline-block');
+			
 		}
 
 		//通过ajax向后台发送id触发查询并返回数据
@@ -1103,7 +1538,29 @@ tbody tr th {
 				var usernumber = userlist[0]; //获取用户姓名
 				var username = userlist[1]; //获取用户性别
 				var userposition = userlist[2]; //获取用户学历
-
+				if(username=="张琪"){
+					$("#rader1").css('display', 'inline-block');
+					$("#bar1").css('display', 'inline-block');
+					$("#rader2").css('display', 'none');
+					$("#bar2").css('display', 'none');
+					$("#rader3").css('display', 'none');
+					$("#bar3").css('display', 'none');
+				}else if(username=="张培"){
+					$("#rader1").css('display', 'none');
+					$("#bar1").css('display', 'none');
+					$("#rader2").css('display', 'inline-block');
+					$("#bar2").css('display', 'inline-block');
+					$("#rader3").css('display', 'none');
+					$("#bar3").css('display', 'none');
+				}else if(username=="王光"){
+					$("#rader1").css('display', 'none');
+					$("#bar1").css('display', 'none');
+					$("#rader2").css('display', 'none');
+					$("#bar2").css('display', 'none');
+					$("#rader3").css('display', 'inline-block');
+					$("#bar3").css('display', 'inline-block');
+				}
+					
 				//改变左侧输入框的内容
 				var usernumberid = document
 						.getElementById("exampleInputNumber1");
@@ -1173,5 +1630,22 @@ tbody tr th {
 
 		}
 	</script>
+
+	<script>
+  $(function() {
+      $('#layer_btn').click(function() {
+          $('.masking').fadeIn();
+      })
+      $('.close').click(function(event) {
+          event.preventDefault;
+          $('.masking').hide();
+      });
+
+      $('.masking').click(function(event) {
+          event.preventDefault;
+          $(this).hide();
+      });
+  })
+</script>
 </body>
 </html>

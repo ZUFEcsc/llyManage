@@ -1,10 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.util.Date;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Dao;
 
 /**
- * Servlet implementation class UptoFirstStepServlet
+ * Servlet implementation class PassQualiServlet
  */
-@WebServlet("/jsp/UptoFirstStepServlet")
-public class UptoFirstStepServlet extends HttpServlet {
+@WebServlet("/jsp/PassQualiServlet")
+public class PassQualiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UptoFirstStepServlet() {
+    public PassQualiServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,24 +39,15 @@ public class UptoFirstStepServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		//PrintWriter out=response.getWriter();
-		String identity=request.getParameter("identity");
-//		try {
-//			identity=new String(identity.getBytes("ISO-8859-1"),"UTF-8");
-//		}catch(UnsupportedEncodingException e) {
-//			e.printStackTrace();
-//		}
 		Dao dao=new Dao();
-		boolean b=dao.UptoFirstStepUpdate(identity);
-		if(b) {
-			response.sendRedirect("hrPage.jsp");
-//			response.sendRedir/Servlet?m=1");
-		}else {
-			response.sendRedirect("hrPage.jsp");
+		String number=request.getParameter("number");
+		boolean b=dao.QualiUpdate(number);
+		response.sendRedirect("adminMg.jsp");
+//		if(b) {
+//			response.sendRedirect("JudgeServlet?m=1");
+//		}else {
 //			response.sendRedirect("JudgeServlet?m=0");
-		}
-		
-		
+//		}
 	}
 
 }

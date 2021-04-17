@@ -37,6 +37,7 @@ public class Dao {
 				ab.setName(rs.getString(2));
 				ab.setKind(rs.getString(3));
 				ab.setTime(rs.getDate(4));
+				ab.setQuali_state(rs.getString(5));
 				
 				list.add(ab);
 			}
@@ -707,4 +708,25 @@ public class Dao {
 		}
     	return list;
     }
+	
+	public boolean QualiUpdate(String cnumber)
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update company_basic_info set quali_state='已通过认证' where company_number=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, cnumber);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
 }

@@ -913,8 +913,8 @@ tbody tr th {
 								<tbody>
 									<tr>
 										<th scope="row">Y20189</th>
-										<td>陈聪明</td>
-										<td>员工陈不错子多次矿工，申请辞去… <a href=""
+										<td>张琪</td>
+										<td>申请升职 <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
 										<td>2020/01/09</td>
 										<td><span class="layui-badge layui-bg-orange">通过申请</span></td>
@@ -922,8 +922,8 @@ tbody tr th {
 									</tr>
 									<tr>
 										<th scope="row">Y20189</th>
-										<td>陈聪明</td>
-										<td>员工陈不错子多次矿工，申请辞去… <a href=""
+										<td>张培</td>
+										<td>申请辞职，删除账号 <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
 										<td>2020/01/09</td>
 										<td><span class="layui-badge layui-bg-green">驳回申请</span></td>
@@ -931,8 +931,8 @@ tbody tr th {
 									</tr>
 									<tr>
 										<th scope="row">Y20189</th>
-										<td>陈聪明</td>
-										<td>员工陈不错子多次矿工，申请辞去… <a href=""
+										<td>王光</td>
+										<td>申请修改联系方式 <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
 										<td>2020/01/09</td>
 										<td><span class="layui-badge layui-bg-blue">等待处理</span></td>

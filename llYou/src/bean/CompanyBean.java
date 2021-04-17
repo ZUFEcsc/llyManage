@@ -7,7 +7,7 @@ public class CompanyBean {
 	private String name;
 	private String kind;
 	private Date time;
-	
+	private String quali_state;
 	
 	public String getNumber() {
 		return number;
@@ -34,20 +34,23 @@ public class CompanyBean {
 		this.time = time;
 	}
 	
-	public CompanyBean()
-	{
-		
+	public String getQuali_state() {
+		return quali_state;
 	}
-	public CompanyBean(String number, String name, String kind, Date time) {
+	public void setQuali_state(String quali_state) {
+		this.quali_state = quali_state;
+	}
+
+	public CompanyBean(String number, String name, String kind, Date time, String quali_state) {
 		super();
 		this.number = number;
 		this.name = name;
 		this.kind = kind;
 		this.time = time;
+		this.quali_state = quali_state;
 	}
 	
-	
-	
-	
-	
+	public CompanyBean() {
+		
+	}
 }
