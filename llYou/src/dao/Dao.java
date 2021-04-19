@@ -55,7 +55,7 @@ public class Dao {
     	Connection conn=DBUtil.getConnection();
     	Statement stmt=null;
 		ResultSet rs=null;
-		String sql="select l.username,u.name,u.sex,l.regist_time from user_basic_info u,login_info l where u.name=l.name";
+		String sql="select l.username,u.name,u.sex,l.regist_time,u.state from user_basic_info u,login_info l where u.name=l.name";
 		try{
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -66,6 +66,7 @@ public class Dao {
 				ab.setUsername(rs.getString(1));
 				ab.setSex(rs.getString(3));
 				ab.setRegist_time(rs.getDate(4));
+				ab.setState(rs.getString(5));
 				list.add(ab);
 			}
 		}catch(Exception e)
@@ -369,7 +370,7 @@ public class Dao {
 	{
 		Connection conn=DBUtil.getConnection();
 		PreparedStatement pstmt=null;
-		String sql="insert into company_project_info(project_number,project_name,project_member,company_number,project_responser,project_content,start_time,end_time,state) values(?,?,?,'SZ001F',?,?,?,null,'1')";
+		String sql="insert into company_project_info(project_number,project_name,project_member,company_number,project_responser,project_content,start_time,end_time,state,evaluate_state) values(?,?,?,'SZ001F',?,?,?,null,'1','待评价')";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, projectnumber);
@@ -421,17 +422,16 @@ public class Dao {
 		
 	}
 	
-	public boolean NianmoEvaluateInsert(String other)
+	public boolean NianmoEvaluateInsert()
 	{
 		Connection conn=DBUtil.getConnection();
 		PreparedStatement pstmt=null;
-		String sql="insert into department_manager_evaluate(number,name,position,evaluate_time,work_ability,work_efficiency,develop_potential,communicate_ability,satisfy_degree,evaluate_people,other) values('SZ001F0001','张琪','普通员工',?,'优秀','优秀','优秀','优秀','优秀','王颖',?)";
+		String sql="insert into department_manager_evaluate(number,name,position,evaluate_time,work_ability,work_efficiency,develop_potential,communicate_ability,satisfy_degree,evaluate_people,other) values('SZ001F0001','张琪','普通员工',?,'优秀','优秀','优秀','优秀','优秀','王颖',null)";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 			Date date=new Date();
 			pstmt.setString(1, sdf.format(date).toString());
-			pstmt.setString(2, other);
 			
 			
 			int number=pstmt.executeUpdate();
@@ -713,7 +713,7 @@ public class Dao {
 	{
 		Connection conn=DBUtil.getConnection();
 		PreparedStatement pstmt=null;
-		String sql="update company_basic_info set quali_state='已通过认证' where company_number=?";
+		String sql="update company_basic_info set quali_state='已创建账号' where company_number=?";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, cnumber);

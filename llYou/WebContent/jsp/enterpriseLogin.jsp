@@ -128,7 +128,12 @@ body {
 <title>企业成员登录</title>
 </head>
 <body>
-
+<%
+		String msg = (String) request.getAttribute("msg");
+	%>
+	<%if(msg!=null) {%>
+<%=msg %>
+<%} %>
 	<form class="form-signin" action="CompanyLoginServlet" method="post">
 		<div class="text-center mb-4">
 			<img class="mb-4" src="/llYou/img/you.png"

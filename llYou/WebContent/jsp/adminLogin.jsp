@@ -127,8 +127,13 @@ body {
 <title>管理员登录</title>
 </head>
 <body>
-
-	<form class="form-signin" action="LoginServlet" method="post">
+<%
+		String msg = (String) request.getAttribute("msg");
+	%>
+	<%if(msg!=null) {%>
+<%=msg %>
+<%} %>
+	<form class="form-signin" action="AdminLoginServlet" method="post">
 		<div class="text-center mb-4">
 			<img class="mb-4" src="/llYou/img/you.png"
 				alt="" width="72" height="72">

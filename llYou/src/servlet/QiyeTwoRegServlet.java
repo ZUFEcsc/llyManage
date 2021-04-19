@@ -6,21 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import dao.Dao;
 
 /**
- * Servlet implementation class PassQualiServlet
+ * Servlet implementation class QiyeTwoRegServlet
  */
-@WebServlet("/jsp/PassQualiServlet")
-public class PassQualiServlet extends HttpServlet {
+@WebServlet("/jsp/QiyeTwoRegServlet")
+public class QiyeTwoRegServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PassQualiServlet() {
+    public QiyeTwoRegServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,22 +37,7 @@ public class PassQualiServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		Dao dao=new Dao();
-		String number=request.getParameter("number");
-		boolean b=dao.QualiUpdate(number);
-		
-//		HttpSession mySession = request.getSession(true);
-//		mySession.setAttribute("tabv", "1");
-		
-		request.setAttribute("tabv", "1");
-		
-		request.getRequestDispatcher("adminMg.jsp").forward(request, response);
-//		response.sendRedirect("adminMg.jsp");
-//		if(b) {
-//			response.sendRedirect("JudgeServlet?m=1");
-//		}else {
-//			response.sendRedirect("JudgeServlet?m=0");
-//		}
+		response.sendRedirect("QiyeJudgeRegTwoStepServlet?m=1");
 	}
 
 }

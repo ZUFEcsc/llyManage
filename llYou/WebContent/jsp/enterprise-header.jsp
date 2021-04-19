@@ -21,13 +21,13 @@ for(WorkerLoginBean ab:listl)
 		<li class="layui-nav-item"><a href="javascript:;">其它系统</a>
 			<dl class="layui-nav-child">
 				<dd>
-					<a href="">a管理</a>
+					<a href="">用户子系统</a>
 				</dd>
 				<dd>
-					<a href="">b管理</a>
+					<a href="">系统管理员子系统</a>
 				</dd>
 				<dd>
-					<a href="">c管理</a>
+					<a href="">企业成员子系统</a>
 				</dd>
 			</dl>
 		</li>

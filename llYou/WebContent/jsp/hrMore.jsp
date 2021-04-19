@@ -602,7 +602,6 @@ tbody tr th {
 	</script>
 
 	<!-- 旭日图 -->
-
 	<script>
 		var myChart = echarts.init(document.getElementById('xrt2'));
 

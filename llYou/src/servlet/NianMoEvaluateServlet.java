@@ -39,9 +39,8 @@ public class NianMoEvaluateServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		String other=request.getParameter("other");
 		Dao dao=new Dao();
-		boolean b=dao.NianmoEvaluateInsert(other);
+		boolean b=dao.NianmoEvaluateInsert();
 		if(b) {
 			response.sendRedirect("JudgenianmoEvaluateServlet?m=1");
 		}else {

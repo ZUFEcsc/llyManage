@@ -45,7 +45,7 @@
 
 					<div class="layui-card">
 						<!-- style="overflow-y:scroll; overflow-x:hidden;" -->
-						<form>
+						<form action="QiyeTwoRegServlet" method="post">
 							<div class="layui-card-header">
 								<strong style="font-size:18px;">企业认证</strong>
 							</div>
@@ -77,7 +77,8 @@
 								</div>
 								<div class="form-group">
 									<div class="form-row" style="margin-top:15px;margin-left:43%;">
-										<a href="qyReg.jsp" class="layui-btn layui-btn-normal"><span style="padding:0 15px;">确认提交</span></a>
+										<button type="submit" class="layui-btn layui-btn-normal"><span
+											style="padding: 0 15px;">确认提交</span></button>
 									</div>
 								</div>
 								

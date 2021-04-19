@@ -196,8 +196,8 @@ tbody tr th {
 
 							<div class="layui-card">
 								<div class="layui-card-body" style="display: inline-block;">
-									<div id="ddd"
-										style="margin-left: -10px; width: 520px; height: 320px; border: solid 1px black;"></div>
+									<div id="pie"
+										style="margin-left: -10px; width: 520px; height: 320px;"></div>
 								</div>
 							</div>
 						</div>
@@ -899,6 +899,58 @@ tbody tr th {
 
 	</script>
 
+	<!-- 平台用户就业情况 pie -->
+	<script>
+		Highcharts.setOptions({
+		colors: ['#7cb5ec','#90ed7d'],
+	});
+	var chart=Highcharts.chart('pie', {
+		title: {
+			text: '平台用户<br>就业情况',
+			align: 'center',
+			verticalAlign: 'middle',
+			y: 70,
+	        style: {
+				fontFamily: 'Arial',
+	                fontSize: 18,
+	                fontStyle: 'normal',
+	                fontWeight: 'bold',
+				},
+		},
+		tooltip: {
+			headerFormat: '{series.name}<br>',
+			pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				dataLabels: {
+					enabled: true,
+					distance: -50,
+					style: {
+						fontWeight: 'bold',
+						color: 'white',
+						textShadow: '0px 1px 2px black',
+						fontSize:14
+					}
+				},
+				startAngle: -90, // 圆环的开始角度
+				endAngle: 90,    // 圆环的结束角度
+				center: ['50%', '75%']
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: '平台用户占比',
+			innerSize: '50%',
+			data: [
+				['就业',2918.0],
+				['未就业',4928.8],
+			]
+		}]
+	});
+
+    </script>
+	
 	<!-- 地图分布 map -->	
 	<script>
 	var chartDom = document.getElementById('map');
@@ -1481,5 +1533,6 @@ tbody tr th {
 	option && myChart.setOption(option);
 	
 	</script>
+
 </body>
 </html>

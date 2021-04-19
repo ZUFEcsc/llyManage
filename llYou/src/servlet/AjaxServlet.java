@@ -44,11 +44,11 @@ public class AjaxServlet extends HttpServlet {
 		String aa = "";
 		// 我这里不连数据库就直接给出了
 		if (userid.equals("11")) {
-			aa = "SZ001F0001,张琪,普通员工,";
+			aa = "SZ001F0001,张琪,普通员工,25,1,1,1,2,";
 		} else if (userid.equals("22")) {
-			aa = "SZ001F0002,张培,普通员工,";
+			aa = "SZ001F0002,张培,普通员工,26,1,1,1,1,";
 		} else {
-			aa = "SZ001F0003,王光,普通员工,";
+			aa = "SZ001F0003,王光,普通员工,25,2,1,1,1,";
 		}
 
 		printWriter.print(aa);// 返给ajax请求

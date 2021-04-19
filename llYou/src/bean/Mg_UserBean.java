@@ -12,6 +12,7 @@ public class Mg_UserBean {
 	private String learn_experience;
 	private String username;
 	private String password;
+	private String state;
 	public String getName() {
 		return name;
 	}
@@ -66,8 +67,17 @@ public class Mg_UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Mg_UserBean(String name, String identity, String sex, String nation, Date regist_time, String political_feature,
-			String learn_experience,String username,String password) {
+	
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	
+	
+	public Mg_UserBean(String name, String identity, String sex, String nation, Date regist_time,
+			String political_feature, String learn_experience, String username, String password, String state) {
 		super();
 		this.name = name;
 		this.identity = identity;
@@ -76,10 +86,10 @@ public class Mg_UserBean {
 		this.regist_time = regist_time;
 		this.political_feature = political_feature;
 		this.learn_experience = learn_experience;
-		this.username=username;
-		this.password=password;
+		this.username = username;
+		this.password = password;
+		this.state = state;
 	}
-	
 	public Mg_UserBean()
 	{
 		

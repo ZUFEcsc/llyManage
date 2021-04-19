@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="../res/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
+<%
+		String msg = (String) request.getAttribute("msg");
+	%>
+<%if(msg!=null) {%>
+<%=msg %>
+<%} %>
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header" style="height: 80px;">
 			<div class="layui-logo" style="line-height: 80px;">

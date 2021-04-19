@@ -17,18 +17,7 @@ for(WorkerLoginBean ab:listll)
 		<li class="layui-nav-item"><a href="">首页</a></li>
 		<li class="layui-nav-item"><a href="">求职广场</a></li>
 		<li class="layui-nav-item"><a href="">面试直通车</a></li>
-		<li class="layui-nav-item"><a href="javascript:;">其它系统</a>
-			<dl class="layui-nav-child">
-				<dd>
-					<a href="">a管理</a>
-				</dd>
-				<dd>
-					<a href="">b管理</a>
-				</dd>
-				<dd>
-					<a href="">c管理</a>
-				</dd>
-			</dl></li>
+		
 	</ul>
 	<ul class="layui-nav layui-layout-right">
 		<li class="layui-nav-item"><a href="javascript:;"> <img

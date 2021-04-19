@@ -177,7 +177,7 @@ padding
 								<div class="form-row">
 									<div class="form-group col-md">
 										<input type="date" name="birth" class="form-control"
-											value="2000-01-01">
+											value="2020-03-01">
 									</div>
 									<div class="form-group">
 										<i class="layui-icon layui-icon-right"
@@ -185,9 +185,9 @@ padding
 									</div>
 									<div class="form-group col-md">
 										<input type="date" name="birth" class="form-control"
-											value="2000-01-01">
+											value="2020-04-01">
 									</div>
-									<a href="#" type="submit"><i
+									<a onclick="change()"><i
 										class="layui-icon layui-icon-search"
 										style="font-size: 30px; color: #1E9FFF;"></i></a>
 								</div>
@@ -196,7 +196,7 @@ padding
 							<hr>
 						</div>
 
-						<div class="layui-row layui-col-space15">
+						<div class="layui-row layui-col-space15" id="d1">
 							<%
 								Dao dao = new Dao();
 								List<CompanyProjectBean> list = dao.getListCompanyProjectInfo();
@@ -301,6 +301,73 @@ padding
 							%>
 
 						</div>
+						
+						<div class="layui-row layui-col-space15" id="d2" style="display:none;">
+							<div class="layui-col-md3">
+								<div class="layui-card">
+									
+									<div class="layui-card-header" style="background: #9cd2f7;">
+										<strong>SZ001F002</strong> <span
+											style="float: right;"> <i
+											class="iconfont icon-jiazaizhong"
+											style="color: #ffffff; font-size: 18px;"></i> 进行中…
+										</span>
+									</div>
+									<div class="layui-card-body">
+										<table>
+											<colgroup>
+												<col width="110">
+												<col width="140">
+											</colgroup>
+											<tbody>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-xiangmu"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目姓名：</strong></td>
+													<td><span style="color: #777777;">学习app</span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-zhaopingangwei"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">负责人：</strong></td>
+													<td><span style="color: #777777;">张雨佳</span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-suggestion"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目内容：</strong></td>
+													<td><span style="color: #777777;">研发一款学习app</span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-lunkuohua2_yonghu"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目成员：</strong></td>
+													<td><span style="color: #777777;">张培，王光</span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-shijian"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">起始时间：</strong></td>
+													<td><span style="color: #777777;">2020-03-03</span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-jiezhishijian"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">结束时间：</strong></td>
+													<td>
+														<span style="color: #777777;">未知</span> 
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+										<a href="#" style="margin-left: 80%"><span
+											style="font-size: 12px; color: #838383;"> 查看详情</span></a>
+
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 
 
@@ -316,7 +383,7 @@ padding
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
-									<form action="AddNewProjectServlet" method="post">
+									<form method="post" id="form1">
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-xiugai"
 												style="color: #1296db; font-size: 1.25rem;"></i> <strong
@@ -395,7 +462,7 @@ padding
 										</div>
 
 										<div style="display: inline-block; padding-top: 25px;">
-											<button type="submit" class="layui-btn "
+											<button class="layui-btn " onclick="saveFormproject()"
 												style="background-color: #00a5cf; padding: 0 30px;">确定添加</button>
 										</div>
 										<a href="#"><span
@@ -468,7 +535,7 @@ padding
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
-									<form action="NianMoEvaluateServlet" method="post">
+									<form method="post" id="form2">
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-lunkuohua2_yonghu"
 												style="color: #5FB878;"></i> <label
@@ -549,8 +616,9 @@ padding
 										</div>
 
 										<div style="display: inline-block; padding-top: 25px;">
-											<button type="submit" class="layui-btn"
+											<button class="layui-btn" onclick="saveForm()"
 												style="background-color: #00a5cf; padding: 0 30px;">提交评价</button>
+												
 
 										</div>
 										<a href="#"><span
@@ -667,7 +735,7 @@ padding
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
-									<form action="BigMistakeEvaluateServlet" method="post">
+									<form method="post" id="form3">
 										<div style="margin-bottom: 5px;">
 											<i class="iconfont icon-lunkuohua2_yonghu"
 												style="color: #5FB878;"></i> <label
@@ -731,7 +799,7 @@ padding
 
 
 										<div style="display: inline-block; padding-top: 25px;">
-											<button type="submit" class="layui-btn "
+											<button class="layui-btn " onclick="saveFormbig()"
 												style="background-color: #00a5cf; padding: 0 30px;">提交评价</button>
 
 										</div>
@@ -826,6 +894,31 @@ padding
 	<script type="text/javascript" src="../dist/jquery.raty.min.js"></script>
 	<script src="../res/layui/layui.js"></script>
 	<script>
+	function change(){
+		$("#d1").css('display', 'none');
+		$("#d2").css('display', 'block');			
+	}
+	function saveForm(){
+		alert("评价成功！");
+	form2.action="NianMoEvaluateServlet";
+		document.form2.submit();
+		
+		return false;
+	}
+	function saveFormproject(){
+		alert("添加成功！");
+	form1.action="AddNewProjectServlet";
+		document.form1.submit();
+		
+		return false;
+	}
+	function saveFormbig(){
+		alert("评价成功！");
+	form3.action="BigMistakeEvaluateServlet";
+		document.form3.submit();
+		
+		return false;
+	}
 		//JavaScript代码区域
 		layui.use('element', function() {
 			var element = layui.element;

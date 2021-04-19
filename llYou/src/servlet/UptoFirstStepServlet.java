@@ -45,22 +45,10 @@ public class UptoFirstStepServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		//PrintWriter out=response.getWriter();
 		String identity=request.getParameter("identity");
-//		try {
-//			identity=new String(identity.getBytes("ISO-8859-1"),"UTF-8");
-//		}catch(UnsupportedEncodingException e) {
-//			e.printStackTrace();
-//		}
 		Dao dao=new Dao();
 		boolean b=dao.UptoFirstStepUpdate(identity);
-		if(b) {
-			response.sendRedirect("hrPage.jsp");
-//			response.sendRedir/Servlet?m=1");
-		}else {
-			response.sendRedirect("hrPage.jsp");
-//			response.sendRedirect("JudgeServlet?m=0");
-		}
-		
-		
+		request.setAttribute("tabv", "1");
+		request.getRequestDispatcher("hrPage.jsp").forward(request, response);
 	}
 
 }

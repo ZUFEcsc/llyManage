@@ -40,6 +40,22 @@ tbody tr th {
 <link rel="stylesheet" href="../res/layui/css/layui.css">
 
 <link rel="stylesheet" href="../js/selection/xlselection.css" />
+<script type="text/javascript">
+	window.onload=function(){
+		//要初始化的东西
+		var $ = layui.jquery, element = layui.element;
+		var tabv = '<%=request.getAttribute("tabv")%>';
+		if(tabv=='1'){
+			element.tabAdd('demo', {
+				title : '简历池',
+				id : 'JLC'
+			});
+			$("#item-ZPXX").removeClass("layui-show");
+			$("#item-JLC").addClass("layui-show");
+			element.tabChange('demo', 'JLC');
+		}
+	}
+	</script>
 </head>
 <body class="layui-layout-body">
 	<%
@@ -176,7 +192,10 @@ tbody tr th {
 										style="font-size: 16px; color: #e29c45;"></i> <%=ab.getSeek_number()%></th>
 									<td><%=ab.getSeek_position()%></td>
 									<td><%=ab.getDeliver_time()%></td>
-									<td><span class="layui-badge layui-bg-orange"><%=ab.getState()%></span></td>
+									<td><%if(ab.getState().equals("进行中")){ %>
+									<span class="layui-badge layui-bg-green"><%=ab.getState()%></span><%}else{ %>
+									<span class="layui-badge layui-bg-orange"><%=ab.getState()%></span><%} %>
+									</td>
 									<td>
 										<%
 											if (ab.getState().equals("进行中")) {
@@ -227,8 +246,8 @@ tbody tr th {
 											<img style="display: inline-block;" src="../icon/ai.png"
 												width=8%> <span
 												style="color: #3f81c1; font-size: 16px;">请选择筛选条件</span> <a
-												href="#" class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin-left: 70px;">提交筛选</a>
+												type="button" class="layui-btn layui-btn-sm layui-btn-normal"
+												style="margin-left: 70px;color:#fff;" onclick="change()">提交筛选</a>
 										</div>
 									</div>
 
@@ -421,7 +440,7 @@ tbody tr th {
 							</form>
 						</div>
 						<hr>
-						<div
+						<div id="d1"
 							style="margin: 10px; padding: 15px; background-color: #ffffff;">
 							<img alt="" src="../icon/jlc.png"
 								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
@@ -437,8 +456,11 @@ tbody tr th {
 									<div class="layui-card">
 										<div class="layui-card-header">
 											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
-											<strong style="color: #2b4f6c;">标签： </strong> <span
-												class="layui-badge layui-bg-orange">工作狂魔</span> <span
+											<strong style="color: #2b4f6c;">标签： </strong> 
+											<%if(!(ab.getName().equals("王一")||ab.getName().equals("王五"))){ %>
+											<span
+												class="layui-badge layui-bg-orange">工作狂魔</span> <%} %>
+												<span
 												class="layui-badge layui-bg-orange">亲和待人</span>
 										</div>
 										<div class="layui-card-body">
@@ -509,6 +531,83 @@ tbody tr th {
 								<%
 									}
 								%>
+							</div>
+
+						</div>
+						<div id="d2"
+							style="margin: 10px; padding: 15px; background-color: #ffffff;display: none;">
+							<img alt="" src="../icon/jlc.png"
+								style="width: 4%; float: left; margin-top: -15px; margin-left: -20px;">
+
+							<div class="layui-row layui-col-space15">
+								<!-- -->
+								<div class="layui-col-md3">
+									<div class="layui-card">
+										<div class="layui-card-header">
+											<i class="iconfont icon-biaoqian1" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">标签： </strong> 
+											<span
+												class="layui-badge layui-bg-orange">工作狂魔</span>
+												<span
+												class="layui-badge layui-bg-orange">亲和待人</span>
+										</div>
+										<div class="layui-card-body">
+											<i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">姓名：</strong>
+											<span style="color: #777777;">王一</span><br>
+											<i class="iconfont icon-xingbie" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">性别：</strong> <span
+												style="color: #777777;">女</span><br> <i
+												class="iconfont icon-zhaopingangwei" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">年龄：</strong> <span
+												style="color: #777777;">24</span><br> <i
+												class="iconfont icon-xueli" style="color: #5FB878;"></i> <strong
+												style="color: #2b4f6c;">学历：</strong> <span
+												style="color: #777777;">高中</span><br>
+											<i class="iconfont icon-shoujizhengli"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">招聘职位：</strong>
+											<span style="color: #777777;">项目经理</span>
+											<br> <i class="iconfont icon-gangwei"
+												style="color: #5FB878; font-size: 16px;"></i> <strong
+												style="color: #2b4f6c;">人岗匹配：</strong>
+											<div class="layui-progress"
+												style="width: 50%; display: inline-block;">
+												<div class="layui-progress-bar" lay-percent="80%"
+													style="background-color: #ff9b85;"></div>
+											</div>
+											<span
+												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+
+
+											<br> <i class="iconfont icon-jiqiren2"
+												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">综合评分：</strong>
+											<div class="layui-progress"
+												style="width: 50%; display: inline-block;">
+												<div class="layui-progress-bar" lay-percent="80%"></div>
+											</div>
+											<span
+												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+
+											<div style="display: inline-block; margin-top: 10px;">
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #25a18e;">
+													<a href="#">通过</a>
+												</button>
+												<button type="button" class="layui-btn layui-btn-sm"
+													style="background-color: #ff9b85;">驳回</button>
+
+											</div>
+											<div style="float: right; margin-top: 15px;">
+												<a class="layui-btn-xs" href="hrMore.jsp"> <span
+													style="color: #838383;">了解更多</span> <i
+													class="iconfont icon-ziyuan25"
+													style="font-size: 22px; color: #16c2c2;"></i>
+												</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
 							</div>
 
 						</div>
@@ -841,7 +940,7 @@ tbody tr th {
 										if (ab.getPosition_kind().equals("4"))
 											ab.setPosition_kind("办公室主任");
 										if (ab.getPosition_kind().equals("5"))
-											ab.setPosition_kind("hr");
+											ab.setPosition_kind("人力资源经理");
 								%>
 								<tr>
 									<th scope="row"><i class="iconfont icon-6"
@@ -912,7 +1011,7 @@ tbody tr th {
 								</thead>
 								<tbody>
 									<tr>
-										<th scope="row">Y20189</th>
+										<th scope="row">20041016</th>
 										<td>张琪</td>
 										<td>申请升职 <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
@@ -921,7 +1020,7 @@ tbody tr th {
 										<td></td>
 									</tr>
 									<tr>
-										<th scope="row">Y20189</th>
+										<th scope="row">20041017</th>
 										<td>张培</td>
 										<td>申请辞职，删除账号 <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
@@ -930,7 +1029,7 @@ tbody tr th {
 										<td></td>
 									</tr>
 									<tr>
-										<th scope="row">Y20189</th>
+										<th scope="row">20050225</th>
 										<td>王光</td>
 										<td>申请修改联系方式 <a href=""
 											style="color: #666666; font-size: 10px;"> 更多</a></td>
@@ -986,6 +1085,10 @@ tbody tr th {
 
 	<!-- 下拉框 -->
 	<script>
+	function change(){
+		$("#d1").css('display', 'none');
+		$("#d2").css('display', 'block');			
+	}
 	function clicktest(){
 		window.location.href="EndFindServlet?number="+"SZ18003";
 	}

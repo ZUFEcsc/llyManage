@@ -103,7 +103,7 @@ tbody tr th {
 								<div class="form-row">
 									<div class="form-group col-md">
 										<input type="date" name="birth" class="form-control"
-											value="2000-01-01">
+											value="2020-03-01">
 									</div>
 									<div class="form-group">
 										<i class="layui-icon layui-icon-right"
@@ -111,18 +111,18 @@ tbody tr th {
 									</div>
 									<div class="form-group col-md">
 										<input type="date" name="birth" class="form-control"
-											value="2000-01-01">
+											value="2020-04-01">
 									</div>
-									<a href="#" type="submit"><i
+									<a onclick="change()"><i
 										class="layui-icon layui-icon-search"
 										style="font-size: 30px; color: #1E9FFF;"></i></a>
 								</div>
 							</form>
-							<sapn style="float: right;line-height:45px;">请选择时间段：</sapn>
+							<span style="float: right;line-height:45px;">请选择时间段：</span>
 							<hr>
 						</div>
 
-						<div class="layui-row layui-col-space15">
+						<div class="layui-row layui-col-space15" id="d1">
 							<%
 								Dao dao = new Dao();
 								List<CompanyProjectBean> list = dao.getListCompanyProjectInfo();
@@ -200,6 +200,75 @@ tbody tr th {
 													}
 												}
 											%>
+											</div>
+											
+							<div class="layui-row layui-col-space15" id="d2" style="display:none;">
+							<div class="layui-col-md3">
+								<div class="layui-card">
+									<div class="layui-card-header" style="background: #9cd2f7;">
+										<strong>SZ001F002</strong> <span
+											style="float: right;"> <i
+											class="iconfont icon-jiazaizhong"
+											style="color: #ffffff; font-size: 18px;"></i> 进行中…
+										</span>
+									</div>
+									<div class="layui-card-body">
+										<table>
+											<colgroup>
+												<col width="110">
+												<col width="140">
+											</colgroup>
+											<tbody>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-xiangmu"
+														style="color: #5FB878;"></i> <strong
+														style="color: #2b4f6c;">项目姓名：</strong></td>
+
+													<td><span style="color: #777777;">学习app</span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-zhaopingangwei"
+												style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">项目负责人：</strong></td>
+													<td><span style="color: #777777;">张雨佳</span></td>
+												</tr>
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-suggestion" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">项目内容：</strong></td>
+													<td><span style="color: #777777;">研发一款学习app</span>
+											</td>
+												</tr>
+												
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-lunkuohua2_yonghu"
+												style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">项目成员：</strong></td>
+													<td><span style="color: #777777;">张培，王光</span></td>
+												</tr>
+												
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-shijian" style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">起始时间：</strong></td>
+													<td> <span style="color: #777777;">2020-03-03</span></td>
+												</tr>
+												
+												<tr class="uc-tr">
+													<td><i class="iconfont icon-jiezhishijian"
+												style="color: #5FB878;"></i>
+											<strong style="color: #2b4f6c;">结束时间：</strong></td>
+													<td><span style="color: #777777;">未知</span></td>
+												</tr>
+
+
+											</tbody>
+											</table>
+											
+											<a href="#" style="margin-left: 80%"><span
+												style="font-size: 12px; color: #838383;"> 查看详情</span></a>
+											</div>
+											</div>
+											</div>
+											
 											</div>
 
 
@@ -298,6 +367,11 @@ tbody tr th {
 											</div>
 											<script src="../res/layui/layui.js"></script>
 											<script>
+											function change(){
+												$("#d1").css('display', 'none');
+												$("#d2").css('display', 'block');			
+											}
+											
 												//JavaScript代码区域
 												layui
 														.use(
