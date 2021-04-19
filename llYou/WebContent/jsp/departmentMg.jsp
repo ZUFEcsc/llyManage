@@ -482,7 +482,7 @@ padding
 							<div class="layui-card">
 								<div class="layui-card-header"
 									style="background-color: #25a18e;">
-									<strong style="color: #fff; font-size: 1.1rem;">待评价组员：</strong>
+									<strong style="color: #fff; font-size: 1.1rem;">待添加组员：</strong>
 								</div>
 								<div class="layui-card-body"
 									style="margin-top: 20px; margin-left: 20px;">
@@ -874,7 +874,8 @@ padding
 				<div style="margin-left: 10px; margin-top: 10px;">
 					<span style="margin-left: 6px; font-size: 25px; margin-top: 10px;">请勾选项目负责人：</span>
 				</div>
-				</br> <label style="font-size: 20px;"><input type="checkbox"
+				<HR style="FILTER: alpha(opacity=0,finishopacity=100,style=1)" width="100%" color=#25a18e SIZE=3>
+				 <label style="font-size: 20px;"><input type="checkbox"
 					value="1" style="margin-left: 20px;" />张琪 </label> <label
 					style="font-size: 20px;"><input type="checkbox" value="2"
 					style="margin-left: 20px;" />张培 </label> <label style="font-size: 20px;"><input
@@ -936,35 +937,35 @@ padding
 		$('#nlstar').raty({
 			half : true,
 			path : '../icon/',
-			score : 3,
+			score : 0,
 		});
 
 		$('#xlstar').raty({
 
 			half : true,
 			path : '../icon/',
-			score : 5,
+			score : 0,
 		});
 
 		$('#fzstar').raty({
 
 			half : true,
 			path : '../icon/',
-			score : 3,
+			score : 0,
 		});
 
 		$('#ljstar').raty({
 
 			half : true,
 			path : '../icon/',
-			score : 5,
+			score : 0,
 		});
 
 		$('#xastar').raty({
 
 			half : true,
 			path : '../icon/',
-			score : 4,
+			score : 0,
 		});
 	</script>
 

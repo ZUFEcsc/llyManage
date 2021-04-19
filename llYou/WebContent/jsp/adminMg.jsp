@@ -137,7 +137,7 @@ tbody tr th {
 				</ul>
 				<div class="layui-tab-content">
 					<!-- 企业信息 -->
-					<div class="layui-tab-item layui-show" id="item-QYXX">
+					<div class="layui-tab-item" id="item-QYXX">
 
 						<div>
 							<form style="float: right;">
@@ -294,7 +294,7 @@ tbody tr th {
 												class="layui-btn layui-btn-sm layui-btn-normal"
 												style="margin: 0px;" data-toggle="modal"
 												data-target="#exampleModal">
-												<span style="font-size: 14px;">去认证</span>
+												<span style="font-size: 14px;">通过认证</span>
 											</button>
 											 <%}%>
 											  <%
@@ -370,8 +370,8 @@ tbody tr th {
 										<td><span class="layui-badge layui-bg-red">未通过认证</span></td>
 										<td><button type="button"
 												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<span style="font-size: 14px;">删除</span>
+												style="margin: 0px;padding:0px 15px;">
+												<span style="font-size: 14px;">删 除</span>
 											</button></td>
 									</tr>
 									<tr>
@@ -383,8 +383,8 @@ tbody tr th {
 										<td>
 											<button type="button"
 												class="layui-btn layui-btn-sm layui-btn-normal"
-												style="margin: 0px;">
-												<span style="font-size: 14px;">删除</span>
+												style="margin: 0px;padding:0px 15px;">
+												<span style="font-size: 14px;">删 除</span>
 											</button>
 										</td>
 									</tr>
@@ -412,23 +412,24 @@ tbody tr th {
 					<!-- 企业数据分析 -->
 					<div class="layui-tab-item layui-col-space10" id="item-QYSJFX"
 						style="display: none;">
-						<div class="layui-col-md4">
+						<div class="layui-col-md4" style="width:30%;">
 							<div class="layui-card">
 								<div class="layui-card-header" style="text-align: center;">
 									<strong style="font-size: 18px;">本周平台企业上线情况</strong>
 								</div>
 								<div class="layui-card-body" style="display: inline-block;">
 									<div id="line-bar"
-										style="margin-left: -10px; width: 420px; height: 300px;"></div>
+										style="margin-left: -10px; width: 380px; height: 280px;"></div>
 								</div>
 							</div>
 
 							<div class="layui-card">
 								<div class="layui-card-body" style="display: inline-block;">
 									<div id="wordcloud"
-										style="margin-left: -10px; width: 420px; height: 305px;"></div>
+										style="margin-left: -10px; width: 380px; height: 410px;"></div>
 								</div>
 							</div>
+							
 						</div>
 
 						<div class="layui-col-md4">
@@ -436,7 +437,7 @@ tbody tr th {
 
 								<div class="layui-card-body">
 									<div id="line"
-										style="margin-left: -10px; width: 420px; height: 350px;"></div>
+										style="margin-left: -10px; width: 420px; height: 430px;"></div>
 								</div>
 							</div>
 
@@ -449,12 +450,12 @@ tbody tr th {
 							</div>
 						</div>
 
-						<div class="layui-col-md4">
+						<div class="layui-col-md4" style="width:36%;">
 							<div class="layui-card">
 
 								<div class="layui-card-body">
 									<div id="circle"
-										style="margin-left: -10px; width: 420px; height: 350px;"></div>
+										style="margin-left: -10px; width: 455px; height: 430px;border: solid 1px black;"></div>
 								</div>
 							</div>
 
@@ -465,7 +466,7 @@ tbody tr th {
 								</div>
 								<div class="layui-card-body">
 									<div id="map1"
-										style="margin-left: -10px; width: 420px; height: 260px; border: solid 1px black;"></div>
+										style="margin-left: -10px; width: 455px; height: 260px; border: solid 1px black;"></div>
 								</div>
 							</div>
 						</div>
@@ -619,7 +620,7 @@ tbody tr th {
 												class="layui-btn layui-btn-sm layui-btn-normal"
 												style="margin: 0px;" data-toggle="modal"
 												data-target="#exampleModal">
-												<span style="font-size: 14px;">去认证</span>
+												<span style="font-size: 14px;">通过认证</span>
 											</button>
 											 <%}%>
 											  <%
@@ -647,7 +648,7 @@ tbody tr th {
 					</div>
 
 					<!-- 用户数据分析 -->
-					<div class="layui-tab-item layui-col-space10" id="item-YHSJFX"
+					<div class="layui-tab-item layui-show layui-col-space10" id="item-YHSJFX"
 						style="display: none;">
 
 						<div class="layui-col-md4">
@@ -697,25 +698,6 @@ tbody tr th {
 							</div>
 						</div>
 
-						<div class="layui-col-md5">
-							<div class="layui-card">
-								<div class="layui-card-header" style="text-align: center;">
-									<strong style="font-size: 18px;">平台用户地域分布</strong>
-								</div>
-								<div class="layui-card-body" style="display: inline-block;">
-									<div id="map2"
-										style="margin-left: -10px; width: 520px; height: 285px;"></div>
-								</div>
-							</div>
-
-							<div class="layui-card">
-								<div class="layui-card-body" style="display: inline-block;">
-									<div id="pie"
-										style="margin-left: -10px; width: 520px; height: 320px;"></div>
-								</div>
-							</div>
-						</div>
-
 						<div class="layui-col-md7">
 							<div class="layui-card">
 								<div class="layui-card-header" style="text-align: center;">
@@ -723,11 +705,24 @@ tbody tr th {
 								</div>
 								<div class="layui-card-body" style="display: inline-block;">
 									<div id="barpie"
-										style="margin-left: -10px; width: 740px; height: 645px;"></div>
+										style="margin-left: -10px; width: 740px; height: 585px;"></div>
 								</div>
 							</div>
 						</div>
 
+						<div class="layui-col-md5">
+							<div class="layui-card">
+								<div class="layui-card-header" style="text-align: center;">
+									<strong style="font-size: 18px;">平台用户地域分布</strong>
+								</div>
+								<div class="layui-card-body" style="display: inline-block;">
+									<div id="map2"
+										style="margin-left: -10px; width: 520px; height: 585px;"></div>
+								</div>
+							</div>
+						</div>
+
+						
 					</div>
 				</div>
 			</div>
@@ -923,7 +918,7 @@ tbody tr th {
 	            axisLabel: {
 	                formatter: '{value} ',
 	                textStyle: {
-	          fontSize : 12     //更改坐标轴文字大小
+	          fontSize : 10     //更改坐标轴文字大小
 	        }
 	            }
 	        }
@@ -1577,7 +1572,7 @@ tbody tr th {
 	            value: 320
 	        },
 	        {
-	            name: "脑祖宗",
+	            name: "小猿搜题",
 	            value: 23.4
 	        },
 	        {
@@ -1605,7 +1600,7 @@ tbody tr th {
 	            value: 30.2
 	        },
 	        {
-	            name: "脑祖宗",
+	            name: "小猿搜题",
 	            value: 323.4
 	        },
 	        {
@@ -2253,8 +2248,8 @@ tbody tr th {
 		        trigger: 'item'
 		    },
 		    bmap: {
-		        center: [72.114129, 50.550339],
-		        zoom: 4,
+		        center: [107.114129, 35.550339],
+		        zoom: 3,
 		        roam: true,
 		        mapStyle: {
 		            styleJson: [
@@ -2905,7 +2900,6 @@ tbody tr th {
 		  "大专": 4778,
 		  "本科": 9055,
 		  "其他":3089
-		
 		},
 		"components": {
 		  "100k以上": 288,
@@ -2942,7 +2936,7 @@ tbody tr th {
 		ctx.textAlign = 'center';
 		ctx.textBaseline = 'middle';
 		ctx.globalAlpha = 0.08;
-		ctx.font = '20px Microsoft Yahei';
+		ctx.font = '14px Microsoft Yahei';
 		ctx.translate(50, 50);
 		ctx.rotate(-Math.PI / 4);
 		
@@ -2993,8 +2987,7 @@ tbody tr th {
 		        textStyle: {
 		          fontSize : 14      //更改坐标轴文字大小
 		        }
-		     },
-		
+		     },		
 		      splitLine: {
 		          show: false
 		      }
@@ -3045,9 +3038,15 @@ tbody tr th {
 		      stack: 'chart',
 		      z: 3,
 		      itemStyle: {
-		          color: '#91cd76'
+		    	  color: function(params){
+		    		  //黄绿var colorList = ['#b57f50','#f4e04d','#e8fccf','#96e072','#3da35d','#3e8914'];
+		    		  //var colorList = ['#2d6a4f','#40916c','#52b788','#74c69d','#95d5b2','#b7e4c7'];
+		    		  var colorList = ['#34a0a4','#52b69a','#99d98c','#76c893','#b5e48c','#d9ed92'];
+		    		  return colorList[params.dataIndex];
+		    	  }	    		  
+			      
 		      },
-		      
+		      		      
 		      label: {
 		          position: 'right',
 		          show: true,
@@ -3055,11 +3054,9 @@ tbody tr th {
 		                            formatter: '{b} {d}%',
 		                            textStyle: {
 		                                fontWeight: 'normal',
-		                                fontSize: 14,
-		
+		                                fontSize: 14,		
 		                            },
-		                            color: '#2F4F4F',
-		
+		                            color: '#2F4F4F'		
 		                        }
 		      },
 		      data: Object.keys(builderJson.charts).map(function (key) {
@@ -3073,7 +3070,12 @@ tbody tr th {
 		      z: 3,
 		      
 		      itemStyle: {
-		          color: '#fac958'
+		    	  color: function(params){
+		    		  //黄绿var colorList = ['#b57f50','#f4e04d','#e8fccf','#96e072','#3da35d','#3e8914','#134611'];
+		    		  //全绿var colorList = ['#2d6a4f','#40916c','#52b788','#74c69d','#95d5b2','#b7e4c7','#d8f3dc'];
+		    		  var colorList = ['#1e6091','#34a0a4','#52b69a','#99d98c','#76c893','#b5e48c','#d9ed92'];
+		    		  return colorList[params.dataIndex];
+		    	  }
 		      },
 		      label: {
 		          position: 'right',
@@ -3090,10 +3092,22 @@ tbody tr th {
 		  },{
 		      type: 'pie',
 		      radius: [0, '30%'],
-		      
-		      
+		      label: {
+                  normal: {
+                      formatter: '{b} {d}%',
+                      textStyle: {
+                          fontWeight: 'normal',
+                          fontSize: 14,
+                      },
+                      color: '#2F4F4F',		
+                  }
+
+              },		      
 		      center: ['75%', '25%'],
-		      color:['#9dc8f1','#acf29e','#d7797f'],
+		      //color:['#f4e04d','#e8fccf','#96e072'],
+		      //color:['#40916c','#52b788','#74c69d'],
+		      color:['#34a0a4','#99d98c','#b5e48c'],
+		      
 		      data: Object.keys(downloadJson).map(function (key) {
 		          return {
 		              name: key.replace('.js', ''),
@@ -3109,15 +3123,15 @@ tbody tr th {
 		                            textStyle: {
 		                                fontWeight: 'normal',
 		                                fontSize: 14,
-		
 		                            },
-		                            color: '#2F4F4F',
-		
+		                            color: '#2F4F4F',		
 		                        }
 		
 		                    },
 		      center: ['75%', '75%'],
-		      color:['#d7797f','#9dc8f1','#acf29e','#e2b864','#859dd5'],
+		      //color:['#f4e04d','#e8fccf','#96e072','#3da35d','#3e8914'],
+		      //color:['#2d6a4f','#40916c','#52b788','#74c69d','#95d5b2'],
+		      color:['#34a0a4','#52b69a','#99d98c','#76c893','#d9ed92'],
 		      data: Object.keys(themeJson).map(function (key) {
 		          return {
 		              name: key.replace('.js', ''),
@@ -3131,54 +3145,6 @@ tbody tr th {
 
 	</script>
 
-	<!-- 平台用户就业情况 pie -->
-	<script>
-		Highcharts.setOptions({
-		colors: ['#7cb5ec','#90ed7d'],
-	});
-	var chart=Highcharts.chart('pie', {
-		title: {
-			text: "平台用户就业情况",
-			style: {
-				fontFamily: 'Arial',
-	                fontSize: 18,
-	                fontStyle: 'normal',
-	                fontWeight: 'bold',
-				},
-		},
-		tooltip: {
-			headerFormat: '{series.name}<br>',
-			pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
-		},
-		plotOptions: {
-			pie: {
-				dataLabels: {
-					enabled: true,
-					distance: -50,
-					style: {
-						fontWeight: 'bold',
-						color: 'white',
-						textShadow: '0px 1px 2px black',
-						fontSize:14
-					}
-				},
-				startAngle: -90, // 圆环的开始角度
-				endAngle: 90,    // 圆环的结束角度
-				center: ['50%', '75%']
-			}
-		},
-		series: [{
-			type: 'pie',
-			name: '平台用户占比',
-			innerSize: '50%',
-			data: [
-				['就业',2918.0],
-				['未就业',4928.8],
-			]
-		}]
-	});
-
-    </script>
 
 	<!-- 地图分布 map -->
 	<script>
@@ -3602,7 +3568,7 @@ tbody tr th {
 	        trigger: 'item'
 	    },
 	    bmap: {
-	        center: [72.114129, 50.550339],
+	        center: [107.114129, 40.550339],
 	        zoom: 3,
 	        roam: true,
 	        mapStyle: {

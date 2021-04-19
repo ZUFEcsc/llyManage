@@ -111,7 +111,8 @@ tbody tr th {
 </head>
 
 <body class="">
-<%String mac="UptoFirstStepServlet?identity="+"2300003"; %>
+<%String mac="UptoFirstStepServlet?identity="+"2300003";
+String msg = (String) request.getAttribute("msg");%>
 	<div class="layui-layout layui-layout-admin">
 
 		<%@ include file="enterprise-header.jsp"%>
@@ -179,7 +180,7 @@ tbody tr th {
 									<tbody>
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">姓名：</strong><span
-												style="color: #777777;">赵子树</span></td>
+												style="color: #777777;"><%=msg %></span></td>
 											<td><strong style="color: #2b4f6c;">民族：</strong><span
 												style="color: #777777;">汉族</span></td>
 										</tr>
@@ -198,8 +199,17 @@ tbody tr th {
 										<tr class="uc-tr">
 											<td><strong style="color: #2b4f6c;">所属企业：</strong><span
 												style="color: #777777;">无</span></td>
-											<td><strong style="color: #2b4f6c;">联系邮箱：</strong><span
-												style="color: #777777;">87xxx657@163.com</span></td>
+											<td><strong style="color: #2b4f6c;">联系邮箱：</strong>
+											<%if(msg.equals("王撤")){ %>
+											<span
+												style="color: #777777;">87xxx657@163.com
+												</span><%} %>
+												<%if(msg.equals("王一")){ %>
+											<span
+												style="color: #777777;">87111657@163.com
+												</span><%}%>
+												
+												</td>
 										</tr>
 									</tbody>
 								</table>
@@ -208,9 +218,10 @@ tbody tr th {
 
 							<div style="float: right; margin: -40px 50px 0px 0px;">
 								<a class="layui-btn-xs" href="#" style="margin: 10px 10px;"
-									data-toggle="modal" data-target="#exampleModal"> <i
+									data-toggle="modal" data-target="#exampleModal"> <%if(msg=="王撤"){ %><i
 									class="iconfont icon-ziyuan25"
-									style="font-size: 22px; color: #16c2c2;"></i> 申请查看联系方式
+									style="font-size: 22px; color: #16c2c2;"></i><%} %> <%if(msg=="王撤"){ %>申请查看联系方式<%} %>
+									<%if(msg=="王一"){ %>联系方式:111111111<%}%>
 								</a>
 							</div>
 
@@ -566,13 +577,13 @@ tbody tr th {
 		});
 
 		function tcClick() {
-			alert("发送成功！");
+			//alert("发送成功！");
 		}
 		
 		function sxClick() {
 			$("#xrt").css('display', 'none');
 			$("#xrt2").css('display', 'inline-block');
-			alert("筛选成功！");
+			//alert("筛选成功！");
 		}
 	</script>
 

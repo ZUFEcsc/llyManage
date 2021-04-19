@@ -510,7 +510,7 @@ tbody tr th {
 
 											</div>
 											<div style="float: right; margin-top: 15px;">
-												<a class="layui-btn-xs" href="hrMore.jsp"> <span
+												<a class="layui-btn-xs" href="KnowMoreServlet?name=<%=ab.getName()%>"> <span
 													style="color: #838383;">了解更多</span> <i
 													class="iconfont icon-ziyuan25"
 													style="font-size: 22px; color: #16c2c2;"></i>

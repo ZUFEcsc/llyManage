@@ -234,9 +234,9 @@
 	    "nodes": [
 	      {
 	        "id": "0",
-	        "name": "安徽阿里有限公司管理人",
-	        "symbolSize": 85.12381,
-	        "x": -500.82776,
+	        "name": "副总裁",
+	        "symbolSize": 45.12381,
+	        "x": -460.82776,
 	        "y": 199.6904,
 	        "value": 28.685715,
 	        "category": 0
@@ -244,15 +244,15 @@
 	      {
 	        "id": "1",
 	        "name": "法务",
-	        "symbolSize": 58.6666666666666665,
-	        "x": -418.08344,
+	        "symbolSize": 18.6666666666666665,
+	        "x": -318.08344,
 	        "y": 166.8853,
 	        "value": 4,
 	        "category": 1
 	      },
 	      {
 	        "id": "2",
-	        "name": "副总裁",
+	        "name": "安徽阿里管理人",
 	        "symbolSize": 41.323809333333333,
 	        "x": -212.76357,
 	        "y": 385.29176,
@@ -262,7 +262,7 @@
 	      {
 	        "id": "3",
 	        "name": "税务人",
-	        "symbolSize": 29.323809333333333,
+	        "symbolSize": 49.323809333333333,
 	        "x": -142.82404,
 	        "y": 255.26283,
 	        "value": 9.485714,
@@ -273,13 +273,13 @@
 	        "name": "控股股东",
 	        "symbolSize": 48.6666666666666665,
 	        "x": -379.30386,
-	        "y": 149.06424,
+	        "y": 209.06424,
 	        "value": 4,
 	        "category": 4
 	      },
 	      {
 	        "id": "5",
-	        "name": "北京XX公司管理人",
+	        "name": "作业帮公司管理人",
 	        "symbolSize": 25.6666666666666665,
 	        "x": -417.26337,
 	        "y": 206.03506,
@@ -289,7 +289,7 @@
 	      {
 	        "id": "6",
 	        "name": "股东",
-	        "symbolSize": 59.6666666666666665,
+	        "symbolSize": 69.6666666666666665,
 	        "x": -332.6012,
 	        "y": 285.16974,
 	        "value": 4,
@@ -1222,7 +1222,10 @@
 		      stack: 'chart',
 		      z: 3,
 		      itemStyle: {
-		          color: '#7cb5ec'
+		    	  color: function(params){
+		    		  var colorList = ['#f4e04d','#e8fccf','#96e072','#3da35d','#3e8914'];
+		    		  return colorList[params.dataIndex];
+		    	  }
 		      },
 		      
 		      label: {
@@ -1250,7 +1253,12 @@
 		      z: 3,
 		      
 		      itemStyle: {
-		          color: '#596472'
+		    	  color: function(params){
+		    		  var colorList = ['#b57f50','#f4e04d','#e8fccf','#96e072','#3da35d','#3e8914'];
+		    		  //全绿var colorList = ['#40916c','#52b788','#74c69d','#95d5b2','#b7e4c7','#d8f3dc'];
+		    		  //蓝绿var colorList = ['#1e6091','#34a0a4','#52b69a','#99d98c','#76c893','#b5e48c','#d9ed92'];
+		    		  return colorList[params.dataIndex];
+		    	  }
 		      },
 		      label: {
 		          position: 'right',
@@ -1281,7 +1289,7 @@
 		
 		                    },
 		      center: ['75%', '25%'],
-		      color:['#9dc8f1','#acf29e','#d7797f'],
+		      color:['#f4e04d','#96e072','#3e8914'],
 		      data: Object.keys(downloadJson).map(function (key) {
 		          return {
 		              name: key.replace('.js', ''),
@@ -1305,7 +1313,7 @@
 		
 		                    },
 		      center: ['75%', '75%'],
-		      color:['#d7797f','#9dc8f1','#acf29e','#e2b864','#859dd5'],
+		      color:['#b57f50','#f4e04d','#e8fccf','#96e072','#3da35d','#3e8914'],
 		      data: Object.keys(themeJson).map(function (key) {
 		          return {
 		              name: key.replace('.js', ''),

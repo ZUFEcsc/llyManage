@@ -520,7 +520,12 @@
 					</br> </br>
 					<label style="font-size: 15px;margin-left:30px;"><input
 												type="checkbox" checked/> <span
-												style="color: #777777">发送全部档案信息</span> </label>
+												style="color: #000000;">同意条款</span></label><label style="font-size: 15px;margin-left:30px;color:#777777;"><a onclick="showlaw()">查看条款</a></label>
+					<div style="margin-left:30px;margin-right:30px;display:none;" id="law">请充分阅读并理解《用户协议》和《隐私政策》，点击同意按钮代表你已知悉并同意前述协议及以下约定：<br>1.在浏览使用时，我们可能会申请系统设备
+					权限收集设备信息、日志信息，用于推送和安全风控，并申请存储权限，用于下载及缓存相关文件。<br>
+					2.我们可能会申请位置权限，用于帮助你在发布的信息中展示位置或丰富信息推荐维度。城市/区县位置无需使用位置权限，仅通过ip地址确定"城市频道"中的城市
+					及相关信息，不会收集精确位置信息。<br>3.上述权限以及摄像头、麦克风、相册（存储）、GPS\日历等权限均不会默认或强制开启收集信息。<br>4.为实现信息分享、第三方登录
+					、参加相关活动、综合统计分析等目的所必须、我们可能会调用剪切板并使用与功能相关的最小必要信息。</div><br>
 					<div style="margin-left: 350px;">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">取消</button>
@@ -1160,6 +1165,9 @@
 		<script>
 			function clicktest() {
 				alert("发送成功");
+			}
+			function showlaw() {
+			$("#law").css('display', 'block');
 			}
 			layui.config({
 				base : '../js/steps/',
