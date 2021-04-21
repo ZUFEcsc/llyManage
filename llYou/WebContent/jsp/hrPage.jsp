@@ -484,21 +484,21 @@ tbody tr th {
 												style="color: #2b4f6c;">人岗匹配：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
-												<div class="layui-progress-bar" lay-percent="80%"
+												<div class="layui-progress-bar" lay-percent="<%=ab.getRandom()%>%"
 													style="background-color: #ff9b85;"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+												style="display: inline-block; font-size: 7px; color: #838383;"><%=ab.getRandom()%>分</span>
 
 
 											<br> <i class="iconfont icon-jiqiren2"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">综合评分：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
-												<div class="layui-progress-bar" lay-percent="80%"></div>
+												<div class="layui-progress-bar" lay-percent="<%=ab.getRandom2()%>%"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+												style="display: inline-block; font-size: 7px; color: #838383;"><%=ab.getRandom2()%>分</span>
 
 											<div style="display: inline-block; margin-top: 10px;">
 												<button type="button" class="layui-btn layui-btn-sm"
@@ -572,21 +572,21 @@ tbody tr th {
 												style="color: #2b4f6c;">人岗匹配：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
-												<div class="layui-progress-bar" lay-percent="80%"
+												<div class="layui-progress-bar" lay-percent="78%"
 													style="background-color: #ff9b85;"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+												style="display: inline-block; font-size: 7px; color: #838383;">78分</span>
 
 
 											<br> <i class="iconfont icon-jiqiren2"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">综合评分：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
-												<div class="layui-progress-bar" lay-percent="80%"></div>
+												<div class="layui-progress-bar" lay-percent="88%"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+												style="display: inline-block; font-size: 7px; color: #838383;">88分</span>
 
 											<div style="display: inline-block; margin-top: 10px;">
 												<button type="button" class="layui-btn layui-btn-sm"
@@ -692,21 +692,21 @@ tbody tr th {
 												style="color: #2b4f6c;">人岗匹配：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
-												<div class="layui-progress-bar" lay-percent="80%"
+												<div class="layui-progress-bar" lay-percent="<%=ab.getRandom()%>%"
 													style="background-color: #ff9b85;"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+												style="display: inline-block; font-size: 7px; color: #838383;"><%=ab.getRandom()%>分</span>
 
 
 											<br> <i class="iconfont icon-jiqiren2"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">综合评分：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
-												<div class="layui-progress-bar" lay-percent="80%"></div>
+												<div class="layui-progress-bar" lay-percent="<%=ab.getRandom2()%>%"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+												style="display: inline-block; font-size: 7px; color: #838383;"><%=ab.getRandom2()%>分</span>
 
 											<div style="display: inline-block; margin-top: 10px;">
 												<button type="button" class="layui-btn layui-btn-sm"
@@ -826,21 +826,21 @@ tbody tr th {
 												style="color: #2b4f6c;">人岗匹配：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
-												<div class="layui-progress-bar" lay-percent="80%"
+												<div class="layui-progress-bar" lay-percent="<%=ab.getRandom()%>%"
 													style="background-color: #ff9b85;"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+												style="display: inline-block; font-size: 7px; color: #838383;"><%=ab.getRandom()%>分</span>
 
 
 											<br> <i class="iconfont icon-jiqiren2"
 												style="color: #5FB878;"></i> <strong style="color: #2b4f6c;">综合评分：</strong>
 											<div class="layui-progress"
 												style="width: 50%; display: inline-block;">
-												<div class="layui-progress-bar" lay-percent="80%"></div>
+												<div class="layui-progress-bar" lay-percent="<%=ab.getRandom2()%>%"></div>
 											</div>
 											<span
-												style="display: inline-block; font-size: 7px; color: #838383;">80分</span>
+												style="display: inline-block; font-size: 7px; color: #838383;"><%=ab.getRandom2()%>分</span>
 
 											<div style="display: inline-block; margin-top: 10px;">
 												<button type="button" class="layui-btn layui-btn-sm"

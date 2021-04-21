@@ -137,7 +137,7 @@ tbody tr th {
 				</ul>
 				<div class="layui-tab-content">
 					<!-- 企业信息 -->
-					<div class="layui-tab-item" id="item-QYXX">
+					<div class="layui-tab-item layui-show" id="item-QYXX">
 
 						<div>
 							<form style="float: right;">
@@ -220,10 +220,7 @@ tbody tr th {
 										<select class="form-control">
 											<option selected disabled style="display: none;" value="">请选择认证状态</option>
 											<option>已通过认证</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+											<option>未通过认证</option>
 										</select>
 									</div>
 									<a href="#" type="submit"><i
@@ -320,7 +317,6 @@ tbody tr th {
 						</div>
 
 					</div>
-
 
 					<!-- 信息修改 -->
 					<div class="layui-tab-item" id="item-XXXG" style="display: none;">
@@ -455,7 +451,7 @@ tbody tr th {
 
 								<div class="layui-card-body">
 									<div id="circle"
-										style="margin-left: -10px; width: 455px; height: 430px;border: solid 1px black;"></div>
+										style="margin-left: -10px; width: 455px; height: 430px;"></div>
 								</div>
 							</div>
 
@@ -466,7 +462,7 @@ tbody tr th {
 								</div>
 								<div class="layui-card-body">
 									<div id="map1"
-										style="margin-left: -10px; width: 455px; height: 260px; border: solid 1px black;"></div>
+										style="margin-left: -10px; width: 455px; height: 260px;"></div>
 								</div>
 							</div>
 						</div>
@@ -648,7 +644,7 @@ tbody tr th {
 					</div>
 
 					<!-- 用户数据分析 -->
-					<div class="layui-tab-item layui-show layui-col-space10" id="item-YHSJFX"
+					<div class="layui-tab-item layui-col-space10" id="item-YHSJFX"
 						style="display: none;">
 
 						<div class="layui-col-md4">
@@ -735,6 +731,7 @@ tbody tr th {
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				</br>
+				<!-- 是否确认为该企业通过账号？ -->
 				<h4 style="margin-left: 10px; font-size: 19px;">是否创建该账号？</h4>
 				</br>
 				<div style="margin-left: 350px;">
@@ -2248,7 +2245,7 @@ tbody tr th {
 		        trigger: 'item'
 		    },
 		    bmap: {
-		        center: [107.114129, 35.550339],
+		        center: [79.114129, 50.550339],
 		        zoom: 3,
 		        roam: true,
 		        mapStyle: {
@@ -3568,7 +3565,7 @@ tbody tr th {
 	        trigger: 'item'
 	    },
 	    bmap: {
-	        center: [107.114129, 40.550339],
+	        center: [66.114129, 60.550339],
 	        zoom: 3,
 	        roam: true,
 	        mapStyle: {

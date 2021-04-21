@@ -307,7 +307,7 @@ padding
 								<div class="layui-card">
 									
 									<div class="layui-card-header" style="background: #9cd2f7;">
-										<strong>SZ001F002</strong> <span
+										<strong>SZ001F003</strong> <span
 											style="float: right;"> <i
 											class="iconfont icon-jiazaizhong"
 											style="color: #ffffff; font-size: 18px;"></i> 进行中…
@@ -872,7 +872,7 @@ padding
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div style="margin-left: 10px; margin-top: 10px;">
-					<span style="margin-left: 6px; font-size: 25px; margin-top: 10px;">请勾选项目负责人：</span>
+					<span style="margin-left: 6px; font-size: 25px; margin-top: 10px;">请勾选项目成员：</span>
 				</div>
 				<HR style="FILTER: alpha(opacity=0,finishopacity=100,style=1)" width="100%" color=#25a18e SIZE=3>
 				 <label style="font-size: 20px;"><input type="checkbox"

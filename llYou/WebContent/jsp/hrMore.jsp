@@ -234,14 +234,14 @@ String msg = (String) request.getAttribute("msg");%>
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel">向赵子树发送查看联系方式的申请</h5>
+											<h5 class="modal-title" id="exampleModalLabel">向<%=msg %>发送查看联系方式的申请</h5>
 											<button type="button" class="close" data-dismiss="modal"
 												aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
 										<div class="modal-body">
-											提交申请的同时会附带您所在企业的基本信息以及现阶段您的招聘岗位信息，获得用户同意之后可以获取到赵子树的联系方式，包括微信和联系电话等，您确定提交发送吗？
+											提交申请的同时会附带您所在企业的基本信息以及现阶段您的招聘岗位信息，获得用户同意之后可以获取到<%=msg %>的联系方式，包括微信和联系电话等，您确定提交发送吗？
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary"

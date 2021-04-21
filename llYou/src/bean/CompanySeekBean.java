@@ -12,6 +12,7 @@ public class CompanySeekBean {
 	private Date deliver_time;
 	private String state;
 	private String seek_number;
+	private String apply;
 	
 	public String getCompany_location() {
 		return company_location;
@@ -68,8 +69,18 @@ public class CompanySeekBean {
 	public void setSeek_number(String seek_number) {
 		this.seek_number = seek_number;
 	}
-	public CompanySeekBean(String company_location, String company_name, String seek_position, String salary, String advantage,
-			String work_experience,Date deliver_time,String state,String seek_number) {
+	
+	public String getApply() {
+		return apply;
+	}
+	public void setApply(String apply) {
+		this.apply = apply;
+	}
+	
+	
+	public CompanySeekBean(String company_location, String company_name, String seek_position, String salary,
+			String advantage, String work_experience, Date deliver_time, String state, String seek_number,
+			String apply) {
 		super();
 		this.company_location = company_location;
 		this.company_name = company_name;
@@ -77,11 +88,11 @@ public class CompanySeekBean {
 		this.salary = salary;
 		this.advantage = advantage;
 		this.work_experience = work_experience;
-		this.deliver_time=deliver_time;
-		this.state=state;
-		this.seek_number=seek_number;
+		this.deliver_time = deliver_time;
+		this.state = state;
+		this.seek_number = seek_number;
+		this.apply = apply;
 	}
-	
 	public CompanySeekBean()
 	{
 		

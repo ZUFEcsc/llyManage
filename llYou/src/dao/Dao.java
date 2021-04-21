@@ -83,7 +83,7 @@ public class Dao {
     	Connection conn=DBUtil.getConnection();
     	Statement stmt=null;
 		ResultSet rs=null;
-		String sql="select s.company_position,s.seek_position,s.salary,s.advantage,b.name,s.work_experience_requirement,s.deliver_time from company_seek_info s,company_basic_info b where s.company_number=b.company_number and s.state='1'";
+		String sql="select s.company_position,s.seek_position,s.salary,s.advantage,b.name,s.work_experience_requirement,s.deliver_time,s.apply from company_seek_info s,company_basic_info b where s.company_number=b.company_number and s.state='1'";
 		try{
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -97,6 +97,7 @@ public class Dao {
 				ab.setCompany_name(rs.getString(5));
 				ab.setWork_experience(rs.getString(6));
 				ab.setDeliver_time(rs.getDate(7));
+				ab.setApply(rs.getString(8));
 				list.add(ab);
 			}
 		}catch(Exception e)
@@ -717,6 +718,26 @@ public class Dao {
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, cnumber);
+			
+			int number=pstmt.executeUpdate();
+			if(number>0)
+				return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.ColseJDBC(null, pstmt, conn);
+		}
+		return false;
+		
+	}
+	public boolean ApplyUpdate()
+	{
+		Connection conn=DBUtil.getConnection();
+		PreparedStatement pstmt=null;
+		String sql="update company_seek_info set apply='2' where seek_number=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, "SZ10001");
 			
 			int number=pstmt.executeUpdate();
 			if(number>0)

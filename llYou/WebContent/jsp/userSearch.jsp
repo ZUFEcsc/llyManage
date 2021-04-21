@@ -174,6 +174,7 @@
 								Dao dao = new Dao();
 								List<CompanySeekBean> list = dao.getListCompanySeekInfo();
 								for (CompanySeekBean ab : list) {
+									
 							%>
 							<div class="layui-row"
 								style="margin: 10px; padding: 5px; background-color: #F2F2F2;">
@@ -230,12 +231,22 @@
 													</td>
 													<td></td>
 													<td>
+													<%if(ab.getApply().equals("1")){ %>
 														<button type="button"
 															class="layui-btn layui-btn-sm layui-btn-danger"
 															style="margin: 0px;" data-toggle="modal"
 															data-target="#exampleModal">
 															<i class="layui-icon layui-icon-templeate-1"></i>申请
-														</button> <span style="margin-left: 10px; color: #c2c2c2;"><%=ab.getDeliver_time()%></span>
+														</button><%} %> 
+														<%if(ab.getApply().equals("2")){ %>
+														<span style="color:grey;">已申请</span>
+														<button type="button"
+															class="layui-btn layui-btn-sm layui-btn-danger"
+															style="margin-left: 10px;" data-toggle="modal"
+															data-target="#exampleModal">
+															<i class="layui-icon layui-icon-templeate-1"></i>再次申请
+														</button><%} %> 
+														<span style="margin-left: 10px; color: #c2c2c2;"><%=ab.getDeliver_time()%></span>
 													</td>
 												</tr>
 
@@ -1164,7 +1175,8 @@
 		<!-- 步骤条 -->
 		<script>
 			function clicktest() {
-				alert("发送成功");
+				window.location.href="ApplyServlet";
+				
 			}
 			function showlaw() {
 			$("#law").css('display', 'block');
@@ -1181,7 +1193,7 @@
 					"desc" : "2021-03-23"
 				}, {
 					'title' : "简历初选",
-					"desc" : "暂定"
+					"desc" : "2021-04-11"
 				}, {
 					'title' : "一轮面试",
 					"desc" : "暂定"
@@ -1211,7 +1223,7 @@
 					"desc" : "2021-03-23"
 				}, {
 					'title' : "简历初选",
-					"desc" : "2021-03-24"
+					"desc" : "暂定"
 				}, {
 					'title' : "一轮面试",
 					"desc" : "暂定"

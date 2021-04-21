@@ -40,8 +40,8 @@
 			<!-- 头部区域（可配合layui已有的水平导航） -->
 			<ul class="layui-nav layui-layout-left" style="line-height: 80px;">
 				<li class="layui-nav-item"><a href="index.jsp">首页</a></li>
-				<li class="layui-nav-item"><a href="">求职广场</a></li>
-				<li class="layui-nav-item"><a href="">面试直通车</a></li>
+				<li class="layui-nav-item"><a href="#">求职广场</a></li>
+				<li class="layui-nav-item"><a href="#">面试直通车</a></li>
 				<li class="layui-nav-item"><a href="javascript:;">其它系统</a>
 					<dl class="layui-nav-child">
 						<dd>
@@ -57,7 +57,7 @@
 			</ul>
 			<ul class="layui-nav layui-layout-right" style="line-height: 80px;">
 				<li class="layui-nav-item"><a href="javascript:;"> <img
-						src="../img/avatar.png" class="layui-nav-img"> 赵子龙
+						src="../img/boy.png" class="layui-nav-img"> 赵子龙
 				</a>
 					<dl class="layui-nav-child">
 						<dd>

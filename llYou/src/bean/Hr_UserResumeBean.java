@@ -1,6 +1,7 @@
 package bean;
 
 import java.util.Date;
+import java.util.Random;
 
 public class Hr_UserResumeBean {
 	private String name;
@@ -15,6 +16,8 @@ public class Hr_UserResumeBean {
 	private String work_experience;
 	private String deliver_time;
 	private String state;
+	private String num = setRandom();
+	private String num2 = setRandom2();
 	public String getName() {
 		return name;
 	}
@@ -86,6 +89,36 @@ public class Hr_UserResumeBean {
 	}
 	public void setState(String state) {
 		this.state = state;
+	}
+	public String setRandom() {
+		//创建Random类对象
+        Random random =  new  Random();              
+        
+        //产生随机数
+        int  num = random.nextInt(90 - 55 +  1 ) + 55;
+        
+        String res = String.valueOf(num);
+        
+		return res;
+	}
+	public String getRandom() {
+        
+		return num;
+	}
+	public String setRandom2() {
+		//创建Random类对象
+        Random random =  new  Random();              
+        
+        //产生随机数
+        int  num = random.nextInt(99 - 60 +  1 ) + 60;
+        
+        String res = String.valueOf(num);
+        
+		return res;
+	}
+public String getRandom2() {
+        
+		return num2;
 	}
 	public Hr_UserResumeBean(String name, String identity, String sex, int age, String nation, Date regist_time,
 			String political_feature, String learn_experience, String seek_position, String work_experience,
