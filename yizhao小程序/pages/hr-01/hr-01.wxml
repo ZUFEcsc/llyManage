@@ -1,0 +1,68 @@
+<!--用户简历-1-->
+<view class="body">
+
+  <view class="top">
+    <view class="item54">
+      <view class="peoplenum"><text>共120份简历
+        </text></view>
+      <view class="tt"></view>
+      <navigator class="shenhe"><text>智能筛选</text></navigator>
+    </view>
+
+  </view>
+
+  <view class="bodyy">
+
+    <view class="item">
+      <view class="items" wx:for="{{userlist}}" wx:key="id">
+        <view class="item1">
+          <view class="tt1">
+            <image src="../../icons/圆.png" mode="widthFix"></image>
+          </view>
+          <view class="tt2">姓 名:</view>
+          <view class="tt3">{{item.name}}</view>
+        </view>
+        <view class="item2">
+          <view class="tt1">
+            <image src="../../icons/圆.png" mode="widthFix"></image>
+          </view>
+          <view class="tt2">性 别:</view>
+          <view class="tt3">{{item.sex}}</view>
+        </view>
+        <view class="item3">
+          <view class="tt1">
+            <image src="../../icons/圆.png" mode="widthFix"></image>
+          </view>
+          <view class="tt2">年 龄:</view>
+          <view class="tt3">{{item.age}}</view>
+        </view>
+        <view class="item4">
+          <view class="tt1">
+            <image src="../../icons/圆.png" mode="widthFix"></image>
+          </view>
+          <view class="tt2">招聘职位:</view>
+          <view class="tt3">{{item.jobname}}</view>
+        </view>
+        <view class="item5">
+          <view class="tt1">
+            <image src="../../icons/圆.png" mode="widthFix"></image>
+          </view>
+          <view class="tt2">人岗匹配:</view>
+          <view class="tt3"><progress class="progress" percent="{{item.fit}}" stroke-width='15' activeColor="#d94f44" show-info></progress></view>
+        </view>
+        <view class="item6">
+          <view class="tt1">
+            <image src="../../icons/圆.png" mode="widthFix"></image>
+          </view>
+          <view class="tt2">综合评分:</view>
+          <view class="tt3"><progress class="progress" percent="{{item.grade}}" stroke-width='15' activeColor="#ffcd42" show-info></progress></view>
+        </view>
+        <view class="item7">
+          <button class="btn1" style="width:150rpx;margin-left:0rpx;">通过</button>
+          <button class="btn2" style="width:150rpx;margin-left:180rpx;margin-top:-70rpx;">驳回</button>
+          <button class="btn3" style="width:250rpx;margin-left:350rpx;margin-top:-70rpx;border-radius: 28rpx;font-size: 28rpx;">查看档案</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

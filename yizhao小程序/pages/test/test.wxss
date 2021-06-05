@@ -1,0 +1,16 @@
+/* pages/test/test.wxss */
+.box {
+  margin-top:20rpx;
+  width:800rpx;
+  height:600rpx;
+
+} 
+.box2 {
+  width:750rpx;
+  height:780rpx;
+} 
+.box3 {
+  width:750rpx;
+  height:880rpx;
+  margin-top:30rpx;
+} 

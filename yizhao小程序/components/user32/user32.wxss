@@ -1,0 +1,68 @@
+/* components/user32/user32.wxss */
+.body{
+  padding:35rpx 50rpx;
+}
+.top{
+  border-bottom: 4rpx solid #ededed;
+  width:100%;
+  height: 110rpx;
+}
+.title{
+  font-size: 32rpx;
+  color:black;
+  font-weight:550;
+  margin-bottom: 10rpx;
+}
+.text1{
+  font-size:25rpx;
+  color:#666;
+}
+.text2{
+  font-size:28rpx;
+  color:black;
+  margin-left: 260rpx;
+}
+.imgblock{
+  width:40rpx;
+  margin-left: 620rpx;
+  margin-top: -36rpx;
+}
+.choice-img{
+  width: 100%;
+}
+.items{
+  display: flex;
+  padding: 20rpx 0rpx;
+}
+.item1{
+  flex: 50%;
+}
+.imgsrc{
+  width: 96%;
+}
+.item-detail{
+  display:flex;
+  margin-top: 10rpx;
+}
+.left{
+  flex: 3;
+}
+.name{
+  font-size: 28rpx;
+  font-weight: bold;
+
+}
+.details{
+  color: #666;
+  font-size: 26rpx;
+}
+.right{
+  flex: 1;
+}
+.iconssrc{
+
+}
+.iconssrc image{
+  width: 60%;
+}
+

@@ -1,0 +1,259 @@
+/* pages/teacher/teacher.wxss */
+.top{
+  width: 100%;
+  height:460rpx;
+  background-color: var(--themecolor);
+}
+.peopleimg{
+  height: 200rpx;
+}
+.peopleimg image{
+  width:180rpx;
+  margin-left: 50rpx;
+  margin-top: 30rpx;
+}
+
+.intro1{
+  color: white;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-left: 50rpx;
+  margin-top: 20rpx;
+}
+
+.intro2{
+  color: rgb(224, 221, 221);
+  font-size: 30rpx;
+  margin-left: 50rpx;
+  margin-top: 15rpx;
+}
+.info{
+  display: flex;
+  margin-top: 40rpx;
+}
+.info1{
+  flex: 1.5;
+  margin-left: 50rpx;
+}
+.num{
+  color: white;
+  font-size: 38rpx;
+  font-weight: bold;
+}
+.text{
+  color: rgb(231, 228, 228);
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+.info2{
+  flex: 1.5;
+}
+.info3{
+  flex: 1;
+}
+.info3 navigator{
+  width:50%;
+  margin-top: -10rpx;
+  margin-left: 40rpx;
+}
+.info3 image{
+  width:80%;
+}
+.introo{
+  padding: 30rpx 50rpx;
+  height:300rpx;
+  border-bottom: 4rpx solid #ededed;
+}
+.title{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.intro-1{
+  display: flex;
+  margin-top: 30rpx;
+}
+.left{
+  flex:1;
+}
+.left .img111{
+  width: 80%;
+}
+.center{
+  flex: 1;
+}
+.name{
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-top: 15rpx;
+}
+.degree{
+  font-size: 30rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.right{
+  flex: 1;
+}
+.intro-2{
+  font-size: 30rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.comp{
+  padding: 30rpx 50rpx;
+  height:200rpx;
+  border-bottom: 4rpx solid #ededed;
+}
+.item2{
+  width: 100%;
+  margin-left: -30rpx;
+}
+.item2 image{
+  width: 80%;
+  margin-top: 36rpx;
+}
+
+.bottom{
+  border-top: 1px solid #ccc;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 30rpx 50rpx;
+  height: 80rpx;
+  background-color: #fff;
+  display: flex;
+}
+.sixin{
+  flex: 40%;
+  height: 100%;
+}
+.sixin image{
+  width: 100%;
+  height: 100%;
+}
+.jianli{
+  flex:40%;
+  height: 100%;
+}
+.jianli image{
+  width: 100%;
+  height: 100%;
+}
+.item-2{
+  padding: 50rpx 35rpx;
+}
+.evalueitems{
+  padding: 20rpx 0rpx;
+  display: flex;
+  margin-top: 10rpx;
+  border-bottom: 4rpx solid #ebebeb;
+}
+.imgsrc{
+  flex:1;
+}
+.imgsrc image{
+  width:80%;
+}
+.evalue-text{
+  flex:3.5;
+  color:#666;
+}
+
+
+scroll-view{
+  height: 128rpx;
+ 
+  width: 100%;
+}
+scroll-view .list{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+    width: 1302rpx; 
+}
+scroll-view .listItem{
+  text-align: center;
+  width: 186rpx;
+  height: 128rpx;
+  background-color: #f1f2f6;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+  /* float: left; */
+  display: inline-block;
+}
+scroll-view .listItem text{
+  display: block;
+}
+scroll-view .listItem .name{
+  font-size: 21rpx;
+}
+scroll-view .listItem .date{
+  font-size: 21rpx;
+}
+scroll-view .current{
+  background-color: #76aef8;
+
+}
+scroll-view .current text{
+  color: #fff;
+}
+.time{
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.time .listItem{
+  width: 25%;
+  height: 135rpx;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding-top: 35rpx;
+  border: 1px solid #b9c1c8;
+}
+.time .listItem text{
+  display: block;
+  font-size: 21rpx;
+}
+.time .current{
+  border: 1px solid #76aef8;
+}
+.time .current text{
+  color: #76aef8;
+}
+.operate button{
+  width:300rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.operate .del{
+  
+   color: #e54449; 
+}
+.operate button::after{
+  border: 2px solid #e54449;
+}
+.operate{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.operate button:nth-child(2):after{
+  border: 2px solid #e54449;
+}
+.operate .save{
+  color: #fff;
+  background-color: #e54449; 
+  
+}
+.operate{
+  width: 100%;
+  padding: 30rpx 0;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+}

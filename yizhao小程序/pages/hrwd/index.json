@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "Select": "../../components/select/select",
+    "tabs":"../../components/tabs/tabs"
+  },
+  "navigationBarTitleText": "直通车",
+  "navigationBarBackgroundColor": "#37c2bb",
+  "navigationBarTextStyle":"white"
+}

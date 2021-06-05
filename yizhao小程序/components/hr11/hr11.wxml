@@ -1,0 +1,60 @@
+<!--人才库-->
+<view class="body">
+  <view class="block-1">
+    <view class="title1">
+      易Zhao为您推荐    <text class="text2" style="font-weight:normal;">筛选</text>
+        <view class="imgblock">
+          <image src="../../icons/筛选.png" class="choice-img" mode="widthFix"></image>
+        </view>
+    </view>
+
+    <image src="../../images/user11-back.png" mode="widthFix">
+    </image>
+    <view class="block-1-item">
+      <navigator class="nav1">
+        <text>18位人才·28个匹配职位</text>
+        <image src="../../icons/向右.png" mode="widthFix" />
+      </navigator>
+      <view class="item1-1" wx:for="{{list1}}" wx:key="id">
+        <view class="item-left">
+          <image src="{{item.imgsrc}}" mode="widthFix"></image>
+        </view>
+        <view class="item-right">
+          <navigator url="" class="nav2">{{item.text1}}</navigator>
+          <view class="view2">{{item.text2}}</view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+  <view class="block-2">
+    <view class="top">
+      <view class="title">探索更多人才</view>
+      <view>
+        <text class="text1">368位人才等你来探索</text>
+        <text class="text2">筛选</text>
+        <view class="imgblock">
+          <image src="../../icons/筛选.png" class="choice-img" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="items" wx:for="{{companylist}}" wx:key="id">
+      <view class="left">
+        <image src="{{item.imgsrc}}" mode="widthFix"></image>
+      </view>
+      <view class="center">
+        <view class="title">{{item.title}}</view>
+        <view class="detail">{{item.detail}}</view>
+      </view>
+      <view class="right">
+        <image src="../../icons/向右.png" mode="widthFix"></image>
+      </view>
+    </view>
+
+  </view>
+
+
+</view>

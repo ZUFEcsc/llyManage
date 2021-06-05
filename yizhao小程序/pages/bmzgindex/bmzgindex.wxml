@@ -1,0 +1,43 @@
+<!--部门主管-评价板块-->
+<view class="top">
+  <text class="text1">待评价项目</text>
+  <text class="text2">待评价员工</text>
+</view>
+<view class="content">
+      <view class='left'>
+        <view class="{{flag==0?'select':'normal'}}" id='0' bindtap='switchNav'>A项目</view>
+        <view class="{{flag==1?'select':'normal'}}" id='1' bindtap='switchNav'>B项目</view>
+        <view class="{{flag==2?'select':'normal'}}" id='2' bindtap='switchNav'>C项目</view>
+        <view class="{{flag==3?'select':'normal'}}" id='3' bindtap='switchNav'>D项目</view>
+      </view>
+      <view class='right'>
+        <view class='category'>
+          <swiper current='{{currentTab}}' style='height:500px' vertical="{{true}}">
+            <swiper-item id='0' catchtouchmove="stopTouchMove">
+              <!--A项目待评价员工-->
+              <view class="item">
+              <view class="items" wx:for="{{employlist}}" wx:key="id">
+
+                <view class="picsrc"><image mode="widthFix" src="{{item.picsrc}}"></image></view>
+                <view class="name">{{item.name}}</view>
+
+              </view>
+              </view>
+
+            </swiper-item>
+            <swiper-item id='1' catchtouchmove="stopTouchMove">
+              专家B
+            </swiper-item>
+            <swiper-item id='2' catchtouchmove="stopTouchMove">
+              专家C
+            </swiper-item>
+            <swiper-item id='3' catchtouchmove="stopTouchMove">
+              专家D
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+    </view>
+<!--底部导航栏-->
+<import src="../../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />

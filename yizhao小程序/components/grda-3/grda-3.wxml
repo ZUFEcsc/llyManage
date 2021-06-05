@@ -1,0 +1,13 @@
+<!--pages/test/test.wxml-->
+<!--自我评价-->
+<view class="box" style="margin-top:20rpx;margin-left:10rpx;width:800rpx;height:600rpx;">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec2}}"></ec-canvas>
+</view>
+<!--综合得分-->
+<view class="box3">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec3}}"></ec-canvas>
+</view>
+<!--综合得分-->
+<view class="box2" style="margin-top:30rpx;">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec}}"></ec-canvas>
+</view>

@@ -1,0 +1,26 @@
+<!-- pages/login/login.wxml -->
+<view class="top">
+
+        <image src="../../images/logo.png" style="width:60%;" mode="widthFix" class="img-logo"></image>
+
+</view>
+<view class='container'>
+    <form bindsubmit="onSubmit">
+        <view class="User">
+            <image class="icons" src="../../icons/人物.png" style="width:60rpx;height:60rpx;"></image>
+            <input placeholder="请输入账号" type="text" style="border:none;" name="account"/>
+        </view>
+        <view class="password">
+            <image class="icons" src="../../icons/锁.png" style="width:60rpx;height:60rpx;"></image>
+            <input placeholder="请输入密码" type="password" style="border:none;" name="pwd" />
+        </view>
+        <view class="yhlx">
+            <Select class="select" prop-array='{{selectArray2}}' bind:myget='getDate'></Select>
+        </view>
+        <view class="btn">
+            <button form-type='submit' class="dl" size="mini">
+                <image src="../../images/button.PNG" style="width:380rpx;height:100rpx;"></image>
+            </button>
+        </view>
+    </form>
+</view>

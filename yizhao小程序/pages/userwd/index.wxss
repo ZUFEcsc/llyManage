@@ -1,0 +1,110 @@
+/* pages/userwd/index.wxss */
+.item1{
+  background-color: var(--themecolor);
+  width: 100%;
+  height: 450rpx;
+}
+.item1-0{
+  padding: 35rpx 50rpx;
+  display: flex;
+}
+.tt{
+  flex: 3;
+}
+.img11{
+  width: 50rpx;
+  flex: 0.5;
+
+}
+.img12{
+  flex: 0.5;
+  width: 50rpx;
+  margin-left: 30rpx;
+}
+.item1-1{
+  display: flex;
+  padding: 0 50rpx;
+}
+.ttt1{
+  flex: 1;
+}
+.img1{
+  width: 70%;
+}
+.name{
+  flex: 1;
+  font-size: 40rpx;
+  color: white;
+  font-weight: bold;
+}
+.ttt{
+  flex: 2;
+}
+.item1-2{
+  display: flex;
+  padding:50rpx 130rpx;
+}
+.item1-2-1{
+  flex: 1;
+
+}
+.item1-2-2{
+  flex: 1;
+}
+.item1-2-3{
+  flex: 1;
+}
+.num{
+  color: white;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-left:60rpx;
+}
+.detail{
+  color: white;
+  font-size: 30rpx;
+  margin-left:30rpx;
+  margin-top: 30rpx;
+}
+.detail2{
+  color: white;
+  font-size: 30rpx;
+  margin-left:45rpx;
+  margin-top: 30rpx;
+}
+.detail3{
+  color: white;
+  font-size: 30rpx;
+  margin-left:27rpx;
+  margin-top: 30rpx;
+}
+.items{
+  padding: 10rpx 50rpx;
+ 
+}
+.item2{
+  display: flex;
+  border-bottom: 2rpx solid #ededed;
+  margin-top: 0rpx;
+  padding: 30rpx 0;
+}
+.iconsrc{
+  flex: 0.5;
+  width: 50rpx;
+}
+.iconsrc image{
+  width: 50%;
+}
+.text{
+  flex: 2;
+  margin-top: 10rpx;
+}
+.right{
+  flex: 0.5;
+  
+}
+.right image{
+  width: 30%;
+  margin-left: 80rpx;
+  margin-top: 10rpx;
+}

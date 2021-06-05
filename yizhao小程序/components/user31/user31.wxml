@@ -1,0 +1,24 @@
+<!--就业指南-职业指导-面试题库板块-->
+<view class="body">
+  <view class="items" wx:for="{{questlist}}" wx:key="id">
+
+    <view class="title">{{item.title}}</view>
+    <view class="img1">
+      <image src="{{item.imgsrc}}" mode="widthFix" class="imgsrc1"></image>
+    </view>
+    <view class="details">{{item.details}}</view>
+    <view class="people">
+      <view class="left">
+        <image src="{{item.picsrc}}" mode="widthFix"></image> </view>
+        <view class="right">
+          <view class="name">{{item.name}}</view>
+          <view class="degree">{{item.degree}}</view>
+        </view>
+        <view class="null"></view>
+    </view>
+
+  </view>
+
+
+
+</view>

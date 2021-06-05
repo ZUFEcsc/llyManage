@@ -1,0 +1,49 @@
+<!--pages/userindex/userindex.wxml-->
+<!--顶部搜索框-->
+<searchinput> </searchinput>
+<view class="body">
+<view class="top">
+
+  <text class="text1">正在进行</text>
+  <text class="text2">历史招聘</text>
+
+    <text class="text4">筛选</text>
+    <view class="imgblock">
+    <image src="../../icons/筛选.png" class="choice-img" mode="widthFix"></image></view>
+</view>
+
+
+
+<view class="items" wx:for="{{joblist}}" wx:key="id">
+<view class="item1">
+  <text class="jobname">{{item.jobname}}</text>
+  <text class="money">{{item.money}}</text>
+</view>
+<view class="item2">
+  <text wx:for="{{item.children}}" wx:key="idd" wx:for-item="item2" class="item22">
+    <text class="text">{{item2.text}}</text>
+  </text>
+</view>
+<view class="item3">
+  <text class="detail">{{item.detail}}</text>
+</view>
+<view class="item4">
+  <view class="imgsrc"><image src="{{item.imgsrc}}" mode="widthFix"></image></view>
+  <view class="peoplename">{{item.peoplename}}</view>
+  <view class="center"></view>
+  <view class="local">{{item.local}}</view>
+</view>
+<view class="item5">
+  <view class="peoplenum"><text>{{item.peoplenum}}
+  </text></view>
+  <view class="tt"></view>
+  <navigator class="shenhe" url="../../pages/hr-01/hr-01"><text>去审核</text></navigator>
+</view>
+
+
+</view>
+  
+</view>
+<!--底部导航栏-->
+<import src="../../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />

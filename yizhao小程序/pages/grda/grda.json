@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "Select": "../../components/select/select",
+    "tabs":"../../components/tabs/tabs",
+    "grda-2":"../../components/grda-2/grda-2",
+    "grda-3":"../../components/grda-3/grda-3"
+
+
+    
+  },
+  "navigationBarTitleText": "个人档案",
+  "navigationBarBackgroundColor": "#37c2bb",
+  "navigationBarTextStyle":"white"
+}

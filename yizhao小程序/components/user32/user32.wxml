@@ -1,0 +1,64 @@
+<!--就业指南-情景对话-->
+<view class="body">
+
+  <view class="top">
+<view class="title">名师一对一</view>
+<view>
+  <text class="text1">45位名师·15个领域·等你来选</text>
+    <text class="text2">筛选</text>
+    <view class="imgblock">
+    <image src="../../icons/筛选.png" class="choice-img" mode="widthFix"></image></view>
+</view>
+
+</view>
+<!--名师列表循环-->
+<view class="items">
+<view class="item1" wx:for="{{dialoglist}}" wx:key="id">
+  <navigator url="../../pages/teacher/teacher" class="imgsrc"><image src="{{item.imgsrc}}" mode="widthFix"></image></navigator>
+  <view class="item-detail">
+  <view class="left">
+    <view class="name">{{item.name}}</view>
+    <view class="details">{{item.details}}</view>
+  </view>
+  <view class="right">
+    <view class="iconssrc"><image src="{{item.iconssrc}}" mode="widthFix"></image></view>
+  </view>
+</view>
+
+</view>
+</view>
+
+
+<view class="items">
+<view class="item1" wx:for="{{dialoglist}}" wx:key="id">
+  <view class="imgsrc"><image src="{{item.imgsrc}}" mode="widthFix"></image></view>
+  <view class="item-detail">
+  <view class="left">
+    <view class="name">{{item.name}}</view>
+    <view class="details">{{item.details}}</view>
+  </view>
+  <view class="right">
+    <view class="iconssrc"><image src="{{item.iconssrc}}" mode="widthFix"></image></view>
+  </view>
+</view>
+
+</view>
+</view>
+
+<view class="items">
+<view class="item1" wx:for="{{dialoglist}}" wx:key="id">
+  <view class="imgsrc"><image src="{{item.imgsrc}}" mode="widthFix"></image></view>
+  <view class="item-detail">
+  <view class="left">
+    <view class="name">{{item.name}}</view>
+    <view class="details">{{item.details}}</view>
+  </view>
+  <view class="right">
+    <view class="iconssrc"><image src="{{item.iconssrc}}" mode="widthFix"></image></view>
+  </view>
+</view>
+
+</view>
+</view>
+
+</view>

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50562
 File Encoding         : 65001
 
-Date: 2021-04-20 01:41:22
+Date: 2021-04-21 19:36:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,6 +37,7 @@ CREATE TABLE `clock_in_evaluate` (
 -- ----------------------------
 -- Records of clock_in_evaluate
 -- ----------------------------
+INSERT INTO `clock_in_evaluate` VALUES ('SZ001F0001', '张琪', '普通员工', '2021-04-20', '25', '1', '1', '1', '2', '王畅畅', '');
 
 -- ----------------------------
 -- Table structure for company_basic_info
@@ -109,46 +110,47 @@ CREATE TABLE `company_seek_info` (
   `deliver_time` date NOT NULL,
   `state` varchar(50) CHARACTER SET utf8 NOT NULL,
   `advantage` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `apply` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`seek_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of company_seek_info
 -- ----------------------------
-INSERT INTO `company_seek_info` VALUES ('SZ10001', 'AH001F', '上海', '项目经理', '1', '博士', '有过相关工作经验', '2w-4w', '2020-07-23', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ100010', 'BJ001F', '福建', '普通员工', '2', '本科以上', '不限', '3k-5.5k', '2020-12-01', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ100011', 'FJ001F', '上海', '普通员工', '2', '本科以上', '不限', '1w-2w', '2020-11-12', '1', '五险一金');
-INSERT INTO `company_seek_info` VALUES ('SZ100012', 'FJ001F', '北京', '普通员工', '1', '本科以上', '不限', '1w-3w', '2019-12-30', '1', '五险一金');
-INSERT INTO `company_seek_info` VALUES ('SZ100013', 'FJ001F', '深圳', '项目经理', '1', '博士', '担任过主管以上职位', '3w-6w', '2020-09-23', '1', '五险一金');
-INSERT INTO `company_seek_info` VALUES ('SZ10002', 'AH001F', '北京', '项目经理', '1', '博士', '有过相关经验', '2w-4w', '2020-05-30', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ10003', 'AH001F', '安徽', '项目经理', '1', '博士', '有过相关工作经验', '2w-4w', '2020-08-23', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ10004', 'AH001F', '深圳', '部门主管', '2', '硕士以上', '有过相关工作经验', '3w-4.5w', '2020-11-24', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ10005', 'AH001F', '湖南', '普通员工', '1', '本科以上', '不限', '1w-3w', '2020-06-13', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ10006', 'BJ001F', '上海', '部门主管', '1', '硕士以上', '有过相关工作经验', '2k-3.5k', '2020-11-12', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ10007', 'BJ001F', '北京', '项目经理', '1', '博士', '有过相关工作经验', '1w-2w', '2021-03-01', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ10008', 'BJ001F', '厦门', '部门主管', '2', '硕士以上', '有过相关工作经验', '1.5w-3w', '2021-01-06', '2', '五险一金，单休');
-INSERT INTO `company_seek_info` VALUES ('SZ10009', 'BJ001F', '深圳', '普通员工', '2', '本科以上', '不限', '7k-9k', '2021-03-17', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ11001', 'FJ001F', '福建', '普通员工', '3', '本科以上', '不限', '8k-2w', '2020-10-12', '1', '五险一金');
-INSERT INTO `company_seek_info` VALUES ('SZ11002', 'HN001F', '上海', '部门主管', '2', '硕士以上', '有过相关工作经验', '2w-4w', '2020-11-11', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ11003', 'HN001F', '北京', '部门主管', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2020-11-13', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ11004', 'HN001F', '深圳', '办公室主任', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2020-04-21', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ12001', 'HN001F', '湖北', '办公室主任', '2', '硕士以上', '有过相关工作经验', '2w-3w', '2019-02-21', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ12002', 'HN001F', '湖南', '办公室主任', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2020-03-21', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ12003', 'SC001F', '上海', '普通员工', '1', '本科以上', '不限', '2w-3w', '2020-01-01', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ12004', 'SC001F', '北京', '办公室主任', '2', '硕士以上', '有过相关工作经验', '2w-3w', '2020-02-02', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ12005', 'SC001F', '四川', '普通员工', '1', '本科以上', '不限', '2w-3w', '2020-01-01', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ12006', 'SC001F', '广州', '部门主管', '1', '硕士以上', '有过相关工作经验', '3w-4w', '2019-12-12', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ14001', 'SC001F', '深圳', '办公室主任', '2', '硕士以上', '有过相关工作经验', '2w-3w', '2020-03-04', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ14002', 'SH001F', '上海', '普通员工', '2', '本科以上', '不限', '1w-2w', '2020-08-08', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ14003', 'SH001F', '北京', '普通员工', '2', '本科以上', '不限', '2w-3w', '2020-09-09', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ17001', 'SH001F', '广州', '部门主管', '1', '硕士以上', '有过相关工作经验', '2w-3.5w', '2020-04-04', '1', '五险一金，单休');
-INSERT INTO `company_seek_info` VALUES ('SZ17002', 'SH001F', '深圳', '普通员工', '1', '本科以上', '不限', '1w-2w', '2020-03-03', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ18001', 'SH001F', '湖北', '部门主管', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2020-03-23', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ18002', 'SH001F', '湖南', '部门主管', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2021-01-02', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ18003', 'SZ001F', '上海', '项目经理', '4', '博士', '有过相关工作经验', '2w-3w', '2020-10-11', '2', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ19001', 'SZ001F', '北京', '部门主管', '4', '硕士以上', '有过相关工作经验', '2w-3w', '2020-11-11', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ20001', 'SZ001F', '深圳', '项目经理', '5', '博士', '有过相关工作经验', '2w-3w', '2021-02-10', '1', '五险一金，双休');
-INSERT INTO `company_seek_info` VALUES ('SZ21001', 'SZ001F', '深圳', '部门主管', '5', '硕士以上', '有过相关工作经验', '2w-3w', '2020-12-12', '1', '五险一金，双休');
+INSERT INTO `company_seek_info` VALUES ('SZ10001', 'AH001F', '上海', '项目经理', '1', '博士', '有过相关工作经验', '2w-4w', '2020-07-23', '1', '五险一金，双休', '2');
+INSERT INTO `company_seek_info` VALUES ('SZ100010', 'BJ001F', '福建', '普通员工', '2', '本科以上', '不限', '3k-5.5k', '2020-12-01', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ100011', 'FJ001F', '上海', '普通员工', '2', '本科以上', '不限', '1w-2w', '2020-11-12', '1', '五险一金', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ100012', 'FJ001F', '北京', '普通员工', '1', '本科以上', '不限', '1w-3w', '2019-12-30', '1', '五险一金', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ100013', 'FJ001F', '深圳', '项目经理', '1', '博士', '担任过主管以上职位', '3w-6w', '2020-09-23', '1', '五险一金', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ10002', 'AH001F', '北京', '项目经理', '1', '博士', '有过相关经验', '2w-4w', '2020-05-30', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ10003', 'AH001F', '安徽', '项目经理', '1', '博士', '有过相关工作经验', '2w-4w', '2020-08-23', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ10004', 'AH001F', '深圳', '部门主管', '2', '硕士以上', '有过相关工作经验', '3w-4.5w', '2020-11-24', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ10005', 'AH001F', '湖南', '普通员工', '1', '本科以上', '不限', '1w-3w', '2020-06-13', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ10006', 'BJ001F', '上海', '部门主管', '1', '硕士以上', '有过相关工作经验', '2k-3.5k', '2020-11-12', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ10007', 'BJ001F', '北京', '项目经理', '1', '博士', '有过相关工作经验', '1w-2w', '2021-03-01', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ10008', 'BJ001F', '厦门', '部门主管', '2', '硕士以上', '有过相关工作经验', '1.5w-3w', '2021-01-06', '2', '五险一金，单休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ10009', 'BJ001F', '深圳', '普通员工', '2', '本科以上', '不限', '7k-9k', '2021-03-17', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ11001', 'FJ001F', '福建', '普通员工', '3', '本科以上', '不限', '8k-2w', '2020-10-12', '1', '五险一金', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ11002', 'HN001F', '上海', '部门主管', '2', '硕士以上', '有过相关工作经验', '2w-4w', '2020-11-11', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ11003', 'HN001F', '北京', '部门主管', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2020-11-13', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ11004', 'HN001F', '深圳', '办公室主任', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2020-04-21', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ12001', 'HN001F', '湖北', '办公室主任', '2', '硕士以上', '有过相关工作经验', '2w-3w', '2019-02-21', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ12002', 'HN001F', '湖南', '办公室主任', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2020-03-21', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ12003', 'SC001F', '上海', '普通员工', '1', '本科以上', '不限', '2w-3w', '2020-01-01', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ12004', 'SC001F', '北京', '办公室主任', '2', '硕士以上', '有过相关工作经验', '2w-3w', '2020-02-02', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ12005', 'SC001F', '四川', '普通员工', '1', '本科以上', '不限', '2w-3w', '2020-01-01', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ12006', 'SC001F', '广州', '部门主管', '1', '硕士以上', '有过相关工作经验', '3w-4w', '2019-12-12', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ14001', 'SC001F', '深圳', '办公室主任', '2', '硕士以上', '有过相关工作经验', '2w-3w', '2020-03-04', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ14002', 'SH001F', '上海', '普通员工', '2', '本科以上', '不限', '1w-2w', '2020-08-08', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ14003', 'SH001F', '北京', '普通员工', '2', '本科以上', '不限', '2w-3w', '2020-09-09', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ17001', 'SH001F', '广州', '部门主管', '1', '硕士以上', '有过相关工作经验', '2w-3.5w', '2020-04-04', '1', '五险一金，单休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ17002', 'SH001F', '深圳', '普通员工', '1', '本科以上', '不限', '1w-2w', '2020-03-03', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ18001', 'SH001F', '湖北', '部门主管', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2020-03-23', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ18002', 'SH001F', '湖南', '部门主管', '1', '硕士以上', '有过相关工作经验', '2w-4w', '2021-01-02', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ18003', 'SZ001F', '上海', '项目经理', '4', '博士', '有过相关工作经验', '2w-3w', '2020-10-11', '2', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ19001', 'SZ001F', '北京', '部门主管', '4', '硕士以上', '有过相关工作经验', '2w-3w', '2020-11-11', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ20001', 'SZ001F', '深圳', '项目经理', '5', '博士', '有过相关工作经验', '2w-3w', '2021-02-10', '1', '五险一金，双休', '1');
+INSERT INTO `company_seek_info` VALUES ('SZ21001', 'SZ001F', '深圳', '部门主管', '5', '硕士以上', '有过相关工作经验', '2w-3w', '2020-12-12', '1', '五险一金，双休', '1');
 
 -- ----------------------------
 -- Table structure for company_username_info
@@ -220,6 +222,7 @@ CREATE TABLE `department_manager_evaluate` (
 -- ----------------------------
 -- Records of department_manager_evaluate
 -- ----------------------------
+INSERT INTO `department_manager_evaluate` VALUES ('SZ001F0001', '张琪', '普通员工', '2021-04-20', '优秀', '优秀', '优秀', '优秀', '优秀', '王颖', null);
 
 -- ----------------------------
 -- Table structure for grade-evaluate
@@ -404,6 +407,7 @@ CREATE TABLE `login_info` (
 -- ----------------------------
 -- Records of login_info
 -- ----------------------------
+INSERT INTO `login_info` VALUES ('', '', '', null, null, '2021-04-20', null, null, null, null, null, null, null);
 INSERT INTO `login_info` VALUES ('20041011', '111', null, '张小倩', '3300001', '2010-02-01', null, null, null, null, null, null, null);
 INSERT INTO `login_info` VALUES ('20041012', '111', null, '王聪', '3300002', '2010-02-01', null, null, null, null, null, null, null);
 INSERT INTO `login_info` VALUES ('20041013', '111', null, '叶子舒', '3300004', '2010-02-01', null, null, null, null, null, null, null);
@@ -455,6 +459,8 @@ INSERT INTO `login_info` VALUES ('20130202', '111', null, '叶倩文', '3300006'
 INSERT INTO `login_info` VALUES ('20140101', '111', null, '刘子辉', '3300014', '2010-02-01', null, null, null, null, null, null, null);
 INSERT INTO `login_info` VALUES ('20150101', '111', null, '张亮', '3300015', '2010-02-01', null, null, null, null, null, null, null);
 INSERT INTO `login_info` VALUES ('20160101', '111', null, '王光磊', '3300019', '2010-02-01', null, null, null, null, null, null, null);
+INSERT INTO `login_info` VALUES ('user', '111', '', '111', '1111', '2021-04-20', '女', '汉', '群众', '1111', '11111', '2021-03-29', '2021-05-02');
+INSERT INTO `login_info` VALUES ('user2', '111', '111@163.com', '张三', '33000005', '2021-04-20', '男', '汉', '群众', '创新创业小学', '优秀毕业生', '2021-04-01', '2021-04-25');
 INSERT INTO `login_info` VALUES ('usera', '111', null, '孙蕾', '4300007', '2000-01-01', null, null, null, null, null, null, null);
 INSERT INTO `login_info` VALUES ('userd', '111', null, '王畅畅', '3300023', '2010-02-01', null, null, null, null, null, null, null);
 INSERT INTO `login_info` VALUES ('userh', '111', null, '王汪', '3300100', '2020-01-01', null, null, null, null, null, null, null);
@@ -652,3 +658,4 @@ CREATE TABLE `worklogin` (
 -- ----------------------------
 -- Records of worklogin
 -- ----------------------------
+INSERT INTO `worklogin` VALUES ('赵子龙');

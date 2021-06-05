@@ -1,0 +1,34 @@
+<!--线上考核板块-->
+<view class="body">
+<view class="top">
+<view class="title">考核进度</view>
+<view>
+  <text class="text1">目前有3场考核正在进行</text>
+  <button style="width:80rpx;border-radius:90rpx;background-color:var(--themecolor);font-size:40rpx;color:white;font-weight:bold;margin-right:10rpx;margin-top:-80rpx;"><text style="margin-left:-15rpx;margin-top:-5rpx;">+</text></button>
+</view>
+<!--考核列表循环-->
+</view>
+<view class="item" wx:for="{{testList}}" wx:key="id">
+<view class="item-1">
+  <view class="left">
+    <image src="{{item.comimg}}" mode="widthFix"></image>
+  </view>
+  <view class="right">
+    <view class="comname">{{item.comname}}</view>
+    <view class="comdescribe">{{item.comdescribe}}</view>
+  </view>
+
+</view>
+<view wx:for="{{item.children}}" wx:for-item="item1" wx:key="id" class="item-child">
+<view class="testleft">
+  <view class="testname">{{item1.testname}}</view>
+  <view class="testdescribe">{{item1.testdescribe}}</view>
+</view>
+<view class="testright">
+  <view class="testdegree">{{item1.testdegree}}</view>
+</view>
+</view>
+</view>
+
+
+</view>

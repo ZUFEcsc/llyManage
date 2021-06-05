@@ -1,0 +1,46 @@
+<!--用户-我的-->
+<view class="body">
+
+
+  <view class="item1">
+    <view class="item1-0">
+      <text class="tt"></text>
+      <navigator><image class="img11" src="../../icons/扫一扫.png" mode="widthFix"></image></navigator>
+      <navigator><image class="img12" src="../../icons/设置.png" mode="widthFix"></image></navigator>
+    </view>
+    <view class="item1-1">
+      <view class="ttt1"><image src="../../icons/humans-2.png" mode="widthFix" class="img1"></image></view>
+      <text class="name">刘宇</text>
+      <text class="ttt"></text>
+    </view>
+    <view class="item1-2">
+      <view class="item1-2-1">
+        <view class="num">2</view>
+        <view class="detail">沟通过</view>
+      </view>
+      <view class="item1-2-2">
+        <view class="num">0</view>
+        <view class="detail2">面试</view>
+      </view>
+      <view class="item1-2-3">
+        <view class="num">0</view>
+        <view class="detail3">已投简历</view>
+      </view>
+    </view>
+  </view>
+<view class="items">
+  <view class="item2" wx:for="{{minelist}}" wx:key="id">
+    <view class="iconsrc"><image src="{{item.iconsrc}}" mode="widthFix"></image></view>
+    <navigator url="{{item.url}}" class="text">{{item.text}}</navigator>
+    <view class="right"><image src="../../icons/向右.png" mode="widthFix"></image></view>
+  </view>
+
+</view>
+
+</view>
+
+
+
+
+<import src="../../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />

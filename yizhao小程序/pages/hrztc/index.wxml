@@ -1,0 +1,67 @@
+<!--pages/userztc/index.wxml-->
+<tabs tabs="{{tabs}}" bind:tabsitemchange="handletabsitemchange">
+  <!--智能推荐-板块-->
+  <block wx:if="{{tabs[0].isactive}}">
+    <tabs1 tabs="{{tabs1}}" bind:tabsitemchange="handletabsitemchange1">
+    </tabs1>
+    <block wx:if="{{tabs1[0].isactive}}">
+      <hr11></hr11>
+    </block>
+    <block wx:if="{{tabs1[1].isactive}}">
+      <user12></user12>
+    </block>
+  </block>
+  <!--面试直通板块-->
+  <block wx:elif="{{tabs[1].isactive}}">
+    <tabs2 tabs="{{tabs2}}" bind:tabsitemchange="handletabsitemchange2">
+    </tabs2>
+    <block wx:if="{{tabs2[0].isactive}}">
+      <hr21></hr21>
+    </block>
+    <block wx:if="{{tabs2[1].isactive}}">
+      <hr22></hr22>
+    </block>
+    <block wx:if="{{tabs2[2].isactive}}">
+      <hr23></hr23>
+    </block>
+
+  </block>
+
+  <!--就业指南板块-->
+  <block wx:elif="{{tabs[2].isactive}}">
+
+
+    <tabs2 tabs="{{tabs3}}" bind:tabsitemchange="handletabsitemchange3">
+    </tabs2>
+    <block wx:if="{{tabs3[0].isactive}}">
+      <tabs31 tabs="{{tabs31}}" bind:tabsitemchange="handletabsitemchange31">
+        <!--面试题库板块-->
+        <block wx:if="{{tabs31[0].isactive}}">
+          <user31></user31>
+        </block>
+        <block wx:if="{{tabs31[1].isactive}}">
+          2
+        </block>
+        <block wx:if="{{tabs31[2].isactive}}">
+          3
+        </block>
+      </tabs31>
+
+<!--情景对话板块-->
+    </block>
+    <block wx:if="{{tabs3[1].isactive}}">
+      <user32></user32>
+    </block>
+    <block wx:if="{{tabs3[2].isactive}}">
+      <user33></user33>
+    </block>
+
+
+
+  </block>
+</tabs>
+
+
+
+<import src="../../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />

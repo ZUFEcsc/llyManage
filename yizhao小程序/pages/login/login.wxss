@@ -1,0 +1,94 @@
+.top .img-logo{
+  margin: auto;
+  display: flex;
+  margin-top:280rpx;
+}
+.container{
+  margin-top:160rpx;
+}
+form{
+  width: 310px;
+  height: 260px;
+  line-height: 40px;
+  margin-top:-200rpx;
+}
+
+input{
+  flex: 6;
+  border: 1px solid #01cbfd;
+  height: 80rpx;
+  margin-left: 22rpx;
+  font-size:16.5px;
+  color:#3e3f3f;
+}
+
+.icons{
+  padding-left: 20rpx;
+}
+
+.User{
+  display: flex;
+  width: 90%;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px #8d8c8c;
+
+  margin: auto;
+  margin-bottom: 40rpx;
+}
+
+.password{
+  display: flex;
+  width: 90%;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px #8d8c8c;
+
+  margin: auto;
+  margin-bottom: 40rpx;
+}
+
+.yhlx{
+  display: flex;
+  width: 40%;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  margin: auto;
+  margin-bottom: 40rpx;
+}
+
+.btn{
+  display: flex;
+}
+
+.dl{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  margin: auto;
+}
+button image{
+  margin-top: 20rpx;
+}
+.bottom{
+  display: flex;
+  margin-top: -160rpx;
+}
+.login{
+  flex: 1;
+  padding-left: 150rpx;
+  color: #c6c6c6;
+}
+.reg{
+  flex: 1;
+  padding-left: 150rpx;
+  color: #c6c6c6;
+}
+
+
+

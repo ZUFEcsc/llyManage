@@ -1,0 +1,26 @@
+<!--就业指南-就业帮助-->
+<view class="body">
+
+  <view class="top">
+    <view class="title">问答圈子</view>
+    <view>
+      <text class="text1">130个问题等你来答·也可发布你的提问</text>
+      <text class="text2">提问</text>
+      <view class="imgblock">
+        <image src="../../icons/帮助.png" class="choice-img" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="items" wx:for="{{helplist}}" wx:key="id">
+    <view class="title2">{{item.title}}</view>
+    <view class="detail">{{item.detail}}</view>
+    <view class="people">
+      <image src="{{item.imgsrc}}" mode="widthFix" style="width:50rpx;height:50rpx;" class="img1"></image>
+      <text class="text1">{{item.text}}</text>
+      <image src="../../icons/更多.png" mode="widthFix" style="width:36rpx;" class="img2"></image>
+    </view>
+
+  </view>
+
+</view>

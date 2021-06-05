@@ -1,0 +1,61 @@
+<!--企业库-->
+<view class="body">
+  <view class="block-1">
+    <view class="title1">
+      易Zhao为您推荐
+    </view>
+    <image src="../../images/back-2.png" mode="widthFix" style="opacity:{{0.3}};">
+    </image>
+    <view class="block-1-item">
+      <navigator class="nav1">
+        <text>18种岗位·108家匹配企业</text>
+        <image src="../../icons/向右.png" mode="widthFix" />
+      </navigator>
+      <view class="item1-1" wx:for="{{list1}}" wx:key="id">
+        <view class="item-left">
+          <image src="{{item.imgsrc}}" mode="widthFix"></image>
+        </view>
+        <view class="item-right">
+          <navigator url="" class="nav2">{{item.text1}}</navigator>
+          <view class="view2">{{item.text2}}</view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+  <view class="block-2">
+    <view class="top">
+      <view class="title">探索更多企岗位</view>
+      <view>
+        <text class="text1">1056个职位·160家企业</text>
+        <text class="text2">筛选</text>
+        <view class="imgblock">
+          <image src="../../icons/筛选.png" class="choice-img" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="itemss" wx:for="{{companylist}}" wx:key="id">
+      <view class="items">
+        <view class="left">
+          <image src="{{item.imgsrc}}" mode="widthFix"></image>
+        </view>
+        <view class="center">
+          <view class="title">{{item.title}}</view>
+          <view class="detail">{{item.detail}}</view>
+        </view>
+        <view class="right">
+          <image src="../../icons/向右.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="items2" wx:for="{{item.children}}" wx:key="idd" wx:for-item="item2">
+        <view class="itemsss">
+          <text class="jobname">{{item2.jobname}}</text>
+          <text class="money">{{item2.money}}</text></view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,10 @@
+<!--个人档案--综合评价板块-->
+
+<!--自我评价-->
+<view class="box">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec2}}"></ec-canvas>
+</view>
+<!--综合得分-->
+<view class="box2">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec}}"></ec-canvas>
+</view>

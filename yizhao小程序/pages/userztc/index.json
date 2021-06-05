@@ -1,0 +1,23 @@
+{
+  "usingComponents": {
+    "Select": "../../components/select/select",
+    "tabs":"../../components/tabs/tabs",
+    "tabs1":"../../components/tabs1/tabs1",
+    "tabs2":"../../components/tabs2/tabs2",
+    "tabs3":"../../components/tabs3/tabs3",
+    "tabs31":"../../components/tabs31/tabs31",
+    "user11":"../../components/user11/user11",
+    "user12":"../../components/user12/user12",
+    "user21":"../../components/user21/user21",
+    "user22":"../../components/user22/user22",
+    "user23":"../../components/user23/user23",
+    "user31":"../../components/user31/user31",
+    "user32":"../../components/user32/user32",
+    "user33":"../../components/user33/user33"
+
+    
+  },
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#37c2bb",
+  "navigationBarTextStyle":"white"
+}

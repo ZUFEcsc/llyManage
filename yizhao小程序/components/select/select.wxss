@@ -1,0 +1,64 @@
+.com-selectBox{
+    width: 300px;
+    height:50px;
+}
+.com-sContent{
+  position:relative;
+  display: flex;
+  width: 93%;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px #8d8c8c;
+
+  margin: auto;
+  margin-bottom: 40rpx;
+}
+.icons-choice{
+    position:absolute;
+    left:10px;
+    top:6px;
+
+}
+.com-sImg{
+    position: absolute;
+    right: 8px;
+    top: 13px;
+    width: 22px;
+    height: 14px;
+    transition: all .3s ease;
+}
+.com-sTxt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: absolute;
+    left:50px;
+    font-size: 16.5px;
+    color:#808080;
+}
+.com-sList{
+    background: white;
+    width: inherit;
+    position: absolute;
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    box-sizing: border-box;
+    z-index: 3;
+    max-height: 150px;
+    overflow: auto;
+}
+.com-sItem{
+    height: 30px;
+    weight:80%;
+    line-height: 30px;
+    border-top: 1px solid #e2e2e2;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+.com-sItem:first-child{
+    border-top: none;
+}

@@ -1,0 +1,113 @@
+/* pages/hr-01/hr-01.wxss */
+.body{
+  padding: 35rpx 50rpx;
+}
+.item54{
+  display: flex;
+  padding: 20rpx 0rpx;
+  height: 150rpx;
+}
+.peoplenum{
+  flex: 2;
+  float: left;
+  height: 50rpx;
+  border-radius: 50rpx;
+  background-color: #489eca;
+}
+.peoplenum text{
+  color: white;
+  margin-left: 70rpx;
+  font-weight: bold;
+}
+.tt{
+  flex: 1;
+}
+.shenhe{
+  fleX:1;
+  float:right;
+  height: 50rpx;
+  border-radius: 50rpx;
+  background-color: var(--themecolor);
+}
+.shenhe text{
+  color: white;
+  margin-left: 26rpx;
+  font-weight: bold;
+}
+.bodyy{
+  margin-top: -70rpx;
+}
+.item{
+  margin-top: -10rpx;
+  padding:10rpx 0rpx;
+  margin-left: -10rpx;
+}
+.items{
+
+  border: solid 2px #37c2bb;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-left: 10rpx;
+  margin-top: 30rpx;
+}
+.item1{
+  display: flex;
+  height: 60rpx;
+}
+.item2{
+  display: flex;
+  height: 60rpx;
+}
+.item3{
+  display: flex;
+  height: 60rpx;
+}
+.item4{
+  display: flex;
+  height: 60rpx;
+}
+.item5{
+  display: flex;
+  height: 60rpx;
+}
+.item6{
+  display: flex;
+  height: 60rpx;
+}
+.tt1{
+  flex: 0.4;
+}
+.tt1 image{
+  width: 50%;
+  margin-top: 5rpx;
+  margin-left:10rpx;
+}
+.tt2{
+  flex: 1.2;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+}
+.tt3{
+  flex: 1.5;
+  font-size: 30rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+.btn1 {
+  background-color: #37c2bb;
+  color: white;
+  border-radius: 28rpx; 
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  
+}
+.btn2 {
+  background-color: #489eca;
+  color: white;
+  border-radius: 28rpx; 
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  margin-left:40rpx;
+}

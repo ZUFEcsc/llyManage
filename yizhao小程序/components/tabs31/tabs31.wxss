@@ -1,0 +1,20 @@
+.tabs {
+    padding: 10rpx 0rpx;
+}
+
+.tabs_title {
+    display: flex;
+    padding: 10rpx 40rpx;
+}
+
+.title_item {
+    flex: 1;
+    height: 20rpx;
+    padding: 18rpx 45rpx;
+    margin-left: 10rpx;
+    color:#666;
+}
+.active{
+    border-bottom:solid 5rpx var(--themecolor);
+    color:var(--themecolor);
+}

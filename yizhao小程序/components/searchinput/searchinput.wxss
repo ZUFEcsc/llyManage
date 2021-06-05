@@ -1,0 +1,37 @@
+.search_input {
+  height: 90rpx;
+  padding: 10rpx;
+  display: flex;
+  background-color: var(--themecolor);
+}
+.textzw{
+  margin-top:-35px;
+  margin-left:10px;
+  color:white;
+  font-weight:bold;
+  font-size:28px;
+  flex:1;
+}
+.search_input navigator{
+  margin-left:-30px;
+  margin-top:6px;
+  height:60rpx;
+  line-height:60rpx;
+  flex:2;
+
+  background-color:white;
+  border-radius: 45rpx;
+  color: #666;
+  
+}
+.textnull{
+  flex:1;
+}
+.search_text{
+  display:block;
+  margin-left:40px;
+}
+.search_img{
+  display:block;
+  margin-top:-29px;
+}

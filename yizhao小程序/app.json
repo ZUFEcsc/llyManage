@@ -1,0 +1,31 @@
+{
+  "pages":[
+
+    "pages/login/login",
+    "pages/test/test",
+    "pages/orderTime/index",
+    "pages/bmzgindex/bmzgindex",
+    "pages/hrztc/index",
+    "pages/evalue/evalue",
+    "pages/hr-01/hr-01",
+    "pages/userztc/index",
+    "pages/userxx/index",
+    "pages/userwd/index",
+    "pages/userindex/userindex",
+    "pages/hrindex/hrindex",
+    "pages/index/index",
+    "pages/vedio/vedio",
+    "pages/dialog/dialog",
+    "pages/teacher/teacher",
+    "pages/hrwd/index",
+    "pages/grda/grda"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#37c2bb",
+    "navigationBarTitleText": "易Zhao",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

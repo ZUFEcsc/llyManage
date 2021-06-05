@@ -1,0 +1,36 @@
+<!--线上考核板块-->
+<view class="body">
+<view class="top">
+<view class="title">等你来答</view>
+<view>
+  <text class="text1">320场考核·130家企业·1060个直通名额</text>
+    <text class="text2">筛选</text>
+    <view class="imgblock">
+    <image src="../../icons/筛选.png" class="choice-img" mode="widthFix"></image></view>
+</view>
+<!--考核列表循环-->
+</view>
+<view class="item" wx:for="{{testList}}" wx:key="id">
+<view class="item-1">
+  <view class="left">
+    <image src="{{item.comimg}}" mode="widthFix"></image>
+  </view>
+  <view class="right">
+    <view class="comname">{{item.comname}}</view>
+    <view class="comdescribe">{{item.comdescribe}}</view>
+  </view>
+
+</view>
+<view wx:for="{{item.children}}" wx:for-item="item1" wx:key="id" class="item-child">
+<view class="testleft">
+  <view class="testname">{{item1.testname}}</view>
+  <view class="testdescribe">{{item1.testdescribe}}</view>
+</view>
+<view class="testright">
+  <view class="testdegree">{{item1.testdegree}}</view>
+</view>
+</view>
+</view>
+
+
+</view>

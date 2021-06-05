@@ -1,0 +1,61 @@
+/* components/user33/user33.wxss */
+.body{
+  padding:35rpx 50rpx;
+}
+.top{
+  border-bottom: 4rpx solid #ededed;
+  width:100%;
+  height: 110rpx;
+}
+.title{
+  font-size: 34rpx;
+  color:black;
+  font-weight:550;
+  margin-bottom: 10rpx;
+}
+.text1{
+  font-size:25rpx;
+  color:#666;
+}
+.text2{
+  font-size:28rpx;
+  columns: #666666;
+  margin-left: 118rpx;
+}
+.imgblock{
+  width:40rpx;
+  margin-left: 620rpx;
+  margin-top: -36rpx;
+}
+.choice-img{
+  width: 100%;
+}
+
+.items{
+  padding: 30rpx 0rpx;
+  border-bottom: 6rpx solid #ededed;
+}
+.detail{
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.people{
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.title2{
+  font-size: 33rpx;
+  color:black;
+  font-weight:550;
+  margin-bottom: 20rpx;
+}
+.text1{
+  margin-left: 10rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.img2{
+  margin-left: 260rpx;
+}

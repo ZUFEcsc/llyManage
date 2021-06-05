@@ -1,0 +1,128 @@
+/* pages/userindex/userindex.wxss */
+.body{
+  padding: 35rpx 50rpx;
+}
+.top{
+  border-bottom: 4rpx solid #ededed;
+  width:100%;
+  height: 60rpx;
+
+}
+
+.text1{
+  font-size:28rpx;
+  color:black;
+  border-bottom: 6rpx solid var(--themecolor);
+}
+.text2{
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 50rpx;
+}
+.text3{
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 50rpx;
+}
+.text4{
+  font-size:28rpx;
+  color:black;
+  margin-left: 300rpx;
+}
+.imgblock{
+  width:40rpx;
+  margin-left: 620rpx;
+  margin-top: -36rpx;
+}
+.choice-img{
+  width: 100%;
+}
+
+.items{
+  height: 360rpx;
+  border-bottom: 3px solid #ededed;
+  padding: 40rpx 0rpx;
+}
+.item1{
+  height: 70rpx;
+}
+.jobname{
+  float: left;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.money{
+  float:right;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: var(--themecolor);
+  float:right;
+}
+
+.item2{
+  margin-top: 15rpx;
+}
+.text{
+  margin-left: 20rpx;
+  padding:10rpx 20rpx;
+  border-radius: 10rpx;
+  background-color: #ededed;
+  color: #666;
+}
+.item3{
+  margin-top: 35rpx;
+}
+.item4{
+  display: flex;
+  margin-top: 30rpx;
+}
+.imgsrc{
+  flex: 0.5;
+}
+.imgsrc image{
+  width: 80%;
+}
+.peoplename{
+  flex: 1;
+  margin-top:20rpx;
+}
+.center{
+  flex: 1.5;
+}
+.local{
+  flex: 1;
+  font-size:28rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+.item5{
+  display: flex;
+  padding: 20rpx 0rpx;
+}
+.peoplenum{
+  flex: 2;
+  float: left;
+  height: 50rpx;
+  border-radius: 50rpx;
+  background-color: var(--themecolor);
+}
+.peoplenum text{
+  color: white;
+  margin-left: 30rpx;
+  font-weight: bold;
+}
+.tt{
+  flex: 1;
+}
+.shenhe{
+  fleX:1;
+  float:right;
+  height: 50rpx;
+  border-radius: 50rpx;
+  background-color: #489eca;
+}
+.shenhe text{
+  color: white;
+  margin-left: 40rpx;
+  font-weight: bold;
+}

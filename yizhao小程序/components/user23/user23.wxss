@@ -1,0 +1,75 @@
+/* components/user23/user23.wxss */
+.body{
+  padding:35rpx 50rpx;
+}
+.index_swiper swiper {
+  width: 100%;
+  height: 360rpx;
+}
+.index_swiper swiper image {
+  width: 100%;
+}
+.index_cate1 {
+  display: flex;
+  margin-top: 10rpx;
+
+}
+.index_cate1 navigator {
+  padding: 20rpx;
+  flex: 1;
+}
+.index_cate1 navigator image {
+  width: 100%;
+}
+.index_cate {
+  display: flex;
+  margin-top: 10rpx;
+  border-bottom: 4rpx solid #ededed;
+}
+.index_cate navigator {
+  padding: 20rpx;
+  flex: 1;
+}
+.index_cate navigator image {
+  width: 100%;
+}
+
+.index_floor .floor_group .floor_title {
+  padding: 20rpx 0;
+  margin-top: 10rpx;
+}
+.index_floor .floor_group .floor_title image {
+  width: 100%;
+}
+.index_floor .floor_group .floor_list navigator {
+  float: left;
+  width: 32.33%;
+}
+.index_floor .floor_group .floor_list navigator:nth-last-child(-n+4) {
+  height: 25.72711207vw;
+  border-left: 10rpx solid #fff;
+}
+.index_floor .floor_group .floor_list navigator:nth-child(2),
+.index_floor .floor_group .floor_list navigator:nth-child(3) {
+  border-bottom: 10rpx solid #fff;
+}
+.index_floor .floor_group .floor_list navigator image {
+  width: 100%;
+  height: 100%;
+}
+.vedio-item{
+  display: flex;
+  margin-top: 20rpx;
+
+}
+.vedio-item .center{
+  flex:5%;
+}
+.vedio-item navigator{
+  flex: 45%;
+}
+.texttt{
+  margin-top: 20rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}

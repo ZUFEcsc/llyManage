@@ -1,0 +1,94 @@
+<!--名师一对一板块-->
+<view class="body">
+
+  <view class="top">
+    <view class="peopleimg">
+      <image src="../../images/teach-1.png" mode="widthFix"></image>
+
+    </view>
+    <view class="intro">
+      <view class="intro1">张德</view>
+      
+      <view class="intro2">张德·人事主管·高级讲师</view>
+    </view>
+    <view class="info">
+      <view class="info1">
+        <text class="num">1340</text>
+        <text class="text">关注 TA</text>
+      </view>
+      <view class="info2">
+        <text class="num">673</text>
+        <text class="text">咨询过</text>
+      </view>
+      <view class="info3">
+        <navigator url="../../pages/dialog/dialog"><image src="../../icons/私信.png" mode="widthFix"></image></navigator>
+      </view>
+
+    </view>
+  </view>
+
+
+  <view class="center">
+    <tabs tabs="{{tabs}}" bind:tabsitemchange="handletabsitemchange">
+      <!--个人信息板块-->
+      <block wx:if="{{tabs[0].isactive}}">
+        <view class="introo">
+          <view class="title">个人介绍</view>
+          <view class="intro-1">
+            <view class="left">
+              <image src="../../images/teach-1.png" mode="widthFix" class="img111"></image>
+            </view>
+            <view class="center">
+              <view class="name">张德</view>
+              <view class="degree">人事主管</view>
+            </view>
+            <view class="right"></view>
+          </view>
+          <view class="intro-2">曾在多家企业担任过人事主管，面试经验丰富，能针对性解决你的面试烦恼。</view>
+        </view>
+        <view class="comp">
+          <view class="title">工作经历</view>
+          <view class="item2">
+            <image src="../../images/teacher-1.png" mode="widthFix"></image>
+          </view>
+        </view>
+
+      </block>
+      <!--历史评价板块-->
+      <block wx:if="{{tabs[1].isactive}}">
+        <view class="item-2">
+          <view class="evalueitems" wx:for="{{evaluelist}}" wx:key="id">
+            <view class="imgsrc">
+              <image src="{{item.imgsrc}}" mode="widthFix"></image>
+            </view>
+            <view class="evalue-text">{{item.text}}</view>
+          </view>
+
+        </view>
+      </block>
+      <!--预约指导板块-->
+      <block wx:if="{{tabs[2].isactive}}">
+
+        <view class='containt'>
+          <scroll-view class="scroll-view_H" scroll-x>
+            <view class='list' style='width:{{ width }}rpx'>
+              <view bindtap="select" wx:for="{{ calendar }}" wx:for-item="item" wx:for-index="index"
+                data-index="{{ index }}" class='listItem {{index==currentIndex? "current":""}}'>
+                <text class='name'>{{ item.week }}</text>
+                <text class='date'>{{ item.date }}</text>
+              </view>
+            </view>
+          </scroll-view>
+          <view class='time'>
+            <view wx:for="{{ timeArr }}" wx:for-item="timeItem" wx:for-index="timeIndex" data-Tindex="{{ timeIndex }}"
+              bindtap='selectTime' class='listItem {{ currentTime==timeIndex? "current":"" }}'>
+              <text>{{ timeItem.time }}</text>
+              <text>{{ timeItem.status }}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </tabs>
+  </view>
+
+</view>

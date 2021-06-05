@@ -1,0 +1,95 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "用户首页",
+          "pathName": "pages/userindex/userindex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "用户直通车",
+          "pathName": "pages/userztc/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "用户消息",
+          "pathName": "pages/userxx/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/userwd/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "直播页面",
+          "pathName": "pages/vedio/vedio",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "对话",
+          "pathName": "pages/dialog/dialog",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "名师页面",
+          "pathName": "pages/teacher/teacher",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "hr主页",
+          "pathName": "pages/hrindex/hrindex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "简历页面",
+          "pathName": "pages/hr-01/hr-01",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/evalue/evalue",
+          "pathName": "pages/evalue/evalue",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "hr直通车页面",
+          "pathName": "pages/hrztc/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "部门主管首页",
+          "pathName": "pages/bmzgindex/bmzgindex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人档案",
+          "pathName": "pages/grda/grda",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

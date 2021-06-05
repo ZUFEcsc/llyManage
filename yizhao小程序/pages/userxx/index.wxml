@@ -1,0 +1,30 @@
+<!--用户-消息-->
+<view class="body">
+
+<view class="top">
+<image src="../../icons/聊天.png" mode="widthFix" class="img1"></image>
+<text class="text1">我的消息</text>
+</view>
+
+<view class="items" wx:for="{{messagelist}}" wx:key="id">
+  <view class="left"><image src="{{item.imgsrc}}" mode="widthFix"></image></view>
+  <view class="center">
+    <view class="text2">
+      <text class="name">{{item.name}}</text>
+      <text class="detail">{{item.detail}}</text>
+    </view>
+    <view class="message">{{item.message}}</view>
+  </view>
+  <view class="right">
+    <text class="time">{{item.time}}</text>
+  </view>
+</view>
+
+</view>
+
+
+
+
+
+<import src="../../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />

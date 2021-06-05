@@ -1,0 +1,16 @@
+/* components/grda-1/grda-1.wxss */
+/* pages/test/test.wxss */
+.box {
+  margin-left:-20rpx;
+  margin-top:20rpx;
+  width:800rpx;
+  height:870rpx;
+
+} 
+.box2 {
+  margin-left:-20rpx;
+  margin-top:-80rpx;
+  width:800rpx;
+  height:800rpx;
+
+} 

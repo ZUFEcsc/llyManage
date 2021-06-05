@@ -1,0 +1,22 @@
+/* pages/test/test.wxss */
+.box {
+  margin-top:20rpx;
+  margin-left:120rpx;
+  width:800rpx;
+  height:200rpx;
+
+} 
+.box ec-canvas{
+  width:100%;
+  height:100%;
+}
+.box2 {
+  margin-top:100rpx;
+  width:750rpx;
+  height:780rpx;
+} 
+.box3 {
+  width:750rpx;
+  height:800rpx;
+  margin-top:0rpx;
+} 

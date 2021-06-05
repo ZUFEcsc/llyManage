@@ -1,0 +1,11 @@
+{
+  
+  "usingComponents": {
+    "Select": "../../components/select/select",
+    "searchinput":"../../components/searchinput/searchinput",
+    "tabs":"../../components/tabs/tabs"
+  },
+  "navigationBarTitleText": "职位",
+  "navigationBarBackgroundColor": "#37c2bb",
+  "navigationBarTextStyle":"white"
+}

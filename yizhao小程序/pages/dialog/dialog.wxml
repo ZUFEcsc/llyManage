@@ -1,0 +1,21 @@
+<!--用户对话板块-->
+
+<view class="top">
+  <view class="back"><image src="../../icons/向左2.png" mode="widthFix"></image></view>
+  <view class="item1">
+  <view class="name">朱先生</view>
+  <view class="details">无际云帆·总监</view></view>
+  <view class="more"><image src="../../icons/更多.png" mode="widthFix"></image></view>
+</view>
+
+<view class="dialogs"></view>
+
+<view class="bottom">
+<view class="message"><input placeholder="新消息111" type="text" name="account" placeholder-class="phcolor" /></view>
+<view class="face">
+  <image src="../../icons/vedio-表情.png" mode="widthFix"></image>
+</view>
+<view class="plus">
+  <image src="../../icons/vedio-添加.png" mode="widthFix"></image>
+</view>
+</view>

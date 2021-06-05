@@ -1,0 +1,78 @@
+<!--云上直播-直播页面-->
+
+<!--播放视频板块-->
+<view class="vedio">
+
+
+  <view class="section tc">
+  <video
+    id="myVideo"
+    src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+    style="width:100%;"
+  ></video>
+</view>
+
+
+</view>
+
+<vediotabs tabs="{{vediotabs}}" bind:tabsitemchange="handletabsitemchange">
+<!--互动板块-->
+<block wx:if="{{vediotabs[0].isactive}}">
+
+
+<view class="index" animation="{{slide_up1}}">
+  <view class="commitment1">
+    <image src="../../icons/humans-2.png" style="width:18%;" mode="widthFix"></image>
+    <view class="text"><text class="txt">具体有什么职位呢？</text></view>
+  </view>
+
+</view>
+
+<view class="index" animation="{{slide_up2}}">
+  <view class="commitment2">
+    <image src="../../icons/humans-3.png" style="width:18%;" mode="widthFix"></image>
+    <view class="text"><text class="txt">我是哈佛毕业的，是否有优待？</text></view>
+  </view>
+
+</view>
+
+<view class="index" animation="{{slide_up3}}">
+  <view class="commitment3">
+    <image src="../../icons/humans-4.png" style="width:18%;" mode="widthFix"></image>
+    <view class="text"><text class="txt">应届毕业生有机会吗?</text></view>
+  </view>
+
+</view>
+
+</block>
+<!--职位信息板块-->
+<block wx:if="{{vediotabs[1].isactive}}">
+  <view class="item3">
+    <view class="text-3">职位信息</view>
+    <view class="item3-s" wx:for="{{joblist}}" wx:key="{{index}}">
+      <view class="a11">
+        <text class="name">{{item.name}}</text>
+        <text class="money">{{item.money}}</text>
+        <button class="btn" bindtap="jinduchange" data-index="{{index}}">{{item.btnname}}</button>
+      </view>
+      <view class="a22">
+        <text class="describe">{{item.describe}}</text>
+        <text class="jindu">{{item.jindu}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+<!--主播信息板块-->
+<block wx:if="{{vediotabs[2].isactive}}">
+<image src="../../images/vedio-back-2.png" mode="widthFix" style="width:90%;margin-left:40rpx;margin-top:20rpx;"></image>
+
+</block>
+</vediotabs>
+
+<!--发言、私信、连线-->
+<view class="bottom">
+  <view class="danmu">
+  <input placeholder="发个弹幕呗~" type="text" name="account" placeholder-class="phcolor" /></view>
+  <navigator url="../../pages/dialog/dialog" class="sixin"><image src="../../icons/发送.png" mode="widthFix"></image></navigator>
+  <navigator url="../../pages/dialog/dialog" class="jianli"><image src="../../icons/去私聊.png" mode="widthFix"></image></navigator>
+</view>

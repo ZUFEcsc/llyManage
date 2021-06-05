@@ -1,0 +1,25 @@
+.tabs{
+
+}
+.tabs_title{
+    display: flex;
+    margin-top: -30rpx;
+    border-bottom: 4rpx solid #ededed;
+}
+.title_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 15rpx 0;
+    font-size: 30rpx;
+    color:#838383;
+}
+.text-item{
+    margin-left: -95rpx;
+    margin-top: 120rpx;
+}
+.active{
+    color:var(--themecolor);
+}
+.tabs_content{}

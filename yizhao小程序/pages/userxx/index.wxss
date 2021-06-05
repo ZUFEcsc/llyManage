@@ -1,0 +1,62 @@
+.body{
+  padding:35rpx 50rpx;
+}
+.top{
+  border-bottom: 6rpx solid #ededed;
+  height: 80rpx;
+}
+.img1{
+  width:60rpx;
+}
+.text1{
+  font-size: 36rpx;
+  font-weight: bold;
+  display:block;
+  margin-left: 80rpx;
+  margin-top: -60rpx;
+  color: var(--themecolor);
+}
+.items{
+  height: 140rpx;
+  border-bottom: 4rpx solid #ededed;
+  display: flex;
+  padding: 20rpx 0rpx;
+}
+.left{
+  flex: 1;
+}
+.left image{
+  width: 80%;
+}
+.center{
+  flex: 2.5;
+}
+.text2{
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.name{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.detail{
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+.message{
+  margin-top: 20rpx;
+  color: rgb(167, 166, 166);
+  font-weight: bold;
+}
+.right{
+  flex:0.5;
+  margin-left: 34rpx;
+  margin-top: 20rpx;
+}
+.time{
+  font-size: 24rpx;
+  color: #666;
+
+}

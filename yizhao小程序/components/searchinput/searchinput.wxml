@@ -1,0 +1,14 @@
+<!--components/searchinput/searchinput.wxml-->
+<view class="search_input">
+<text class="textzw">
+    职位
+</text>
+<navigator url="" open-type="navigate">
+     <text class="search_text">搜索职位/企业</text>
+     <image class="search_img" src="../../icons/搜索.png" style="width:25px;height:25px;margin-left:144px;"/>
+       
+</navigator>
+<text class="textnull">
+
+</text>
+</view>

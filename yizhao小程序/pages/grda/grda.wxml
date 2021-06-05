@@ -1,0 +1,23 @@
+<!--pages/userztc/index.wxml-->
+<tabs tabs="{{tabs}}" bind:tabsitemchange="handletabsitemchange">
+  <!--基本信息-板块-->
+  <block wx:if="{{tabs[0].isactive}}">
+    <image src="../../images/grda_1.png" mode="widthFix" style="width:100%;"></image>
+  </block>
+  <!--综合评价板块-->
+  <block wx:elif="{{tabs[1].isactive}}">
+    <grda-2></grda-2>
+
+  </block>
+
+  <!--绩效评分板块-->
+  <block wx:elif="{{tabs[2].isactive}}">
+    <grda-3></grda-3>
+
+  </block>
+</tabs>
+
+
+
+<import src="../../template/tabbar.wxml" />
+<template is="tabBar" data="{{tabBar}}" />
